@@ -3,6 +3,6 @@ const Nosotros = () => {
     <>
       <h1>Nosotros</h1>
     </>
-  );
-};
-export default Nosotros;
+  )
+}
+export default Nosotros

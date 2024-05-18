@@ -1,33 +1,34 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
-import ReactDOM from "react-dom/client";
-import Index from "./web/Index";
-import Home from "./web/Pages/Home";
-import Nosotros from "./web/Pages/Nosotros";
-import Contacto from "./web/Pages/Contacto";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ReactDOM from 'react-dom/client'
+import ThemeProvider from './web/theme'
+import Index from './web/Index'
+import Home from './web/Pages/Home'
+import Nosotros from './web/Pages/Nosotros'
+import Contacto from './web/Pages/Contacto'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: `/`,
     element: <Index />,
     children: [
       {
-        path: "",
+        path: ``,
         element: <Home />,
       },
       {
-        path: "Nosotros",
+        path: `Nosotros`,
         element: <Nosotros />,
       },
       {
-        path: "Contacto",
+        path: `Contacto`,
         element: <Contacto />,
       },
     ],
   },
-]);
+])
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
-);
+ReactDOM.createRoot(document.getElementById(`root`)).render(
+  <ThemeProvider>
+    <RouterProvider router={router} />
+  </ThemeProvider>,
+)

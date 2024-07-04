@@ -1,3 +1,4 @@
+import Service from "./pages/service";
 import team from "./img/team_2.png";
 const Index = () => {
   return (
@@ -9,7 +10,7 @@ const Index = () => {
               <b>SysifosWeb</b>
             </a>
             <button
-              className="navbar-toggler"
+              className="navbar-toggler text-white"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -25,28 +26,20 @@ const Index = () => {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li className="nav-item">
-                  <a
-                    className="nav-link active text-white"
-                    aria-current="page"
-                    href="#"
-                  >
-                    Home
+                  <a className="nav-link text-white" href="#servicios">
+                    Nuestros Servicios
                   </a>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a className="nav-link text-white" href="#">
                     Nosotros
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <a className="nav-link text-white" href="#">
                     Contacto
                   </a>
                 </li>
-
-                {/* <li className="nav-item">
-                  <a className="nav-link text-white"></a>
-                </li> */}
               </ul>
               <span className="navbar-text text-white">+56949109970</span>
               <button className="btn btn-info text-white ms-4">
@@ -79,6 +72,7 @@ const Index = () => {
           </article>
         </section>
       </header>
+      <Service id="service"></Service>
     </>
   );
 };

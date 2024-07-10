@@ -10,7 +10,6 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
 import MenuItem from '@mui/material/MenuItem'
-import { useNavigate } from 'react-router-dom'
 
 const pages = [
   { page: `Nuestros Servicios`, link: `/` },
@@ -18,22 +17,18 @@ const pages = [
   { page: `Contactanos`, link: `/` },
 ]
 
-function ResponsiveAppBar() {
-  const navigate = useNavigate()
+function Header({ palette: { secondary } }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
 
-  const handleCloseNavMenu = (link) => {
-    navigate(link)
-    setAnchorElNav(null)
-  }
+  const handleCloseNavMenu = () => {}
 
   return (
     <AppBar position="static" sx={{ background: `none`, boxShadow: `none` }}>
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
           <img src={logo} alt="Logo" width={`230px`} />
 
@@ -68,8 +63,8 @@ function ResponsiveAppBar() {
                 display: { xs: `block`, md: `none` },
               }}
             >
-              {pages.map(({ page, link }) => (
-                <MenuItem key={page} onClick={() => handleCloseNavMenu(link)}>
+              {pages.map(({ page }) => (
+                <MenuItem key={`m-` + page} onClick={() => handleCloseNavMenu(page)}>
                   <Typography>{page}</Typography>
                 </MenuItem>
               ))}
@@ -78,13 +73,18 @@ function ResponsiveAppBar() {
           <Box
             sx={{ flexGrow: 1, display: { xs: `none`, md: `flex` }, justifyContent: `flex-end` }}
           >
-            {pages.map(({ page, link }) => (
+            {pages.map(({ page }) => (
               <Button
                 variant="text"
-                key={page}
-                onClick={() => handleCloseNavMenu(link)}
+                key={`full-` + page}
+                onClick={() => handleCloseNavMenu(page)}
                 color={`white`}
-                sx={{}}
+                sx={{
+                  background: page === `Contactanos` ? secondary.main : `transparent`,
+                  '&:hover': {
+                    background: page === `Contactanos` ? secondary.main : `transparent`,
+                  },
+                }}
               >
                 {page}
               </Button>
@@ -95,4 +95,4 @@ function ResponsiveAppBar() {
     </AppBar>
   )
 }
-export default ResponsiveAppBar
+export default Header

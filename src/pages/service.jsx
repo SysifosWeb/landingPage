@@ -5,7 +5,6 @@ const Service = () => {
       <h2 className="text-center py-5" style={{ color: "rgb(9,9,121)" }}>
         <b>Nuestros Servicios</b>
       </h2>
-
       <div
         id="tarjetas"
         className="d-flex justify-content-center flex-wrap gap-5 row-gap-5 column-gap-5"

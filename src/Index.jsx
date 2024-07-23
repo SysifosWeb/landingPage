@@ -8,7 +8,6 @@ const Index = () => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-transparent container">
           <div className="container">
             <a className="navbar-brand" href="#">
-              {/* <b>SysifosWeb</b> */}
               <img src={logo} alt="" />
             </a>
             <button
@@ -28,7 +27,7 @@ const Index = () => {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-5">
                 <li className="nav-item">
-                  <a className="nav-link text-white" href="#servicios">
+                  <a className="nav-link text-white" href="#service">
                     Nuestros Servicios
                   </a>
                 </li>
@@ -103,6 +102,9 @@ const Index = () => {
             <h5>Contactanos</h5>
             <p>
               <b>Telefono : </b> +56949109970
+            </p>
+            <p>
+              <b>Correo : </b> sysifosweb@gmail.com
             </p>
           </div>
           <div className="d-flex flex-column  redes col-md-6">

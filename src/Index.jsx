@@ -10,7 +10,7 @@ const Index = () => {
             <a className="navbar-brand" href="#">
               <img src={logo} alt="" />
             </a>
-            <button
+            {/* <button
               className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
@@ -20,8 +20,8 @@ const Index = () => {
               aria-label="Toggle navigation"
             >
               <span className="navbar-toggler-icon"></span>
-            </button>
-            <div
+            </button> */}
+            {/* <div
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
@@ -31,11 +31,6 @@ const Index = () => {
                     Nuestros Servicios
                   </a>
                 </li>
-                {/* <li className="nav-item">
-                  <a className="nav-link text-white" href="#">
-                    Nosotros
-                  </a>
-                </li> */}
                 <li className="nav-item">
                   <a className="nav-link text-white" href="#">
                     Contacto
@@ -46,12 +41,12 @@ const Index = () => {
               <button className="btn btn-info text-white ms-4">
                 Contactanos
               </button>
-            </div>
+            </div> */}
           </div>
         </nav>
         <section
           id="banner"
-          className="d-flex justify-content-between container"
+          className="d-flex justify-content-sm-center justify-content-md-between container"
         >
           <article
             id="welcome"
@@ -75,12 +70,11 @@ const Index = () => {
             </div>
           </article>
 
-          <article
-            id="welcome-img"
-            className="d-flex flex-column justify-content-center align-content-center text-white mt-5 col-sm-5 "
-          >
-            <img src={team} className="d-none d-md-block" alt="" />
-          </article>
+          <img
+            src={team}
+            className="d-flex justify-content-center align-self-end d-none d-md-block"
+            alt=""
+          />
         </section>
       </header>
       <Service id="service"></Service>

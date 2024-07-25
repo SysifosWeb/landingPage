@@ -2,6 +2,7 @@ import movile_img from "./../img/movile_img.png";
 import web_img from "./../img/web.png";
 import solution_img from "./../img/empresarial.png";
 import system_img from "./../img/integracion.png";
+import "./../index.css";
 
 const Service = () => {
   return (

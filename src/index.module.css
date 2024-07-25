@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
  }
-.navbar-brand img{  
+.logo{  
   margin-top: 0.3rem;
   width: 9rem;  
 }
@@ -26,7 +26,7 @@
   /* max-height: 100vh;   */
   font-weight: 300;
 }
-#banner > img{
+.bannerImg{
   height: 30rem;
 }
 .service{
@@ -34,41 +34,41 @@
   font-weight: 300;
   /* padding-bottom: 5rem; */
 }
-#movile{
+.movile{
   width: 100%;
   height: auto;
   padding-top: 1rem;
 }
 
-#movile article img{
+.movile article img{
 height: 30rem;
 }
 
-#web{
+.web{
   width:100%;  
   background: linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1));
 }
 
 
-#web article img{
+.web article img{
   height: 20rem;
 }
 
 
-#solution{
+.solution{
   width:100%;  
 }
 
-#solution article img{
+.solution article img{
   height: 21rem;
 }
 
-#system{
+.system{
   width:100%;  
   background: linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)60%,rgba(0,212,255,1));
 }
 
-#system article img{
+.system article img{
   height: 30rem;
 }
 
@@ -89,19 +89,19 @@ footer{
 }
 
 @media (min-width: 768px) and (max-width: 1200px) {
-  #banner > img{
+  .bannerImg{
     height: 21rem;
   }
-  #movile article img{
+  .movile article img{
     height: 20rem;
   }
-  #web article img{
+  .web article img{
     height: 10rem;
   }
-  #solution article img{
+  .solution article img{
     height: 15rem;
   }
-  #system article img{
+  .system article img{
     height: 20rem;
   }
 }

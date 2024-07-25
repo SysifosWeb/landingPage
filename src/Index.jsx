@@ -1,14 +1,15 @@
 import Service from "./pages/service";
 import team from "./img/team_2.png";
 import logo from "./img/logo-blanco.png";
+import indexcss from "./index.module.css";
 const Index = () => {
   return (
     <>
-      <header className="cabecera">
+      <header className={indexcss.cabecera}>
         <nav className="navbar navbar-expand-lg navbar-dark bg-transparent container">
           <div className="container">
             <a className="navbar-brand" href="#">
-              <img src={logo} alt="" />
+              <img src={logo} className={indexcss.logo} alt="" />
             </a>
             {/* <button
               className="navbar-toggler"
@@ -44,14 +45,8 @@ const Index = () => {
             </div> */}
           </div>
         </nav>
-        <section
-          id="banner"
-          className="d-flex justify-content-sm-center justify-content-md-between container"
-        >
-          <article
-            id="welcome"
-            className="d-flex flex-column justify-content-center align-content-center text-white mt-5 p-2 col-md-6 col-sm-12 col-xs-12 gap-4"
-          >
+        <section className="d-flex justify-content-sm-center justify-content-md-between container banner">
+          <article className="d-flex flex-column justify-content-center align-content-center text-white mt-5 p-2 col-md-6 col-sm-12 col-xs-12 gap-4 welcome">
             <h1 className="display-4 text-center text-md-start">
               Excelencia en Ingeniería
               <p className="display-6 text-center text-md-start">
@@ -69,16 +64,13 @@ const Index = () => {
               </button>
             </div>
           </article>
-
-          <img
-            src={team}
-            className="d-flex justify-content-center align-self-end d-none d-md-block"
-            alt=""
-          />
+          <article className="d-flex justify-content-center align-self-end d-none d-md-block">
+            <img src={team} className={indexcss.bannerImg} alt="" />
+          </article>
         </section>
       </header>
-      <Service id="service"></Service>
-      <section className="prefooter">
+      <Service></Service>
+      <section className={indexcss.prefooter}>
         <div className="container">
           <p>
             La calidad no es negociable en <b>SysifosWeb</b>. Nos comprometemos

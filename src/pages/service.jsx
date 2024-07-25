@@ -2,16 +2,16 @@ import movile_img from "./../img/movile_img.png";
 import web_img from "./../img/web.png";
 import solution_img from "./../img/empresarial.png";
 import system_img from "./../img/integracion.png";
-import "./../index.css";
+import serv from "./../index.module.css";
 
 const Service = () => {
   return (
-    <main className="service">
+    <main className={serv.service}>
       <h2 className="text-center py-5" style={{ color: "rgb(9,9,121)" }}>
         <b>Nuestros Servicios</b>
       </h2>
 
-      <section id="movile">
+      <section className={serv.movile}>
         <div className="d-flex justify-content-center justify-content-md-between align-items-center container px-5 pb-5 pb-md-0 px-md-0">
           <article className="d-flex justify-content-center align-items-end d-none d-md-block">
             <img src={movile_img} alt="" />
@@ -27,7 +27,13 @@ const Service = () => {
         </div>
       </section>
 
-      <section id="web">
+      <section
+        className={serv.web}
+        style={{
+          background:
+            "linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1))",
+        }}
+      >
         <div className="d-flex justify-content-md-between align-items-center container py-5">
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start px-5">
             <h3 className="text-white">Desarrollo Web</h3>
@@ -42,7 +48,7 @@ const Service = () => {
         </div>
       </section>
 
-      <section id="solution">
+      <section className={serv.solution}>
         <div className="d-flex justify-content-md-between align-items-center container py-5">
           <article className="d-flex align-items-center justify-content-center d-none d-md-block">
             <img src={solution_img} alt="" />
@@ -57,7 +63,13 @@ const Service = () => {
         </div>
       </section>
 
-      <section id="system">
+      <section
+        className={serv.system}
+        style={{
+          background:
+            "linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)60%,rgba(0,212,255,1))",
+        }}
+      >
         <div className="d-flex justify-content-md-between align-items-center container">
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start px-5 py-5 py-md-0">
             <h3 className="text-white text-sm-center">

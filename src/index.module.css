@@ -13,10 +13,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 } */
- .navbar-brand{
-  display: flex;
-  align-items: center;
- }
+
 .logo{  
   margin-top: 0.3rem;
   width: 9rem;  
@@ -24,6 +21,7 @@
 .cabecera{
   background: linear-gradient(189deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 80%);
   /* max-height: 100vh;   */
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
 .bannerImg{
@@ -31,6 +29,7 @@
 }
 .service{
   width: 100%;  
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
   /* padding-bottom: 5rem; */
 }
@@ -78,7 +77,8 @@ height: 30rem;
   text-align: center;
   padding:5rem 4rem;  
 }
-.prefooter .container p{
+.font300{
+  font-family: "Roboto", sans-serif;
   font-weight: 300;
 }
 footer{

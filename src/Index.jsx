@@ -72,7 +72,7 @@ const Index = () => {
       <Service></Service>
       <section className={indexcss.prefooter}>
         <div className="container">
-          <p>
+          <p className={indexcss.font300}>
             La calidad no es negociable en <b>SysifosWeb</b>. Nos comprometemos
             a entregar software que no solo funcione bien, sino que también sea
             robusto, seguro y sostenible a largo plazo. Nuestro equipo sigue las

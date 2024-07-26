@@ -2,6 +2,7 @@ import Service from "./pages/service";
 import team from "./img/team_2.png";
 import logo from "./img/logo-blanco.png";
 import indexcss from "./index.module.css";
+import whatsapp from "./img/whatsapp.png";
 const Index = () => {
   return (
     <>
@@ -59,9 +60,22 @@ const Index = () => {
               cumple, sino que supera expectativas
             </p>
             <div className="text-center text-md-start mb-4">
-              <button className="btn btn-primary btn-md col-6 ">
-                Más información
-              </button>
+              <a
+                className="btn btn-success btn-lg col-6 "
+                aria-label="Chat on WhatsApp"
+                style={{
+                  background: "#54CC61",
+                  border: "none",
+                  fontSize: "1.5em",
+                }}
+                href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20porfavor"
+              >
+                <img
+                  src={whatsapp}
+                  style={{ height: "3rem", marginRight: "1.5rem" }}
+                />
+                Contactanos
+              </a>
             </div>
           </article>
           <article className="d-flex justify-content-center align-self-end d-none d-md-block">

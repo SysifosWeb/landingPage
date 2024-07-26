@@ -59,7 +59,7 @@ const Index = () => {
               cumple, sino que supera expectativas
             </p>
             <div className="text-center text-md-start mb-4">
-              <button className="btn btn-primary btn-md col-6 ">
+              <button className={"btn btn-primary btn-md col-6 "+indexcss.btnContact}>
                 Más información
               </button>
             </div>

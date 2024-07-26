@@ -67,7 +67,7 @@ const Service = () => {
         className={serv.system}
         style={{
           background:
-            "linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)60%,rgba(0,212,255,1))",
+            "linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)20%,rgba(0,212,255,1))",
         }}
       >
         <div className="d-flex justify-content-md-between align-items-center container">

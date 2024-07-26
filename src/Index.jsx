@@ -61,7 +61,9 @@ const Index = () => {
             </p>
             <div className="text-center text-md-start mb-4">
               <a
-                className="btn btn-success btn-lg col-6 "
+                className={
+                  "btn btn-success btn-lg col-6 " + indexcss.btnContact
+                }
                 aria-label="Chat on WhatsApp"
                 style={{
                   background: "#54CC61",

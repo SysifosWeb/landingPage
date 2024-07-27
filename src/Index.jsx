@@ -3,6 +3,7 @@ import team from "/img/team_2.png";
 import logo from "/img/logo-blanco.png";
 import indexcss from "./css/index.module.css";
 import whatsapp from "/img/whatsapp.png";
+import instagram from "/img/insta.png";
 const Index = () => {
   return (
     <>
@@ -89,18 +90,24 @@ const Index = () => {
         </div>
       </section>
       <footer>
-        <div className="container d-flex justify-content-center flex-wrap">
-          <div className="d-flex flex-column  dir col-md-6">
-            <h5>Contactanos</h5>
-            <p>
-              <b>Telefono : </b> +56949109970
-            </p>
-            <p>
-              <b>Correo : </b> sysifosweb@gmail.com
-            </p>
+        <div className="container d-flex justify-content-center justify-content-md-between gap-5">
+          <div className="d-flex justify-content-md-center align-items-center w-50">
+            <img src={logo} alt="" />
           </div>
-          <div className="d-flex flex-column  redes col-md-6">
-            <h5>Red Social</h5>
+          <div className="d-flex flex-column justify-content-md-start dir w-50">
+            <h4 className="mb-4 text-start">Contactanos</h4>
+            <div className="d-flex align-items-center">
+              <span className="material-icons me-2">phone_in_talk </span>
+              +56949109970
+            </div>
+            <div className="d-flex align-items-center">
+              <span className="material-icons me-2">mark_email_read </span>
+              sysifosweb@gmail.com
+            </div>
+            <div className="d-flex align-items-center">
+              <img src={instagram} alt="" className="me-1" />
+              sysifosweb_
+            </div>
           </div>
         </div>
       </footer>

@@ -1,0 +1,33 @@
+
+.logo{  
+  margin-top: 0.3rem;
+  width: 9rem;  
+}
+.cabecera{
+  background: linear-gradient(189deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 10%, rgba(0,212,255,1) 80%);
+  /* max-height: 100vh;   */
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+.bannerImg{
+  height: 30rem;
+}
+
+.btnContact {
+  background: rgb(0, 54, 182);
+}
+
+.btnContact:hover {
+  background: rgb(0, 42, 142);
+}
+
+.prefooter{
+  background-color: rgb(0, 172, 230);
+  color: white;
+  text-align: center;
+  padding:5rem 4rem;  
+}
+.font300{
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}

@@ -1,8 +1,8 @@
-import movile_img from "./../img/movile_img.png";
-import web_img from "./../img/web.png";
-import solution_img from "./../img/empresarial.png";
-import system_img from "./../img/integracion.png";
-import serv from "./../index.module.css";
+import movile_img from "/img/movile_img.png";
+import web_img from "/img/web.png";
+import solution_img from "/img/empresarial.png";
+import system_img from "/img/integracion.png";
+import serv from "./../css/services.module.css";
 
 const Service = () => {
   return (
@@ -14,7 +14,7 @@ const Service = () => {
       <section className={serv.movile}>
         <div className="d-flex justify-content-center justify-content-md-between align-items-center container px-5 pb-5 pb-md-0 px-md-0">
           <article className="d-flex justify-content-center align-items-end d-none d-md-block">
-            <img src={movile_img} alt="" />
+            <img src={movile_img} alt="" className={serv.movile_img} />
           </article>
 
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start">

@@ -1,0 +1,41 @@
+.service{
+    width: 100%;  
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    /* padding-bottom: 5rem; */
+  }
+  .movile{
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+  }
+  
+  .movile article img{
+  height: 30rem;
+  }
+  
+  .web{
+    width:100%;  
+    background: linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1));
+  }
+  
+  
+  .web article img{
+    height: 20rem;
+  }
+  .solution{
+    width:100%;  
+  }
+  
+  .solution article img{
+    height: 21rem;
+  }
+  
+  .system{
+    width:100%;  
+    background: linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1));
+  }
+  
+  .system article img{
+    height: 30rem;
+  }

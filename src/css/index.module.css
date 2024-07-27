@@ -15,10 +15,19 @@
 
 .btnContact {
   background: rgb(0, 54, 182);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  border: none;
+  font-size: 1em;
 }
 
-.btnContact:hover {
+.btnContact:hover, .btnContact:active, .btnContact:focus{
   background: rgb(0, 42, 142);
+  background-color: rgb(0, 42, 142) !important;
+  box-shadow: none;
 }
 
 .prefooter{
@@ -30,4 +39,11 @@
 .font300{
   font-family: "Roboto", sans-serif;
   font-weight: 300;
+}
+
+@media (min-width: 1200px) {
+  .btnContact {
+    width: 50%;
+  }
+
 }

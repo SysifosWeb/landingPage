@@ -90,12 +90,12 @@ const Index = () => {
         </div>
       </section>
       <footer>
-        <div className="container d-flex justify-content-center justify-content-md-between gap-5">
-          <div className="d-flex justify-content-md-center align-items-center w-50">
+        <div className="container d-flex flex-column flex-md-row justify-content-center justify-content-md-between">
+          <div className="d-flex justify-content-md-end align-items-center pb-4">
             <img src={logo} alt="" />
           </div>
-          <div className="d-flex flex-column justify-content-md-start dir w-50">
-            <h4 className="mb-4 text-start">Contactanos</h4>
+          <div className="d-flex flex-column justify-content-md-start dir">
+            <h4 className="mb-3 text-start">Contactanos</h4>
             <div className="d-flex align-items-center">
               <span className="material-icons me-2">phone_in_talk </span>
               +56949109970

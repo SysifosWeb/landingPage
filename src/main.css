@@ -22,23 +22,7 @@ footer .container div img{
   margin-left: -6px;
 } 
   
-  @media (min-width: 768px) and (max-width: 1200px) {
-    .bannerImg{
-      height: 21rem;
-    }
-    .movile article img{
-      height: 20rem;
-    }
-    .web article img{
-      height: 10rem;
-    }
-    .solution article img{
-      height: 15rem;
-    }
-    .system article img{
-      height: 20rem;
-    }
-  }
+
   
   @media (min-width: 1200px) {
     .logo{  

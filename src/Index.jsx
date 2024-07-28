@@ -4,6 +4,7 @@ import logo from "/img/logo-blanco.png";
 import indexcss from "./css/index.module.css";
 import whatsapp from "/img/whatsapp.png";
 import instagram from "/img/insta.png";
+import gmail from "/img/gmail.png";
 const Index = () => {
   return (
     <>
@@ -101,7 +102,7 @@ const Index = () => {
               +56949109970
             </div>
             <div className="d-flex align-items-center">
-              <span className="material-icons me-2">mark_email_read </span>
+              <img src={gmail} alt="" className="me-1" />
               sysifosweb@gmail.com
             </div>
             <div className="d-flex align-items-center">

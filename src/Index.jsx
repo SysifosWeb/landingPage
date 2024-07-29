@@ -18,7 +18,7 @@ const Index = () => {
           </div>
         </nav>
         <section className="d-flex justify-content-center align-items-center container banner">
-          <article className="d-flex flex-column justify-content-center align-items-center text-white pb-5 mt-5 gap-2 welcome">
+          <article className="d-flex flex-column justify-content-center align-items-center text-white py-md-5 mt-5 gap-2 welcome">
             <b>Desarrollo web y aplicaciones a medida</b>
             <h1 className="text-center">
               Soluciones digitales a tu medida
@@ -30,7 +30,7 @@ const Index = () => {
             <p className="text-center">
               Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio
             </p>
-            <div className="d-flex justify-content-center align-items-center mb-4">
+            <div className="d-flex justify-content-center align-items-center mb-md-4">
               <a
                 className={`btn btn-success ` + indexcss.btnContact}
                 aria-label="Chat on WhatsApp"

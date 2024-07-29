@@ -19,8 +19,8 @@ const Service = () => {
           </article>
 
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start">
-            <h3>Desarrollo de Aplicaciones Móviles</h3>
-            <p>
+            <h3 className="text-center text-md-start mt-5">Desarrollo de Aplicaciones Móviles</h3>
+            <p className="text-center text-md-start d-none d-sm-none d-md-block ">
               Creación de aplicaciones intuitivas y responsivas que ofrecen una experiencia de
               usuario excepcional en cualquier dispositivo.
             </p>
@@ -28,16 +28,11 @@ const Service = () => {
         </div>
       </section>
 
-      <section
-        className={serv.web}
-        style={{
-          background: `linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1))`,
-        }}
-      >
+      <section className={serv.web}>
         <div className="d-flex justify-content-md-between align-items-center container py-5">
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start px-5">
-            <h3 className="text-white">Desarrollo Web</h3>
-            <p className="text-white">
+            <h3 className="text-white text-center text-md-start mt-5">Desarrollo Web</h3>
+            <p className="text-white d-none d-sm-none d-md-block">
               Sitios web y aplicaciones web modernas, seguras y escalables que impulsan la presencia
               en línea de tu negocio.
             </p>

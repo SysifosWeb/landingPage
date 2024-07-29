@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import Service from './pages/service'
-import logo from '/img/logo-blanco.png'
+import logo from './img/logo-blanco.png'
 import indexcss from './css/index.module.css'
 import { Instagram, LocalPhone, MailOutline, WhatsApp } from '@mui/icons-material'
 

@@ -23,7 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 80vw;
   padding: 0;
   border: none;
   font-size: 1em;
@@ -55,7 +55,7 @@
 
 @media (min-width: 1200px) {
   .btnContact {
-    width: 140%;
+    width: 30vw;
   }
 
 }

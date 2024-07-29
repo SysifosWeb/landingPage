@@ -1,9 +1,11 @@
-import Service from "./pages/service";
-import logo from "/img/logo-blanco.png";
-import indexcss from "./css/index.module.css";
-import whatsapp from "/img/whatsapp.png";
-import instagram from "/img/insta.png";
-import gmail from "/img/gmail.png";
+/* eslint-disable max-len */
+import Service from './pages/service'
+import logo from '/img/logo-blanco.png'
+import indexcss from './css/index.module.css'
+import whatsapp from '/img/whatsapp.png'
+import instagram from '/img/insta.png'
+import gmail from '/img/gmail.png'
+
 const Index = () => {
   return (
     <>
@@ -26,16 +28,15 @@ const Index = () => {
             </h1>
 
             <p className="text-center">
-              Desarrollamos aplicaciones web y software personalizados para
-              impulsar tu negocio
+              Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio
             </p>
             <div className="d-flex justify-content-center align-items-center mb-4">
               <a
-                className={"btn btn-success btn-lg " + indexcss.btnContact}
+                className={`btn btn-success ` + indexcss.btnContact}
                 aria-label="Chat on WhatsApp"
                 href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20porfavor"
               >
-                <img src={whatsapp} style={{ height: "3rem" }} />
+                <img src={whatsapp} style={{ height: `3rem` }} />
                 Contactanos
               </a>
             </div>
@@ -50,11 +51,11 @@ const Index = () => {
             Contactanos y hablemos sobre el proyecto que tienes en mente
           </p>
           <a
-            className={"btn btn-success btn-lg " + indexcss.btnContact}
+            className={`btn btn-success btn-lg ` + indexcss.btnContact}
             aria-label="Chat on WhatsApp"
             href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20porfavor"
           >
-            <img src={whatsapp} style={{ height: "3rem" }} />
+            <img src={whatsapp} style={{ height: `3rem` }} />
             Contactanos
           </a>
         </div>
@@ -82,7 +83,7 @@ const Index = () => {
         </div>
       </footer>
     </>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index

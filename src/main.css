@@ -2,11 +2,15 @@
 *{
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-    font-size: 105%;
+    font-size: 103%;
 }
-.welcome p.text-wrap{
+.welcome h1{
+  font-weight: 400;
+  font-size: 3.5em;
+}
+.welcome p{
   font-weight: 300;
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 footer{
     background-color: rgb(0, 0, 54);

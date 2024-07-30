@@ -24,8 +24,7 @@
     font-size: 1.7em;
   }
   .web{
-    width:100%;  
-    background: linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1)) !important;
+    width:100%;      
   }
 
   .web_m{   
@@ -62,8 +61,7 @@
     font-size: 1.7em;
   }
   .system{
-    width:100%;  
-    background: linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1)) !important;
+    width:100%;    
   }
 
   

@@ -36,7 +36,12 @@ const Service = () => {
       </section>
       {/* fin mobile section */}
 
-      <section className={`${serv.web} d-none d-sm-none d-md-block`}>
+      <section
+        className={`${serv.web} d-none d-sm-none d-md-block`}
+        style={{
+          background: 'linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1))',
+        }}
+      >
         <div className="d-flex justify-content-md-between align-items-center container py-5">
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start px-5">
             <h3 className="text-white text-center text-md-start mt-5">Desarrollo Web</h3>
@@ -82,7 +87,13 @@ const Service = () => {
       </section>
       {/* fin mobile section */}
 
-      <section className={`${serv.system} d-none d-sm-none d-md-block`}>
+      <section
+        className={`${serv.system} d-none d-sm-none d-md-block`}
+        style={{
+          background:
+            'linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)20%,rgba(0,212,255,1))',
+        }}
+      >
         <div className="d-flex justify-content-md-between align-items-center container">
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start px-5 py-5 py-md-0">
             <h3 className="text-white text-sm-center">Integración de Sistemas</h3>

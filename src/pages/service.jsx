@@ -8,18 +8,18 @@ import serv from './../css/services.module.css'
 const Service = () => {
   return (
     <main className={serv.service}>
-      <h2 className="text-center py-5" style={{ color: `rgb(9,9,121)` }}>
+      <h2 className="text-center py-4" style={{ color: `rgb(9,9,121)` }}>
         <b>Nuestros Servicios</b>
       </h2>
 
       <section className={`${serv.movile} d-none d-sm-none d-md-block`}>
-        <div className="d-flex justify-content-center justify-content-md-between align-items-center container px-5 pb-5 pb-md-0 px-md-0">
+        <div className="d-flex justify-content-center justify-content-md-between align-items-center container ">
           <article className="d-flex justify-content-center align-items-end d-none d-md-block">
             <img src={movileImg} alt="" className={serv.movileImg} />
           </article>
 
           <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start">
-            <h3 className="text-center text-md-start mt-5">Desarrollo de Aplicaciones Móviles</h3>
+            <h3 className="text-center text-md-start">Desarrollo de Aplicaciones Móviles</h3>
             <p className="text-center text-md-start d-none d-sm-none d-md-block ">
               Creación de aplicaciones intuitivas y responsivas que ofrecen una experiencia de
               usuario excepcional en cualquier dispositivo.
@@ -30,16 +30,20 @@ const Service = () => {
 
       {/* mobile section */}
       <section
-        className={`d-flex justify-content-center align-items-center d-sm-block d-md-none ${serv.movile_m}`}
+        className={`d-flex flex-column justify-content-center align-items-center d-sm-block d-md-none ${serv.movile_m}`}
       >
-        <h3 className="text-center">Desarrollo de Aplicaciones Móviles</h3>
+        <h3 className="text-center px-4 mb-4">Desarrollo de Aplicaciones Móviles</h3>
+        <p className="text-justify px-5">
+          Creación de aplicaciones intuitivas y responsivas que ofrecen una experiencia de usuario
+          excepcional en cualquier dispositivo.
+        </p>
       </section>
       {/* fin mobile section */}
 
       <section
         className={`${serv.web} d-none d-sm-none d-md-block`}
         style={{
-          background: 'linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1))',
+          background: `linear-gradient(90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)10%,rgba(0,212,255,1))`,
         }}
       >
         <div className="d-flex justify-content-md-between align-items-center container py-5">
@@ -58,9 +62,13 @@ const Service = () => {
 
       {/* mobile section */}
       <section
-        className={`d-flex justify-content-center align-items-center d-sm-block d-md-none ${serv.web_m}`}
+        className={`d-flex flex-column justify-content-center align-items-center d-sm-block d-md-none ${serv.web_m}`}
       >
-        <h3 className="text-center">Desarrollo Web</h3>
+        <h3 className="text-center mb-4">Desarrollo Web</h3>
+        <p className="text-justify px-5">
+          Sitios web y aplicaciones web modernas, seguras y escalables que impulsan la presencia en
+          línea de tu negocio.
+        </p>
       </section>
       {/* fin mobile section */}
 
@@ -81,17 +89,20 @@ const Service = () => {
 
       {/* mobile section */}
       <section
-        className={`d-flex justify-content-center align-items-center d-sm-block d-md-none ${serv.solution_m}`}
+        className={`d-flex flex-column justify-content-center align-items-center d-sm-block d-md-none ${serv.solution_m}`}
       >
-        <h3 className="text-center">Soluciones Empresariales</h3>
+        <h3 className="text-center mb-4">Soluciones Empresariales</h3>
+        <p className="text-justify px-5">
+          Sistemas personalizados que optimizan los procesos de negocio, mejoran la productividad y
+          fomentan el crecimiento.
+        </p>
       </section>
       {/* fin mobile section */}
 
       <section
         className={`${serv.system} d-none d-sm-none d-md-block`}
         style={{
-          background:
-            'linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)20%,rgba(0,212,255,1))',
+          background: `linear-gradient(-90deg,rgb(0, 0, 54)1%,rgba(9,9,121,1)20%,rgba(0,212,255,1))`,
         }}
       >
         <div className="d-flex justify-content-md-between align-items-center container">
@@ -110,9 +121,13 @@ const Service = () => {
 
       {/* mobile section */}
       <section
-        className={`d-flex justify-content-center align-items-center d-sm-block d-md-none ${serv.system_m}`}
+        className={`d-flex flex-column justify-content-center align-items-center d-sm-block d-md-none ${serv.system_m}`}
       >
-        <h3 className="text-center">Integración de Sistemas</h3>
+        <h3 className="text-center mb-4">Integración de Sistemas</h3>
+        <p className="text-justify px-5">
+          Conectamos tus aplicaciones y sistemas existentes para crear un ecosistema tecnológico
+          cohesivo y eficiente.
+        </p>
       </section>
       {/* fin mobile section */}
     </main>

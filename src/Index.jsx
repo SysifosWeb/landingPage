@@ -15,9 +15,9 @@ const Index = () => {
             </a>
           </div>
         </nav>
-        <section className="d-flex justify-content-center align-items-center container banner mt-5">
-          <article className="d-flex flex-column justify-content-center align-items-center text-white pb-5 mt-5 gap-2 welcome">
-            <b>Desarrollo web y aplicaciones a medida</b>
+        <section className="d-flex justify-content-center align-items-center container banner mt-5 px-5">
+          <article className="d-flex flex-column justify-content-center align-items-center text-white pb-5  mt-5 gap-2 welcome">
+            <b className="text-center">Desarrollo web y aplicaciones a medida</b>
             <h1 className="text-center">Soluciones digitales a tu medida</h1>
             <p className="text-center">
               Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio

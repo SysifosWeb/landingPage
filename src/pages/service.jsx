@@ -83,7 +83,7 @@ const Service = () => {
       <section
         className={`d-flex justify-content-center align-items-center d-sm-block d-md-none ${serv.solution_m}`}
       >
-        <h3>Soluciones Empresariales</h3>
+        <h3 className="text-center">Soluciones Empresariales</h3>
       </section>
       {/* fin mobile section */}
 
@@ -112,7 +112,7 @@ const Service = () => {
       <section
         className={`d-flex justify-content-center align-items-center d-sm-block d-md-none ${serv.system_m}`}
       >
-        <h3>Integración de Sistemas</h3>
+        <h3 className="text-center">Integración de Sistemas</h3>
       </section>
       {/* fin mobile section */}
     </main>

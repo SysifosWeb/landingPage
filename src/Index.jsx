@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import Service from './pages/service'
 import logo from './img/logo-blanco.png'
 import indexcss from './css/index.module.css'
+import equipoOg from './img/equipo_min.png'
 import { Instagram, LocalPhone, MailOutline, WhatsApp } from '@mui/icons-material'
 
 const Index = () => {
@@ -11,7 +12,9 @@ const Index = () => {
       <header className={indexcss.cabecera}>
         <Helmet>
           <title>Sysifos Web Soluciones digitales a tu medida</title>
-          <base target="_blank" href="https://sysifosweb.cl/" />
+          <meta charset="UTF-8" />
+          <link rel="icon" type="image/svg+xml" href="./src/img/logo_min.png" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <meta
             name="description"
             content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
@@ -30,8 +33,10 @@ const Index = () => {
           <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
           <meta property="og:title" content="Soluciones digitales a tu medida" />
           <meta property="og:url" content="https://sysifosweb.cl" />
-          <meta property="og:image" content={logo} />
+          <meta property="og:image" content={equipoOg} />
           <meta property="og:image:type" content="image/png" />
+          <meta property="og:image:width" content="400" />
+          <meta property="og:image:height" content="300" />
           <meta property="og:locale" content="es_LA" />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="SysifosWeb" />

@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import Service from './pages/service'
 import logo from './img/logo-blanco.png'
 import indexcss from './css/index.module.css'
+import equipo from './img/equipoMin.jpg'
 import { Instagram, LocalPhone, MailOutline, WhatsApp } from '@mui/icons-material'
 
 const Index = () => {
@@ -40,10 +41,7 @@ const Index = () => {
           <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
           <meta property="og:title" content="Soluciones digitales a tu medida" />
           <meta property="og:url" content="https://sysifosweb.cl" />
-          <meta
-            property="og:image"
-            content="https://sysifosweb.cl/assets/equipo_min-CF0O6nNZ.png"
-          />
+          <meta property="og:image" content={equipo} />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:image:width" content="400" />
           <meta property="og:image:height" content="300" />

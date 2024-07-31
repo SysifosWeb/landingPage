@@ -2,7 +2,6 @@
 import { Helmet } from 'react-helmet'
 import Service from './pages/service'
 import logo from './img/logo-blanco.png'
-import logoMin from './img/logo_min.png'
 import indexcss from './css/index.module.css'
 import { Instagram, LocalPhone, MailOutline, WhatsApp } from '@mui/icons-material'
 
@@ -12,8 +11,8 @@ const Index = () => {
       <header className={indexcss.cabecera}>
         <Helmet>
           <title>Sysifos Web Soluciones digitales a tu medida</title>
-          <base href="https://sysifos.cl"></base>
-          <link rel="icon" sizes="192x192" href={logoMin}></link>
+          <base href="https://sysifosweb.cl"></base>
+          <meta name="rating" content="General" />
           <meta
             name="description"
             content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."

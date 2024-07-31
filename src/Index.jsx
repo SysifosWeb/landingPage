@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Link, Meta, Title, Base } from 'react-head'
+import { Helmet } from 'react-helmet'
 import Service from './pages/service'
 import logo from './img/logo-blanco.png'
 import indexcss from './css/index.module.css'
@@ -9,36 +9,37 @@ const Index = () => {
   return (
     <>
       <header className={indexcss.cabecera}>
-        <Title>Sysifos Web Soluciones digitales a tu medida</Title>
-        <Base href="/"></Base>
-        <Meta
-          name="description"
-          content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
-        />
-        <Meta
-          name="keywords"
-          content="web, desarrollo web, programacion, movil, mobile, software, software a medida, pagina web, website, digital"
-        />
-        <Meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
-        <Meta property="og:title" content="Soluciones digitales a tu medida" />
-        <Meta property="og:url" content="https://sysifosweb.cl" />
-        <Meta
-          property="og:description"
-          content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
-        />
-        <Meta property="og:image" content={logo} />
-        <Meta property="og:image:type" content="image/png" />
-        <Meta property="og:locale" content="es_LA" />
-        <Meta property="og:type" content="website" />
-        <Meta property="og:site_name" content="Sysifos Web" />
-        <Link rel="preconnect" href="https://fonts.googleapis.com" />
-        <Link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <Link
-          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-          rel="stylesheet"
-        />
-        <Link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
+        <Helmet>
+          <title>Sysifos Web Soluciones digitales a tu medida</title>
+          <base href="/"></base>
+          <meta
+            name="description"
+            content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
+          />
+          <meta
+            name="keywords"
+            content="web, desarrollo web, programacion, movil, mobile, software, software a medida, pagina web, website, digital"
+          />
+          <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
+          <meta property="og:title" content="Soluciones digitales a tu medida" />
+          <meta property="og:url" content="https://sysifosweb.cl" />
+          <meta
+            property="og:description"
+            content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
+          />
+          <meta property="og:image" content={logo} />
+          <meta property="og:image:type" content="image/png" />
+          <meta property="og:locale" content="es_LA" />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Sysifos Web" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+            rel="stylesheet"
+          />
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        </Helmet>
         <nav className="navbar navbar-expand-lg navbar-dark bg-transparent container">
           <div className="container">
             <a className="navbar-brand" href="#">

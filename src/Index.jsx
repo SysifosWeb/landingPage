@@ -21,7 +21,7 @@ const Index = () => {
           />
           <meta
             name="keywords"
-            content="web, desarrollo web, programacion, movil, mobile, software, software a medida, pagina web, website, digital"
+            content="web, desarrollo web, programacion, movil, mobile, software, software a medida, pagina web, website, digital, sysifosweb, sysifos, sysifos web, html, javascript, react"
           />
           <meta name="robots" content="index" />
           <meta name="robots" content="follow" />

@@ -12,7 +12,6 @@ const Index = () => {
       <header className={indexcss.cabecera}>
         <Helmet>
           <title>Sysifos Web Soluciones digitales a tu medida</title>
-          <base href="https://sysifosweb.cl"></base>
           <meta name="rating" content="General" />
           <meta
             name="description"

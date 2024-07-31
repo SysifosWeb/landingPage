@@ -11,7 +11,7 @@ const Index = () => {
       <header className={indexcss.cabecera}>
         <Helmet>
           <title>Sysifos Web Soluciones digitales a tu medida</title>
-          <base href="/"></base>
+          <base target="_blank" href="https://sysifosweb.cl/" />
           <meta
             name="description"
             content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
@@ -20,18 +20,21 @@ const Index = () => {
             name="keywords"
             content="web, desarrollo web, programacion, movil, mobile, software, software a medida, pagina web, website, digital"
           />
-          <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
-          <meta property="og:title" content="Soluciones digitales a tu medida" />
-          <meta property="og:url" content="https://sysifosweb.cl" />
+          <meta name="robots" content="index" />
+          <meta name="robots" content="follow" />
+          <meta name="robots" content="max-snippet:20, max-image-preview:large"></meta>
           <meta
             property="og:description"
             content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
           />
+          <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
+          <meta property="og:title" content="Soluciones digitales a tu medida" />
+          <meta property="og:url" content="https://sysifosweb.cl" />
           <meta property="og:image" content={logo} />
           <meta property="og:image:type" content="image/png" />
           <meta property="og:locale" content="es_LA" />
           <meta property="og:type" content="website" />
-          <meta property="og:site_name" content="Sysifos Web" />
+          <meta property="og:site_name" content="SysifosWeb" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link

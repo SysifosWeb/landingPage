@@ -39,7 +39,8 @@
 }
 
 .btnContactHeader {
-  background: rgb(0, 159, 203);
+  background: rgb(255, 255, 255);
+  color: rgb(9,9,121);
 }
 
 .btnContactHeader:hover, .btnContactHeader:active, .btnContactHeader:focus {

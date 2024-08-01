@@ -57,7 +57,7 @@ const Index = () => {
         </Helmet>
         <nav className="navbar navbar-expand-lg navbar-dark bg-transparent container">
           <div className="container">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="https://sysifosweb.cl/">
               <img src={logo} className={indexcss.logo} alt="" />
             </a>
           </div>

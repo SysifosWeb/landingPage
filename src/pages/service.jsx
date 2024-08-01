@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
-import movileImg from './../img/movileImg.png'
-import webImg from './../img/web.png'
-import solutionImg from './../img/empresarial_min.png'
-import systemImg from './../img/integracion_min.png'
+import movileImg from './../img/movileImg.webp'
+import webImg from './../img/web.webp'
+import solutionImg from './../img/empresarial_min.webp'
+import systemImg from './../img/integracion_min.webp'
 import serv from './../css/services.module.css'
 
 const Service = () => {

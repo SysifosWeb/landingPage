@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import { Helmet } from 'react-helmet'
 import Service from './pages/service'
-import logo from './img/logo-blanco.png'
+import logo from './img/logo-blanco.webp'
 import indexcss from './css/index.module.css'
-import equipo from './img/equipoMin.jpg'
+import equipo from './img/equipoMin.webp'
 import { Instagram, LocalPhone, MailOutline, WhatsApp } from '@mui/icons-material'
 
 const Index = () => {
@@ -105,7 +105,7 @@ const Index = () => {
             <img src={logo} alt="" />
           </div>
           <div className="d-flex flex-column justify-content-md-start dir">
-            <h4 className="mb-3 text-start">Contactanos</h4>
+            <div className="mb-3 text-start">Contactanos</div>
             <div className="d-flex align-items-center mb-3">
               <LocalPhone fontSize="large" sx={{ mr: 1 }} />
               +56949109970

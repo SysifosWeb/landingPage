@@ -4,20 +4,19 @@
   width: 9rem;  
 }
 .cabecera{
-    width: 100%;
-    padding-bottom: 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-image: linear-gradient(rgba(2,0,36,0.9), rgba(9,9,121,0.9)),url(/src/img/equipoMin.webp);
-    background-size: cover;        
-    opacity: 0.9;
+  width: 100%;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: linear-gradient(rgba(2,0,36,0.9), rgba(9,9,121,0.9)), url(/src/img/equipoMin.webp);
+  background-size: cover;        
+  opacity: 0.9;
 }
 .bannerImg{
   height: 30rem;
 }
-
 .btnContact {
   display: flex;
   justify-content: center;
@@ -27,49 +26,58 @@
   border: none;
   font-size: 1em;
 }
-
 .btnContactBody {
   background: rgb(0, 54, 182);
 }
-
 .btnContactBody:hover, .btnContactBody:active, .btnContactBody:focus{
   background: rgb(0, 42, 142);
   background-color: rgb(0, 42, 142) !important;
   box-shadow: none;
 }
-
 .btnContactHeader {
   background: rgb(255, 255, 255);
   color: rgb(9,9,121);
 }
-
 .btnContactHeader:hover, .btnContactHeader:active, .btnContactHeader:focus {
   background: rgb(0, 127, 173);
   background-color: rgb(0, 127, 173) !important;
   box-shadow: none;
 }
-
 .prefooter{
-  /* background-color: rgb(0, 172, 230); */
   color: rgb(0, 42, 142);
   text-align: center;
   padding:5rem 4rem;  
 }
-.font300{
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
+.welcome h1{
+  font-weight: 400;
+  font-size: 3.5em;
 }
+.welcome p{
+  font-weight: 300;
+  font-size: 1.2em;
+}
+.dir div span{
+  font-size: 1.5em;
+}
+.dir div img{
+  height: 2rem;
+  margin-left: -6px;
+} 
 @media (min-width: 768px) and (max-width: 1200px) {
-   
   .bannerImg{
     height: 21rem;
   }
-  
 }
-
 @media (min-width: 1200px) {
   .btnContact {
     width: 30vw;
   }
-
+  .logo{  
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    width: 10rem;   
+  }
+  .prefooter{
+    padding: 5rem 7rem;  
+  }
 }

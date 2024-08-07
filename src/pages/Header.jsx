@@ -1,7 +1,6 @@
 import logo from '../img/logo-blanco.webp'
 import indexcss from '../css/index.module.css'
 import { WhatsApp } from '@mui/icons-material'
-import equipo from '../img/equipoMin.webp'
 import { Helmet } from 'react-helmet'
 
 export default function Header() {
@@ -37,8 +36,11 @@ export default function Header() {
         <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
         <meta property="og:title" content="Soluciones digitales a tu medida" />
         <meta property="og:url" content="https://sysifosweb.cl" />
-        <meta property="og:image" content={equipo} />
-        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:image"
+          content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
+        />
+        <meta property="og:image:type" content="image/webp" />
         <meta property="og:image:width" content="400" />
         <meta property="og:image:height" content="300" />
         <meta property="og:locale" content="es_LA" />

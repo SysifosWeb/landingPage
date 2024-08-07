@@ -19,6 +19,8 @@ export default function Header() {
           property="og:image"
           content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="627" />
         <meta property="og:locale" content="es_LA" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SysifosWeb" />

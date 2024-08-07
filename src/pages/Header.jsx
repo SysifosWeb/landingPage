@@ -35,24 +35,14 @@ export default function Header() {
         />
         <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
         <meta property="og:title" content="Soluciones digitales a tu medida" />
-        <meta property="og:url" content="https://sysifosweb.cl" />
+        <meta property="og:url" content="https://www.sysifosweb.cl" />
         <meta
           property="og:image"
           content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
         />
-        <meta property="og:image:type" content="image/webp" />
-        <meta property="og:image:width" content="400" />
-        <meta property="og:image:height" content="300" />
         <meta property="og:locale" content="es_LA" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="SysifosWeb" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-          rel="stylesheet"
-        />
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
       </Helmet>
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparent container">
         <div className="container">

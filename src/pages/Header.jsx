@@ -8,27 +8,6 @@ export default function Header() {
     <header className={indexcss.cabecera}>
       <Helmet>
         <title>Sysifos Web Soluciones digitales a tu medida</title>
-        <meta name="rating" content="General" />
-        <meta
-          name="description"
-          content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
-        />
-        <meta
-          name="keywords"
-          content="web, desarrollo web, programacion, movil, mobile, software, software a medida, pagina web, website, digital, sysifosweb, sysifos, sysifos web, html, javascript, react"
-        />
-
-        <meta name="robots" content="index,follow" />
-        <meta name="googlebot" content="index,follow" />
-
-        <meta name="google" content="nositelinkssearchbox" />
-
-        <meta name="google" content="notranslate" />
-        <meta
-          name="google-site-verification"
-          content="VTWOSSGGnktpmu96UQyQ2iQ7TYwRA2NJ8JkWQvH4-Xk"
-        />
-        <meta name="robots" content="max-snippet:20, max-image-preview:large"></meta>
         <meta
           property="og:description"
           content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."

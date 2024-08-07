@@ -1,30 +1,12 @@
 import logo from '../img/logo-blanco.webp'
 import indexcss from '../css/index.module.css'
 import { WhatsApp } from '@mui/icons-material'
-import { Helmet } from 'react-helmet'
+// import { Helmet } from 'react-helmet'
 
 export default function Header() {
   return (
     <header className={indexcss.cabecera}>
-      <Helmet>
-        <title>Sysifos Web Soluciones digitales a tu medida</title>
-        <meta
-          property="og:description"
-          content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
-        />
-        <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
-        <meta property="og:title" content="Soluciones digitales a tu medida" />
-        <meta property="og:url" content="https://www.sysifosweb.cl" />
-        <meta
-          property="og:image"
-          content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="627" />
-        <meta property="og:locale" content="es_LA" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="SysifosWeb" />
-      </Helmet>
+      {/* <Helmet></Helmet> */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-transparent container">
         <div className="container">
           <a className="navbar-brand" href="https://sysifosweb.cl/">

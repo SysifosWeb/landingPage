@@ -1,26 +1,7 @@
 ---
-#version: 2
-#name: Sysifos Web Landing
-#description: Despliegue automático desde GitHub
-
-# Configuración del repositorio de Git
-#repository:
-#url: https://github.com/SysifosWeb/landingPage.git # Reemplaza con la URL de tu repositorio
-# branch: main # La rama que deseas desplegar
-
-# Configuración del despliegue
 deployment:
   tasks:
     - export DEPLOYPATH=/home3/cfxhsigb/public_html/
-    - /dist/cp index.html $DEPLOYPATH
-    - /dist/cp robots.txt $DEPLOYPATH
-    - /dist/cp -R assets $DEPLOYPATH
-  #type: git
-  #local_path: /home3/cfxhsigb/public_html/ # Directorio de destino en el servidor
-  # Comando para instalar dependencias (si es necesario)
-  # commands:
-  #   - npm install
-  # Comando para construir el proyecto
-  #build_command: vite build
-  # Directorio a desplegar (relativo al directorio raíz del proyecto)
-  #deploy_dir: dir
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp robots.txt $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH

@@ -1,4 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/cfxhsigb/public_html/
+    - export DEPLOYPATH=/home/cfxhsigb/public_html

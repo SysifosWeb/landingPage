@@ -2,6 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cfxhsigb/public_html/
-    - /bin/dist cp index.html $DEPLOYPATH
-    - /bin/dist cp robots.txt $DEPLOYPATH
-    - /bin/dist cp -R assets $DEPLOYPATH
+    - /bin/dist/cp index.html $DEPLOYPATH
+    - /bin/dist/cp robots.txt $DEPLOYPATH
+    - /bin/dist/cp -R assets $DEPLOYPATH

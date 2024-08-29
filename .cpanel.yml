@@ -2,3 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/cfxhsigb/public_html
+    - /bin/cp index.html $DEPLOYPATH

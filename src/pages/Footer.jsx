@@ -20,7 +20,7 @@ export default function Footer() {
           </div>
           <div className="d-flex align-items-center mb-3">
             <MailOutline fontSize="large" sx={{ mr: 1 }} />
-            sysifosweb@gmail.com
+            contacto@sysifosweb.cl
           </div>
           <div className="d-flex align-items-center mb-3">
             <Instagram fontSize="large" sx={{ mr: 1 }} />

@@ -67,28 +67,6 @@ export default function Header() {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    href="/portafolio"
-                                    aria-current="page"
-                                    className={`nav-link
-                                        ${url === "/portafolio" ? "active" : ""}
-                                    `}
-                                >
-                                    Portafolio
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
-                                    href="/blog"
-                                    aria-current="page"
-                                    className={`nav-link
-                                        ${url === "/blog" ? "active" : ""}
-                                    `}
-                                >
-                                    Blog
-                                </Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link
                                     href="/contacto"
                                     aria-current="page"
                                     className={`nav-link

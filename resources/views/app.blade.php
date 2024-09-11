@@ -15,11 +15,7 @@
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
     <meta name="google" content="nositelinkssearchbox" />
-    <meta name="google" content="notranslate" />
-    <meta
-      name="google-site-verification"
-      content="VTWOSSGGnktpmu96UQyQ2iQ7TYwRA2NJ8JkWQvH4-Xk"
-    />
+    <meta name="google" content="notranslate" />   
     <meta name="robots" content="max-snippet:20, max-image-preview:large" />    
     <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
     <meta name="robots" content="max-snippet:20, max-image-preview:large" />

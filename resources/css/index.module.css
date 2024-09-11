@@ -5,13 +5,13 @@
 }
 .cabecera{
   width: 100%;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   background-image: linear-gradient(rgba(2,0,36,0.9), rgba(9,9,121,0.9)), url(/resources/img/equipoMin.webp);
-  background-size: cover;        
+  background-size:cover;        
   opacity: 0.9;
 }
 .bannerImg{

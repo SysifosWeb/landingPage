@@ -30,7 +30,7 @@ const Menu = () => {
                         className="collapse navbar-collapse"
                         id="navbarSupportedContent"
                     >
-                        <ul className="navbar-nav me-auto mb-2 mb-lg-0 mt-3 ms-4">
+                        <ul className="navbar-nav ms-auto mb-2 mb-lg-0 mt-3">
                             <li className="nav-item">
                                 <Link
                                     href="/"

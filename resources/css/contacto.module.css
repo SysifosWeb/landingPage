@@ -1,0 +1,22 @@
+main{
+    background-color: rgb(231, 231, 231);
+}
+.fondo{
+    margin-top: -60px !important;
+    height: 800px;    
+    z-index: 2;
+    background-color: white;
+}
+.form_container{   
+    height: 100%;    
+}
+.form_contact{
+    height: 600px;
+    width: 500px;
+}
+.form_contact p{
+    font-weight: 300;
+    font-size: 0.9em;
+    text-align: center;
+    color: rgb(155, 155, 155);
+}

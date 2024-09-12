@@ -1,4 +1,4 @@
-import Header from "./../Header";
+import Header from "./../HeaderPages";
 import Contact from "./../Contact";
 import Footer from "./../Footer";
 import { Head } from "@inertiajs/react";
@@ -11,7 +11,7 @@ const Servicios = () => {
                 <title>Servicios - Sysifos Web</title>
                 <meta name="description" content="pagina de nosotros" />
             </Head>
-            <Header />
+            <Header title={"Nuestros Servicios"} />
             <Contact />
             <Footer />
         </>

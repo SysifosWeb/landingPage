@@ -1,4 +1,4 @@
-import Header from "./../HeaderNosotros";
+import Header from "../HeaderPages";
 import Footer from "./../Footer";
 import Contact from "./../Contact";
 import { Head } from "@inertiajs/react";
@@ -11,13 +11,13 @@ const Nosotros = () => {
                 <title>Nosotros - Sysifos Web</title>
                 <meta name="description" content="pagina de nosotros" />
             </Head>
-            <Header />
+            <Header title={"Quienes Somos?"} />
             <div className="main">
                 <div className="container py-5">
                     <div className="row d-flex flex-row pb-4">
                         <div
                             id="our-img"
-                            className="col-6 d-flex align-items-center justify-content-center"
+                            className="col-12 col-md-6 d-flex align-items-center justify-content-center"
                         >
                             <img src={equipo} height="250" alt="" />
                         </div>
@@ -44,7 +44,7 @@ const Nosotros = () => {
                         <hr />
                     </div>
                     <dir className="row d-flex justify-content-evenly">
-                        <div className="card mb-3 text-center shadow col-5">
+                        <div className="card mb-3 text-center shadow col-12 col-md-5">
                             <div className="card-body ">
                                 <h4 className="card-title py-3">Mision</h4>
                                 <p className="card-text">

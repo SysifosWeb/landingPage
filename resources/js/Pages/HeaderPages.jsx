@@ -1,6 +1,6 @@
 import indexcss from "./../../css/index.module.css";
 import Menu from "./Menu";
-const HeaderNosotros = () => {
+const HeaderPages = ({ title }) => {
     return (
         <header className={`shadow-sm ${indexcss.cabecera}`}>
             <Menu />
@@ -22,13 +22,11 @@ const HeaderNosotros = () => {
                     }}
                     className={`text-white  pb-5  mt-5 ${indexcss.welcome}`}
                 >
-                    <h1 className="text-center">
-                        Quienes <b>Somos?</b>
-                    </h1>
+                    <h1 className="text-center">{title}</h1>
                 </article>
             </section>
         </header>
     );
 };
 
-export default HeaderNosotros;
+export default HeaderPages;

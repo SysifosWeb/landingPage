@@ -20,17 +20,27 @@ const Contacto = () => {
                         <div
                             className={`${contact.fondo} d-flex flex-row justify-content-between`}
                         >
-                            <div className="info"></div>
+                            <div className="info">
+                                <h3>Agedemos una cita</h3>
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Enim porro tenetur, nam
+                                    distinctio et dignissimos?
+                                </p>
+                            </div>
                             <div
                                 className={`${contact.form_container} col-md-6 d-flex align-items-center justify-content-center`}
                             >
                                 <div
                                     className={`${contact.form_contact} shadow d-flex flex-column align-items-center justify-content-center gap-2 px-5`}
                                 >
-                                    <h4>Envianos un mensaje</h4>
+                                    <h4 className="text-center">
+                                        Envianos un mensaje
+                                    </h4>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur
-                                        adipisicing elit. Dolor, omnis?
+                                        Escribenos y conversemos sobre aquel
+                                        proyecto que ronda en tu cabeza para ser
+                                        tu aliado digital.
                                     </p>
                                     <div class="col-12">
                                         <label
@@ -71,7 +81,7 @@ const Contacto = () => {
                                             id="message"
                                         />
                                     </div>
-                                    <button className="btn btn-primary">
+                                    <button className="btn btn-primary btn-md mt-4">
                                         <SendTwoTone
                                             fontSize="medium"
                                             sx={{ mr: 1, my: 0.1 }}

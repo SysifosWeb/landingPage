@@ -2,7 +2,12 @@ import Header from "./../HeaderPages";
 // import Contact from "./../Contact";
 import Footer from "./../Footer";
 import { Head } from "@inertiajs/react";
-import { SendTwoTone } from "@mui/icons-material";
+import {
+    SendTwoTone,
+    Mail,
+    AccessTime,
+    PhoneInTalk,
+} from "@mui/icons-material";
 import "./../../../css/main.css";
 import contact from "./../../../css/contacto.module.css";
 
@@ -11,7 +16,7 @@ const Contacto = () => {
         <>
             <Head>
                 <title>Contacto - Sysifos Web</title>
-                <meta name="description" content="pagina de nosotros" />
+                <meta name="description" content="pagina de contactos" />
             </Head>
             <Header title={"Contactanos!"} />
             <main>
@@ -20,13 +25,51 @@ const Contacto = () => {
                         <div
                             className={`${contact.fondo} d-flex flex-row justify-content-between`}
                         >
-                            <div className="info">
-                                <h3>Agedemos una cita</h3>
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur
-                                    adipisicing elit. Enim porro tenetur, nam
-                                    distinctio et dignissimos?
-                                </p>
+                            <div
+                                className={`${contact.info} col-md-6 d-flex align-items-center justify-content-center`}
+                            >
+                                <div className={`${contact.info_data}`}>
+                                    <h4>Agendemos una cita</h4>
+                                    <p>
+                                        Conozcamosnos más y agendemos una
+                                        reunión, para analizar las necesidades y
+                                        empezar luego en esa super idea.Puedes
+                                        llamarnos o bien escribirnos a nuestro
+                                        correo en el el horario de atención:
+                                    </p>
+                                    <div
+                                        className={`${contact.cards_} d-flex align-content-center flex-wrap mt-2 gap-5`}
+                                    >
+                                        <div className={`${contact.card_}`}>
+                                            <Mail
+                                                fontSize="large"
+                                                sx={{ mr: 1, my: 0.1 }}
+                                            />
+                                            <h5>CORREO</h5>
+                                            <p>contacto@sysifosweb.cl</p>
+                                        </div>
+                                        <div className={`${contact.card_}`}>
+                                            <AccessTime
+                                                fontSize="large"
+                                                sx={{ mr: 1, my: 0.1 }}
+                                            />
+                                            <h5>HORARIO DE ATENCIÓN</h5>
+                                            <p>
+                                                Lunes a Viernes : 9am a 7pm{" "}
+                                                <br />
+                                                Sábados y Domingos : Cerrado
+                                            </p>
+                                        </div>
+                                        <div className={`${contact.card_}`}>
+                                            <PhoneInTalk
+                                                fontSize="large"
+                                                sx={{ mr: 1, my: 0.1 }}
+                                            />
+                                            <h5>TELEFONO</h5>
+                                            <p>+569 49109970</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div
                                 className={`${contact.form_container} col-md-6 d-flex align-items-center justify-content-center`}
@@ -42,9 +85,9 @@ const Contacto = () => {
                                         proyecto que ronda en tu cabeza para ser
                                         tu aliado digital.
                                     </p>
-                                    <div class="col-12">
+                                    <div className="col-12">
                                         <label
-                                            for="name"
+                                            htmlFor="name"
                                             className="col-form-label-sm"
                                         >
                                             Nombre
@@ -55,9 +98,9 @@ const Contacto = () => {
                                             id="name"
                                         />
                                     </div>
-                                    <div class="col-12">
+                                    <div className="col-12">
                                         <label
-                                            for="mail"
+                                            htmlFor="mail"
                                             className="col-form-label-sm"
                                         >
                                             Correo
@@ -68,9 +111,9 @@ const Contacto = () => {
                                             id="mail"
                                         />
                                     </div>
-                                    <div class="col-12">
+                                    <div className="col-12">
                                         <label
-                                            for="message"
+                                            htmlFor="message"
                                             className="col-form-label-sm"
                                         >
                                             Mensaje

@@ -31,7 +31,8 @@
     color: var(--title-grey);
 }
 .card_our h4{
-    font-weight: 700;
+   
+    font-weight: 600;
 }
 .card_our small{
     color: var(--paragraph-grey);
@@ -44,8 +45,8 @@
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, -70%);
-     
+    transform: translate(-50%, -50%);
+    padding-bottom: 2rem;
     
 }
 .card_img img{

@@ -5,7 +5,8 @@ import { Head } from "@inertiajs/react";
 import "./../../../css/main.css";
 import ours from "./../../../css/nosotros.module.css";
 import equipo from "./../../../img/equipoMin.webp";
-import yo from "./../../../img/yo.png";
+import osman from "./../../../img/Osman.png";
+import karen from "./../../../img/Karen.png";
 const Nosotros = () => {
     return (
         <>
@@ -56,10 +57,16 @@ const Nosotros = () => {
                             className={`row d-flex justify-content-center align-items-center gap-5`}
                         >
                             <div className={`${ours.card_our} col-lg-3`}>
-                                <div className={ours.card_img}>
-                                    <img src={yo} alt="" />
+                                <div className={`${ours.card_img}`}>
+                                    <img
+                                        src={osman}
+                                        alt="osman"
+                                        className="mb-5"
+                                    />
                                 </div>
-                                <h4 className={`mt-1 mb-1`}>Osman Ahumada</h4>
+                                <h4 className={`mt-5 pt-5 mb-1`}>
+                                    Osman Ahumada
+                                </h4>
                                 <small className={`mb-3`}>
                                     Web & Mobile Developer
                                 </small>
@@ -71,9 +78,11 @@ const Nosotros = () => {
                             </div>
                             <div className={`${ours.card_our} col-lg-3`}>
                                 <div className={ours.card_img}>
-                                    <img src={yo} alt="" />
+                                    <img src={karen} alt="" />
                                 </div>
-                                <h4 className={`mt-1 mb-1`}>Osman Ahumada</h4>
+                                <h4 className={`mt-5 pt-5 mb-1`}>
+                                    Karen Godoy
+                                </h4>
                                 <small className={`mb-3`}>
                                     Web & Mobile Developer
                                 </small>
@@ -85,9 +94,11 @@ const Nosotros = () => {
                             </div>
                             <div className={`${ours.card_our} col-lg-3`}>
                                 <div className={ours.card_img}>
-                                    <img src={yo} alt="" />
+                                    <img src={karen} alt="" />
                                 </div>
-                                <h4 className={`mt-1 mb-1`}>Osman Ahumada</h4>
+                                <h4 className={`mt-5 pt-5 mb-1`}>
+                                    Osman Ahumada
+                                </h4>
                                 <small className={`mb-3`}>
                                     Web & Mobile Developer
                                 </small>

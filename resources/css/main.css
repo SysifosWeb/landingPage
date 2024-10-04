@@ -3,6 +3,13 @@
   font-weight: 300;
   font-size: 103%;
 }
+:root{
+  --title-grey : rgb(95, 95, 95);
+  --title-blue : rgb(118, 159, 255);
+  --subtitle-grey : rgb(122, 122, 122);
+  --paragraph-grey : rgb(180, 180, 180);
+
+}
 footer{
   background-color: rgb(0, 0, 54);
   color: white;

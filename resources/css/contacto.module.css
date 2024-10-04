@@ -18,16 +18,16 @@ main{
     font-weight: 300;
     font-size: 0.9em;
     text-align: center;
-    color: rgb(145, 145, 145);
+    color: var(--paragraph-grey);
 }
 .form_contact h4{    
-    color: rgb(118, 159, 255);
+    color: var(--title-blue);
     font-weight: 900;
     font-size: 2.5em;
     line-height: 0.9em;
 }
 .info_data h4{
-    color:rgb(95, 95, 95);
+    color:var(--title-grey);
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     font-weight: 900;
@@ -37,7 +37,7 @@ main{
     font-weight: 300;
     font-size: 0.9em;
     text-align: left;
-    color: rgb(145, 145, 145);
+    color: var(--paragraph-grey);
 }
 .cards_{
 width: 100%;
@@ -54,10 +54,10 @@ height: 450px;
     margin-bottom: 0.7rem;
 }
 .card_ h5{
-    color:rgb(122, 122, 122);
+    color:var(--subtitle-grey);
     font-weight: 400;
 }
 .card_ p{
-    color: rgb(145, 145, 145);
+    color: var(--paragraph-grey);
     font-size: 0.8em;
 }

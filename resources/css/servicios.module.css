@@ -1,0 +1,11 @@
+.web{
+    padding: 2rem 0 5rem 0;
+    background-color: white;
+}
+.web h1{
+    color: var(--title-grey);
+    font-weight: 700;
+}
+.web p{
+    color: var(--paragraph-grey);
+}

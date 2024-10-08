@@ -15,7 +15,7 @@ const Contacto = () => {
     return (
         <>
             <Head>
-                <title>Contacto - Sysifos Web</title>
+                <title>Contacto | Sysifos Web</title>
                 <meta name="description" content="pagina de contactos" />
             </Head>
             <Header title={"Contactanos!"} />

@@ -11,7 +11,7 @@ const Nosotros = () => {
     return (
         <>
             <Head>
-                <title>Nosotros - Sysifos Web</title>
+                <title>Nosotros | Sysifos Web</title>
                 <meta name="description" content="pagina de nosotros" />
             </Head>
             <Header title={"Quienes Somos?"} />

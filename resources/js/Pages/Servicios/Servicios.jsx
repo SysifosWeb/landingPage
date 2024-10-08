@@ -8,7 +8,7 @@ const Servicios = () => {
     return (
         <>
             <Head>
-                <title>Servicios - Sysifos Web</title>
+                <title>Servicios | Sysifos Web</title>
                 <meta name="description" content="pagina de nosotros" />
             </Head>
             <Header title={"Nuestros Servicios"} />

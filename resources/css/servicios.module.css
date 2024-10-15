@@ -3,9 +3,30 @@
     background-color: white;
 }
 .web h1{
-    color: var(--title-grey);
-    font-weight: 700;
+    color: var(--title-blue);
+    font-weight: 800;
+    font-size: 2.5em;
 }
 .web p{
     color: var(--paragraph-grey);
+}
+
+.price_table{
+    border: 1px solid grey;
+    min-height: 200px;
+    padding: 2.5rem 0;
+}
+.price_table h4{
+ font-weight: 600;   
+}
+.price_table p{
+    margin: 0;    
+}
+
+.price_table ul li{
+    list-style:none;        
+}
+.pro{
+    background-color: #000236;
+    color: white;
 }

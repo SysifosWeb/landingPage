@@ -7,14 +7,32 @@
     font-weight: 800;
     font-size: 2.5em;
 }
-.web p{
+.parrafo{
     color: var(--paragraph-grey);
+}
+.price{
+    font-size: 2.8em;
+    font-weight: 800;    
+}
+.price::before{
+    content: '$';
+    font-weight: 300;
+    font-size: 0.8em;
+}
+.price::after{
+    content: 'clp';
+    font-weight: 300;
+    font-size: 30px;
 }
 
 .price_table{
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
+    box-shadow: 0px 0px 15px #d8d8d8;
     min-height: 200px;
     padding: 2.5rem 0;
+}
+.price_table small{
+    color: var(--paragraph-grey);
 }
 .price_table h4{
  font-weight: 600;   
@@ -22,11 +40,34 @@
 .price_table p{
     margin: 0;    
 }
-
+.price_table ul{
+    padding: 0;    
+}
 .price_table ul li{
     list-style:none;        
 }
+@keyframes bg {
+    0%{
+        background-position: 0 50%;
+        /* background: linear-gradient(-45deg,#000236,#202144,#0006b1,#515272);         */
+    }
+   
+    /* 40%{ background: linear-gradient(-45deg,#202144,#0006b1,#515272,#000236);}
+  
+    80%{ background: linear-gradient(-45deg,#0006b1,#515272,#000236,#202144);} */
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+        background-position: 0 50%;
+        /* background: linear-gradient(-45deg,#515272,#000236,#202144,#0006b1); */
+        
+    }
+    
+}
 .pro{
-    background-color: #000236;
-    color: white;
+    background: linear-gradient(-45deg,#000350,#202144,#0006b1,#3d41bb);
+    background-size: 400% 400%;
+    color: white;     
+    animation: bg 10s ease infinite;       
 }

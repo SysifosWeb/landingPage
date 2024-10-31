@@ -1,3 +1,4 @@
+/* web page */
 .web{
     padding: 2rem 0 5rem 0;
     background-color: white;
@@ -48,26 +49,64 @@
 }
 @keyframes bg {
     0%{
-        background-position: 0 50%;
-        /* background: linear-gradient(-45deg,#000236,#202144,#0006b1,#515272);         */
-    }
-   
-    /* 40%{ background: linear-gradient(-45deg,#202144,#0006b1,#515272,#000236);}
-  
-    80%{ background: linear-gradient(-45deg,#0006b1,#515272,#000236,#202144);} */
+        background-position: 0 50%;        
+    }   
     50%{
         background-position: 100% 100%;
     }
     100%{
-        background-position: 0 50%;
-        /* background: linear-gradient(-45deg,#515272,#000236,#202144,#0006b1); */
-        
-    }
-    
+        background-position: 0 50%;        
+    }    
 }
 .pro{
-    background: linear-gradient(-45deg,#000350,#202144,#0006b1,#3d41bb);
-    background-size: 400% 400%;
+    background: linear-gradient(-45deg,#00046b,#121568,#0006b1,#3d41bb);
+    background-size: 300% 300%;
     color: white;     
-    animation: bg 10s ease infinite;       
+    animation: bg 7s ease infinite;   
+    z-index: 2;    
+}
+
+/* custom applications */
+
+.custom{
+    padding: 5rem 0;
+}
+.custom h1{
+    color: var(--title-blue);
+    font-weight: 800;
+    font-size: 2.5em;
+}
+.img_empresarial{
+    width: 400px;
+}
+.list_empresarial{
+    list-style: none;
+    margin: 0;
+}
+
+/* mobile */
+.mobile{
+    padding: 5rem 0;
+    background-color: white;
+}
+.mobile h1{
+    color: var(--title-blue);
+    font-weight: 800;
+    font-size: 2.5em;
+}
+.img_mobile{
+   height: 400px; 
+}
+
+/* integrations */
+.integration{
+    padding: 5rem 0;
+}
+.integration h1{
+    color: var(--title-blue);
+    font-weight: 800;
+    font-size: 2.5em;
+}
+.img_integracion{
+    width: 400px;
 }

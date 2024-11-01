@@ -71,9 +71,9 @@ const Nosotros = () => {
                                     Web & Mobile Developer
                                 </small>
                                 <p className={`text-center`}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Maxime maiores rem
-                                    voluptatem
+                                    Desarrollador web, con conocimientos en
+                                    backend,frontend y desarrollo mobile en
+                                    flutter
                                 </p>
                             </div>
                             <div className={`${ours.card_our} col-lg-3`}>
@@ -84,12 +84,11 @@ const Nosotros = () => {
                                     Karen Godoy
                                 </h4>
                                 <small className={`mb-3`}>
-                                    Web & Mobile Developer
+                                    DBA & Frontend Developer
                                 </small>
                                 <p className={`text-center`}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Maxime maiores rem
-                                    voluptatem
+                                    Mi especialidad son las bases de datos y el
+                                    desarrollo web frontend
                                 </p>
                             </div>
                             <div className={`${ours.card_our} col-lg-3`}>
@@ -97,10 +96,10 @@ const Nosotros = () => {
                                     <img src={karen} alt="" />
                                 </div>
                                 <h4 className={`mt-5 pt-5 mb-1`}>
-                                    Osman Ahumada
+                                    Diego Araya
                                 </h4>
                                 <small className={`mb-3`}>
-                                    Web & Mobile Developer
+                                    DBA & Frontend Developer
                                 </small>
                                 <p className={`text-center`}>
                                     Lorem ipsum dolor sit amet consectetur

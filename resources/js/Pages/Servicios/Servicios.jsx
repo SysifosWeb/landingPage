@@ -30,9 +30,11 @@ const Servicios = () => {
                                 <p
                                     className={`text-justify ${service.parrafo}`}
                                 >
-                                    Posicionamos tu negocio en internet y te acercamos a más
-                                    clientes con un diseño de página enfocado en tus servicios y
-                                    compatible con la mayoría de dispositivos del mercado.
+                                    Posicionamos tu negocio en internet y te
+                                    acercamos a más clientes con un diseño de
+                                    página enfocado en tus servicios y
+                                    compatible con la mayoría de dispositivos
+                                    del mercado.
                                 </p>
                             </div>
                         </div>
@@ -86,10 +88,14 @@ const Servicios = () => {
                                 <div
                                     className={`col-lg-4 d-flex flex-column align-items-center justy-content-center ${service.price_table} ${service.pro}`}
                                 >
-                                    <small>Sitio dinámico</small>
+                                    <small className="text-white">
+                                        Sitio dinámico
+                                    </small>
                                     <h4>Plan emprendedor</h4>
                                     <p className={service.price}>297.500</p>
-                                    <small>IVA incluido</small>
+                                    <small className="text-white">
+                                        IVA incluido
+                                    </small>
                                     <ul className="mt-4 list-group list-group-flush">
                                         <li className="list-group-item text-white bg-transparent">
                                             <Check className="me-2" />
@@ -120,8 +126,8 @@ const Servicios = () => {
                                             Autoadministrable
                                         </li>
                                         <li className="list-group-item text-white bg-transparent">
-                                            <Check className="me-2" />
-                                            2 GB de almacenamiento
+                                            <Check className="me-2" />2 GB de
+                                            almacenamiento
                                         </li>
                                         <li className="list-group-item text-white bg-transparent">
                                             <Check className="me-2" />
@@ -198,9 +204,11 @@ const Servicios = () => {
                                     Soluciones empresariales
                                 </h1>
                                 <p className={`text-justify`}>
-                                Creamos tu proyecto de software funcional basado en los requerimientos
-                                que nos solicites. Te mantendremos informado para que veas los resultados
-                                lo más pronto posible.
+                                    Creamos tu proyecto de software funcional
+                                    basado en los requerimientos que nos
+                                    solicites. Te mantendremos informado para
+                                    que veas los resultados lo más pronto
+                                    posible.
                                 </p>
                             </div>
                         </div>
@@ -215,25 +223,29 @@ const Servicios = () => {
                                 </div>
                                 <div className="col-lg-6 d-flex align-items-center justify-content-start">
                                     <div className="ps-4">
-                                    <h4 className="ps-4">Proceso de Implementación</h4>
-                                    <ul className={service.list_empresarial}>
-                                        <li className="">
-                                            <Check className="me-2 text-success " />
-                                            Reunión inicial
-                                        </li>
-                                        <li className="">
-                                            <Check className="me-2 text-success" />
-                                            Reporte de avances
-                                        </li>
-                                        <li className="">
-                                            <Check className="me-2 text-success" />
-                                            Pruebas de diseño cíclicas
-                                        </li>
-                                        <li className="list-group-item">
-                                            <Check className="me-2 text-success" />
-                                            Mantenciones mensuales
-                                        </li>
-                                    </ul>
+                                        <h4 className="ps-4">
+                                            Proceso de Implementación
+                                        </h4>
+                                        <ul
+                                            className={service.list_empresarial}
+                                        >
+                                            <li className="">
+                                                <Check className="me-2 text-success " />
+                                                Reunión inicial
+                                            </li>
+                                            <li className="">
+                                                <Check className="me-2 text-success" />
+                                                Reporte de avances
+                                            </li>
+                                            <li className="">
+                                                <Check className="me-2 text-success" />
+                                                Pruebas de diseño cíclicas
+                                            </li>
+                                            <li className="list-group-item">
+                                                <Check className="me-2 text-success" />
+                                                Mantenciones mensuales
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -250,8 +262,9 @@ const Servicios = () => {
                                 <p
                                     className={`text-justify ${service.parrafo}`}
                                 >
-                                    Convertiremos tu proyecto en una app para Android o iPhone,
-                                    con acceso a la tienda correspondiente, o adaptada a los propósitos
+                                    Convertiremos tu proyecto en una app para
+                                    Android o iPhone, con acceso a la tienda
+                                    correspondiente, o adaptada a los propósitos
                                     que tengas en mente.
                                 </p>
                             </div>
@@ -260,25 +273,29 @@ const Servicios = () => {
                             <div className="d-flex align-items-center justify-content-center">
                                 <div className="col-lg-6 d-flex align-items-center justify-content-center">
                                     <div className="pe-4">
-                                    <h4 className="ps-4">Proceso de Implementación</h4>
-                                    <ul className={service.list_empresarial}>
-                                        <li className="">
-                                            <Check className="me-2 text-success " />
-                                            Reunión inicial
-                                        </li>
-                                        <li className="">
-                                            <Check className="me-2 text-success" />
-                                            Reporte de avances
-                                        </li>
-                                        <li className="">
-                                            <Check className="me-2 text-success" />
-                                            Pruebas de diseño cíclicas
-                                        </li>
-                                        <li className="list-group-item">
-                                            <Check className="me-2 text-success" />
-                                            Mantenciones mensuales
-                                        </li>
-                                    </ul>
+                                        <h4 className="ps-4">
+                                            Proceso de Implementación
+                                        </h4>
+                                        <ul
+                                            className={service.list_empresarial}
+                                        >
+                                            <li className="">
+                                                <Check className="me-2 text-success " />
+                                                Reunión inicial
+                                            </li>
+                                            <li className="">
+                                                <Check className="me-2 text-success" />
+                                                Reporte de avances
+                                            </li>
+                                            <li className="">
+                                                <Check className="me-2 text-success" />
+                                                Pruebas de diseño cíclicas
+                                            </li>
+                                            <li className="list-group-item">
+                                                <Check className="me-2 text-success" />
+                                                Mantenciones mensuales
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                                 <div className="col-lg-6 d-flex">
@@ -310,8 +327,10 @@ const Servicios = () => {
                                     Integraciones
                                 </h1>
                                 <p className={`text-justify`}>
-                                Conectamos a tu sistema la información de las APIs que necesites y
-                                organizamos el contenido de forma armoniosa con los elementos de tu software.
+                                    Conectamos a tu sistema la información de
+                                    las APIs que necesites y organizamos el
+                                    contenido de forma armoniosa con los
+                                    elementos de tu software.
                                 </p>
                             </div>
                         </div>
@@ -326,25 +345,31 @@ const Servicios = () => {
                                 </div>
                                 <div className="col-lg-6 d-flex align-items-center justify-content-start">
                                     <div className="ps-4">
-                                    <h4 className="ps-4">Proceso de Implementación</h4>
-                                    <ul className={service.list_empresarial}>
-                                        <li className="">
-                                            <Check className="me-2 text-success " />
-                                            Reunión inicial
-                                        </li>
-                                        <li className="">
-                                            <Check className="me-2 text-success" />
-                                            Reporte de avances
-                                        </li>
-                                        <li className="">
-                                            <Check className="me-2 text-success" />
-                                            Pruebas de funcionamiento cíclicas
-                                        </li>
-                                        <li className="list-group-item">
-                                            <Check className="me-2 text-success" />
-                                            Mantenciones, pruebas y validaciones
-                                        </li>
-                                    </ul>
+                                        <h4 className="ps-4">
+                                            Proceso de Implementación
+                                        </h4>
+                                        <ul
+                                            className={service.list_empresarial}
+                                        >
+                                            <li className="">
+                                                <Check className="me-2 text-success " />
+                                                Reunión inicial
+                                            </li>
+                                            <li className="">
+                                                <Check className="me-2 text-success" />
+                                                Reporte de avances
+                                            </li>
+                                            <li className="">
+                                                <Check className="me-2 text-success" />
+                                                Pruebas de funcionamiento
+                                                cíclicas
+                                            </li>
+                                            <li className="list-group-item">
+                                                <Check className="me-2 text-success" />
+                                                Mantenciones, pruebas y
+                                                validaciones
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

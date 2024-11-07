@@ -7,6 +7,7 @@ import ours from "./../../../css/nosotros.module.css";
 import equipo from "./../../../img/equipoMin.webp";
 import osman from "./../../../img/Osman.png";
 import karen from "./../../../img/Karen.png";
+import Diego from "./../../../img/Diego.png";
 const Nosotros = () => {
     return (
         <>
@@ -93,18 +94,16 @@ const Nosotros = () => {
                             </div>
                             <div className={`${ours.card_our} col-lg-3`}>
                                 <div className={ours.card_img}>
-                                    <img src={karen} alt="" />
+                                    <img src={Diego} alt="" />
                                 </div>
                                 <h4 className={`mt-5 pt-5 mb-1`}>
                                     Diego Araya
                                 </h4>
                                 <small className={`mb-3`}>
-                                    DBA & Frontend Developer
+                                    Full Stack Developer
                                 </small>
                                 <p className={`text-center`}>
-                                    Lorem ipsum dolor sit amet consectetur
-                                    adipisicing elit. Maxime maiores rem
-                                    voluptatem
+                                Desarrollador full stack especializado en crear aplicaciones web responsivas.
                                 </p>
                             </div>
                         </div>

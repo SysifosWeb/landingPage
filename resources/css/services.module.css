@@ -1,8 +1,10 @@
 .service{
   width: 100%;  
   font-weight: 300;
+  background: white;
 }
 .movile{
+  background: linear-gradient(to bottom, white, #F3F3F3);
   width: 100%;
   height: auto;
   padding-top: 1rem;
@@ -39,6 +41,8 @@
   height: 20rem;
 }
 .solution{
+  background: linear-gradient(to bottom, #f8f8f8, #F3F3F3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
   width:100%;  
 } 
 .solution article img{

@@ -71,7 +71,6 @@
 .custom{
     padding: 5rem 0;
     background: linear-gradient(to bottom, #f8f8f8, #F3F3F3);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
 .custom h1{
     color: var(--title-blue);

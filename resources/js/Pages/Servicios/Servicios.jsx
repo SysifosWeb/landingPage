@@ -81,9 +81,14 @@ const Servicios = () => {
                                             1 GB de almacenamiento
                                         </li>
                                     </ul>
-                                    <button className="btn btn-primary mt-4">
-                                        Obtener Plan
-                                    </button>
+                                    <a
+                                            className="btn btn-primary mt-4"
+                                            type="button"
+                                            aria-label="Chat on WhatsApp"
+                                            href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%20básico"
+                                        >
+                                            Obtener Plan
+                                        </a>
                                 </div>
                                 <div
                                     className={`col-lg-4 d-flex flex-column align-items-center justy-content-center ${service.price_table} ${service.pro}`}
@@ -135,12 +140,14 @@ const Servicios = () => {
                                         </li>
                                     </ul>
                                     <div className="d-grid">
-                                        <button
+                                        <a
                                             className="btn btn-light mt-4"
                                             type="button"
+                                            aria-label="Chat on WhatsApp"
+                                            href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%emprendedor"
                                         >
                                             Obtener Plan
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                                 <div
@@ -188,9 +195,14 @@ const Servicios = () => {
                                             Botón de whatsapp
                                         </li>
                                     </ul>
-                                    <button className="btn btn-primary mt-4">
-                                        Obtener Plan
-                                    </button>
+                                    <a
+                                        className="btn btn-primary mt-4"
+                                        type="button"
+                                        aria-label="Chat on WhatsApp"
+                                        href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%premium"
+                                    >
+                                            Obtener Plan
+                                        </a>
                                 </div>
                             </div>
                         </div>

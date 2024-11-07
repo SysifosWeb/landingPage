@@ -8,7 +8,7 @@ import serv from "./../../css/services.module.css";
 const Service = () => {
     return (
         <main className={serv.service}>
-            <h2 className="text-center py-4" style={{ color: `rgb(9,9,121)` }}>
+            <h2 className="text-center py-4" style={{ color: `rgb(9,9,121)`, background: "white" }}>
                 <b>Nuestros Servicios</b>
             </h2>
 

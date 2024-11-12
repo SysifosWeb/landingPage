@@ -1,7 +1,7 @@
 import Header from "./../HeaderPages";
-// import Contact from "./../Contact";
+import { useState } from "react";
 import Footer from "./../Footer";
-import { Head } from "@inertiajs/react";
+import { Head, router } from "@inertiajs/react";
 import {
     SendTwoTone,
     Mail,
@@ -12,6 +12,24 @@ import "./../../../css/main.css";
 import contact from "./../../../css/contacto.module.css";
 
 const Contacto = () => {
+    const [values, setValues] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+    function handleChange(e) {
+        const key = e.target.id;
+        const value = e.target.value;
+        setValues((values) => ({
+            ...values,
+            [key]: value,
+        }));
+    }
+    function handleSubmit(e) {
+        e.preventDefault();
+        router.post("/customer", values);
+    }
+
     return (
         <>
             <Head>
@@ -74,8 +92,9 @@ const Contacto = () => {
                             <div
                                 className={`${contact.form_container} col-md-6 d-flex align-items-center justify-content-center`}
                             >
-                                <div
+                                <form
                                     className={`${contact.form_contact} shadow d-flex flex-column align-items-center justify-content-center gap-2 px-5`}
+                                    onSubmit={handleSubmit}
                                 >
                                     <h4 className="text-center">
                                         Envianos un mensaje
@@ -96,6 +115,8 @@ const Contacto = () => {
                                             type="text"
                                             className="form-control"
                                             id="name"
+                                            value={values.name}
+                                            onChange={handleChange}
                                         />
                                     </div>
                                     <div className="col-12">
@@ -108,7 +129,9 @@ const Contacto = () => {
                                         <input
                                             type="email"
                                             className="form-control"
-                                            id="mail"
+                                            id="email"
+                                            value={values.email}
+                                            onChange={handleChange}
                                         />
                                     </div>
                                     <div className="col-12">
@@ -122,16 +145,21 @@ const Contacto = () => {
                                             type="text"
                                             className="form-control"
                                             id="message"
+                                            value={values.message}
+                                            onChange={handleChange}
                                         />
                                     </div>
-                                    <button className="btn btn-primary btn-md mt-4">
+                                    <button
+                                        type="submit"
+                                        className="btn btn-primary btn-md mt-4"
+                                    >
                                         <SendTwoTone
                                             fontSize="medium"
                                             sx={{ mr: 1, my: 0.1 }}
                                         />
                                         Enviar
                                     </button>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>

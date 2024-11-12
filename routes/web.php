@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomerController;
 
 Route::get('/', function () {
     return inertia('Home/Home');
@@ -26,3 +27,4 @@ Route::get('/contacto', function () {
     return inertia('Contacto/Contacto');
 });
 
+Route::resource('customer', CustomerController::class);

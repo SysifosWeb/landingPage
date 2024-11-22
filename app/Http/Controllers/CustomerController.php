@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Mail\NewCustomer;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCustomerRequest;
 use App\Http\Requests\UpdateCustomerRequest;
@@ -35,6 +38,8 @@ class CustomerController extends Controller
             'email' => ['required', 'max:50', 'email'],
             'message' => ['required', 'max:255'],
           ]));
+
+          Mail::to('prueba@prueba.com')->send(new NewCustomer);
   
           return to_route('customer.index');
     }

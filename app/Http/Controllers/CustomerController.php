@@ -33,15 +33,19 @@ class CustomerController extends Controller
      */
     public function store(StoreCustomerRequest $request)
     {
-        Customer::create($request->validate([
-            'name' => ['required', 'max:50'],
-            'email' => ['required', 'max:50', 'email'],
-            'message' => ['required', 'max:255'],
-          ]));
+        try {
+            Customer::create($request->validate([
+                'name' => ['required', 'max:50'],
+                'email' => ['required', 'max:50', 'email'],
+                'message' => ['required', 'max:255'],
+            ]));
 
-          Mail::to('prueba@prueba.com')->send(new NewCustomer);
-  
-          return to_route('customer.index');
+            Mail::to('prueba@prueba.com')->send(new NewCustomer());
+
+            return back()->with('success', 'Tu mensaje ha sido enviado exitosamente.');
+        } catch (\Throwable $_) {
+            return back()->with('error', 'No hemos logrado enviar tu mensaje, intenta nuevamente.');
+        }
     }
 
     /**

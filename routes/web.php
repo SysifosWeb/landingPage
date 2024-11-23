@@ -27,4 +27,4 @@ Route::get('/contacto', function () {
     return inertia('Contacto/Contacto');
 });
 
-Route::resource('customer', CustomerController::class);
+Route::resource('customers', CustomerController::class);

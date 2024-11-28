@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Customer;
 use App\Mail\NewCustomer;
+use App\Mail\SendCustomer;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,17 +35,20 @@ class CustomerController extends Controller
     public function store(StoreCustomerRequest $request)
     {
         try {
-            Customer::create($request->validate([
+            $customer = Customer::create($request->validate([
                 'name' => ['required', 'max:50'],
                 'email' => ['required', 'max:50', 'email'],
                 'message' => ['required', 'max:255'],
             ]));
 
-            Mail::to('prueba@prueba.com')->send(new NewCustomer());
+            Mail::to('contacto@sysifosweb.cl')->send(new NewCustomer($customer));
+            Mail::to($customer->email)->send(new SendCustomer());
 
             return back()->with('success', 'Tu mensaje ha sido enviado exitosamente.');
-        } catch (\Throwable $_) {
-            return back()->with('error', 'No hemos logrado enviar tu mensaje, intenta nuevamente.');
+        // } catch (\Throwable $_) {
+        //     return back()->with('error', 'No hemos logrado enviar tu mensaje, intenta nuevamente.');
+        } catch(Exception $ex){
+            return back()->with('error', "error: $ex->getMessage()");
         }
     }
 

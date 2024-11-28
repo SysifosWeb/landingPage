@@ -8,21 +8,17 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use App\Models\Customer;
 
-class NewCustomer extends Mailable implements ShouldQueue
+class SendCustomer extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    public Customer $customer;
-    public $nombre;
     /**
      * Create a new message instance.
      */
-    public function __construct($customer)
+    public function __construct()
     {
-        $this->customer = $customer; 
-        $this->nombre = $customer->name;
+        //
     }
 
     /**
@@ -31,7 +27,7 @@ class NewCustomer extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Nuevo Cliente | $this->nombre",
+            subject: 'Contacto | SysifosWeb',
         );
     }
 
@@ -41,7 +37,7 @@ class NewCustomer extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'emails.new-customer',
+            view: 'emails.send-customer',
         );
     }
 

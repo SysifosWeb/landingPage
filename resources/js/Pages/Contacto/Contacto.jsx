@@ -79,7 +79,7 @@ const Contacto = () => {
                                         reunión, para analizar las necesidades y
                                         empezar luego en esa super idea.Puedes
                                         llamarnos o bien escribirnos a nuestro
-                                        correo en el el horario de atención:
+                                        correo en el horario de atención:
                                     </p>
                                     <div
                                         className={`${contact.cards_} d-flex align-content-center flex-wrap mt-2 gap-5`}

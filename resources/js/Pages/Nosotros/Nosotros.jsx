@@ -19,16 +19,21 @@ const Nosotros = () => {
             <div className="main">
                 <div className="container py-5">
                     <section className={`row`} id="history-company">
-                        <div className={`d-flex flex-row pb-4`}>
+                        <div className={`d-flex row pb-4`}>
                             <div
                                 id="our-img"
-                                className="col-12 col-md-6 d-flex align-items-center justify-content-center"
+                                className="col-12 col-lg-6 d-flex align-items-center justify-content-center pb-5"
                             >
-                                <img src={equipo} height="250" alt="" />
+                                <img
+                                    src={equipo}
+                                    height="250"
+                                    width="100%"
+                                    alt=""
+                                />
                             </div>
                             <div
                                 id="our-text"
-                                className={`${ours.history_text} col-6 d-flex flex-column`}
+                                className={`${ours.history_text} col-12 col-lg-6 d-flex flex-column`}
                             >
                                 <h2 className="text-start">
                                     Nuestra Historia.
@@ -103,71 +108,13 @@ const Nosotros = () => {
                                     Full Stack Developer
                                 </small>
                                 <p className={`text-center`}>
-                                Desarrollador full stack especializado en crear aplicaciones web responsivas.
+                                    Desarrollador full stack especializado en
+                                    crear aplicaciones web responsivas.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
-                {/* <div className="container py-5">
-                    <section id="info-company">
-                        <div className="py-5"></div>
-                        <dir className="d-flex justify-content-evenly">
-                            <div className="card mb-3 text-center shadow col-12 col-md-5">
-                                <div className="card-body ">
-                                    <h4 className="card-title py-3">Mision</h4>
-                                    <p className="card-text">
-                                        En SysifosWeb, nuestra misión es liderar
-                                        el sector tecnológico en la región
-                                        ofreciendo soluciones digitales
-                                        altamente personalizadas que transformen
-                                        las ideas de nuestros clientes en
-                                        aplicaciones móviles y sitios web
-                                        innovadores. Nos comprometemos a abordar
-                                        las necesidades de nuestros clientes con
-                                        flexibilidad y eficiencia, garantizando
-                                        una experiencia de usuario excepcional.
-                                        Aprovechamos nuestra experiencia y
-                                        habilidades para brindar soluciones
-                                        únicas que impacten positivamente en sus
-                                        negocios y que se adapten a las
-                                        exigencias del mercado.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="card mb-3 text-center shadow col-5">
-                                <div className="card-body">
-                                    <h4 className="card-title py-3">Vision</h4>
-                                    <p className="card-text">
-                                        En los próximos cinco años, SysifosWeb
-                                        aspira a ser el referente en el mercado
-                                        chileno, consolidándose como líder en el
-                                        desarrollo de software mediante la
-                                        adquisición de nuevos clientes y
-                                        proyectos, y mejorando nuestra
-                                        estabilidad financiera y rentabilidad.
-                                        Nos enfocaremos en la formación y
-                                        retención del talento humano para
-                                        asegurar un equipo capacitado y
-                                        motivado. Buscamos ser ágiles y
-                                        adaptables a los cambios tecnológicos y
-                                        regulatorios, destacándonos por nuestra
-                                        calidad y servicio al cliente.
-                                        Innovaremos constantemente mediante la
-                                        implementación de metodologías ágiles,
-                                        prácticas DevOps, y soluciones avanzadas
-                                        en seguridad y sostenibilidad. Nuestra
-                                        meta es marcar la diferencia en el
-                                        mercado con productos de alta calidad y
-                                        un enfoque en la experiencia del
-                                        usuario, contribuyendo positivamente a
-                                        la sociedad y al entorno empresarial.
-                                    </p>
-                                </div>
-                            </div>
-                        </dir>
-                    </section>
-                </div> */}
             </div>
             <Contact />
             <Footer />

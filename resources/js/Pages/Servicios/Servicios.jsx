@@ -39,7 +39,9 @@ const Servicios = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="d-flex  justify-content-center align-content-stretch my-5">
+                            <div
+                                className={`d-flex  justify-content-center align-content-stretch my-5 ${service.table_columns}`}
+                            >
                                 <div
                                     className={`col-lg-4 d-flex flex-column align-items-center justy-content-center ${service.price_table}`}
                                 >
@@ -82,13 +84,13 @@ const Servicios = () => {
                                         </li>
                                     </ul>
                                     <a
-                                            className="btn btn-primary mt-4"
-                                            type="button"
-                                            aria-label="Chat on WhatsApp"
-                                            href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%20básico"
-                                        >
-                                            Obtener Plan
-                                        </a>
+                                        className="btn btn-primary mt-4"
+                                        type="button"
+                                        aria-label="Chat on WhatsApp"
+                                        href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%20básico"
+                                    >
+                                        Obtener Plan
+                                    </a>
                                 </div>
                                 <div
                                     className={`col-lg-4 d-flex flex-column align-items-center justy-content-center ${service.price_table} ${service.pro}`}
@@ -201,8 +203,8 @@ const Servicios = () => {
                                         aria-label="Chat on WhatsApp"
                                         href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%premium"
                                     >
-                                            Obtener Plan
-                                        </a>
+                                        Obtener Plan
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -225,16 +227,16 @@ const Servicios = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="d-flex align-items-center justify-content-center">
-                                <div className="col-lg-6 d-flex align-items-end justify-content-end">
+                            <div className="d-flex row align-items-center justify-content-center">
+                                <div className="col-lg-6 d-flex justify-content-center">
                                     <img
                                         src={empresarial}
                                         alt="empresarial"
                                         className={service.img_empresarial}
                                     />
                                 </div>
-                                <div className="col-lg-6 d-flex align-items-center justify-content-start">
-                                    <div className="ps-4">
+                                <div className="col-lg-6 d-flex align-items-center justify-content-center">
+                                    <div className="pe-4 pt-4">
                                         <h4 className="ps-4">
                                             Proceso de Implementación
                                         </h4>
@@ -282,9 +284,9 @@ const Servicios = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="d-flex align-items-center justify-content-center">
+                            <div className="d-flex row align-items-center justify-content-center">
                                 <div className="col-lg-6 d-flex align-items-center justify-content-center">
-                                    <div className="pe-4">
+                                    <div className="pe-4 pb-4">
                                         <h4 className="ps-4">
                                             Proceso de Implementación
                                         </h4>
@@ -310,22 +312,28 @@ const Servicios = () => {
                                         </ul>
                                     </div>
                                 </div>
-                                <div className="col-lg-6 d-flex">
-                                    <img
-                                        src={mobile_splash}
-                                        alt=""
-                                        className={service.img_mobile}
-                                    />
-                                    <img
-                                        src={mobile_login}
-                                        alt=""
-                                        className={service.img_mobile}
-                                    />
-                                    <img
-                                        src={mobile_home}
-                                        alt=""
-                                        className={service.img_mobile}
-                                    />
+                                <div className="col-lg-6 d-flex row">
+                                    <div className="col-sm-4 justify-content-center d-flex pb-4">
+                                        <img
+                                            src={mobile_splash}
+                                            alt=""
+                                            className={service.img_mobile}
+                                        />
+                                    </div>
+                                    <div className="col-sm-4 justify-content-center d-flex pb-4">
+                                        <img
+                                            src={mobile_login}
+                                            alt=""
+                                            className={service.img_mobile}
+                                        />
+                                    </div>
+                                    <div className="col-sm-4 justify-content-center d-flex ">
+                                        <img
+                                            src={mobile_home}
+                                            alt=""
+                                            className={service.img_mobile}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -347,16 +355,16 @@ const Servicios = () => {
                             </div>
                         </div>
                         <div className="row">
-                            <div className="d-flex align-items-center justify-content-center">
-                                <div className="col-lg-6 d-flex align-items-center justify-content-end">
+                            <div className="d-flex row align-items-center justify-content-center">
+                                <div className="col-lg-6 d-flex align-items-center justify-content-center">
                                     <img
                                         src={integracion}
                                         alt=""
                                         className={service.img_integracion}
                                     />
                                 </div>
-                                <div className="col-lg-6 d-flex align-items-center justify-content-start">
-                                    <div className="ps-4">
+                                <div className="col-lg-6 d-flex align-items-center justify-content-center">
+                                    <div className="ps-4 pt-4">
                                         <h4 className="ps-4">
                                             Proceso de Implementación
                                         </h4>
@@ -389,7 +397,6 @@ const Servicios = () => {
                     </div>
                 </section>
             </main>
-            {/* <Contact /> */}
             <Footer />
         </>
     );

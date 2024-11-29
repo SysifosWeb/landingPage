@@ -1,115 +1,124 @@
 /* web page */
-.web{
+.web {
     padding: 2rem 0 5rem 0;
     background-color: white;
 }
-.web h1{
+.web h1 {
     color: var(--title-blue);
     font-weight: 800;
     font-size: 2.5em;
 }
-.parrafo{
+.parrafo {
     color: var(--paragraph-grey);
 }
-.price{
+.price {
     font-size: 2.8em;
-    font-weight: 800;    
+    font-weight: 800;
 }
-.price::before{
-    content: '$';
+.price::before {
+    content: "$";
     font-weight: 300;
     font-size: 0.8em;
 }
-.price::after{
-    content: 'clp';
+.price::after {
+    content: "clp";
     font-weight: 300;
     font-size: 30px;
 }
 
-.price_table{
+.price_table {
     /* border: 1px solid grey; */
     box-shadow: 0px 0px 15px #d8d8d8;
     min-height: 200px;
     padding: 2.5rem 0;
 }
-.price_table small{
+.price_table small {
     color: var(--paragraph-grey);
 }
-.price_table h4{
- font-weight: 600;   
+.price_table h4 {
+    font-weight: 600;
 }
-.price_table p{
-    margin: 0;    
+.price_table p {
+    margin: 0;
 }
-.price_table ul{
-    padding: 0;    
+.price_table ul {
+    padding: 0;
 }
-.price_table ul li{
-    list-style:none;        
+.price_table ul li {
+    list-style: none;
 }
 @keyframes bg {
-    0%{
-        background-position: 0 50%;        
-    }   
-    50%{
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
         background-position: 100% 100%;
     }
-    100%{
-        background-position: 0 50%;        
-    }    
+    100% {
+        background-position: 0 50%;
+    }
 }
-.pro{
-    background: linear-gradient(-45deg,#00046b,#121568,#0006b1,#3d41bb);
+.pro {
+    background: linear-gradient(-45deg, #00046b, #121568, #0006b1, #3d41bb);
     background-size: 300% 300%;
-    color: white;     
-    animation: bg 7s ease infinite;   
-    z-index: 2;    
+    color: white;
+    animation: bg 7s ease infinite;
+    z-index: 2;
 }
 
 /* custom applications */
 
-.custom{
+.custom {
     padding: 5rem 0;
-    background: linear-gradient(to bottom, #f8f8f8, #F3F3F3);
+    background: linear-gradient(to bottom, #f8f8f8, #f3f3f3);
 }
-.custom h1{
+.custom h1 {
     color: var(--title-blue);
     font-weight: 800;
     font-size: 2.5em;
 }
-.img_empresarial{
+.img_empresarial {
     width: 400px;
 }
-.list_empresarial{
+.list_empresarial {
     list-style: none;
     margin: 0;
 }
 
 /* mobile */
-.mobile{
+.mobile {
     padding: 5rem 0;
     background-color: white;
 }
-.mobile h1{
+.mobile h1 {
     color: var(--title-blue);
     font-weight: 800;
     font-size: 2.5em;
 }
-.img_mobile{
-   height: 400px; 
+.img_mobile {
+    height: 400px;
 }
 
 /* integrations */
-.integration{
+.integration {
     padding: 5rem 0;
-    background: linear-gradient(to bottom, #f8f8f8, #F3F3F3);
+    background: linear-gradient(to bottom, #f8f8f8, #f3f3f3);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
 }
-.integration h1{
+.integration h1 {
     color: var(--title-blue);
     font-weight: 800;
     font-size: 2.5em;
 }
-.img_integracion{
+.img_integracion {
     width: 400px;
+}
+.table_columns {
+    flex-direction: column !important;
+}
+
+@media (min-width: 992px) {
+    .table_columns {
+        flex-direction: row !important;
+    }
 }

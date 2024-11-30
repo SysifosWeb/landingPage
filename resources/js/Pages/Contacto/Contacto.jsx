@@ -58,8 +58,7 @@ const Contacto = () => {
     console.log(flash);
     return (
         <>
-            <Head>
-                <title>Contacto | Sysifos Web</title>
+            <Head title="Contacto">
                 <meta name="description" content="pagina de contactos" />
             </Head>
             <Header title={"Contactanos!"} />

@@ -15,6 +15,10 @@ Route::get('/servicios', function () {
     return inertia('Servicios/Servicios');
 });
 
+Route::get('/mail', function () {
+    return view('emails/send-customer');
+});
+
 // Route::get('/portafolio', function () {
 //     return inertia('Portafolio/Portafolio');
 // });

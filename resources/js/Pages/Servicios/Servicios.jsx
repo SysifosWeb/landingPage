@@ -14,8 +14,7 @@ import integracion from "./../../../img/integracion_min.webp";
 const Servicios = () => {
     return (
         <>
-            <Head>
-                <title>Servicios | Sysifos Web</title>
+            <Head title="Servicios">
                 <meta name="description" content="pagina de nosotros" />
             </Head>
             <Header title={"Nuestros Servicios"} />

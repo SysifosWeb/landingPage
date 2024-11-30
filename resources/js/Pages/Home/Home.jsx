@@ -7,11 +7,10 @@ import "./../../../css/main.css";
 const Home = () => {
     return (
         <>
-            <Head>
-                <title>Sysifos Web Soluciones digitales</title>
+            <Head title="Home">
                 <meta
                     name="description"
-                    content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
+                    content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferenciar tu marca."
                 />
             </Head>
             <Header />

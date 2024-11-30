@@ -45,11 +45,12 @@ class CustomerController extends Controller
             Mail::to($customer->email)->send(new SendCustomer());
 
             return back()->with('success', 'Tu mensaje ha sido enviado exitosamente.');
-        // } catch (\Throwable $_) {
-        //     return back()->with('error', 'No hemos logrado enviar tu mensaje, intenta nuevamente.');
-        } catch(Exception $ex){
-            return back()->with('error', "error: $ex->getMessage()");
+        } catch (\Throwable $_) {
+            return back()->with('error', 'No hemos logrado enviar tu mensaje, intenta nuevamente.');
         }
+        // catch(Exception $ex){
+        //     return back()->with('error', "error: $ex->getMessage()");
+        // }
     }
 
     /**

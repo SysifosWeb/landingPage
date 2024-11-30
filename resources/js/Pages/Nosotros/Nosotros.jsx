@@ -11,8 +11,7 @@ import Diego from "./../../../img/Diego.png";
 const Nosotros = () => {
     return (
         <>
-            <Head>
-                <title>Nosotros | Sysifos Web</title>
+            <Head title="Nosotros">
                 <meta name="description" content="pagina de nosotros" />
             </Head>
             <Header title={"Quienes Somos?"} />

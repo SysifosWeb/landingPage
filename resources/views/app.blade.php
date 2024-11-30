@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <base href="/" />
-    <meta name="rating" content="General" />
-    
-    <meta
-      name="keywords"
-      content="web, desarrollo web, programacion, movil, mobile, software, software a medida, pagina web, website, digital, sysifosweb, sysifos, sysifos web, html, javascript, react, paginas web"
-    />
+    <meta name="rating" content="General" />   
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />
     <meta name="google" content="nositelinkssearchbox" />
@@ -27,21 +22,10 @@
     />
     <meta
     property="og:description"
-    content="Desarrollamos aplicaciones web y software personalizados para impulsar tu negocio. Aumenta tus ventas, mejora la experiencia del cliente y diferencia tu marca."
+    content="Desarrollamos tu pagina web y software personalizados para tu negocio. Aumenta tus ventas, mejora la experiencia de tus clientes, Contactanos!"
   />
   <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />
-  <meta property="og:title" content="Soluciones digitales a tu medida" />
-  <meta property="og:url" content="https://www.sysifosweb.cl" />
-  <meta
-    property="og:image"
-    content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
-  />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="627" />
-  <meta property="fb:app_id" content="1215450019494398" />
-  <meta property="og:locale" content="es_LA" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="SysifosWeb" />
+ 
     @viteReactRefresh
     @vite('resources/js/app.jsx')
     @inertiaHead

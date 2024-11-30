@@ -12,7 +12,29 @@ const Nosotros = () => {
     return (
         <>
             <Head title="Nosotros">
-                <meta name="description" content="pagina de nosotros" />
+                <meta
+                    name="description"
+                    content="Quienes somos?, Descubre quienes somos y cual es nuestro rol dentro de Sysifos Web, te inivtamos a conocernos y contactarnos!"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    property="og:title"
+                    content="Nosotros | Sysifos Web Soluciones digitales"
+                />
+                <meta
+                    property="og:url"
+                    content="https://www.sysifosweb.cl/nosotros"
+                />
+                <meta
+                    property="og:image"
+                    content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
+                />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="627" />
+                <meta property="fb:app_id" content="1215450019494398" />
+                <meta property="og:locale" content="es_LA" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Sysifos Web" />
             </Head>
             <Header title={"Quienes Somos?"} />
             <div className="main">

@@ -59,7 +59,29 @@ const Contacto = () => {
     return (
         <>
             <Head title="Contacto">
-                <meta name="description" content="pagina de contactos" />
+                <meta
+                    name="description"
+                    content="Quieres cotizar un proyecto? escribenos y te contestaremos lo antes posible para despejar tus dudas sobre precios y tiempo, hablemos!"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    property="og:title"
+                    content="Contacto | Sysifos Web Soluciones digitales"
+                />
+                <meta
+                    property="og:url"
+                    content="https://www.sysifosweb.cl/contacto"
+                />
+                <meta
+                    property="og:image"
+                    content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
+                />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="627" />
+                <meta property="fb:app_id" content="1215450019494398" />
+                <meta property="og:locale" content="es_LA" />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Sysifos Web" />
             </Head>
             <Header title={"Contactanos!"} />
             <main>

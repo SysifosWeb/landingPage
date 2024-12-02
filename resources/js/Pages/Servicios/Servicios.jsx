@@ -1,6 +1,7 @@
 import Header from "./../HeaderPages";
 // import Contact from "./../Contact";
 import Footer from "./../Footer";
+import Contact from "./../Contact";
 import { Head } from "@inertiajs/react";
 import { Check } from "@mui/icons-material";
 import "./../../../css/main.css";
@@ -418,6 +419,7 @@ const Servicios = () => {
                     </div>
                 </section>
             </main>
+            <Contact />
             <Footer />
         </>
     );

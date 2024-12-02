@@ -117,6 +117,26 @@
     flex-direction: column !important;
 }
 
+.offerPriceContainer {
+    position: relative;
+}
+
+.offerPricePercentage {
+    position: absolute;
+    right: 0.5rem;
+    top: -1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: #ff3d00;
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
 @media (min-width: 992px) {
     .table_columns {
         flex-direction: row !important;

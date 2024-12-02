@@ -68,7 +68,16 @@ const Servicios = () => {
                                 >
                                     <small>Sitio estático</small>
                                     <h4>Plan básico</h4>
-                                    <p className={service.price}>185.640</p>
+                                    <div
+                                        className={`${service.offerPriceContainer}`}
+                                    >
+                                        <div
+                                            className={`${service.offerPricePercentage}`}
+                                        >
+                                            10%
+                                        </div>
+                                        <p className={service.price}>185.640</p>
+                                    </div>
                                     <small>IVA incluido</small>
                                     <ul className="mt-4 list-group list-group-flush">
                                         <li className="list-group-item">
@@ -120,7 +129,16 @@ const Servicios = () => {
                                         Sitio dinámico
                                     </small>
                                     <h4>Plan emprendedor</h4>
-                                    <p className={service.price}>297.500</p>
+                                    <div
+                                        className={`${service.offerPriceContainer}`}
+                                    >
+                                        <div
+                                            className={`${service.offerPricePercentage}`}
+                                        >
+                                            10%
+                                        </div>
+                                        <p className={service.price}>297.500</p>
+                                    </div>
                                     <small className="text-white">
                                         IVA incluido
                                     </small>
@@ -178,7 +196,16 @@ const Servicios = () => {
                                 >
                                     <small>Sitio dinámico</small>
                                     <h4>Plan premium</h4>
-                                    <p className={service.price}>476.000</p>
+                                    <div
+                                        className={`${service.offerPriceContainer}`}
+                                    >
+                                        <div
+                                            className={`${service.offerPricePercentage}`}
+                                        >
+                                            10%
+                                        </div>
+                                        <p className={service.price}>470.000</p>
+                                    </div>
                                     <small>IVA incluido</small>
                                     <ul className="mt-4 list-group list-group-flush">
                                         <li className="list-group-item">

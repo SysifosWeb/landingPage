@@ -30,6 +30,15 @@
     @vite('resources/js/app.jsx')
     @inertiaHead
   </head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3BJ0HZ6RSH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3BJ0HZ6RSH');
+</script>
   <body>
     @inertia
     <div id="app"></div>

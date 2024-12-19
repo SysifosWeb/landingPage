@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <base href="/" />
+    <link rel="canonical" href="https://www.sysifosweb.cl/">
     <meta name="rating" content="General" />   
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index,follow" />

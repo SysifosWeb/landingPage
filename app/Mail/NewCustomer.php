@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Customer;
 
-class NewCustomer extends Mailable implements ShouldQueue
+class NewCustomer extends Mailable
 {
     use Queueable, SerializesModels;
 

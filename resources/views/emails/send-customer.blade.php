@@ -48,7 +48,7 @@ td, a, span {
                 <td height="26" style="height:26px;" class="em_h20">&nbsp;</td>
               </tr>
               <tr>
-                <td align="center" valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://sysifosweb.cl/assets/logo-blanco-BFdNkacE.webp" width="208" height="41" alt="meowgun" border="0" style="display:block; font-family:Arial, sans-serif; font-size:18px; line-height:25px; text-align:center; color:#1d4685; font-weight:bold; max-width:208px;" class="em_w150" /></a></td>
+                <td align="center" valign="top"><a href="#" target="_blank" style="text-decoration:none;"><img src="https://sysifosweb.cl/build/assets/logo-blanco-BFdNkacE.webp" width="208" height="41" alt="meowgun" border="0" style="display:block; font-family:Arial, sans-serif; font-size:18px; line-height:25px; text-align:center; color:#1d4685; font-weight:bold; max-width:208px;" class="em_w150" /></a></td>
               </tr>
               <tr>
                 <td height="28" style="height:28px;" class="em_h20">&nbsp;</td>

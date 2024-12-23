@@ -15,20 +15,9 @@ Route::get('/servicios', function () {
     return inertia('Servicios/Servicios');
 });
 
-Route::get('/mail', function () {
-    return view('emails/send-customer');
-});
-
-// Route::get('/portafolio', function () {
-//     return inertia('Portafolio/Portafolio');
-// });
-
-// Route::get('/blog', function () {
-//     return inertia('Blog/Blog');
-// });
-
 Route::get('/contacto', function () {
     return inertia('Contacto/Contacto');
 });
-
+Auth::routes(["register" => false]);
+Auth::routes(["login" => false]);
 Route::resource('customers', CustomerController::class);

@@ -5,6 +5,7 @@
     <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/img/logo_min.ico') }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <base href="/" />
+    <meta name="google-site-verification" content="VTWOSSGGnktpmu96UQyQ2iQ7TYwRA2NJ8JkWQvH4-Xk" />
     <meta name="keywords" content="sisyfos, sysifos, sysifos web, sysifosweb, Sysifos, Sysifos Web, SysifosWeb, web, Web, sisyfo, sysifo" />           
     <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />    
     <link rel="preconnect" href="https://fonts.googleapis.com" />

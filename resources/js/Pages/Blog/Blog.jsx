@@ -7,10 +7,6 @@ import "./../../../css/main.css";
 const Blog = () => {
     return (
         <>
-            <Head>
-                <title>Blog - Sysifos Web</title>
-                <meta name="description" content="pagina de nosotros" />
-            </Head>
             <Header />
             <Contact />
             <Footer />

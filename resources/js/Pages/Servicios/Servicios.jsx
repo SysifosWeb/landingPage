@@ -20,7 +20,10 @@ const Servicios = () => {
                     name="description"
                     content="Paginas web, Desarrollo de software a medida, Aplicaciones mobiles y Integración de sistemas, los mejores precios que encontraras!"
                 />
-                <meta name="robots" content="index, follow" />
+                <link
+                    rel="canonical"
+                    href="https://www.sysifosweb.cl/Servicios"
+                />
                 <meta
                     property="og:title"
                     content="Servicios | Sysifos Web Soluciones digitales"

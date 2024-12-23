@@ -12,7 +12,7 @@ const Home = () => {
                     name="description"
                     content="Soluciones digitales a medida. Desarrollamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
                 />
-                <meta name="robots" content="index, follow" />
+                <link rel="canonical" href="https://www.sysifosweb.cl/Home" />
                 <meta
                     property="og:title"
                     content="Sysifos Web Soluciones Informáticas"

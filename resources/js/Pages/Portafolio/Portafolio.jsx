@@ -7,10 +7,6 @@ import "./../../../css/main.css";
 const Portafolio = () => {
     return (
         <>
-            <Head>
-                <title>Portafolio - Sysifos Web</title>
-                <meta name="description" content="pagina de nosotros" />
-            </Head>
             <Header />
             <Contact />
             <Footer />

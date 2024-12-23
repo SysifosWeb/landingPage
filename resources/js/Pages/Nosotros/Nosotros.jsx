@@ -16,7 +16,10 @@ const Nosotros = () => {
                     name="description"
                     content="Quienes somos?, Descubre quienes somos y cual es nuestro rol dentro de Sysifos Web, te inivtamos a conocernos y contactarnos!"
                 />
-                <meta name="robots" content="index, follow" />
+                <link
+                    rel="canonical"
+                    href="https://www.sysifosweb.cl/Nosotros"
+                />
                 <meta
                     property="og:title"
                     content="Nosotros | Sysifos Web Soluciones digitales"

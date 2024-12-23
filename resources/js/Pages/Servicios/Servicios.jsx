@@ -20,6 +20,7 @@ const Servicios = () => {
                     Servicios | SysifosWeb Soluciones Informáticas Limitada
                 </title>
                 <meta
+                    head-key="description"
                     name="description"
                     content="Paginas web, Desarrollo de software a medida, Aplicaciones mobiles y Integración de sistemas, los mejores precios que encontraras!"
                 />

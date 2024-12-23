@@ -16,6 +16,7 @@ const Nosotros = () => {
                     Nosotros | SysifosWeb Soluciones Informáticas Limitada
                 </title>
                 <meta
+                    head-key="description"
                     name="description"
                     content="Quienes somos?, Descubre quienes somos y cual es nuestro rol dentro de Sysifos Web, te inivtamos a conocernos y contactarnos!"
                 />

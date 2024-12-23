@@ -63,6 +63,7 @@ const Contacto = () => {
                     Contacto | SysifosWeb Soluciones Informáticas Limitada
                 </title>
                 <meta
+                    head-key="description"
                     name="description"
                     content="Quieres cotizar un proyecto? escribenos y te contestaremos lo antes posible para despejar tus dudas sobre precios y tiempo, hablemos!"
                 />

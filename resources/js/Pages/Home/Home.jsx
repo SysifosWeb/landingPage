@@ -10,6 +10,7 @@ const Home = () => {
             <Head>
                 <title>SysifosWeb Soluciones Informáticas Limitada</title>
                 <meta
+                    head-key="description"
                     name="description"
                     content="Soluciones digitales a medida. Desarrollamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
                 />

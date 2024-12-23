@@ -58,7 +58,10 @@ const Contacto = () => {
     console.log(flash);
     return (
         <>
-            <Head title="Contacto">
+            <Head>
+                <title>
+                    Contacto | SysifosWeb Soluciones Informáticas Limitada
+                </title>
                 <meta
                     name="description"
                     content="Quieres cotizar un proyecto? escribenos y te contestaremos lo antes posible para despejar tus dudas sobre precios y tiempo, hablemos!"

@@ -3,13 +3,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="{{ Vite::asset('resources/img/logo_min.ico') }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-                    name="description"
-                    content="Soluciones digitales a medida. Desarrollamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
-                />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
     <base href="/" />
-    <link rel="canonical" href="https://www.sysifosweb.cl/">        
+    <meta name="keywords" content="sisyfos, sysifos, sysifos web, sysifosweb, Sysifos, Sysifos Web, SysifosWeb, web, Web, sisyfo, sysifo" />           
     <meta name="author" content="SysifosWeb Soluciones Informáticas Limitada" />    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

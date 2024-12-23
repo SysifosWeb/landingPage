@@ -7,12 +7,13 @@ import "./../../../css/main.css";
 const Home = () => {
     return (
         <>
-            <Head title="Home">
+            <Head>
+                <title>SysifosWeb Soluciones Informáticas Limitada</title>
                 <meta
                     name="description"
                     content="Soluciones digitales a medida. Desarrollamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
                 />
-                <link rel="canonical" href="https://www.sysifosweb.cl/Home" />
+                <link rel="canonical" href="https://www.sysifosweb.cl/" />
                 <meta
                     property="og:title"
                     content="Sysifos Web Soluciones Informáticas"

@@ -15,7 +15,10 @@ import integracion from "./../../../img/integracion_min.webp";
 const Servicios = () => {
     return (
         <>
-            <Head title="Servicios">
+            <Head>
+                <title>
+                    Servicios | SysifosWeb Soluciones Informáticas Limitada
+                </title>
                 <meta
                     name="description"
                     content="Paginas web, Desarrollo de software a medida, Aplicaciones mobiles y Integración de sistemas, los mejores precios que encontraras!"

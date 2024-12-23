@@ -11,7 +11,10 @@ import Diego from "./../../../img/Diego.png";
 const Nosotros = () => {
     return (
         <>
-            <Head title="Nosotros">
+            <Head>
+                <title>
+                    Nosotros | SysifosWeb Soluciones Informáticas Limitada
+                </title>
                 <meta
                     name="description"
                     content="Quienes somos?, Descubre quienes somos y cual es nuestro rol dentro de Sysifos Web, te inivtamos a conocernos y contactarnos!"

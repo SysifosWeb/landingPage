@@ -70,7 +70,11 @@ const Contacto = () => {
                 <meta name="robots" content="index, follow" />
                 <meta
                     property="og:title"
-                    content="Contacto | Sysifos Web Soluciones digitales"
+                    content="Contacto | SysifosWeb Soluciones Informáticas Limitada"
+                />
+                <meta
+                    property="og:description"
+                    content="Quieres cotizar un proyecto? escribenos y te contestaremos lo antes posible para despejar tus dudas sobre precios y tiempo, hablemos!"
                 />
                 <meta
                     property="og:url"

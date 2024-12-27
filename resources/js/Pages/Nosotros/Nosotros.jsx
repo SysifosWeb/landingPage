@@ -18,7 +18,7 @@ const Nosotros = () => {
                 <meta
                     head-key="description"
                     name="description"
-                    content="Quienes somos?, Descubre quienes somos y cual es nuestro rol dentro de Sysifos Web, te inivtamos a conocernos y contactarnos!"
+                    content="Descubre quienes somos y cual es nuestro rol dentro de Sysifos Web, te inivtamos a saber más de nosotros y contactarnos!"
                 />
                 <link
                     rel="canonical"
@@ -26,7 +26,11 @@ const Nosotros = () => {
                 />
                 <meta
                     property="og:title"
-                    content="Nosotros | Sysifos Web Soluciones digitales"
+                    content="Nosotros | SysifosWeb Soluciones Informáticas Limitada"
+                />
+                <meta
+                    property="og:description"
+                    content="Descubre quienes somos y cual es nuestro rol dentro de Sysifos Web, te inivtamos a saber más de nosotros y contactarnos!"
                 />
                 <meta
                     property="og:url"

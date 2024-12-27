@@ -12,12 +12,16 @@ const Home = () => {
                 <meta
                     head-key="description"
                     name="description"
-                    content="Soluciones digitales a medida. Desarrollamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
+                    content="Creamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
                 />
                 <link rel="canonical" href="https://www.sysifosweb.cl/" />
                 <meta
                     property="og:title"
-                    content="Sysifos Web Soluciones Informáticas"
+                    content="SysifosWeb Soluciones Informáticas Limitada"
+                />
+                <meta
+                    property="og:description"
+                    content="Creamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
                 />
                 <meta property="og:url" content="https://www.sysifosweb.cl" />
                 <meta

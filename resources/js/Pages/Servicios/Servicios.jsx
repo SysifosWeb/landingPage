@@ -30,7 +30,11 @@ const Servicios = () => {
                 />
                 <meta
                     property="og:title"
-                    content="Servicios | Sysifos Web Soluciones digitales"
+                    content="Servicios | SysifosWeb Soluciones Informáticas Limitada"
+                />
+                <meta
+                    property="og:description"
+                    content="Paginas web, Desarrollo de software a medida, Aplicaciones mobiles y Integración de sistemas, los mejores precios que encontraras!"
                 />
                 <meta
                     property="og:url"

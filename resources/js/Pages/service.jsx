@@ -8,7 +8,10 @@ import serv from "./../../css/services.module.css";
 const Service = () => {
     return (
         <main className={serv.service}>
-            <h2 className="text-center py-4" style={{ color: `rgb(9,9,121)`, background: "white" }}>
+            <h2
+                className="text-center py-4"
+                style={{ color: `rgb(9,9,121)`, background: "white" }}
+            >
                 <b>Nuestros Servicios</b>
             </h2>
 
@@ -17,7 +20,8 @@ const Service = () => {
                     <article className="d-flex justify-content-center align-items-end d-none d-md-block">
                         <img
                             src={movileImg}
-                            alt=""
+                            alt="movile"
+                            title="aplicaciones moviles"
                             className={serv.movileImg}
                         />
                     </article>
@@ -68,7 +72,7 @@ const Service = () => {
                         </p>
                     </article>
                     <article className="d-flex align-items-center justify-content-start ">
-                        <img src={webImg} alt="" />
+                        <img src={webImg} alt="SitiosWeb" title="Paginas Web" />
                     </article>
                 </div>
             </section>
@@ -88,7 +92,11 @@ const Service = () => {
             <section className={`${serv.solution} d-none d-sm-none d-md-block`}>
                 <div className="d-flex justify-content-md-between align-items-center container py-5">
                     <article className="d-flex align-items-center justify-content-center d-none d-md-block">
-                        <img src={solutionImg} alt="" />
+                        <img
+                            src={solutionImg}
+                            alt="empresarial"
+                            title="Programación a medida"
+                        />
                     </article>
                     <article className="d-flex flex-column justify-content-center align-items-center align-items-md-start px-5">
                         <h3>Soluciones Empresariales</h3>
@@ -131,7 +139,11 @@ const Service = () => {
                         </p>
                     </article>
                     <article className="d-flex align-items-center justify-content-center d-none d-sm-none d-md-block">
-                        <img src={systemImg} alt="" />
+                        <img
+                            src={systemImg}
+                            alt="apis"
+                            title="Integración de apis"
+                        />
                     </article>
                 </div>
             </section>

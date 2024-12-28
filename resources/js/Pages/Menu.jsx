@@ -7,11 +7,16 @@ const Menu = () => {
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-transparent container">
                 <div className="container">
-                    <a className="navbar-brand" href="/">
+                    <a
+                        className="navbar-brand"
+                        href="/"
+                        title="Home | Sysifos Web"
+                    >
                         <img
                             src={logo}
                             className={indexcss.logo}
-                            alt="Logo"
+                            alt="LogoSysifosWeb"
+                            title="SysifosWeb Soluciones Informáticas Limitada"
                             aria-label="Go home"
                         />
                     </a>
@@ -34,6 +39,7 @@ const Menu = () => {
                             <li className="nav-item">
                                 <Link
                                     href="/"
+                                    title="Home"
                                     aria-current="page"
                                     className={`nav-link
                                         ${url === "/" ? "active" : ""}
@@ -45,6 +51,7 @@ const Menu = () => {
                             <li className="nav-item">
                                 <Link
                                     href="/nosotros"
+                                    title="Nosotros"
                                     aria-current="page"
                                     className={`nav-link
                                         ${url === "/nosotros" ? "active" : ""}
@@ -56,6 +63,7 @@ const Menu = () => {
                             <li className="nav-item">
                                 <Link
                                     href="/servicios"
+                                    title="Servicios"
                                     aria-current="page"
                                     className={`nav-link
                                         ${url === "/servicios" ? "active" : ""}
@@ -67,6 +75,7 @@ const Menu = () => {
                             <li className="nav-item">
                                 <Link
                                     href="/contacto"
+                                    title="Contacto"
                                     aria-current="page"
                                     className={`nav-link
                                         ${url === "/contacto" ? "active" : ""}

@@ -46,6 +46,7 @@ const Nosotros = () => {
                 <meta property="og:locale" content="es_LA" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Sysifos Web" />
+                <meta property="og:share_count" content="true" />
             </Head>
             <Header title={"Quienes Somos?"} />
             <div className="main">
@@ -58,9 +59,10 @@ const Nosotros = () => {
                             >
                                 <img
                                     src={equipo}
+                                    title="Equipo de SysifosWeb"
                                     height="250"
                                     width="100%"
-                                    alt=""
+                                    alt="Equipo de SysifosWeb"
                                 />
                             </div>
                             <div
@@ -98,6 +100,7 @@ const Nosotros = () => {
                                 <div className={`${ours.card_img}`}>
                                     <img
                                         src={osman}
+                                        title="Osman Ahumada"
                                         alt="osman"
                                         className="mb-5"
                                     />
@@ -116,7 +119,11 @@ const Nosotros = () => {
                             </div>
                             <div className={`${ours.card_our} col-lg-3`}>
                                 <div className={ours.card_img}>
-                                    <img src={karen} alt="" />
+                                    <img
+                                        src={karen}
+                                        title="karen Godoy"
+                                        alt="karen"
+                                    />
                                 </div>
                                 <h4 className={`mt-5 pt-5 mb-1`}>
                                     Karen Godoy
@@ -131,7 +138,11 @@ const Nosotros = () => {
                             </div>
                             <div className={`${ours.card_our} col-lg-3`}>
                                 <div className={ours.card_img}>
-                                    <img src={Diego} alt="" />
+                                    <img
+                                        src={Diego}
+                                        title="Diego Araya"
+                                        alt="diego"
+                                    />
                                 </div>
                                 <h4 className={`mt-5 pt-5 mb-1`}>
                                     Diego Araya

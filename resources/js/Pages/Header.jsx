@@ -3,7 +3,7 @@ import { WhatsApp } from "@mui/icons-material";
 import Menu from "./Menu";
 export default function Header() {
     return (
-        <header className={`shadow-sm ${indexcss.cabecera}`}>
+        <header className={indexcss.cabecera}>
             <Menu />
             <section
                 style={{
@@ -35,6 +35,7 @@ export default function Header() {
                     <div className="d-flex justify-content-center align-items-center mb-md-4">
                         <a
                             className={`btn btn-success ${indexcss.btnContact} ${indexcss.btnContactHeader}`}
+                            title="Contacta con nosotros"
                             aria-label="Chat on WhatsApp"
                             href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20porfavor"
                         >

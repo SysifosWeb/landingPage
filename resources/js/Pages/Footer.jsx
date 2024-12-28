@@ -18,7 +18,12 @@ export default function Footer() {
                 className="container flex-md-row justify-content-center justify-content-md-between"
             >
                 <div className="d-flex justify-content-md-end align-items-center pb-4">
-                    <img src={logo} alt="Logo" height="50rem" />
+                    <img
+                        src={logo}
+                        alt="LogoFooter"
+                        title="SysifosWeb"
+                        height="50rem"
+                    />
                 </div>
                 <div
                     className={`d-flex flex-column justify-content-md-start mb-4 mb-md-0 ${indexcss.dir}`}
@@ -27,6 +32,7 @@ export default function Footer() {
                     <div className="d-flex align-items-center mb-3">
                         <Link
                             href="/"
+                            title="Home"
                             aria-current="page"
                             className={`nav-link
                                         ${url === "/" ? "active" : ""}
@@ -38,6 +44,7 @@ export default function Footer() {
                     <div className="d-flex align-items-center mb-3">
                         <Link
                             href="/nosotros"
+                            title="Nosotros"
                             aria-current="page"
                             className={`nav-link
                                         ${url === "/nosotros" ? "active" : ""}
@@ -49,6 +56,7 @@ export default function Footer() {
                     <div className="d-flex align-items-center mb-3">
                         <Link
                             href="/servicios"
+                            title="Servicios"
                             aria-current="page"
                             className={`nav-link
                                         ${url === "/servicios" ? "active" : ""}
@@ -60,6 +68,7 @@ export default function Footer() {
                     <div className="d-flex align-items-center mb-3">
                         <Link
                             href="/contacto"
+                            title="Contacto"
                             aria-current="page"
                             className={`nav-link
                                         ${url === "/contacto" ? "active" : ""}
@@ -76,6 +85,7 @@ export default function Footer() {
                     <div className="d-flex align-items-center mb-3">
                         <a
                             href="tel:+56949109970"
+                            title="Llamar"
                             className={`${indexcss.link}`}
                         >
                             <LocalPhone fontSize="large" sx={{ mr: 1 }} />
@@ -90,6 +100,7 @@ export default function Footer() {
                         <a
                             href="https://www.instagram.com/sysifosweb_/"
                             target="_blank"
+                            title="Instagram"
                             className={`${indexcss.link}`}
                         >
                             <Instagram fontSize="large" sx={{ mr: 1 }} />
@@ -100,6 +111,7 @@ export default function Footer() {
                         <a
                             href="https://www.facebook.com/profile.php?id=61567859694020"
                             target="_blank"
+                            title="Facebook"
                             className={`${indexcss.link}`}
                         >
                             <Facebook fontSize="large" sx={{ mr: 1 }} />
@@ -110,6 +122,7 @@ export default function Footer() {
                         <a
                             href="https://www.linkedin.com/company/sysifos-web/"
                             target="_blank"
+                            title="LinkedIn"
                             className={`${indexcss.link}`}
                         >
                             <LinkedIn fontSize="large" sx={{ mr: 1 }} />

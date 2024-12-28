@@ -90,6 +90,7 @@ const Contacto = () => {
                 <meta property="og:locale" content="es_LA" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Sysifos Web" />
+                <meta property="og:share_count" content="true" />
             </Head>
             <Header title={"Contactanos!"} />
             <main>

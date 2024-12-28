@@ -14,7 +14,7 @@ const Home = () => {
                     name="description"
                     content="Creamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
                 />
-                <link rel="canonical" href="https://www.sysifosweb.cl/" />
+
                 <meta
                     property="og:title"
                     content="SysifosWeb Soluciones Informáticas Limitada"
@@ -23,7 +23,7 @@ const Home = () => {
                     property="og:description"
                     content="Creamos aplicaciones móviles, diseñamos sitios web y ofrecemos consultoría tecnológica para impulsar tu negocio. ¡Contacta con nosotros!"
                 />
-                <meta property="og:url" content="https://www.sysifosweb.cl" />
+                <meta property="og:url" content="https://www.sysifosweb.cl/" />
                 <meta
                     property="og:image"
                     content="https://www.sysifosweb.cl/assets/equipoMin-ijW4D7nV.webp"
@@ -34,6 +34,7 @@ const Home = () => {
                 <meta property="og:locale" content="es_LA" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Sysifos Web" />
+                <meta property="og:share_count" content="true" />
             </Head>
             <Header />
             <Service />

@@ -50,6 +50,7 @@ const Servicios = () => {
                 <meta property="og:locale" content="es_LA" />
                 <meta property="og:type" content="website" />
                 <meta property="og:site_name" content="Sysifos Web" />
+                <meta property="og:share_count" content="true" />
             </Head>
             <Header title={"Nuestros Servicios"} />
             <main>
@@ -78,7 +79,7 @@ const Servicios = () => {
                                 <div
                                     className={`col-lg-4 d-flex flex-column align-items-center justy-content-center ${service.price_table}`}
                                 >
-                                    <small>Sitio estático</small>
+                                    <small>Sitio dinámico</small>
                                     <h4>Plan básico</h4>
                                     <div
                                         className={`${service.offerPriceContainer}`}
@@ -128,6 +129,7 @@ const Servicios = () => {
                                     <a
                                         className="btn btn-primary mt-4"
                                         type="button"
+                                        title="Chat on WhatsApp"
                                         aria-label="Chat on WhatsApp"
                                         href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%20básico"
                                     >
@@ -196,6 +198,7 @@ const Servicios = () => {
                                         <a
                                             className="btn btn-light mt-4"
                                             type="button"
+                                            title="Chat on WhatsApp"
                                             aria-label="Chat on WhatsApp"
                                             href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%emprendedor"
                                         >
@@ -260,6 +263,7 @@ const Servicios = () => {
                                     <a
                                         className="btn btn-primary mt-4"
                                         type="button"
+                                        title="Chat on WhatsApp"
                                         aria-label="Chat on WhatsApp"
                                         href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20del%20plan%premium"
                                     >
@@ -291,6 +295,7 @@ const Servicios = () => {
                                 <div className="col-lg-6 d-flex justify-content-center">
                                     <img
                                         src={empresarial}
+                                        title="Software empresarial"
                                         alt="empresarial"
                                         className={service.img_empresarial}
                                     />
@@ -376,21 +381,24 @@ const Servicios = () => {
                                     <div className="col-sm-4 justify-content-center d-flex pb-4">
                                         <img
                                             src={mobile_splash}
-                                            alt=""
+                                            title="Splash Screen"
+                                            alt="splash"
                                             className={service.img_mobile}
                                         />
                                     </div>
                                     <div className="col-sm-4 justify-content-center d-flex pb-4">
                                         <img
                                             src={mobile_login}
-                                            alt=""
+                                            title="Login Screen"
+                                            alt="login"
                                             className={service.img_mobile}
                                         />
                                     </div>
                                     <div className="col-sm-4 justify-content-center d-flex ">
                                         <img
                                             src={mobile_home}
-                                            alt=""
+                                            title="Home Screen"
+                                            alt="inicio"
                                             className={service.img_mobile}
                                         />
                                     </div>
@@ -419,7 +427,8 @@ const Servicios = () => {
                                 <div className="col-lg-6 d-flex align-items-center justify-content-center">
                                     <img
                                         src={integracion}
-                                        alt=""
+                                        title="Integración de sistemas"
+                                        alt="Integración de sistemas"
                                         className={service.img_integracion}
                                     />
                                 </div>

@@ -12,6 +12,7 @@ export default function Contact() {
                 <a
                     className={`btn btn-success btn-lg ${indexcss.btnContact} ${indexcss.btnContactBody}`}
                     aria-label="Chat on WhatsApp"
+                    title="Chat on WhatsApp"
                     href="https://wa.me/+56949109970?text=Hola!%20Quisiera%20Más%20información%20porfavor"
                 >
                     <WhatsApp fontSize="large" sx={{ mr: 1, my: 0.8 }} />

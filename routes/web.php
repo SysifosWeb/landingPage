@@ -20,3 +20,4 @@ Route::get('/contacto', function () {
 });
 
 Route::resource('customers', CustomerController::class);
+Route::get('/sitemap.xml', function () { return response()->view('sitemap')->header('Content-Type', 'text/xml'); }); 

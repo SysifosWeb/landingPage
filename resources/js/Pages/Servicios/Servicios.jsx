@@ -84,11 +84,11 @@ const Servicios = () => {
                                     <div
                                         className={`${service.offerPriceContainer}`}
                                     >
-                                        <div
+                                        {/* <div
                                             className={`${service.offerPricePercentage}`}
                                         >
                                             10%
-                                        </div>
+                                        </div> */}
                                         <p className={service.price}>185.640</p>
                                     </div>
                                     <small>IVA incluido</small>
@@ -146,11 +146,11 @@ const Servicios = () => {
                                     <div
                                         className={`${service.offerPriceContainer}`}
                                     >
-                                        <div
+                                        {/* <div
                                             className={`${service.offerPricePercentage}`}
                                         >
                                             10%
-                                        </div>
+                                        </div> */}
                                         <p className={service.price}>297.500</p>
                                     </div>
                                     <small className="text-white">
@@ -214,11 +214,11 @@ const Servicios = () => {
                                     <div
                                         className={`${service.offerPriceContainer}`}
                                     >
-                                        <div
+                                        {/* <div
                                             className={`${service.offerPricePercentage}`}
                                         >
                                             10%
-                                        </div>
+                                        </div> */}
                                         <p className={service.price}>470.000</p>
                                     </div>
                                     <small>IVA incluido</small>

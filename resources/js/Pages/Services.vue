@@ -6,6 +6,6 @@ export default {
 </script>
 <template>
     <Layout>
-        <h1 class="text-3xl font-bold underline">Hello Contact!</h1>
+        <h1 class="text-3xl font-bold underline">Hello Services!</h1>
     </Layout>
 </template>

@@ -3,5 +3,7 @@ import PrimaryNavbar from "./Component/PrimaryNavbar.vue";
 </script>
 <template>
     <PrimaryNavbar />
-    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+    <section
+        class="bg-gradient-to-b from-sky-400 from-1% to-white-600 to-100% h-[10rem]"
+    ></section>
 </template>

@@ -7,7 +7,9 @@ const isMenuOpen = ref(false);
 const links = [
     { name: "Home", link: "/" },
     { name: "Nosotros", link: "/nosotros" },
+    { name: "Portafolio", link: "/portfolios" },
     { name: "Servicios", link: "/servicios" },
+    { name: "Blog", link: "/blogs" },
     { name: "Contacto", link: "/contactos" },
 ];
 

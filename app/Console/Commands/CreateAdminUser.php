@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Models\User;
+use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,89 +14,97 @@ class CreateAdminUser extends Command
      *
      * @var string
      */
-    protected $signature = 'admin:create-user {--email=} {--name=} {--password=}';
+    protected $signature = 'admin:create-user 
+                            {--name= : Nombre del usuario}
+                            {--email= : Email del usuario}
+                            {--password= : Contraseña del usuario}
+                            {--role=admin : Rol del usuario (admin|editor)}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Crear un usuario administrador';
+    protected $description = 'Crear un nuevo usuario administrador';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
-        $this->info('🔧 Creando usuario administrador...');
+        $this->info('🚀 Creando usuario administrador...');
         $this->newLine();
 
         // Obtener datos del usuario
-        $email = $this->option('email') ?: $this->ask('Email del administrador');
-        $name = $this->option('name') ?: $this->ask('Nombre del administrador');
-        $password = $this->option('password') ?: $this->secret('Contraseña');
+        $name = $this->option('name') ?: $this->ask('Nombre completo');
+        $email = $this->option('email') ?: $this->ask('Email');
+        $role = $this->option('role') ?: $this->choice('Rol', ['admin', 'editor'], 'admin');
 
-        // Validar datos
-        $validator = Validator::make([
-            'email' => $email,
-            'name' => $name,
-            'password' => $password,
-        ], [
-            'email' => 'required|email|unique:users,email',
-            'name' => 'required|string|max:255',
-            'password' => 'required|string|min:6',
+        // Validar email
+        $validator = Validator::make(['email' => $email], [
+            'email' => 'required|email|unique:users,email'
         ]);
 
         if ($validator->fails()) {
-            $this->error('❌ Error en la validación:');
-            foreach ($validator->errors()->all() as $error) {
-                $this->error("   • $error");
+            $this->error('❌ Error: ' . $validator->errors()->first());
+            return 1;
+        }
+
+        // Obtener contraseña
+        if ($this->option('password')) {
+            $password = $this->option('password');
+        } else {
+            $password = $this->secret('Contraseña (mínimo 8 caracteres)');
+            $confirmPassword = $this->secret('Confirmar contraseña');
+
+            if ($password !== $confirmPassword) {
+                $this->error('❌ Las contraseñas no coinciden');
+                return 1;
             }
+        }
+
+        // Validar contraseña
+        if (strlen($password) < 8) {
+            $this->error('❌ La contraseña debe tener al menos 8 caracteres');
             return 1;
         }
 
-        // Verificar si el usuario ya existe
-        if (User::where('email', $email)->exists()) {
-            $this->error("❌ Ya existe un usuario con el email: $email");
-            return 1;
-        }
-
-        // Crear el usuario
         try {
+            // Crear usuario
             $user = User::create([
                 'name' => $name,
                 'email' => $email,
                 'password' => Hash::make($password),
-                'role' => 'admin',
+                'role' => $role,
                 'active' => true,
+                'email_verified_at' => now(),
             ]);
 
             $this->newLine();
-            $this->info('✅ Usuario administrador creado exitosamente!');
+            $this->info('✅ Usuario creado exitosamente!');
             $this->newLine();
 
+            // Mostrar información del usuario
             $this->table(
                 ['Campo', 'Valor'],
                 [
                     ['ID', $user->id],
                     ['Nombre', $user->name],
                     ['Email', $user->email],
-                    ['Rol', $user->role],
+                    ['Rol', ucfirst($user->role)],
                     ['Estado', $user->active ? 'Activo' : 'Inactivo'],
                     ['Creado', $user->created_at->format('d/m/Y H:i:s')],
                 ]
             );
 
             $this->newLine();
-            $this->info('🌐 Puedes acceder al panel de administración en:');
-            $this->info('   URL: http://localhost:8000/admin');
-            $this->info("   Email: $email");
-            $this->info("   Contraseña: [la que acabas de configurar]");
+            $this->info('🔗 Puedes acceder al panel admin en: ' . url('/admin'));
+            $this->info('📧 Email: ' . $user->email);
+            $this->info('🔑 Contraseña: [La que acabas de configurar]');
 
             return 0;
         } catch (\Exception $e) {
-            $this->error('❌ Error al crear el usuario:');
-            $this->error("   {$e->getMessage()}");
+            $this->error('❌ Error al crear el usuario: ' . $e->getMessage());
             return 1;
         }
     }

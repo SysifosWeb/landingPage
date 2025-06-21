@@ -34,6 +34,14 @@ class Category extends Model
     }
 
     /**
+     * Relación con posts (alias para compatibilidad)
+     */
+    public function posts(): HasMany
+    {
+        return $this->hasMany(BlogPost::class);
+    }
+
+    /**
      * Relación con posts publicados
      */
     public function publishedPosts(): HasMany

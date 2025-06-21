@@ -1,3 +1,55 @@
+<script setup>
+import { ref, reactive } from 'vue'
+import { Link, router } from '@inertiajs/vue3'
+import AdminLayout from '../Layout.vue'
+import { route } from '../../../utils/route.js'
+
+const props = defineProps({
+    categories: Object,
+    filters: Object,
+});
+
+const filters = reactive({
+    search: props.filters.search || "",
+    active: props.filters.active || "",
+});
+
+const search = () => {
+    router.get(route("admin.categories.index"), filters, {
+        preserveState: true,
+        replace: true,
+    });
+};
+
+const clearFilters = () => {
+    Object.keys(filters).forEach((key) => {
+        filters[key] = "";
+    });
+    search();
+};
+
+const toggleActive = (category) => {
+    router.post(
+        route("admin.categories.toggle-active", category.id),
+        {},
+        {
+            preserveScroll: true,
+        }
+    );
+};
+
+const deleteCategory = (category) => {
+    if (category.blog_posts_count > 0) {
+        alert("No se puede eliminar una categoría que tiene posts asociados.");
+        return;
+    }
+
+    if (confirm("¿Estás seguro de que quieres eliminar esta categoría?")) {
+        router.delete(route("admin.categories.destroy", category.id));
+    }
+};
+</script>
+
 <template>
     <AdminLayout page-title="Gestión de Categorías">
         <!-- Header con botón de crear -->
@@ -355,54 +407,5 @@
     </AdminLayout>
 </template>
 
-<script setup>
-import { ref, reactive } from 'vue'
-import { Link, router } from '@inertiajs/vue3'
-import AdminLayout from '../Layout.vue'
-import { route } from '../../../utils/route.js'
-
-const props = defineProps({
-    categories: Object,
-    filters: Object,
-});
-
-const filters = reactive({
-    search: props.filters.search || "",
-    active: props.filters.active || "",
-});
-
-const search = () => {
-    router.get(route("admin.categories.index"), filters, {
-        preserveState: true,
-        replace: true,
-    });
-};
-
-const clearFilters = () => {
-    Object.keys(filters).forEach((key) => {
-        filters[key] = "";
-    });
-    search();
-};
-
-const toggleActive = (category) => {
-    router.post(
-        route("admin.categories.toggle-active", category.id),
-        {},
-        {
-            preserveScroll: true,
-        }
-    );
-};
-
-const deleteCategory = (category) => {
-    if (category.blog_posts_count > 0) {
-        alert("No se puede eliminar una categoría que tiene posts asociados.");
-        return;
-    }
-
-    if (confirm("¿Estás seguro de que quieres eliminar esta categoría?")) {
-        router.delete(route("admin.categories.destroy", category.id));
-    }
-};
-</script>
+<style scoped>
+</style>

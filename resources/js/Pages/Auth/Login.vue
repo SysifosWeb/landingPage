@@ -148,6 +148,14 @@ const form = useForm({
 })
 
 const submit = () => {
-  form.post('/login')
+  form.post('/login', {
+    onFinish: () => {
+      // No limpiar la contraseña para que el usuario pueda ver el error
+    },
+  })
 }
-</script> 
+</script>
+
+<style scoped>
+/* Solo estilos que no se puedan lograr con Tailwind */
+</style> 

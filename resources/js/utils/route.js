@@ -7,8 +7,10 @@ export const route = (name, params = {}) => {
         // Posts
         "admin.posts.index": "/admin/posts",
         "admin.posts.create": "/admin/posts/create",
+        "admin.posts.store": "/admin/posts",
         "admin.posts.edit": (id) => `/admin/posts/${id}/edit`,
         "admin.posts.show": (id) => `/admin/posts/${id}`,
+        "admin.posts.update": (id) => `/admin/posts/${id}`,
         "admin.posts.destroy": (id) => `/admin/posts/${id}`,
         "admin.posts.toggle-featured": (id) =>
             `/admin/posts/${id}/toggle-featured`,
@@ -18,8 +20,10 @@ export const route = (name, params = {}) => {
         // Categories
         "admin.categories.index": "/admin/categories",
         "admin.categories.create": "/admin/categories/create",
+        "admin.categories.store": "/admin/categories",
         "admin.categories.edit": (id) => `/admin/categories/${id}/edit`,
         "admin.categories.show": (id) => `/admin/categories/${id}`,
+        "admin.categories.update": (id) => `/admin/categories/${id}`,
         "admin.categories.destroy": (id) => `/admin/categories/${id}`,
         "admin.categories.toggle-active": (id) =>
             `/admin/categories/${id}/toggle-active`,

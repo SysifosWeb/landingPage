@@ -204,8 +204,10 @@
                     <!-- User menu -->
                     <div class="relative ml-4 flex items-center space-x-4">
                         <!-- Notifications -->
-                        <button
-                            class="p-2 text-gray-400 hover:text-gray-500 relative"
+                        <Link
+                            :href="route('admin.contacts.index')"
+                            class="p-2 text-gray-400 hover:text-gray-500 relative transition-colors"
+                            :title="newContactsCount > 0 ? `${newContactsCount} contactos nuevos` : 'Ver contactos'"
                         >
                             <svg
                                 class="h-6 w-6"
@@ -222,11 +224,11 @@
                             </svg>
                             <span
                                 v-if="newContactsCount > 0"
-                                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse"
                             >
                                 {{ newContactsCount }}
                             </span>
-                        </button>
+                        </Link>
 
                         <!-- User dropdown -->
                         <div class="relative">
@@ -241,14 +243,14 @@
                                         class="text-white font-medium text-sm"
                                     >
                                         {{
-                                            $page.props.auth.user.name
-                                                .charAt(0)
-                                                .toUpperCase()
+                                            $page.props.auth?.user?.name
+                                                ? $page.props.auth.user.name.charAt(0).toUpperCase()
+                                                : 'U'
                                         }}
                                     </span>
                                 </div>
                                 <span class="ml-2 text-gray-700 font-medium">{{
-                                    $page.props.auth.user.name
+                                    $page.props.auth?.user?.name || 'Usuario'
                                 }}</span>
                                 <svg
                                     class="ml-1 h-4 w-4 text-gray-400"
@@ -274,7 +276,7 @@
                                 <div
                                     class="px-4 py-2 text-sm text-gray-500 border-b border-gray-100"
                                 >
-                                    {{ $page.props.auth.user.email }}
+                                    {{ $page.props.auth?.user?.email || 'usuario@ejemplo.com' }}
                                 </div>
                                 <Link
                                     :href="route('logout')"

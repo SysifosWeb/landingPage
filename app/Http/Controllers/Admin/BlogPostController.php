@@ -10,6 +10,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class BlogPostController extends Controller
 {
@@ -22,7 +23,18 @@ class BlogPostController extends Controller
 
         // Filtros
         if ($request->filled('search')) {
-            $query->search($request->search);
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('title', 'like', "%{$search}%")
+                    ->orWhere('excerpt', 'like', "%{$search}%")
+                    ->orWhere('content', 'like', "%{$search}%")
+                    ->orWhereHas('user', function ($userQuery) use ($search) {
+                        $userQuery->where('name', 'like', "%{$search}%");
+                    })
+                    ->orWhereHas('category', function ($categoryQuery) use ($search) {
+                        $categoryQuery->where('name', 'like', "%{$search}%");
+                    });
+            });
         }
 
         if ($request->filled('status')) {
@@ -40,6 +52,13 @@ class BlogPostController extends Controller
         // Ordenamiento
         $sortBy = $request->get('sort_by', 'created_at');
         $sortOrder = $request->get('sort_order', 'desc');
+
+        // Validar campos de ordenamiento
+        $allowedSortFields = ['created_at', 'updated_at', 'title', 'views', 'published_at'];
+        if (!in_array($sortBy, $allowedSortFields)) {
+            $sortBy = 'created_at';
+        }
+
         $query->orderBy($sortBy, $sortOrder);
 
         $posts = $query->paginate(15)->appends($request->query());
@@ -78,12 +97,22 @@ class BlogPostController extends Controller
             'featured_image' => 'nullable|image|max:2048',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:500',
-            'meta_keywords' => 'nullable|array',
+            'meta_keywords' => 'nullable|string',
             'status' => 'required|in:draft,published',
             'featured' => 'boolean',
             'category_id' => 'required|exists:categories,id',
             'published_at' => 'nullable|date',
         ]);
+
+        // Generar slug si no se proporciona
+        if (empty($validated['slug'])) {
+            $validated['slug'] = $this->generateUniqueSlug($validated['title']);
+        }
+
+        // Procesar meta keywords
+        if (!empty($validated['meta_keywords'])) {
+            $validated['meta_keywords'] = array_map('trim', explode(',', $validated['meta_keywords']));
+        }
 
         // Manejar imagen destacada
         if ($request->hasFile('featured_image')) {
@@ -94,7 +123,7 @@ class BlogPostController extends Controller
         $validated['user_id'] = Auth::id();
 
         // Si se publica, establecer fecha de publicación
-        if ($validated['status'] === 'published' && !$validated['published_at']) {
+        if ($validated['status'] === 'published' && empty($validated['published_at'])) {
             $validated['published_at'] = now();
         }
 
@@ -142,12 +171,22 @@ class BlogPostController extends Controller
             'featured_image' => 'nullable|image|max:2048',
             'meta_title' => 'nullable|string|max:255',
             'meta_description' => 'nullable|string|max:500',
-            'meta_keywords' => 'nullable|array',
+            'meta_keywords' => 'nullable|string',
             'status' => 'required|in:draft,published',
             'featured' => 'boolean',
             'category_id' => 'required|exists:categories,id',
             'published_at' => 'nullable|date',
         ]);
+
+        // Generar slug si no se proporciona
+        if (empty($validated['slug'])) {
+            $validated['slug'] = $this->generateUniqueSlug($validated['title'], $post->id);
+        }
+
+        // Procesar meta keywords
+        if (!empty($validated['meta_keywords'])) {
+            $validated['meta_keywords'] = array_map('trim', explode(',', $validated['meta_keywords']));
+        }
 
         // Manejar imagen destacada
         if ($request->hasFile('featured_image')) {
@@ -159,7 +198,7 @@ class BlogPostController extends Controller
         }
 
         // Si se publica por primera vez, establecer fecha de publicación
-        if ($validated['status'] === 'published' && $post->status !== 'published' && !$validated['published_at']) {
+        if ($validated['status'] === 'published' && $post->status !== 'published' && empty($validated['published_at'])) {
             $validated['published_at'] = now();
         }
 
@@ -216,5 +255,31 @@ class BlogPostController extends Controller
         $post->update(['status' => 'draft']);
 
         return back()->with('success', 'Post despublicado exitosamente.');
+    }
+
+    /**
+     * Generar slug único
+     */
+    private function generateUniqueSlug($title, $excludeId = null)
+    {
+        $slug = Str::slug($title);
+        $originalSlug = $slug;
+        $counter = 1;
+
+        $query = BlogPost::where('slug', $slug);
+        if ($excludeId) {
+            $query->where('id', '!=', $excludeId);
+        }
+
+        while ($query->exists()) {
+            $slug = $originalSlug . '-' . $counter;
+            $counter++;
+            $query = BlogPost::where('slug', $slug);
+            if ($excludeId) {
+                $query->where('id', '!=', $excludeId);
+            }
+        }
+
+        return $slug;
     }
 }

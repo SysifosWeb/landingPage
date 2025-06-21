@@ -1,3 +1,146 @@
+<script setup>
+import { ref, reactive, watch, computed } from "vue";
+import { Link, router } from "@inertiajs/vue3";
+import AdminLayout from "../Layout.vue";
+import { route } from "../../../utils/route.js";
+
+const props = defineProps({
+    posts: Object,
+    categories: Array,
+    filters: Object,
+});
+
+const filters = reactive({
+    search: props.filters.search || "",
+    status: props.filters.status || "",
+    category: props.filters.category || "",
+    featured: props.filters.featured || "",
+});
+
+// Detectar si hay filtros activos
+const hasActiveFilters = computed(() => {
+    return filters.search || filters.status || filters.category || filters.featured;
+});
+
+const search = () => {
+    router.get(route("admin.posts.index"), filters, {
+        preserveState: true,
+        replace: true,
+        only: ['posts'],
+    });
+};
+
+const clearFilters = () => {
+    Object.keys(filters).forEach((key) => {
+        filters[key] = "";
+    });
+    search();
+};
+
+// Auto-filtrar cuando cambian los valores
+const autoFilter = () => {
+    search();
+};
+
+// Búsqueda con delay para evitar demasiadas peticiones
+let searchTimeout = null;
+watch(() => filters.search, (newValue) => {
+    if (searchTimeout) {
+        clearTimeout(searchTimeout);
+    }
+    searchTimeout = setTimeout(() => {
+        search();
+    }, 500); // 500ms de delay
+});
+
+const toggleFeatured = (post) => {
+    router.post(
+        route("admin.posts.toggle-featured", post.id),
+        {},
+        {
+            preserveScroll: true,
+            only: ['posts'],
+            onError: (errors) => {
+                console.error('❌ Error en toggle featured:', errors);
+                alert('Error al cambiar el estado destacado del post');
+            }
+        }
+    );
+};
+
+const publishPost = (post) => {
+    router.post(
+        route("admin.posts.publish", post.id),
+        {},
+        {
+            preserveScroll: true,
+            only: ['posts'],
+            onError: (errors) => {
+                console.error('❌ Error al publicar:', errors);
+                alert('Error al publicar el post');
+            }
+        }
+    );
+};
+
+const unpublishPost = (post) => {
+    router.post(
+        route("admin.posts.unpublish", post.id),
+        {},
+        {
+            preserveScroll: true,
+            only: ['posts'],
+            onError: (errors) => {
+                console.error('❌ Error al despublicar:', errors);
+                alert('Error al despublicar el post');
+            }
+        }
+    );
+};
+
+const deletePost = (post) => {
+    if (confirm(`¿Estás seguro de que quieres eliminar el post "${post.title}"?`)) {
+        router.delete(route("admin.posts.destroy", post.id), {
+            only: ['posts'],
+            onError: (errors) => {
+                console.error('❌ Error al eliminar:', errors);
+                alert('Error al eliminar el post');
+            }
+        });
+    }
+};
+
+const getStatusClass = (status) => {
+    return (
+        {
+            draft: "bg-yellow-100 text-yellow-800",
+            published: "bg-green-100 text-green-800",
+        }[status] || "bg-gray-100 text-gray-800"
+    );
+};
+
+const getStatusText = (status) => {
+    return (
+        {
+            draft: "Borrador",
+            published: "Publicado",
+        }[status] || "Desconocido"
+    );
+};
+
+const formatNumber = (number) => {
+    return new Intl.NumberFormat("es-CL").format(number);
+};
+
+const formatDate = (date) => {
+    return new Date(date).toLocaleDateString("es-CL", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+    });
+};
+</script>
+
 <template>
     <AdminLayout page-title="Gestión de Posts">
         <!-- Header con botón de crear -->
@@ -60,9 +203,10 @@
                         >
                         <select
                             v-model="filters.status"
+                            @change="autoFilter"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                         >
-                            <option value="">Todos</option>
+                            <option value="">Todos los estados</option>
                             <option value="draft">Borrador</option>
                             <option value="published">Publicado</option>
                         </select>
@@ -76,9 +220,10 @@
                         >
                         <select
                             v-model="filters.category"
+                            @change="autoFilter"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                         >
-                            <option value="">Todas</option>
+                            <option value="">Todas las categorías</option>
                             <option
                                 v-for="category in categories"
                                 :key="category.id"
@@ -97,29 +242,48 @@
                         >
                         <select
                             v-model="filters.featured"
+                            @change="autoFilter"
                             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
                         >
                             <option value="">Todos</option>
-                            <option value="1">Destacados</option>
+                            <option value="1">Solo destacados</option>
                             <option value="0">No destacados</option>
                         </select>
                     </div>
 
-                    <!-- Botones -->
-                    <div class="md:col-span-4 flex items-center space-x-3">
-                        <button
-                            type="submit"
-                            class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
-                        >
-                            Filtrar
-                        </button>
-                        <button
-                            type="button"
-                            @click="clearFilters"
-                            class="inline-flex items-center px-4 py-2 bg-gray-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150"
-                        >
-                            Limpiar
-                        </button>
+                    <!-- Botones y estadísticas -->
+                    <div class="md:col-span-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <button
+                                type="submit"
+                                class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition ease-in-out duration-150"
+                            >
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                                Filtrar
+                            </button>
+                            <button
+                                type="button"
+                                @click="clearFilters"
+                                v-if="hasActiveFilters"
+                                class="inline-flex items-center px-4 py-2 bg-gray-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 focus:bg-gray-700 active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition ease-in-out duration-150"
+                            >
+                                <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                                Limpiar Filtros
+                            </button>
+                        </div>
+                        
+                        <!-- Estadísticas de filtros -->
+                        <div class="text-sm text-gray-600">
+                            <span class="font-medium">{{ posts.total }}</span> 
+                            {{ posts.total === 1 ? 'post encontrado' : 'posts encontrados' }}
+                            <span v-if="hasActiveFilters" class="ml-2 text-blue-600">
+                                (filtrado)
+                            </span>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -472,102 +636,5 @@
     </AdminLayout>
 </template>
 
-<script setup>
-import { ref, reactive } from "vue";
-import { Link, router } from "@inertiajs/vue3";
-import AdminLayout from "../Layout.vue";
-import { route } from "../../../utils/route.js";
-
-const props = defineProps({
-    posts: Object,
-    categories: Array,
-    filters: Object,
-});
-
-const filters = reactive({
-    search: props.filters.search || "",
-    status: props.filters.status || "",
-    category: props.filters.category || "",
-    featured: props.filters.featured || "",
-});
-
-const search = () => {
-    router.get(route("admin.posts.index"), filters, {
-        preserveState: true,
-        replace: true,
-    });
-};
-
-const clearFilters = () => {
-    Object.keys(filters).forEach((key) => {
-        filters[key] = "";
-    });
-    search();
-};
-
-const toggleFeatured = (post) => {
-    router.post(
-        route("admin.posts.toggle-featured", post.id),
-        {},
-        {
-            preserveScroll: true,
-        }
-    );
-};
-
-const publishPost = (post) => {
-    router.post(
-        route("admin.posts.publish", post.id),
-        {},
-        {
-            preserveScroll: true,
-        }
-    );
-};
-
-const unpublishPost = (post) => {
-    router.post(
-        route("admin.posts.unpublish", post.id),
-        {},
-        {
-            preserveScroll: true,
-        }
-    );
-};
-
-const deletePost = (post) => {
-    if (confirm("¿Estás seguro de que quieres eliminar este post?")) {
-        router.delete(route("admin.posts.destroy", post.id));
-    }
-};
-
-const getStatusClass = (status) => {
-    return (
-        {
-            draft: "bg-yellow-100 text-yellow-800",
-            published: "bg-green-100 text-green-800",
-        }[status] || "bg-gray-100 text-gray-800"
-    );
-};
-
-const getStatusText = (status) => {
-    return (
-        {
-            draft: "Borrador",
-            published: "Publicado",
-        }[status] || "Desconocido"
-    );
-};
-
-const formatNumber = (number) => {
-    return new Intl.NumberFormat("es-CL").format(number);
-};
-
-const formatDate = (date) => {
-    return new Date(date).toLocaleDateString("es-CL", {
-        year: "numeric",
-        month: "short",
-        day: "numeric",
-    });
-};
-</script>
+<style scoped>
+</style>

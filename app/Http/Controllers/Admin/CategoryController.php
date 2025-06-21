@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -57,20 +58,43 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255|unique:categories,slug',
             'description' => 'nullable|string|max:1000',
-            'color' => 'nullable|string|max:7',
+            'color' => 'nullable|string|max:7|regex:/^#[0-9A-Fa-f]{6}$/',
             'active' => 'boolean',
             'sort_order' => 'nullable|integer|min:0',
+        ], [
+            'name.required' => 'El nombre de la categoría es obligatorio.',
+            'name.max' => 'El nombre no puede tener más de 255 caracteres.',
+            'slug.unique' => 'Este slug ya está en uso.',
+            'slug.max' => 'El slug no puede tener más de 255 caracteres.',
+            'description.max' => 'La descripción no puede tener más de 1000 caracteres.',
+            'color.regex' => 'El color debe ser un código hexadecimal válido (ej: #3B82F6).',
+            'sort_order.integer' => 'El orden debe ser un número entero.',
+            'sort_order.min' => 'El orden debe ser mayor o igual a 0.',
         ]);
 
-        // Si no se proporciona sort_order, usar el siguiente disponible
-        if (!isset($validated['sort_order'])) {
-            $validated['sort_order'] = Category::max('sort_order') + 1;
+        // Generar slug si no se proporciona
+        if (empty($validated['slug'])) {
+            $validated['slug'] = $this->generateUniqueSlug($validated['name']);
         }
 
-        Category::create($validated);
+        // Si no se proporciona sort_order, usar el siguiente disponible
+        if (!isset($validated['sort_order']) || $validated['sort_order'] === null) {
+            $validated['sort_order'] = (Category::max('sort_order') ?? 0) + 1;
+        }
 
-        return redirect()->route('admin.categories.index')
-            ->with('success', 'Categoría creada exitosamente.');
+        // Asegurar que active sea boolean
+        $validated['active'] = $validated['active'] ?? true;
+
+        try {
+            Category::create($validated);
+
+            return redirect()->route('admin.categories.index')
+                ->with('success', 'Categoría creada exitosamente.');
+        } catch (\Exception $e) {
+            return back()->withInput()->withErrors([
+                'error' => 'Error al crear la categoría: ' . $e->getMessage()
+            ]);
+        }
     }
 
     /**
@@ -106,15 +130,38 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'slug' => ['nullable', 'string', 'max:255', Rule::unique('categories')->ignore($category->id)],
             'description' => 'nullable|string|max:1000',
-            'color' => 'nullable|string|max:7',
+            'color' => 'nullable|string|max:7|regex:/^#[0-9A-Fa-f]{6}$/',
             'active' => 'boolean',
             'sort_order' => 'nullable|integer|min:0',
+        ], [
+            'name.required' => 'El nombre de la categoría es obligatorio.',
+            'name.max' => 'El nombre no puede tener más de 255 caracteres.',
+            'slug.unique' => 'Este slug ya está en uso.',
+            'slug.max' => 'El slug no puede tener más de 255 caracteres.',
+            'description.max' => 'La descripción no puede tener más de 1000 caracteres.',
+            'color.regex' => 'El color debe ser un código hexadecimal válido (ej: #3B82F6).',
+            'sort_order.integer' => 'El orden debe ser un número entero.',
+            'sort_order.min' => 'El orden debe ser mayor o igual a 0.',
         ]);
 
-        $category->update($validated);
+        // Generar slug si está vacío
+        if (empty($validated['slug'])) {
+            $validated['slug'] = $this->generateUniqueSlug($validated['name'], $category->id);
+        }
 
-        return redirect()->route('admin.categories.index')
-            ->with('success', 'Categoría actualizada exitosamente.');
+        // Asegurar que active sea boolean
+        $validated['active'] = $validated['active'] ?? false;
+
+        try {
+            $category->update($validated);
+
+            return redirect()->route('admin.categories.index')
+                ->with('success', 'Categoría actualizada exitosamente.');
+        } catch (\Exception $e) {
+            return back()->withInput()->withErrors([
+                'error' => 'Error al actualizar la categoría: ' . $e->getMessage()
+            ]);
+        }
     }
 
     /**
@@ -144,5 +191,31 @@ class CategoryController extends Controller
 
         $status = $category->active ? 'activada' : 'desactivada';
         return back()->with('success', "Categoría {$status} exitosamente.");
+    }
+
+    /**
+     * Generar slug único
+     */
+    private function generateUniqueSlug($name, $excludeId = null)
+    {
+        $slug = Str::slug($name);
+        $originalSlug = $slug;
+        $counter = 1;
+
+        $query = Category::where('slug', $slug);
+        if ($excludeId) {
+            $query->where('id', '!=', $excludeId);
+        }
+
+        while ($query->exists()) {
+            $slug = $originalSlug . '-' . $counter;
+            $counter++;
+            $query = Category::where('slug', $slug);
+            if ($excludeId) {
+                $query->where('id', '!=', $excludeId);
+            }
+        }
+
+        return $slug;
     }
 }

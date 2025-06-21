@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\BlogPostController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\ContactFormController;
+use App\Http\Controllers\BlogController;
 use App\Models\BlogPost;
 use App\Models\Category;
 
@@ -33,21 +34,7 @@ Route::get('/portfolio', function () {
 });
 
 // Rutas del blog público
-Route::get('/blog', function () {
-    $posts = BlogPost::with(['user', 'category'])
-        ->published()
-        ->latest('published_at')
-        ->paginate(12);
-
-    $categories = Category::active()->ordered()->get();
-    $featuredPosts = BlogPost::published()->featured()->take(3)->get();
-
-    return Inertia::render('Blog', [
-        'posts' => $posts,
-        'categories' => $categories,
-        'featuredPosts' => $featuredPosts,
-    ]);
-})->name('blog.index');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 
 Route::get('/blog/{slug}', function ($slug) {
     $post = BlogPost::with(['user', 'category'])

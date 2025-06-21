@@ -674,6 +674,11 @@ const markAsRead = (contact) => {
         {},
         {
             preserveScroll: true,
+            only: ['contacts', 'stats'],
+            onError: (errors) => {
+                console.error('❌ Error al marcar como leído:', errors);
+                alert('Error al marcar el contacto como leído');
+            }
         }
     );
 };
@@ -684,6 +689,11 @@ const markAsReplied = (contact) => {
         {},
         {
             preserveScroll: true,
+            only: ['contacts', 'stats'],
+            onError: (errors) => {
+                console.error('❌ Error al marcar como respondido:', errors);
+                alert('Error al marcar el contacto como respondido');
+            }
         }
     );
 };
@@ -694,13 +704,25 @@ const archiveContact = (contact) => {
         {},
         {
             preserveScroll: true,
+            only: ['contacts', 'stats'],
+            onError: (errors) => {
+                console.error('❌ Error al archivar:', errors);
+                alert('Error al archivar el contacto');
+            }
         }
     );
 };
 
 const deleteContact = (contact) => {
-    if (confirm("¿Estás seguro de que quieres eliminar este contacto?")) {
-        router.delete(route("admin.contacts.destroy", contact.id));
+    if (confirm(`¿Estás seguro de que quieres eliminar el contacto de "${contact.name}"?`)) {
+        router.delete(route("admin.contacts.destroy", contact.id), {
+            preserveScroll: true,
+            only: ['contacts', 'stats'],
+            onError: (errors) => {
+                console.error('❌ Error al eliminar:', errors);
+                alert('Error al eliminar el contacto');
+            }
+        });
     }
 };
 
@@ -735,9 +757,15 @@ const bulkAction = (action) => {
                 contacts: selectedContacts.value,
             },
             {
+                preserveScroll: true,
+                only: ['contacts', 'stats'],
                 onSuccess: () => {
                     selectedContacts.value = [];
                 },
+                onError: (errors) => {
+                    console.error('❌ Error en acción masiva:', errors);
+                    alert('Error al realizar la acción masiva');
+                }
             }
         );
     }

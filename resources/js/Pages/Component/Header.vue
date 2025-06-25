@@ -69,13 +69,13 @@ onUnmounted(() => {
                     >
                         Servicios
                     </Link>
-                    <Link 
+                    <!-- <Link 
                         href="/portfolio" 
                         class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
                         @click="closeMenu"
                     >
                         Portfolio
-                    </Link>
+                    </Link> -->
                     <Link 
                         href="/blog" 
                         class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"

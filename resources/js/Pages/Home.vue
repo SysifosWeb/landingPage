@@ -2,7 +2,19 @@
 import { Head } from "@inertiajs/vue3";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
-import heroImage from "../../img/webDesign_min.webp";
+import heroImage from "../../img/home_image2.png";
+import react from "../../img/react.png";
+import vue from "../../img/vue.js.png";
+import laravel from "../../img/laravel.png";
+import node from "../../img/Node.js.png";
+import flutter from "../../img/flutter.png";
+import pc from "../../img/pc.png";
+import iphone from "../../img/iphone.png";
+import building from "../../img/building.png";
+import analysis from "../../img/analysis.png";
+import design from "../../img/design.png";
+import development from "../../img/development.png";
+import delivery from "../../img/delivery.png";
 </script>
 
 <template>
@@ -35,12 +47,8 @@ import heroImage from "../../img/webDesign_min.webp";
                         </div>
                     </div>
                     <div class="flex justify-center lg:justify-end">
-                        <div class="relative">
-                            <div class="w-80 h-80 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full opacity-20 absolute -top-4 -left-4"></div>
-                            <div class="w-72 h-72 bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl flex items-center justify-center relative z-10 border border-white/20">
-                                <img :src="heroImage" alt="Desarrollo Web Profesional" class="w-64 h-64 object-cover rounded-xl" />
-                            </div>
-                        </div>
+   
+                               <img :src="heroImage" alt="Desarrollo Web Profesional" class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-xl" />
                     </div>
                 </div>
             </div>
@@ -60,11 +68,7 @@ import heroImage from "../../img/webDesign_min.webp";
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
+                        <img :src="pc" alt="Desarrollo Web" class="w-12 h-12 mb-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Desarrollo Web</h3>
                         <p class="text-gray-600 mb-6">
                             Sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta plataformas complejas.
@@ -77,11 +81,7 @@ import heroImage from "../../img/webDesign_min.webp";
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
+                        <img :src="iphone" alt="Apps Móviles" class="w-12 h-12 mb-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Apps Móviles</h3>
                         <p class="text-gray-600 mb-6">
                             Aplicaciones nativas e híbridas para iOS y Android con experiencia de usuario excepcional.
@@ -94,11 +94,7 @@ import heroImage from "../../img/webDesign_min.webp";
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                            </svg>
-                        </div>
+                        <img :src="building" alt="Sistemas Empresariales" class="w-12 h-12 mb-6">
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Sistemas Empresariales</h3>
                         <p class="text-gray-600 mb-6">
                             ERP, CRM y sistemas personalizados que optimizan los procesos de tu empresa.
@@ -127,39 +123,27 @@ import heroImage from "../../img/webDesign_min.webp";
 
                 <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-16 h-16 bg-blue-500 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-lg">React</span>
-                        </div>
+                        <img :src="react" alt="React" class="w-20 h-20">
                         <span class="text-sm font-medium text-gray-700">React</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-16 h-16 bg-green-500 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-lg">Vue</span>
-                        </div>
+                        <img :src="vue" alt="Vue" class="w-20 h-20">
                         <span class="text-sm font-medium text-gray-700">Vue.js</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-16 h-16 bg-red-500 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-lg">L</span>
-                        </div>
+                        <img :src="laravel" alt="Laravel" class="w-20 h-20">
                         <span class="text-sm font-medium text-gray-700">Laravel</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-16 h-16 bg-green-600 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-lg">Node</span>
-                        </div>
+                        <img :src="node" alt="Node" class="w-20 h-20">
                         <span class="text-sm font-medium text-gray-700">Node.js</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-16 h-16 bg-blue-400 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-lg">RN</span>
-                        </div>
+                        <img :src="react" alt="React Native" class="w-20 h-20">
                         <span class="text-sm font-medium text-gray-700">React Native</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-16 h-16 bg-blue-600 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-lg">FL</span>
-                        </div>
+                        <img :src="flutter" alt="Flutter" class="w-20 h-20">
                         <span class="text-sm font-medium text-gray-700">Flutter</span>
                     </div>
                 </div>
@@ -180,8 +164,8 @@ import heroImage from "../../img/webDesign_min.webp";
 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">1</span>
+                        <div class="w-20 h-20 flex items-center bg-blue-300 rounded-full justify-center mx-auto mb-6">
+                            <img :src="analysis" alt="Análisis" class="w-12 h-12">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Análisis</h3>
                         <p class="text-gray-600">
@@ -189,8 +173,8 @@ import heroImage from "../../img/webDesign_min.webp";
                         </p>
                     </div>
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">2</span>
+                        <div class="w-20 h-20 flex items-center bg-orange-300 rounded-full justify-center mx-auto mb-6">
+                            <img :src="design" alt="Diseño" class="w-12 h-12">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Diseño</h3>
                         <p class="text-gray-600">
@@ -198,8 +182,8 @@ import heroImage from "../../img/webDesign_min.webp";
                         </p>
                     </div>
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">3</span>
+                        <div class="w-20 h-20 flex items-center bg-cyan-500 rounded-full justify-center mx-auto mb-6">
+                            <img :src="development" alt="Desarrollo" class="w-12 h-12">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Desarrollo</h3>
                         <p class="text-gray-600">
@@ -207,8 +191,8 @@ import heroImage from "../../img/webDesign_min.webp";
                         </p>
                     </div>
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">4</span>
+                        <div class="w-20 h-20 flex items-center bg-blue-500 rounded-full justify-center mx-auto mb-6">
+                            <img :src="delivery" alt="Entrega" class="w-12 h-12">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Entrega</h3>
                         <p class="text-gray-600">
@@ -261,7 +245,6 @@ import heroImage from "../../img/webDesign_min.webp";
                             </div>
                             <div>
                                 <p class="font-semibold text-gray-900">María Rodríguez</p>
-                                <p class="text-gray-500">CEO, TechStart</p>
                             </div>
                         </div>
                     </div>
@@ -295,7 +278,6 @@ import heroImage from "../../img/webDesign_min.webp";
                             </div>
                             <div>
                                 <p class="font-semibold text-gray-900">Carlos López</p>
-                                <p class="text-gray-500">Fundador, EcoShop</p>
                             </div>
                         </div>
                     </div>
@@ -329,7 +311,6 @@ import heroImage from "../../img/webDesign_min.webp";
                             </div>
                             <div>
                                 <p class="font-semibold text-gray-900">Ana Silva</p>
-                                <p class="text-gray-500">Gerente, InnovateCorp</p>
                             </div>
                         </div>
                     </div>

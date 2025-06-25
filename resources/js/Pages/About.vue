@@ -2,6 +2,13 @@
 import { Head } from "@inertiajs/vue3";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
+import diego from "../../img/diego.png";
+import karen from "../../img/karen.png";
+import osman from "../../img/osman.png";
+import team from "../../img/team.jpg";
+import mision from "../../img/mision.png";
+import vision from "../../img/vision.png";
+import valores from "../../img/valores.png";
 </script>
 
 <template>
@@ -31,9 +38,7 @@ import Footer from "./Component/Footer.vue";
                             Nuestra Historia
                         </h2>
                         <p class="text-lg text-gray-600 mb-6">
-                            Fundada en 2020, SysifosWeb nació de la visión de democratizar el acceso a la tecnología de vanguardia. 
-                            Comenzamos como un pequeño equipo de desarrolladores apasionados y hemos crecido hasta convertirnos en 
-                            una empresa líder en desarrollo de software.
+                            Fundada en 2024, SysifosWeb nació de la visión de democratizar el acceso a la tecnología de vanguardia. 
                         </p>
                         <p class="text-lg text-gray-600 mb-6">
                             Nuestro nombre, inspirado en el mito de Sísifo, refleja nuestra perseverancia y dedicación para superar 
@@ -53,8 +58,7 @@ import Footer from "./Component/Footer.vue";
                     <div class="relative">
                         <div class="w-full h-96 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center">
                             <div class="text-center">
-                                <div class="text-6xl mb-4">🚀</div>
-                                <p class="text-gray-600 font-medium">Innovación Constante</p>
+                                <img :src="team" alt="SysifosWeb" class="w-full h-full object-cover rounded-2xl">
                             </div>
                         </div>
                     </div>
@@ -73,10 +77,8 @@ import Footer from "./Component/Footer.vue";
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img :src="mision" alt="Misión" class="w-16 h-16">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Misión</h3>
                         <p class="text-gray-600">
@@ -86,11 +88,8 @@ import Footer from "./Component/Footer.vue";
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-                            </svg>
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img :src="vision" alt="Visión" class="w-16 h-16">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Visión</h3>
                         <p class="text-gray-600">
@@ -100,10 +99,8 @@ import Footer from "./Component/Footer.vue";
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <img :src="valores" alt="Valores" class="w-16 h-16">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Valores</h3>
                         <p class="text-gray-600">
@@ -129,9 +126,7 @@ import Footer from "./Component/Footer.vue";
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <div class="w-32 h-32 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-white text-2xl font-bold">DA</span>
-                        </div>
+                        <img :src="diego" alt="Diego Araya" class="w-32 h-32 rounded-full mx-auto mb-4">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Diego Araya</h3>
                         <p class="text-blue-600 font-medium mb-2">Full Stack Developer</p>
                         <p class="text-gray-600 text-sm">
@@ -140,9 +135,7 @@ import Footer from "./Component/Footer.vue";
                     </div>
 
                     <div class="text-center">
-                        <div class="w-32 h-32 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-white text-2xl font-bold">KG</span>
-                        </div>
+                        <img :src="karen" alt="Karen Godoy" class="w-32 h-32 rounded-full mx-auto mb-4">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Karen Godoy</h3>
                         <p class="text-green-600 font-medium mb-2">DBA & Frontend Developer</p>
                         <p class="text-gray-600 text-sm">
@@ -151,9 +144,7 @@ import Footer from "./Component/Footer.vue";
                     </div>
 
                     <div class="text-center">
-                        <div class="w-32 h-32 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <span class="text-white text-2xl font-bold">OA</span>
-                        </div>
+                        <img :src="osman" alt="Osman Ahumada" class="w-32 h-32 rounded-full mx-auto mb-4">
                         <h3 class="text-xl font-semibold text-gray-900 mb-2">Osman Ahumada</h3>
                         <p class="text-purple-600 font-medium mb-2">Web & Mobile Developer</p>
                         <p class="text-gray-600 text-sm">

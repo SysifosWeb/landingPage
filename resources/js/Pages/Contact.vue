@@ -185,7 +185,7 @@ const closeAlert = () => {
                                             'w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors duration-200',
                                             $page.props.errors?.phone ? 'border-red-500' : 'border-gray-300'
                                         ]"
-                                        placeholder="+56 9 1234 5678"
+                                        placeholder="+56 9 4910 9970"
                                     />
                                     <p v-if="$page.props.errors?.phone" class="mt-1 text-sm text-red-600">{{ $page.props.errors.phone }}</p>
                                 </div>
@@ -315,7 +315,7 @@ const closeAlert = () => {
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-900">Teléfono</p>
-                                    <p class="text-gray-600">+56 9 1234 5678</p>
+                                    <p class="text-gray-600">+56 9 4910 9970</p>
                                 </div>
                             </div>
 
@@ -328,7 +328,7 @@ const closeAlert = () => {
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-900">Ubicación</p>
-                                    <p class="text-gray-600">Santiago, Chile</p>
+                                    <p class="text-gray-600">La Serena, Chile</p>
                                 </div>
                             </div>
 

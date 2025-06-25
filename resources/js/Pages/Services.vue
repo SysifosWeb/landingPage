@@ -2,6 +2,13 @@
 import { Head } from "@inertiajs/vue3";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
+import pc from "../../img/pc.png";
+import iphone from "../../img/iphone.png";
+import building from "../../img/building.png";
+import analysis from "../../img/analysis.png";
+import design from "../../img/design.png";
+import development from "../../img/development.png";
+import delivery from "../../img/delivery.png";
 </script>
 
 <template>
@@ -28,10 +35,8 @@ import Footer from "./Component/Footer.vue";
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
                     <!-- Desarrollo Web -->
                     <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                            <img :src="pc" alt="Desarrollo Web" class="w-12 h-12">
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Desarrollo Web</h3>
                         <p class="text-gray-600 mb-6">
@@ -73,10 +78,8 @@ import Footer from "./Component/Footer.vue";
 
                     <!-- Aplicaciones Móviles -->
                     <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-green-600 rounded-xl flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                            </svg>
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                            <img :src="iphone" alt="Aplicaciones Móviles" class="w-12 h-12">
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Aplicaciones Móviles</h3>
                         <p class="text-gray-600 mb-6">
@@ -118,10 +121,8 @@ import Footer from "./Component/Footer.vue";
 
                     <!-- Sistemas Empresariales -->
                     <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-16 h-16 bg-purple-600 rounded-xl flex items-center justify-center mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                            </svg>
+                        <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                            <img :src="building" alt="Sistemas Empresariales" class="w-12 h-12">
                         </div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-4">Sistemas Empresariales</h3>
                         <p class="text-gray-600 mb-6">
@@ -178,8 +179,8 @@ import Footer from "./Component/Footer.vue";
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">1</span>
+                        <div class="w-20 h-20 rounded-full bg-blue-200 flex items-center justify-center mx-auto mb-6">
+                            <img :src="analysis" alt="Análisis y Planificación" class="w-12 h-12">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Análisis y Planificación</h3>
                         <p class="text-gray-600">
@@ -188,9 +189,9 @@ import Footer from "./Component/Footer.vue";
                     </div>
 
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">2</span>
-                        </div>
+                        <div class="w-20 h-20 rounded-full bg-orange-300 flex items-center justify-center mx-auto mb-6">
+                            <img :src="design" alt="Diseño UX/UI" class="w-12 h-12">
+                        </div>  
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Diseño UX/UI</h3>
                         <p class="text-gray-600">
                             Creamos wireframes, prototipos y diseños que reflejan la identidad de tu marca y optimizan la experiencia del usuario.
@@ -198,8 +199,8 @@ import Footer from "./Component/Footer.vue";
                     </div>
 
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">3</span>
+                        <div class="w-20 h-20 rounded-full bg-cyan-500 flex items-center justify-center mx-auto mb-6">
+                            <img :src="development" alt="Desarrollo Ágil" class="w-12 h-12">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Desarrollo Ágil</h3>
                         <p class="text-gray-600">
@@ -208,8 +209,8 @@ import Footer from "./Component/Footer.vue";
                     </div>
 
                     <div class="text-center">
-                        <div class="w-20 h-20 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-white text-2xl font-bold">4</span>
+                        <div class="w-20 h-20 rounded-full bg-blue-500 flex items-center justify-center mx-auto mb-6">
+                            <img :src="delivery" alt="Lanzamiento y Soporte" class="w-12 h-12">
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Lanzamiento y Soporte</h3>
                         <p class="text-gray-600">

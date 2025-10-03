@@ -314,6 +314,7 @@ const copyToClipboard = async () => {
 
 <style scoped>
 /* Estilos para el contenido del artículo */
+@reference "../../css/app.css";
 :deep(.article-content) {
     @apply text-gray-800 leading-relaxed;
 }

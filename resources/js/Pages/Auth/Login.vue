@@ -158,4 +158,4 @@ const submit = () => {
 
 <style scoped>
 /* Solo estilos que no se puedan lograr con Tailwind */
-</style> 
+</style>

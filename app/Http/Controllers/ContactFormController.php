@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Mail\NewContactNotification;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Log;
 
 class ContactFormController extends Controller
 {
@@ -55,7 +58,7 @@ class ContactFormController extends Controller
         }
 
         // Crear el contacto
-        Contact::create([
+        $contact = Contact::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
             'phone' => $validated['phone'],
@@ -69,6 +72,27 @@ class ContactFormController extends Controller
                 'timestamp' => now()->toISOString(),
             ],
         ]);
+
+        // Enviar notificación por correo
+        try {
+            $notificationEmail = config('mail.notification_email') ?? config('mail.from.address');
+
+            if ($notificationEmail) {
+                Mail::to($notificationEmail)
+                    ->send(new NewContactNotification($contact));
+
+                Log::info('Correo de contacto enviado', [
+                    'contact_id' => $contact->id,
+                    'to' => $notificationEmail,
+                ]);
+            }
+        } catch (\Exception $e) {
+            // Registrar el error pero no interrumpir el flujo
+            Log::error('Error al enviar correo de contacto', [
+                'contact_id' => $contact->id,
+                'error' => $e->getMessage(),
+            ]);
+        }
 
         // Incrementar rate limit
         RateLimiter::hit($key, 3600); // 1 hora

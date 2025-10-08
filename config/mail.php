@@ -113,4 +113,16 @@ return [
         'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Notification Email Address
+    |--------------------------------------------------------------------------
+    |
+    | This is the email address where contact form notifications will be sent.
+    | If not set, it will default to the 'from' address.
+    |
+    */
+
+    'notification_email' => env('MAIL_NOTIFICATION_EMAIL'),
+
 ];

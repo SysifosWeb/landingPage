@@ -1,66 +1,304 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 SysifosWeb - Landing Page + Blog + Admin Panel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Sistema completo de landing page empresarial con blog integrado y panel de administración robusto.**
 
-## About Laravel
+## ✨ Características Principales
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🌐 Landing Page Empresarial
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   **Diseño moderno y responsive** con Tailwind CSS
+-   **Header transparente/azul** que cambia con el scroll
+-   **Secciones optimizadas**: Home, Nosotros, Servicios, Portfolio, Contacto
+-   **Formulario de contacto funcional** con validación
+-   **SEO optimizada** con meta tags dinámicos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 📝 Blog Integrado
 
-## Learning Laravel
+-   **Sistema de posts** con categorías y etiquetas
+-   **Editor de contenido** con soporte HTML
+-   **Posts destacados** y sistema de vistas
+-   **Categorización avanzada** con colores personalizados
+-   **URLs amigables** (SEO friendly)
+-   **Paginación automática**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🔐 Panel de Administración Seguro
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   **Login robusto** con protección anti-fuerza bruta
+-   **Dashboard completo** con estadísticas en tiempo real
+-   **Gestión de posts** (crear, editar, publicar, destacar)
+-   **Gestión de categorías** con activación/desactivación
+-   **Gestión de contactos** con estados y acciones en lote
+-   **Sistema de roles** (Admin/Editor)
+-   **Logging de seguridad** completo
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tecnologías Utilizadas
 
-## Laravel Sponsors
+### Backend
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+-   **Laravel 11** - Framework PHP moderno
+-   **Inertia.js** - Puente entre Laravel y Vue.js
+-   **SQLite** - Base de datos (desarrollo)
+-   **Eloquent ORM** - Manejo de base de datos
 
-### Premium Partners
+### Frontend
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+-   **Vue.js 3** - Framework JavaScript reactivo
+-   **Tailwind CSS** - Framework CSS utility-first
+-   **Vite** - Build tool y servidor de desarrollo
+-   **Heroicons** - Iconografía
 
-## Contributing
+### Herramientas
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   **pnpm** - Gestor de paquetes frontend
+-   **Composer** - Gestor de dependencias PHP
+-   **Artisan** - CLI de Laravel
 
-## Code of Conduct
+## 🚀 Instalación y Configuración
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Prerrequisitos
 
-## Security Vulnerabilities
+-   PHP 8.2 o superior
+-   Node.js 18 o superior
+-   pnpm (recomendado) o npm
+-   Composer
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Instalación
 
-## License
+1. **Clonar el repositorio**
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+git clone <repository-url>
+cd landingPage
+```
+
+2. **Instalar dependencias PHP**
+
+```bash
+composer install
+```
+
+3. **Instalar dependencias Node.js**
+
+```bash
+pnpm install
+```
+
+4. **Configurar entorno**
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+5. **Configurar base de datos**
+
+```bash
+php artisan migrate --seed
+```
+
+6. **Crear usuario administrador**
+
+```bash
+php artisan admin:create-user
+```
+
+### Desarrollo
+
+**Terminal 1 - Laravel:**
+
+```bash
+php artisan serve
+```
+
+**Terminal 2 - Vite:**
+
+```bash
+pnpm run dev
+```
+
+**Acceso:**
+
+-   **Sitio web**: http://localhost:8000
+-   **Panel admin**: http://localhost:8000/admin
+-   **Login**: http://localhost:8000/login
+
+## 🔐 Credenciales por Defecto
+
+### Administrador
+
+-   **Email**: admin@sysifosweb.cl
+-   **Contraseña**: admin123
+-   **Permisos**: Completos (crear, editar, eliminar)
+
+### Editor
+
+-   **Email**: editor@sysifosweb.cl
+-   **Contraseña**: editor123
+-   **Permisos**: Gestión de contenido (sin eliminar)
+
+## 📊 Características de Seguridad
+
+### 🛡️ Protección de Login
+
+-   **Rate Limiting**: Máximo 5 intentos por IP cada 5 minutos
+-   **Bloqueo de cuentas**: Automático tras 5 intentos fallidos (30 min)
+-   **Logging completo**: Registro de todos los intentos de acceso
+-   **Verificación de estado**: Cuentas activas y desbloqueadas
+-   **Sesiones seguras**: Regeneración de tokens
+
+### 👥 Sistema de Roles
+
+-   **Admin**: Acceso completo al sistema
+-   **Editor**: Gestión de contenido sin permisos de eliminación
+-   **Middleware**: Protección de rutas administrativas
+
+## 📁 Estructura del Proyecto
+
+```
+landingPage/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── Admin/           # Controladores del panel admin
+│   │   ├── Auth/            # Autenticación
+│   │   └── ...
+│   ├── Models/              # Modelos Eloquent
+│   └── Console/Commands/    # Comandos artisan personalizados
+├── resources/
+│   ├── js/Pages/
+│   │   ├── Admin/           # Componentes Vue del admin
+│   │   ├── Auth/            # Login
+│   │   ├── Component/       # Componentes reutilizables
+│   │   └── ...              # Páginas públicas
+│   └── css/
+├── routes/
+│   └── web.php              # Definición de rutas
+└── database/
+    ├── migrations/          # Migraciones de BD
+    └── seeders/             # Datos de prueba
+```
+
+## 🎯 Funcionalidades Implementadas
+
+### ✅ Landing Page
+
+-   [x] Header transparente/azul con scroll
+-   [x] Secciones responsivas (Home, About, Services, Portfolio, Contact)
+-   [x] Formulario de contacto funcional
+-   [x] Footer informativo
+-   [x] Navegación fluida
+
+### ✅ Blog
+
+-   [x] Lista de posts con paginación
+-   [x] Vista individual de posts
+-   [x] Categorías con filtrado
+-   [x] Posts destacados
+-   [x] Contador de vistas
+-   [x] SEO optimizado
+
+### ✅ Panel de Administración
+
+-   [x] Dashboard con estadísticas
+-   [x] Gestión completa de posts
+-   [x] Gestión de categorías
+-   [x] Gestión de contactos
+-   [x] Sistema de autenticación robusto
+-   [x] Roles y permisos
+
+## 🔧 Comandos Útiles
+
+### Desarrollo
+
+```bash
+# Servidor de desarrollo
+php artisan serve
+
+# Compilar assets (desarrollo)
+pnpm run dev
+
+# Compilar assets (producción)
+pnpm run build
+
+# Migraciones
+php artisan migrate
+php artisan migrate:fresh --seed
+```
+
+### Administración
+
+```bash
+# Crear usuario admin
+php artisan admin:create-user
+
+# Limpiar cache
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+
+# Ver rutas
+php artisan route:list
+```
+
+### Base de Datos
+
+```bash
+# Crear migración
+php artisan make:migration nombre_migracion
+
+# Crear modelo con migración
+php artisan make:model NombreModelo -m
+
+# Crear seeder
+php artisan make:seeder NombreSeeder
+```
+
+## 📈 Próximas Mejoras Sugeridas
+
+### 🎨 UX/UI
+
+-   [ ] Animaciones avanzadas con GSAP
+-   [ ] Modo oscuro/claro
+-   [ ] Mejoras en accesibilidad (WCAG)
+
+### 📝 Blog
+
+-   [ ] Sistema de comentarios
+-   [ ] Tags/etiquetas para posts
+-   [ ] Búsqueda avanzada
+-   [ ] Newsletter/suscripciones
+
+### 🔐 Seguridad
+
+-   [ ] Autenticación de dos factores (2FA)
+-   [ ] Logs de auditoría avanzados
+-   [ ] Backup automático de BD
+
+### 📊 Analytics
+
+-   [ ] Integración con Google Analytics
+-   [ ] Dashboard de métricas avanzado
+-   [ ] Reportes automáticos
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
+
+## 📞 Contacto
+
+**SysifosWeb** - Desarrollo Web Profesional
+
+-   📧 Email: contacto@sysifosweb.cl
+-   🌐 Web: https://sysifosweb.cl
+-   📱 WhatsApp: +56 9 XXXX XXXX
+
+---
+
+⭐ **¡Dale una estrella si te gusta el proyecto!** ⭐

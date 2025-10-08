@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
+
 
 class BlogPostController extends Controller
 {
@@ -62,6 +64,14 @@ class BlogPostController extends Controller
         $query->orderBy($sortBy, $sortOrder);
 
         $posts = $query->paginate(15)->appends($request->query());
+        
+        // Transformar el campo featured_image para incluir la URL completa
+        $posts->getCollection()->transform(function ($post) {
+            if ($post->featured_image) {
+                $post->featured_image = Storage::url($post->featured_image);
+            }
+            return $post;
+        });
 
         $categories = Category::active()->ordered()->get();
 
@@ -281,5 +291,5 @@ class BlogPostController extends Controller
         }
 
         return $slug;
-    }
+    }   
 }

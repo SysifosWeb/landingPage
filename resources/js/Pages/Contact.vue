@@ -241,7 +241,7 @@ const closeAlert = () => {
                             </div>
 
                             <!-- Terms and Conditions -->
-                            <div class="flex items-start">
+                            <!-- <div class="flex items-start">
                                 <div class="flex items-center h-5">
                                     <input 
                                         v-model="form.acceptTerms"
@@ -262,7 +262,7 @@ const closeAlert = () => {
                                     </label>
                                     <p v-if="$page.props.errors?.acceptTerms" class="mt-1 text-red-600">{{ $page.props.errors.acceptTerms }}</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <!-- Submit Button -->
                             <div class="flex justify-center">
@@ -303,7 +303,7 @@ const closeAlert = () => {
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-900">Email</p>
-                                    <p class="text-gray-600">info@sysifosweb.com</p>
+                                    <p class="text-gray-600">contacto@sysifosweb.cl</p>
                                 </div>
                             </div>
 
@@ -328,7 +328,7 @@ const closeAlert = () => {
                                 </div>
                                 <div>
                                     <p class="font-semibold text-gray-900">Ubicación</p>
-                                    <p class="text-gray-600">La Serena, Chile</p>
+                                    <p class="text-gray-600">Coquimbo, Chile</p>
                                 </div>
                             </div>
 
@@ -350,7 +350,7 @@ const closeAlert = () => {
                             <h4 class="text-lg font-semibold text-gray-900 mb-4">Contacto Directo</h4>
                             <div class="space-y-3">
                                 <a 
-                                    href="https://wa.me/56912345678" 
+                                    href="https://wa.me/56949109970" 
                                     target="_blank"
                                     class="flex items-center p-4 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200"
                                 >
@@ -360,7 +360,7 @@ const closeAlert = () => {
                                     <span class="font-medium">Chatear por WhatsApp</span>
                                 </a>
                                 
-                                <a 
+                                <!-- <a 
                                     href="mailto:info@sysifosweb.com"
                                     class="flex items-center p-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors duration-200"
                                 >
@@ -368,7 +368,7 @@ const closeAlert = () => {
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                     </svg>
                                     <span class="font-medium">Enviar Email Directo</span>
-                                </a>
+                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -460,7 +460,7 @@ const closeAlert = () => {
                         </div>
 
                         <!-- Call to Action -->
-                        <div class="border-t border-blue-200 pt-6 mt-6">
+                        <!-- <div class="border-t border-blue-200 pt-6 mt-6">
                             <a 
                                 href="/portfolio"
                                 class="flex items-center justify-center p-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all duration-200 transform hover:scale-105"
@@ -470,7 +470,7 @@ const closeAlert = () => {
                                 </svg>
                                 <span class="font-medium">Ver Nuestros Proyectos</span>
                             </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

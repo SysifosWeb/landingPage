@@ -109,16 +109,7 @@
               {{ form.processing ? 'Iniciando sesión...' : 'Iniciar Sesión' }}
             </button>
           </div>
-        </form>
-
-        <!-- Información de prueba -->
-        <div class="mt-6 p-4 bg-blue-900/30 rounded-lg border border-blue-400/30">
-          <h3 class="text-sm font-medium text-blue-200 mb-2">Credenciales de prueba:</h3>
-          <div class="text-xs text-blue-300 space-y-1">
-            <div><strong>Admin:</strong> admin@sysifosweb.cl / admin123</div>
-            <div><strong>Editor:</strong> editor@sysifosweb.cl / editor123</div>
-          </div>
-        </div>
+        </form>        
       </div>
 
       <!-- Footer -->
@@ -142,8 +133,8 @@ defineProps({
 const showPassword = ref(false)
 
 const form = useForm({
-  email: 'admin@sysifosweb.cl',
-  password: 'admin123',
+  email: '',
+  password: '',
   remember: false
 })
 

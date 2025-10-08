@@ -3,6 +3,7 @@ import { ref, reactive, watch, computed } from "vue";
 import { Link, router } from "@inertiajs/vue3";
 import AdminLayout from "../Layout.vue";
 import { route } from "../../../utils/route.js";
+import delivery from "../../../../img/delivery.png";
 
 const props = defineProps({
     posts: Object,
@@ -109,7 +110,27 @@ const deletePost = (post) => {
         });
     }
 };
-
+const getImageUrl = (filename) => {
+   var urlImage = ''
+    router.get(
+        route("blog.image", filename),
+        {},
+        {
+            preserveScroll: true,
+            onSuccess: (response) => {
+                console.log('✅ URL de imagen:', response);
+                urlImage = response;
+            },
+            onError: (errors) => {
+                 urlImage = response.url;
+                console.error('❌ Error al obtener URL de imagen:', errors);
+               
+            }
+        }
+    );
+    // url = route("blog.image", filename);
+    return urlImage;
+}
 const getStatusClass = (status) => {
     return (
         {
@@ -338,8 +359,7 @@ const formatDate = (date) => {
                                     <div class="flex-shrink-0 h-12 w-12">
                                         <img
                                             :src="
-                                                post.featured_image_url ||
-                                                '/images/blog-default.jpg'
+                                                post.featured_image ? post.featured_image : delivery
                                             "
                                             :alt="post.title"
                                             class="h-12 w-12 rounded-lg object-cover"

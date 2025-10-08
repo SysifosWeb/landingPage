@@ -82,7 +82,7 @@ const getPostUrl = (post) => {
 };
 
 const getImageUrl = (post) => {
-    return post.featured_image_url || '/img/blog-default.jpg';
+    return post.featured_image || '/img/blog-default.jpg';
 };
 </script>
 

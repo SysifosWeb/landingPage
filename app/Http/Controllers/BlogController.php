@@ -7,6 +7,8 @@ use App\Models\BlogPost;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
 
 class BlogController extends Controller
 {
@@ -37,11 +39,12 @@ class BlogController extends Controller
         }
 
         $posts = $query->paginate(9);
-
+        
         // Obtener categorías con conteo de posts
         $categories = Category::withCount(['posts' => function ($query) {
             $query->where('status', 'published');
         }])->get();
+        
 
         // Obtener posts destacados
         $featuredPosts = BlogPost::with(['category', 'user'])
@@ -50,7 +53,24 @@ class BlogController extends Controller
             ->orderBy('published_at', 'desc')
             ->limit(3)
             ->get();
-
+            
+        // Transformar el campo featured_image en featuredPosts
+        $featuredPosts->transform(function ($post) {
+            if ($post->featured_image) {
+                $post->featured_image = Storage::url($post->featured_image);
+            }
+            return $post;
+        });
+            
+        // Transformar el campo featured_image en posts
+        $posts->getCollection()->transform(function ($post) {
+            if ($post->featured_image) {
+                $post->featured_image = Storage::url($post->featured_image);
+            }
+            return $post;
+        });
+            
+            
         return Inertia::render('Blog', [
             'posts' => $posts,
             'categories' => $categories,
@@ -60,6 +80,8 @@ class BlogController extends Controller
             ],
         ]);
     }
+
+   
 
     /**
      * Show the form for creating a new resource.

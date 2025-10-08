@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\BlogController;
 use App\Models\BlogPost;
 use App\Models\Category;
+use Illuminate\Support\Facades\Storage;
 
 // Rutas públicas
 Route::get('/', function () {
@@ -35,7 +36,6 @@ Route::get('/contacto', function () {
 
 // Rutas del blog público
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
-
 Route::get('/blog/{slug}', function ($slug) {
     $post = BlogPost::with(['user', 'category'])
         ->where('slug', $slug)
@@ -44,12 +44,25 @@ Route::get('/blog/{slug}', function ($slug) {
 
     $post->incrementViews();
 
+    // Transformar el campo featured_image en el post principal
+    if ($post->featured_image) {
+        $post->featured_image = Storage::url($post->featured_image);
+    }
+
     $relatedPosts = BlogPost::published()
         ->where('category_id', $post->category_id)
         ->where('id', '!=', $post->id)
         ->take(3)
         ->get();
-
+    
+    // Transformar el campo featured_image en los posts relacionados
+    $relatedPosts->transform(function ($relatedPost) {
+        if ($relatedPost->featured_image) {
+            $relatedPost->featured_image = Storage::url($relatedPost->featured_image);
+        }
+        return $relatedPost;
+    });
+       
     return Inertia::render('BlogPost', [
         'post' => $post,
         'relatedPosts' => $relatedPosts,

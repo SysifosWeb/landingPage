@@ -9,14 +9,14 @@ const props = defineProps({
     post: Object,
     relatedPosts: Array
 });
-
+console.log(props.post);
 const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('es-ES', options);
 };
 
 const getImageUrl = (post) => {
-    return post?.featured_image_url || '/img/blog-default.jpg';
+    return post?.featured_image || '/img/blog-default.jpg';
 };
 
 const getPostUrl = (post) => {
@@ -150,7 +150,7 @@ const copyToClipboard = async () => {
         <article class="py-16">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Featured Image -->
-                <div v-if="post.featured_image_url" class="mb-12">
+                <div v-if="post.featured_image" class="mb-12">
                     <img :src="getImageUrl(post)" :alt="post.title" class="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg" />
                 </div>
                 

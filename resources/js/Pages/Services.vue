@@ -165,7 +165,7 @@ import delivery from "../../img/delivery.png";
             <!-- Software a Medida -->
             <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
                 <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                    <img :src="software" alt="Software a Medida" class="w-12 h-12">
+                    <img :src="design" alt="Software a Medida" class="w-12 h-12">
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Software a Medida</h3>
                 <p class="text-gray-600 mb-6">
@@ -202,7 +202,7 @@ import delivery from "../../img/delivery.png";
             <!-- Mantenimiento Web -->
             <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
                 <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                    <img :src="mantenimiento" alt="Mantenimiento Web" class="w-12 h-12">
+                    <img :src="delivery" alt="Mantenimiento Web" class="w-12 h-12">
                 </div>
                 <h3 class="text-2xl font-bold text-gray-900 mb-4">Mantenimiento Web</h3>
                 <p class="text-gray-600 mb-6">
@@ -307,7 +307,7 @@ import delivery from "../../img/delivery.png";
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="bg-gray-50 rounded-xl p-8">
                         <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Frontend</h3>
                         <div class="space-y-4">
@@ -368,7 +368,7 @@ import delivery from "../../img/delivery.png";
                         </div>
                     </div>
 
-                    <div class="bg-gray-50 rounded-xl p-8">
+                    <!-- <div class="bg-gray-50 rounded-xl p-8">
                         <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">DevOps & Cloud</h3>
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
@@ -396,7 +396,7 @@ import delivery from "../../img/delivery.png";
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -414,9 +414,9 @@ import delivery from "../../img/delivery.png";
                     <a href="/contacto" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
                         Solicitar Cotización
                     </a>
-                    <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
+                    <!-- <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
                         Ver Proyectos
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </section>

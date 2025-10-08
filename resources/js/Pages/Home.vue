@@ -19,10 +19,10 @@ import delivery from "../../img/delivery.png";
 
 <template>
     <Head title="SysifosWeb - Desarrollo de Software Profesional" />
-    
+
     <div class="min-h-screen bg-white">
         <Header />
-        
+
         <!-- Hero Section -->
         <section class="relative bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 text-white overflow-hidden pt-16">
             <div class="absolute inset-0 bg-black opacity-20"></div>
@@ -41,13 +41,13 @@ import delivery from "../../img/delivery.png";
                             <a href="/contacto" class="bg-cyan-400 text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
                                 Iniciar Proyecto
                             </a>
-                            <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
+                            <!-- <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
                                 Ver Portfolio
-                            </a>
+                            </a> -->
                         </div>
                     </div>
                     <div class="flex justify-center lg:justify-end">
-   
+
                                <img :src="heroImage" alt="Desarrollo Web Profesional" class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-xl" />
                     </div>
                 </div>
@@ -69,40 +69,45 @@ import delivery from "../../img/delivery.png";
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
                         <img :src="pc" alt="Desarrollo Web" class="w-12 h-12 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Desarrollo Web</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Landing Page</h3>
                         <p class="text-gray-600 mb-6">
-                            Sitios web modernos, responsivos y optimizados para SEO. Desde landing pages hasta plataformas complejas.
+                        Landing page moderna y optimizada para atraer clientes y generar contacto directo.
                         </p>
                         <ul class="text-sm text-gray-500 space-y-2">
-                            <li>• React, Vue.js, Angular</li>
-                            <li>• Laravel, Node.js</li>
-                            <li>• E-commerce y CMS</li>
+                            <li>• 1–5 secciones</li>
+                            <li>• Diseño básico</li>
+                            <li>• Formulario de contacto</li>
+                            <li>• Integración con WhatsApp/Correo</li>
+                            <li>• SEO inicial</li>
                         </ul>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
                         <img :src="iphone" alt="Apps Móviles" class="w-12 h-12 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Apps Móviles</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">E-commerce</h3>
                         <p class="text-gray-600 mb-6">
-                            Aplicaciones nativas e híbridas para iOS y Android con experiencia de usuario excepcional.
+                            Desarrollamos tu e-commerce completo con pasarela de pago y carga inicial de productos.
                         </p>
                         <ul class="text-sm text-gray-500 space-y-2">
-                            <li>• React Native, Flutter</li>
-                            <li>• iOS y Android nativo</li>
-                            <li>• PWA y apps híbridas</li>
+                            <li>• Tienda online</li>
+                            <li>• Pasarela de pago</li>
+                            <li>• Integración de envíos</li>
+                            <li>• Carga inicial de productos (hasta 20)</li>
                         </ul>
                     </div>
 
                     <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
                         <img :src="building" alt="Sistemas Empresariales" class="w-12 h-12 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Sistemas Empresariales</h3>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Sitio WordPress</h3>
                         <p class="text-gray-600 mb-6">
-                            ERP, CRM y sistemas personalizados que optimizan los procesos de tu empresa.
+                            Sitio WordPress personalizado, adaptable y fácil de gestionar, con capacitación incluida.
                         </p>
                         <ul class="text-sm text-gray-500 space-y-2">
-                            <li>• ERP y CRM personalizados</li>
-                            <li>• Integración de APIs</li>
-                            <li>• Automatización de procesos</li>
+                            <li>• 5–15 páginas</li>
+                            <li>• Plantilla personalizada</li>
+                            <li>• Diseño responsive</li>
+                            <li>• Plugins básicos</li>
+                            <li>• Capacitación breve</li>
                         </ul>
                     </div>
                 </div>
@@ -331,7 +336,8 @@ import delivery from "../../img/delivery.png";
                     <a href="/contacto" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
                         Solicitar Cotización
                     </a>
-                    <a href="https://wa.me/56912345678" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
+                    <a href="https://wa.me/56949109970" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300"
+                        target="_blank" rel="noopener noreferrer">
                         WhatsApp
                     </a>
                 </div>

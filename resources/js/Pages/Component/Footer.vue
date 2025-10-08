@@ -13,8 +13,7 @@ import logoBlanco from "../../../img/logo-blanco.webp";
                         <img :src="logoBlanco" alt="SysifosWeb Logo" class="h-8 w-auto" />
                     </div>
                     <p class="text-gray-300 mb-4 max-w-md">
-                        Desarrollamos soluciones tecnológicas innovadoras que impulsan el crecimiento de tu negocio. 
-                        Especialistas en desarrollo web, aplicaciones móviles y sistemas empresariales.
+                        Desarrollamos soluciones tecnológicas innovadoras que impulsan el crecimiento de tu negocio.
                     </p>
                     <div class="flex space-x-4">
                         <a href="https://www.facebook.com/profile.php?id=61567859694020" target="_blank" class="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
@@ -78,7 +77,7 @@ import logoBlanco from "../../../img/logo-blanco.webp";
                             <svg class="h-5 w-5 mr-2 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            info@sysifosweb.com
+                            contacto@sysifosweb.cl
                         </li>
                         <li class="flex items-center">
                             <svg class="h-5 w-5 mr-2 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,7 +90,7 @@ import logoBlanco from "../../../img/logo-blanco.webp";
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
-                            La Serena, Chile
+                            Coquimbo,Chile
                         </li>
                     </ul>
                 </div>
@@ -104,15 +103,15 @@ import logoBlanco from "../../../img/logo-blanco.webp";
                         © {{ new Date().getFullYear() }} SysifosWeb. Todos los derechos reservados.
                     </p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
-                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
+                        <!-- <a href="#" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
                             Política de Privacidad
                         </a>
                         <a href="#" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
                             Términos de Servicio
-                        </a>
+                        </a> -->
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-</template> 
+</template>

@@ -29,9 +29,9 @@ Route::get('/contacto', function () {
     return Inertia::render('Contact');
 });
 
-Route::get('/portfolio', function () {
-    return Inertia::render('Portfolio');
-});
+// Route::get('/portfolio', function () {
+//     return Inertia::render('Portfolio');
+// });
 
 // Rutas del blog público
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');

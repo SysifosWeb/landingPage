@@ -69,13 +69,13 @@ onUnmounted(() => {
                     >
                         Servicios
                     </Link>
-                    <Link
+                    <!-- <Link
                         href="/portfolio"
                         class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
                         @click="closeMenu"
                     >
                         Portfolio
-                    </Link>
+                    </Link> -->
                     <Link
                         href="/blog"
                         class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
@@ -156,13 +156,13 @@ onUnmounted(() => {
                     >
                         Servicios
                     </Link>
-                    <Link
+                    <!-- <Link
                         href="/portfolio"
                         class="text-white/90 hover:text-cyan-300 hover:bg-blue-700/50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                         @click="closeMenu"
                     >
                         Portfolio
-                    </Link>
+                    </Link> -->
                     <Link
                         href="/blog"
                         class="text-white/90 hover:text-cyan-300 hover:bg-blue-700/50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"

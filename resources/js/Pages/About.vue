@@ -13,10 +13,10 @@ import valores from "../../img/valores.png";
 
 <template>
     <Head title="Nosotros - SysifosWeb" />
-    
+
     <div class="min-h-screen bg-white">
         <Header />
-        
+
         <!-- Hero Section -->
         <section class="bg-gradient-to-r from-blue-900 to-cyan-600 text-white py-20 pt-36">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -38,13 +38,14 @@ import valores from "../../img/valores.png";
                             Nuestra Historia
                         </h2>
                         <p class="text-lg text-gray-600 mb-6">
-                            Fundada en 2024, SysifosWeb nació de la visión de democratizar el acceso a la tecnología de vanguardia. 
+                            Fundada en 2024, SysifosWeb nació con un objetivo claro: hacer que la tecnología de vanguardia esté al alcance de todos.
                         </p>
                         <p class="text-lg text-gray-600 mb-6">
-                            Nuestro nombre, inspirado en el mito de Sísifo, refleja nuestra perseverancia y dedicación para superar 
-                            cualquier desafío tecnológico, convirtiendo cada obstáculo en una oportunidad de innovación.
+                            Nuestro nombre, inspirado en el mito de Sísifo, refleja nuestra forma de trabajar:
+                            con perseverancia y pasión, convirtiendo cada desafío en una oportunidad para innovar y crear soluciones
+                            que realmente hagan la diferencia.
                         </p>
-                        <div class="grid grid-cols-2 gap-6">
+                        <!-- <div class="grid grid-cols-2 gap-6">
                             <div class="text-center">
                                 <div class="text-3xl font-bold text-blue-600">50+</div>
                                 <div class="text-gray-600">Proyectos Completados</div>
@@ -53,7 +54,7 @@ import valores from "../../img/valores.png";
                                 <div class="text-3xl font-bold text-blue-600">35+</div>
                                 <div class="text-gray-600">Clientes Satisfechos</div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="relative">
                         <div class="w-full h-96 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl flex items-center justify-center">
@@ -82,7 +83,7 @@ import valores from "../../img/valores.png";
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Misión</h3>
                         <p class="text-gray-600">
-                            Empoderar a las empresas con soluciones tecnológicas innovadoras que impulsen su crecimiento 
+                            Empoderar a las empresas con soluciones tecnológicas innovadoras que impulsen su crecimiento
                             y mejoren su competitividad en el mercado digital.
                         </p>
                     </div>
@@ -93,7 +94,7 @@ import valores from "../../img/valores.png";
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Visión</h3>
                         <p class="text-gray-600">
-                            Ser la empresa de desarrollo de software más confiable de Latinoamérica, reconocida por 
+                            Ser la empresa de desarrollo de software más confiable de Latinoamérica, reconocida por
                             nuestra excelencia técnica y compromiso con la innovación.
                         </p>
                     </div>
@@ -104,7 +105,7 @@ import valores from "../../img/valores.png";
                         </div>
                         <h3 class="text-xl font-semibold text-gray-900 mb-4">Valores</h3>
                         <p class="text-gray-600">
-                            Innovación, calidad, transparencia y compromiso con nuestros clientes. Creemos en el 
+                            Innovación, calidad, transparencia y compromiso con nuestros clientes. Creemos en el
                             poder de la tecnología para crear un futuro mejor.
                         </p>
                     </div>
@@ -234,8 +235,7 @@ import valores from "../../img/valores.png";
                                     <div class="bg-purple-600 h-2 rounded-full" style="width: 85%"></div>
                                 </div>
                             </div>
-
-                            <div>
+                            <!-- <div>
                                 <div class="flex justify-between items-center mb-2">
                                     <span class="text-sm font-medium text-gray-700">DevOps</span>
                                     <span class="text-sm text-gray-500">AWS, Docker, CI/CD</span>
@@ -243,7 +243,7 @@ import valores from "../../img/valores.png";
                                 <div class="w-full bg-gray-200 rounded-full h-2">
                                     <div class="bg-cyan-600 h-2 rounded-full" style="width: 80%"></div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -263,9 +263,9 @@ import valores from "../../img/valores.png";
                     <a href="/contacto" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
                         Contactar Equipo
                     </a>
-                    <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
+                    <!-- <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
                         Ver Proyectos
-                    </a>
+                    </a> -->
                 </div>
             </div>
         </section>

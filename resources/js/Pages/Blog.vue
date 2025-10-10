@@ -19,15 +19,15 @@ const allCategories = computed(() => {
     if (!props.categories || !Array.isArray(props.categories)) {
         return [{ id: 'all', name: 'Todos', count: 0 }];
     }
-    
+
     const backendCategories = props.categories.map(cat => ({
         id: cat.slug,
         name: cat.name,
         count: cat.posts_count || 0
     }));
-    
+
     const totalCount = props.posts?.total || (props.posts?.data ? props.posts.data.length : 0);
-    
+
     return [
         { id: 'all', name: 'Todos', count: totalCount },
         ...backendCategories
@@ -42,22 +42,22 @@ const allPosts = computed(() => {
 
 const filteredPosts = computed(() => {
     let posts = allPosts.value;
-    
+
     // Filter by category
     if (selectedCategory.value !== 'all') {
         posts = posts.filter(post => post.category?.slug === selectedCategory.value);
     }
-    
+
     // Filter by search query
     if (searchQuery.value) {
         const query = searchQuery.value.toLowerCase();
-        posts = posts.filter(post => 
+        posts = posts.filter(post =>
             post.title.toLowerCase().includes(query) ||
             post.excerpt.toLowerCase().includes(query) ||
             (post.content && post.content.toLowerCase().includes(query))
         );
     }
-    
+
     return posts;
 });
 
@@ -88,10 +88,10 @@ const getImageUrl = (post) => {
 
 <template>
     <Head title="Blog - SysifosWeb" />
-    
+
     <div class="min-h-screen bg-white">
         <Header />
-        
+
         <!-- Hero Section -->
         <section class="bg-gradient-to-br from-blue-900 via-blue-800 to-cyan-600 text-white py-20 pt-36">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -117,14 +117,14 @@ const getImageUrl = (post) => {
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                             </svg>
                         </div>
-                        <input 
+                        <input
                             v-model="searchQuery"
-                            type="text" 
-                            placeholder="Buscar artículos..." 
+                            type="text"
+                            placeholder="Buscar artículos..."
                             class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         />
                     </div>
-                    
+
                     <!-- Category Filters -->
                     <div class="flex flex-wrap gap-2">
                         <button
@@ -151,7 +151,7 @@ const getImageUrl = (post) => {
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">Artículo Destacado</h2>
                 </div>
-                
+
                 <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl overflow-hidden shadow-xl">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center p-8 lg:p-12">
                         <div>
@@ -182,7 +182,7 @@ const getImageUrl = (post) => {
                             <img :src="getImageUrl(featuredPost)" :alt="featuredPost.title" class="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg" />
                             <div class="absolute top-4 right-4">
                                 <div class="flex flex-wrap gap-2">
-                                    <span 
+                                    <span
                                         v-if="featuredPost.category"
                                         class="bg-white/90 backdrop-blur-sm text-gray-700 px-2 py-1 rounded text-xs font-medium"
                                     >
@@ -210,8 +210,8 @@ const getImageUrl = (post) => {
 
                 <!-- Articles Grid -->
                 <div v-if="filteredPosts.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    <article 
-                        v-for="post in filteredPosts" 
+                    <article
+                        v-for="post in filteredPosts"
                         :key="post.id"
                         class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group"
                     >
@@ -290,16 +290,16 @@ const getImageUrl = (post) => {
         </section>
 
         <!-- Newsletter Subscription -->
-        <section class="py-16 bg-blue-900 text-white">
+        <!-- <section class="py-16 bg-blue-900 text-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl font-bold mb-4">¿No te quieres perder nada?</h2>
                 <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
                     Suscríbete a nuestro newsletter y recibe los últimos artículos directamente en tu email
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                    <input 
-                        type="email" 
-                        placeholder="Tu email" 
+                    <input
+                        type="email"
+                        placeholder="Tu email"
                         class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:ring-2 focus:ring-cyan-400 focus:outline-none"
                     />
                     <button class="bg-cyan-400 text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-300 transition-colors duration-200">
@@ -310,8 +310,25 @@ const getImageUrl = (post) => {
                     Sin spam. Solo contenido de calidad. Puedes cancelar en cualquier momento.
                 </p>
             </div>
+        </section> -->
+         <section class="py-20 bg-gradient-to-r from-blue-900 to-cyan-600 text-white">
+            <div class="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    ¿Listo para Comenzar tu Proyecto?
+                </h2>
+                <p class="text-xl mb-8 text-blue-100">
+                    Conversemos sobre tus necesidades y te ayudaremos a encontrar la solución perfecta
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contacto" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
+                        Solicitar Cotización
+                    </a>
+                    <!-- <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
+                        Ver Proyectos
+                    </a> -->
+                </div>
+            </div>
         </section>
-
         <Footer />
     </div>
 </template>

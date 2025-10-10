@@ -32,109 +32,132 @@ import delivery from "../../img/delivery.png";
         <!-- Servicios Principales -->
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-10">
 
-            <!-- Desarrollo Web: Landing Page -->
-            <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                    <img :src="pc" alt="Desarrollo Web" class="w-12 h-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+
+            <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 flex flex-col h-full
+                        hover:shadow-xl hover:shadow-blue-500/50 border-t-4 border-blue-500">
+
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 p-2 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                        <img :src="pc" alt="Landing Page" class="w-8 h-8 text-blue-600">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Landing Page que convierte visitantes en clientes</h3>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Landing Page</h3>
-                <p class="text-gray-600 mb-6">
-                    Landing page moderna y optimizada para atraer clientes y generar contacto directo.
+
+                <p class="text-gray-600 mb-6 mt-2">
+                    Creamos páginas web modernas y optimizadas para captar clientes y generar contacto directo.
                 </p>
+
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-blue-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         1–5 secciones
                     </li>
-                    <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                     <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-blue-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Diseño básico
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-blue-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Formulario de contacto
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-blue-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Integración con WhatsApp/Correo
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-blue-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         SEO inicial
                     </li>
                 </ul>
+
                 <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> React, Vue.js, Laravel, Node.js, TypeScript
                 </div>
-                <a href="/contacto" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 mt-auto inline-block">
+                <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20Landing%20pages"
+                target="_blank"
+                class="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-200 mt-auto text-center">
                     Solicitar Cotización
                 </a>
             </div>
 
-            <!-- Desarrollo Web: E-commerce -->
-            <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                    <img :src="iphone" alt="Aplicaciones Móviles" class="w-12 h-12">
+            <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 flex flex-col h-full
+                        hover:shadow-xl hover:shadow-orange-500/50 border-t-4 border-orange-500">
+
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 p-2 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                        <img :src="iphone" alt="E-commerce" class="w-8 h-8 text-orange-600">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Tu tienda online lista para vender hoy</h3>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">E-commerce</h3>
-                <p class="text-gray-600 mb-6">
-                    Desarrollamos tu e-commerce completo con pasarela de pago y carga inicial de productos.
+
+                <p class="text-gray-600 mb-6 mt-2">
+                    Desarrollamos tiendas online completas con pasarela de pago segura, carga inicial de productos y envío integrado.
                 </p>
+
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-orange-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Tienda online
                     </li>
-                    <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                     <li class="flex items-center text-gray-700">
+                        <svg class="w-5 h-5 text-orange-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Pasarela de pago
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-orange-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Integración de envíos
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-orange-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Carga inicial de productos (hasta 20)
                     </li>
-                </ul>
+
+                    </ul>
+
                 <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> React Native, Flutter, Swift, Kotlin
                 </div>
-                <a href="/contacto" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 mt-auto inline-block">
-                    Solicitar Cotización
-                </a>
+                    <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20Tienda%20online%20"
+                    target="_blank"
+                    class="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200 mt-auto text-center">
+                        Solicitar Cotización
+                    </a>
             </div>
 
-            <!-- Desarrollo Web: WordPress -->
-            <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                    <img :src="building" alt="Sistemas Empresariales" class="w-12 h-12">
+            <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 flex flex-col h-full
+                        hover:shadow-xl hover:shadow-green-500/50 border-t-4 border-green-500">
+
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 p-2 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                        <img :src="building" alt="Sitio WordPress" class="w-8 h-8 text-green-600">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Página web profesional fácil de administrar</h3>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Sitio WordPress</h3>
-                <p class="text-gray-600 mb-6">
-                    Sitio WordPress personalizado, adaptable y fácil de gestionar, con capacitación incluida.
+
+                <p class="text-gray-600 mb-6 mt-2">
+                    Sitios WordPress personalizados, adaptables y fáciles de gestionar, con plugins esenciales y capacitación incluida.
                 </p>
+
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-center text-gray-700">
                         <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -142,7 +165,7 @@ import delivery from "../../img/delivery.png";
                         </svg>
                         Plantilla personalizada
                     </li>
-                    <li class="flex items-center text-gray-700">
+                      <li class="flex items-center text-gray-700">
                         <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
@@ -154,85 +177,107 @@ import delivery from "../../img/delivery.png";
                         </svg>
                         SEO básico
                     </li>
-                </ul>
+
+                    </ul>
+
                 <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> WordPress, Elementor, WooCommerce
                 </div>
-                <a href="/contacto" class="bg-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-teal-700 transition-colors duration-200 mt-auto inline-block">
+                <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20página%20wordpress"
+                target="_blank"
+                class="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200 mt-auto text-center">
                     Solicitar Cotización
                 </a>
             </div>
-            <!-- Software a Medida -->
-            <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                    <img :src="design" alt="Software a Medida" class="w-12 h-12">
+            <!--Software a medida-->
+            <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 flex flex-col h-full
+                        hover:shadow-xl hover:shadow-purple-500/50 border-t-4 border-purple-500 lg:col-start-1 lg:col-end-2">
+
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 p-2 rounded-full bg-purple-100 flex items-center justify-center flex-shrink-0">
+                        <img :src="design" alt="Software a Medida" class="w-8 h-8 text-purple-600">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Soluciones digitales a medida para tu empresa</h3>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Software a Medida</h3>
-                <p class="text-gray-600 mb-6">
-                    Soluciones personalizadas para optimizar procesos internos de tu empresa.
+
+                <p class="text-gray-600 mb-6 mt-2">
+                    Optimizamos procesos internos con soluciones personalizadas que facilitan la gestión y la toma de decisiones.
                 </p>
+
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-purple-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Gestión de datos
                     </li>
-                    <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
+                     <li class="flex items-center text-gray-700">
+                       <svg class="w-5 h-5 text-purple-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
                         Automatización de procesos
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                        </svg>
+                       <svg class="w-5 h-5 text-purple-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
                         Reportes y analíticas
                     </li>
-                </ul>
+                    </ul>
+
                 <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> PHP, Laravel, MySQL, Node.js, Vue.js
                 </div>
-                <a href="/contacto" class="bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition-colors duration-200 mt-auto inline-block">
+                <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20soluciones%20digitales%20a%20medida"
+                target="_blank"
+                class="bg-purple-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-600 transition-colors duration-200 mt-auto text-center">
                     Solicitar Cotización
                 </a>
             </div>
+            <!--Mantenimiento-->
+            <div class="bg-white rounded-xl p-8 shadow-md transition-all duration-300 flex flex-col h-full
+                        hover:shadow-xl hover:shadow-amber-500/50 border-t-4 border-amber-500 lg:col-start-2 lg:col-end-3">
 
-            <!-- Mantenimiento Web -->
-            <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                <div class="w-16 h-16 rounded-xl flex items-center justify-center mb-6">
-                    <img :src="delivery" alt="Mantenimiento Web" class="w-12 h-12">
+                <div class="flex items-center space-x-4 mb-4">
+                    <div class="w-12 h-12 p-2 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
+                        <img :src="delivery" alt="Mantenimiento Web" class="w-8 h-8 text-amber-600">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900">Mantenimiento web: seguro, actualizado y siempre disponible</h3>
                 </div>
-                <h3 class="text-2xl font-bold text-gray-900 mb-4">Mantenimiento Web</h3>
-                <p class="text-gray-600 mb-6">
-                    Aseguramos que tu sitio web esté siempre actualizado, seguro y funcionando correctamente.
+
+                <p class="text-gray-600 mb-6 mt-2">
+                    Nos encargamos de que tu sitio web esté siempre actualizado, seguro y funcionando correctamente, incluyendo backups y monitoreo constante.
                 </p>
+
                 <ul class="space-y-3 mb-8">
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Actualización de contenido
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                         <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Backups periódicos
                     </li>
                     <li class="flex items-center text-gray-700">
-                        <svg class="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                         <svg class="w-5 h-5 text-amber-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                         </svg>
                         Monitoreo de seguridad
                     </li>
-                </ul>
+                    </ul>
+
                 <div class="text-sm text-gray-500 mb-4">
-                    <strong>Tecnologías:</strong> WordPress, Laravel, HTML, CSS, JavaScript
+                    <strong>Tecnologías:</strong> WordPress, PHP, HTML5, CSS3, JavaScript
+
                 </div>
-                <a href="/contacto" class="bg-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-700 transition-colors duration-200 mt-auto inline-block">
-                    Solicitar Cotización
+                <a href="https://wa.me/56949109970?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20mantenimiento%20web"
+                    target="_blank"
+                    class="bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors duration-200 mt-auto text-center">
+                        Solicitar Cotización
                 </a>
             </div>
 

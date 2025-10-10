@@ -30,16 +30,16 @@ import delivery from "../../img/delivery.png";
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center lg:text-left">
                         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Desarrollamos el
-                            <span class="text-cyan-300">Futuro Digital</span>
-                            de tu Empresa
+                            <span class="text-cyan-300">Impulsa</span> tu marca con tecnología y diseño que
+                            <span class="text-cyan-300"> inspiran confianza</span>
+
                         </h1>
                         <p class="text-xl md:text-2xl mb-8 text-blue-100 leading-relaxed">
-                            Soluciones tecnológicas innovadoras que transforman ideas en realidad digital
+                            Desarrollamos soluciones digitales modernas y personalizadas para que tu negocio crezca y destaque en el mundo online.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                             <a href="/contacto" class="bg-cyan-400 text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
-                                Iniciar Proyecto
+                               Iniciar mi Proyecto Ahora
                             </a>
                             <!-- <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
                                 Ver Portfolio
@@ -47,8 +47,8 @@ import delivery from "../../img/delivery.png";
                         </div>
                     </div>
                     <div class="flex justify-center lg:justify-end">
+                        <img :src="heroImage" alt="Desarrollo Web Profesional" class="w-80 h-80 md:w-130 md:h-130 object-cover rounded-xl" />
 
-                               <img :src="heroImage" alt="Desarrollo Web Profesional" class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-xl" />
                     </div>
                 </div>
             </div>
@@ -67,49 +67,114 @@ import delivery from "../../img/delivery.png";
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                        <img :src="pc" alt="Desarrollo Web" class="w-12 h-12 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Landing Page</h3>
-                        <p class="text-gray-600 mb-6">
-                        Landing page moderna y optimizada para atraer clientes y generar contacto directo.
-                        </p>
-                        <ul class="text-sm text-gray-500 space-y-2">
-                            <li>• 1–5 secciones</li>
-                            <li>• Diseño básico</li>
-                            <li>• Formulario de contacto</li>
-                            <li>• Integración con WhatsApp/Correo</li>
-                            <li>• SEO inicial</li>
-                        </ul>
+
+                    <!-- CARD 1 -->
+                    <div class="bg-white rounded-xl p-8 flex flex-col justify-between
+                                shadow-md transition-all duration-300
+                                hover:shadow-xl hover:shadow-sky-500/50
+                                border-t-4 border-sky-500">
+
+                        <div>
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-16 h-16 p-2 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                                    <img :src="pc" alt="Desarrollo Web" class="w-10 h-10">
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Convierte visitas en clientes</h3>
+                            </div>
+
+                            <p class="text-base text-gray-600 mb-6">
+                                Crea una página que impacte desde el primer clic. Diseñamos tu landing page optimizada para captar contactos y aumentar tus ventas.
+                            </p>
+
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• 1–5 secciones</li>
+                                <li>• Diseño básico</li>
+                                <li>• Formulario de contacto</li>
+                                <li>• Integración con WhatsApp/Correo</li>
+                                <li>• SEO inicial</li>
+                            </ul>
+                        </div>
+
+                    <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20Landing%20Pages%20"
+                    target="_blank"
+                    class="bg-sky-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-sky-600 transition-colors duration-200 mt-auto text-center">
+                        Solicitar Cotización
+                    </a>
                     </div>
 
-                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                        <img :src="iphone" alt="Apps Móviles" class="w-12 h-12 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">E-commerce</h3>
-                        <p class="text-gray-600 mb-6">
-                            Desarrollamos tu e-commerce completo con pasarela de pago y carga inicial de productos.
-                        </p>
-                        <ul class="text-sm text-gray-500 space-y-2">
-                            <li>• Tienda online</li>
-                            <li>• Pasarela de pago</li>
-                            <li>• Integración de envíos</li>
-                            <li>• Carga inicial de productos (hasta 20)</li>
-                        </ul>
+                    <!-- CARD 2 -->
+                    <div class="bg-white rounded-xl p-8 flex flex-col justify-between
+                                shadow-md transition-all duration-300
+                                hover:shadow-xl hover:shadow-orange-500/50
+                                border-t-4 border-orange-500">
+
+                        <div>
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-16 h-16 p-2 rounded-full bg-orange-100 flex items-center justify-center flex-shrink-0">
+                                    <img :src="iphone" alt="E-commerce" class="w-10 h-10">
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">Tu tienda online lista para vender</h3>
+                            </div>
+
+                            <p class="text-base text-gray-600 mb-6">
+                                Lleva tu negocio al mundo digital. Desarrollamos tu tienda completa con pagos seguros, gestión de productos y envíos automatizados.
+                            </p>
+
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• Tienda online</li>
+                                <li>• Pasarela de pago</li>
+                                <li>• Integración de envíos</li>
+                                <li>• Carga inicial de productos (hasta 20)</li>
+                            </ul>
+                        </div>
+
+                    <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20Tienda%20online%20"
+                    target="_blank"
+                    class="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200 mt-auto text-center">
+                        Solicitar Cotización
+                    </a>
                     </div>
 
-                    <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
-                        <img :src="building" alt="Sistemas Empresariales" class="w-12 h-12 mb-6">
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Sitio WordPress</h3>
-                        <p class="text-gray-600 mb-6">
-                            Sitio WordPress personalizado, adaptable y fácil de gestionar, con capacitación incluida.
-                        </p>
-                        <ul class="text-sm text-gray-500 space-y-2">
-                            <li>• 5–15 páginas</li>
-                            <li>• Plantilla personalizada</li>
-                            <li>• Diseño responsive</li>
-                            <li>• Plugins básicos</li>
-                            <li>• Capacitación breve</li>
-                        </ul>
+                    <!-- CARD 3 -->
+                    <div class="bg-white rounded-xl p-8 flex flex-col justify-between
+                                shadow-md transition-all duration-300
+                                hover:shadow-xl hover:shadow-green-500/50
+                                border-t-4 border-green-500">
+
+                        <div>
+                            <div class="flex items-center space-x-4 mb-4">
+                                <div class="w-16 h-16 p-2 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                                    <img :src="building" alt="Sitio WordPress" class="w-8 h-8">
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">Tu página web profesional</h3>
+                            </div>
+
+                            <p class="text-base text-gray-600 mb-6">
+                                Construye una presencia sólida con un sitio fácil de administrar, adaptable a cualquier dispositivo y con total control.
+                            </p>
+
+                            <ul class="text-sm text-gray-700 space-y-2">
+                                <li>• 5–15 páginas</li>
+                                <li>• Plantilla personalizada</li>
+                                <li>• Diseño responsive</li>
+                                <li>• Plugins básicos</li>
+                                <li>• Capacitación breve</li>
+                            </ul>
+                        </div>
+
+                    <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20Sitio%20web%20wordpress%20"
+                    target="_blank"
+                    class="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200 mt-auto text-center">
+                        Solicitar Cotización
+                    </a>
                     </div>
+
+                </div>
+
+                <div class="mt-12 flex justify-center md:justify-end">
+                    <a href="/servicios" class="bg-blue-600 text-white py-3 px-6 rounded-lg font-bold hover:bg-blue-700 transition shadow-lg">
+                        Ver Todos Nuestros Servicios →
+                    </a>
                 </div>
             </div>
         </section>

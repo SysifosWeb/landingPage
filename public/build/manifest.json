@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-DqCoQCpL.css",
+    "file": "assets/app-C7fXsIa7.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -40,9 +40,17 @@
     "file": "assets/analysis-BpBQ50LC.png",
     "src": "resources/img/analysis.png"
   },
+  "resources/img/ansar.gif": {
+    "file": "assets/ansar-B3PA-uxT.gif",
+    "src": "resources/img/ansar.gif"
+  },
   "resources/img/building.png": {
     "file": "assets/building-D2u9zc-9.png",
     "src": "resources/img/building.png"
+  },
+  "resources/img/car.gif": {
+    "file": "assets/car-DZBwJkla.gif",
+    "src": "resources/img/car.gif"
   },
   "resources/img/delivery.png": {
     "file": "assets/delivery-BbVlRW9e.png",
@@ -55,6 +63,10 @@
   "resources/img/development.png": {
     "file": "assets/development-BMcPU851.png",
     "src": "resources/img/development.png"
+  },
+  "resources/img/faremin.gif": {
+    "file": "assets/faremin-ElgLJjzk.gif",
+    "src": "resources/img/faremin.gif"
   },
   "resources/img/home_image2.png": {
     "file": "assets/home_image2-CnLA6_VI.png",
@@ -89,7 +101,7 @@
     "src": "resources/img/vision.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-BkwIeHEm.js",
+    "file": "assets/app-uRlvtcWp.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -117,7 +129,10 @@
       "assets/building-D2u9zc-9.png",
       "assets/analysis-BpBQ50LC.png",
       "assets/design-B6Whg8dl.png",
-      "assets/development-BMcPU851.png"
+      "assets/development-BMcPU851.png",
+      "assets/ansar-B3PA-uxT.gif",
+      "assets/car-DZBwJkla.gif",
+      "assets/faremin-ElgLJjzk.gif"
     ]
   }
 }

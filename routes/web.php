@@ -30,9 +30,9 @@ Route::get('/contacto', function () {
     return Inertia::render('Contact');
 });
 
-// Route::get('/portfolio', function () {
-//     return Inertia::render('Portfolio');
-// });
+Route::get('/portfolio', function () {
+    return Inertia::render('Portfolio');
+});
 
 // Rutas del blog público
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
@@ -54,7 +54,7 @@ Route::get('/blog/{slug}', function ($slug) {
         ->where('id', '!=', $post->id)
         ->take(3)
         ->get();
-    
+
     // Transformar el campo featured_image en los posts relacionados
     $relatedPosts->transform(function ($relatedPost) {
         if ($relatedPost->featured_image) {
@@ -62,7 +62,7 @@ Route::get('/blog/{slug}', function ($slug) {
         }
         return $relatedPost;
     });
-       
+
     return Inertia::render('BlogPost', [
         'post' => $post,
         'relatedPosts' => $relatedPosts,

@@ -2,83 +2,132 @@
 import { Head } from "@inertiajs/vue3";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
+import ansar from '../../img/ansar.gif';
+import carmotors from '../../img/car.gif';
+import faremin from '../../img/faremin.gif';
+import react from "../../img/react.png";
+import vue from "../../img/vue.js.png";
+import laravel from "../../img/laravel.png";
+import node from "../../img/Node.js.png";
+import flutter from "../../img/flutter.png";
 </script>
 
 <template>
     <Head title="Portfolio - SysifosWeb" />
-    
+
     <div class="min-h-screen bg-white">
         <Header />
-        
+
         <!-- Hero Section -->
         <section class="bg-gradient-to-r from-blue-900 to-cyan-600 text-white py-20 pt-36">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                    Nuestro Portfolio
+                    Transformamos Desafíos en Casos de Éxito Digital
                 </h1>
                 <p class="text-xl text-blue-100 max-w-3xl mx-auto">
-                    Descubre los proyectos que hemos desarrollado y cómo hemos ayudado a nuestros clientes a alcanzar sus objetivos
+                     Explora las soluciones de diseño y tecnología que han impulsado el crecimiento y la
+                     reputación de marcas líderes en tu sector.
                 </p>
             </div>
         </section>
 
         <!-- Proyecto Destacado -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
+<section class="py-20 bg-white">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+           <div class="text-center mb-16">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                        Proyecto Destacado
+                        Nuestro Proyecto Más Reciente
                     </h2>
+                    <p class="text-xl text-gray-600">
+                        Un ejemplo fresco de cómo convertimos la visión de nuestros clientes en tecnología escalable.
+                    </p>
                 </div>
+        <div class="relative rounded-2xl p-8 lg:p-12 overflow-hidden shadow-2xl">
 
-                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 lg:p-12">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div>
-                            <div class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
-                                Plataforma E-learning
-                            </div>
-                            <h3 class="text-3xl font-bold text-gray-900 mb-6">TechStart Academy</h3>
-                            <p class="text-lg text-gray-600 mb-6">
-                                Desarrollamos una plataforma completa de e-learning que permite a más de 5,000 estudiantes 
-                                acceder a cursos de tecnología de alta calidad. La plataforma incluye sistema de pagos, 
-                                certificaciones, foros de discusión y seguimiento de progreso.
-                            </p>
-                            
-                            <div class="grid grid-cols-2 gap-6 mb-8">
-                                <div>
-                                    <div class="text-2xl font-bold text-blue-600">5,000+</div>
-                                    <div class="text-gray-600">Estudiantes Activos</div>
-                                </div>
-                                <div>
-                                    <div class="text-2xl font-bold text-blue-600">200+</div>
-                                    <div class="text-gray-600">Cursos Disponibles</div>
-                                </div>
-                            </div>
+            <div
+                class="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out hover:scale-105"
+                style="background-image: url('../../img/fondo-portafoliopng.png');"
+                aria-hidden="true">
+            </div>
 
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
-                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Laravel</span>
-                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm">MySQL</span>
-                                <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">AWS</span>
-                            </div>
+            <div
+                class="absolute inset-0 bg-gradient-to-br from-blue-900/85 to-cyan-800/85"
+                aria-hidden="true">
+            </div>
 
-                            <a href="/contacto" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 inline-block">
-                                Desarrollar Similar
+            <div class="relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    <div>
+                        <div class="inline-block bg-white/20 text-white px-3 py-1 rounded-full text-sm font-medium mb-4">
+                            Desarrollo a Medida
+                        </div>
+                        <h3 class="text-4xl font-bold text-white mb-4">
+                             <a href="https://ansarautomotriz.com/"
+                                    target="_blank"
+                                    class="hover:text-cyan-300 transition-colors duration-200"
+                                    title="Ver la plataforma de AutoTasa Pro en vivo"
+                                >
+                                Ansar Automotriz
                             </a>
+                        </h3>
+                        <p class="text-lg text-blue-100 mb-4">
+                            <strong class="font-semibold text-white">El Desafío:</strong>
+                            Crear una plataforma robusta que permitiera a
+                            los usuarios tanto comprar como vender su vehículo, incluyendo un cotizador automatizado para la tasación
+                            precisa en tiempo real.
+                        </p>
+                        <p class="text-lg text-blue-100 mb-6">
+                            <strong class="font-semibold text-white">Nuestra Solución:</strong>
+                            Desarrollamos una aplicación web completa con un motor de tasación (ML/algoritmo) integrado,
+                            un CMS (Sistema de Gestión de Contenido) para la carga dinámica de vehículos por parte del equipo, y
+                            sistemas de gestión de leads de alto valor.
+                        </p>
+
+                        <div class="grid grid-cols-3 gap-4 mb-8">
+                            <div>
+                                <div class="text-3xl font-extrabold text-white">98% </div>
+                                <div class="text-blue-200">Precisión del Cotizador de Tasación</div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-extrabold text-white">50+</div>
+                                <div class="text-blue-200">Vehículos Cargados Mensualmente </div>
+                            </div>
+                            <div>
+                                <div class="text-3xl font-extrabold text-green-300">+30% </div>
+                                <div class="text-blue-200">Oportunidades de Compra</div>
+                            </div>
                         </div>
 
-                        <div class="relative">
-                            <div class="w-full h-80 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center">
-                                <div class="text-center">
-                                    <div class="text-6xl mb-4">🎓</div>
-                                    <p class="text-gray-600 font-medium">TechStart Academy</p>
-                                </div>
-                            </div>
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="bg-gradient-to-r from-blue-400 to-cyan-400 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-sm">Vue</span>
+                            <span class="bg-gradient-to-r from-green-400 to-lime-400 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-sm">Laravel</span>
+                            <span class="bg-gradient-to-r from-pink-400 to-rose-400 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-sm">MySQL</span>
+                        </div>
+                        <a
+                            href="https://wa.me/56949109970?text=Hola,%20me%20interesa%20la%20Plataforma%20AutoTasa%20Pro%20(proyecto%20similar%20a%20Ansar%20Automotriz).%20Quisiera%20saber%20los%20valores%20aproximados%20y%20conocer%20m%C3%A1s%20detalles%20para%20desarrollar%20algo%20a%20medida."
+                            class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 inline-block"
+                            target="_blank"
+                        >
+                            Cotiza tu proyecto similar
+                        </a>
+                    </div>
+
+                    <div class="relative flex justify-center items-center">
+                        <div class="w-full h-96 lg:h-[500px] aspect-video overflow-hidden transform hover:scale-[1.02] transition duration-500 ease-in-out">
+                           <img
+                                :src="ansar"
+                                alt="Demostración animada del proyecto TechStart Academy"
+                                class="w-full h-full object-contain"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- Proyectos por Industria -->
         <section class="py-20 bg-gray-50">
@@ -93,106 +142,97 @@ import Footer from "./Component/Footer.vue";
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Salud -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                            </svg>
+                    <!-- Carmotor's-->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition transform duration-300">
+                        <div class="relative flex justify-center items-center">
+                        <div class="w-full h-64 overflow-hidden rounded-xl">
+                            <img
+                            :src="carmotors"
+                            alt="Demostración animada del proyecto TechStart Academy"
+                            class="w-full h-full object-contain hover:scale-105 transition-transform duration-500 ease-in-out"
+                            >
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">HealthCare Plus</h3>
-                        <p class="text-gray-600 mb-4">
-                            Sistema de gestión hospitalaria que optimiza la atención al paciente y administración médica.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Vue.js</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Laravel</span>
+                        <!-- Etiqueta superior -->
+                        <span class="absolute top-3 left-3 bg-rose-100 text-rose-700 text-xs font-semibold px-3 py-1 rounded-full shadow">
+                            Desarrollo a Medida
+                        </span>
                         </div>
+                            <div class="p-6 text-left">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                    <a href="https://carmotors.cl/"
+                                        target="_blank"
+                                        class="hover:text-blue-700 transition-colors duration-200"
+                                        title="Ver la plataforma de AutoTasa Pro en vivo"
+                                        >
+                                        Carmotor's
+                                    </a>
+                                </h3>
+                                <p class="text-gray-600 mb-4">
+                                    Desarrollo web orientado al sector automotriz, con funcionalidades para mostrar y administrar motocicletas de forma dinámica y moderna.
+                                </p>
+
+
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+                                </div>
+
+                                <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20un%20sistema%20como%20Carmotor's" target="_blank"
+                                class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold inline-flex items-center hover:bg-blue-700 transition">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Cotizar este proyecto
+                                </a>
+                            </div>
                     </div>
 
-                    <!-- E-commerce -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                            </svg>
+                    <!-- Faremin -->
+                    <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:-translate-y-2 transition transform duration-300">
+                        <div class="relative flex justify-center items-center">
+                        <div class="w-full h-64 overflow-hidden rounded-xl">
+                            <img
+                            :src="faremin"
+                            alt="Demostración animada del proyecto TechStart Academy"
+                            class="w-full h-full object-contain hover:scale-105 transition-transform duration-500 ease-in-out"
+                            >
                         </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">EcoShop</h3>
-                        <p class="text-gray-600 mb-4">
-                            Plataforma de e-commerce sustentable con más de 10,000 productos y sistema de logística integrado.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Node.js</span>
+                        <!-- Etiqueta superior -->
+                        <span class="absolute top-3 left-3 bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1 rounded-full shadow">
+                            En desarrllo
+                        </span>
+                        </div>
+                        <div class="p-6 text-left">
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                                    <!-- <a href=""
+                                        target="_blank"
+                                        class="hover:text-blue-700 transition-colors duration-200"
+                                        title="Ver la plataforma de AutoTasa Pro en vivo"
+                                        >
+
+                                    </a> -->
+                                    Maestranza Faremin
+                                </h3>
+                               <p class="text-gray-600 mb-4">
+                                    Sitio web informativo desarrollado a medida para una empresa de maestranza, enfocado en destacar sus servicios, experiencia y compromiso con la industria metalmecánica.
+                                </p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Vue.js</span>
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">Laravel</span>
+                                </div>
+
+                                <!-- <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20un%20sistema%20como%20Carmotor's" target="_blank"
+                                class="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold inline-flex items-center hover:bg-blue-700 transition">
+                                    <i class="fa-brands fa-whatsapp mr-2"></i> Cotizar este proyecto
+                                </a> -->
                         </div>
                     </div>
-
-                    <!-- Fintech -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">FinanceApp</h3>
-                        <p class="text-gray-600 mb-4">
-                            Aplicación móvil para gestión financiera personal con análisis de gastos y planificación de presupuestos.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React Native</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Laravel</span>
-                        </div>
-                    </div>
-
-                    <!-- Educación -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">EduManage</h3>
-                        <p class="text-gray-600 mb-4">
-                            Sistema integral de gestión educativa para colegios con módulos de notas, asistencia y comunicación.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Angular</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">.NET</span>
-                        </div>
-                    </div>
-
-                    <!-- Restaurantes -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">RestaurantPOS</h3>
-                        <p class="text-gray-600 mb-4">
-                            Sistema POS completo para restaurantes con gestión de mesas, inventario y delivery integrado.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">Vue.js</span>
-                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs">Laravel</span>
-                        </div>
-                    </div>
-
-                    <!-- Empresarial -->
-                    <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-900 mb-3">CorporateERP</h3>
-                        <p class="text-gray-600 mb-4">
-                            Sistema ERP empresarial que integra contabilidad, recursos humanos, inventario y ventas.
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">React</span>
-                            <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs">Python</span>
-                        </div>
+                    <!-- Card 3 (Tu proyecto) -->
+                    <div class="bg-gradient-to-br from-blue-600 to-cyan-500 rounded-2xl text-white flex flex-col justify-center items-center p-8 hover:from-cyan-500 hover:to-blue-600 transition duration-300 shadow-xl">
+                        <h3 class="text-3xl font-bold mb-4">Tu proyecto podría estar aquí 🚀</h3>
+                        <p class="text-lg mb-6 text-blue-50">Transforma tu idea en una solución digital profesional y escalable.</p>
+                        <a href="https://wa.me/56949109970?text=Hola,%20quiero%20desarrollar%20mi%20propio%20proyecto%20digital"
+                            target="_blank"
+                            class="bg-white text-blue-700 font-semibold px-6 py-3 rounded-lg hover:bg-blue-100 transition">
+                            Hablemos por WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
@@ -229,7 +269,7 @@ import Footer from "./Component/Footer.vue";
                             </div>
                         </div>
                         <p class="text-gray-600 mb-6 text-lg">
-                            "El sistema que desarrollaron para nuestro hospital ha revolucionado la forma en que atendemos a nuestros pacientes. 
+                            "El sistema que desarrollaron para nuestro hospital ha revolucionado la forma en que atendemos a nuestros pacientes.
                             La eficiencia ha aumentado un 40% y la satisfacción del personal médico es excepcional."
                         </p>
                         <div class="flex items-center">
@@ -264,7 +304,7 @@ import Footer from "./Component/Footer.vue";
                             </div>
                         </div>
                         <p class="text-gray-600 mb-6 text-lg">
-                            "Nuestra plataforma de e-commerce ha crecido exponencialmente desde que SysifosWeb la desarrolló. 
+                            "Nuestra plataforma de e-commerce ha crecido exponencialmente desde que SysifosWeb la desarrolló.
                             Las ventas aumentaron un 300% en el primer año y la experiencia del usuario es fantástica."
                         </p>
                         <div class="flex items-center">
@@ -292,11 +332,11 @@ import Footer from "./Component/Footer.vue";
 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-blue-600 mb-2">50+</div>
+                        <div class="text-4xl font-bold text-blue-600 mb-2">10+</div>
                         <div class="text-gray-600">Proyectos Completados</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-green-600 mb-2">35+</div>
+                        <div class="text-4xl font-bold text-green-600 mb-2">8+</div>
                         <div class="text-gray-600">Clientes Satisfechos</div>
                     </div>
                     <div class="text-center">
@@ -304,7 +344,7 @@ import Footer from "./Component/Footer.vue";
                         <div class="text-gray-600">Satisfacción Cliente</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-cyan-600 mb-2">4</div>
+                        <div class="text-4xl font-bold text-cyan-600 mb-2">2</div>
                         <div class="text-gray-600">Años de Experiencia</div>
                     </div>
                 </div>
@@ -323,54 +363,30 @@ import Footer from "./Component/Footer.vue";
                     </p>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">React</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">React</span>
+                        <img :src="react" alt="React" class="w-20 h-20">
+                        <span class="text-sm font-medium text-gray-700">React</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">Vue</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">Vue.js</span>
+                        <img :src="vue" alt="Vue" class="w-20 h-20">
+                        <span class="text-sm font-medium text-gray-700">Vue.js</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-red-500 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">L</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">Laravel</span>
+                        <img :src="laravel" alt="Laravel" class="w-20 h-20">
+                        <span class="text-sm font-medium text-gray-700">Laravel</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">Node</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">Node.js</span>
+                        <img :src="node" alt="Node" class="w-20 h-20">
+                        <span class="text-sm font-medium text-gray-700">Node.js</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-blue-400 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">RN</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">React Native</span>
+                        <img :src="react" alt="React Native" class="w-20 h-20">
+                        <span class="text-sm font-medium text-gray-700">React Native</span>
                     </div>
                     <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">FL</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">Flutter</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">AWS</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">AWS</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 hover:bg-gray-50 rounded-lg transition-colors duration-200">
-                        <div class="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center mb-3">
-                            <span class="text-white font-bold text-sm">TS</span>
-                        </div>
-                        <span class="text-xs font-medium text-gray-700">TypeScript</span>
+                        <img :src="flutter" alt="Flutter" class="w-20 h-20">
+                        <span class="text-sm font-medium text-gray-700">Flutter</span>
                     </div>
                 </div>
             </div>
@@ -387,7 +403,7 @@ import Footer from "./Component/Footer.vue";
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
                     <a href="/contacto" class="bg-white text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
-                        Iniciar Proyecto
+                        Agendar una Consulta Gratuita
                     </a>
                     <a href="/servicios" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-colors duration-300">
                         Ver Servicios

@@ -41,9 +41,9 @@ import delivery from "../../img/delivery.png";
                             <a href="/contacto" class="bg-cyan-400 text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-cyan-300 transition-all duration-300 transform hover:scale-105 shadow-lg">
                                Iniciar mi Proyecto Ahora
                             </a>
-                            <!-- <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
+                            <a href="/portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-900 transition-all duration-300">
                                 Ver Portfolio
-                            </a> -->
+                            </a>
                         </div>
                     </div>
                     <div class="flex justify-center lg:justify-end">

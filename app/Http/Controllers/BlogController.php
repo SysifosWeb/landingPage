@@ -75,6 +75,15 @@ class BlogController extends Controller
             'posts' => $posts,
             'categories' => $categories,
             'featuredPosts' => $featuredPosts,
+            'seo' => [
+                'title' => 'Blog de Desarrollo de Software y Web en Español | SysifosWeb',
+                'description' => 'Tutoriales, guías y tendencias en desarrollo web y software. Artículos sobre Laravel, Vue.js, React, frontend y backend.',
+                'keywords' => 'blog desarrollo de software, blog desarrollo web, tutoriales, guías, tendencias tecnológicas, Laravel, Vue.js, React, frontend, backend, español',
+                'canonical' => 'https://sysifosweb.cl/blog',
+                'og_type' => 'website',
+                'og_image' => 'https://sysifosweb.cl/img/og-blog.jpg',
+                'twitter_card' => 'summary_large_image'
+            ],
             'secondaryNavbarData' => [
                 'title' => 'Blog',
             ],

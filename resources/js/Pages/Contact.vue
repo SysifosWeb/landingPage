@@ -4,9 +4,13 @@ import { ref } from "vue";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
 
-defineProps({
+const props = defineProps({
     errors: Object,
-    success: String
+    success: String,
+    seo: {
+        type: Object,
+        required: true
+    }
 });
 
 const showSuccess = ref(false);
@@ -65,22 +69,22 @@ const closeAlert = () => {
 
 <template>
     <Head>
-      <title>Contacto | Solicita una Cotización de Desarrollo Web | SysifosWeb</title>
-      <meta name="description" content="¿Necesitas un sitio web o software a medida? Contáctanos para una cotización y asesoría en Chile." />
-      <meta name="keywords" content="contacto SysifosWeb, solicitar cotización, presupuesto desarrollo web, consultoría tecnológica, formulario de contacto, agencia de desarrollo, Chile, Coquimbo, WhatsApp" />
+      <title>{{ props.seo.title }}</title>
+      <meta name="description" :content="props.seo.description" />
+      <meta name="keywords" :content="props.seo.keywords" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://sysifosweb.cl/contacto" />
+      <link rel="canonical" :href="props.seo.canonical" />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Contacto | Solicita una Cotización de Desarrollo Web | SysifosWeb" />
-      <meta property="og:description" content="Escríbenos para cotizar tu proyecto o recibir asesoría técnica." />
-      <meta property="og:url" content="https://sysifosweb.cl/contacto" />
-      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta property="og:type" :content="props.seo.og_type" />
+      <meta property="og:title" :content="props.seo.title" />
+      <meta property="og:description" :content="props.seo.description" />
+      <meta property="og:url" :content="props.seo.canonical" />
+      <meta property="og:image" :content="props.seo.og_image" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Contacto | Solicita una Cotización de Desarrollo Web | SysifosWeb" />
-      <meta name="twitter:description" content="Contáctanos para cotizar o resolver dudas sobre tu proyecto web." />
-      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta name="twitter:card" :content="props.seo.twitter_card" />
+      <meta name="twitter:title" :content="props.seo.title" />
+      <meta name="twitter:description" :content="props.seo.description" />
+      <meta name="twitter:image" :content="props.seo.og_image" />
     </Head>
     
     <div class="min-h-screen bg-white">

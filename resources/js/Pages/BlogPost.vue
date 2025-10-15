@@ -7,7 +7,11 @@ import Footer from "./Component/Footer.vue";
 // Props que vienen del backend
 const props = defineProps({
     post: Object,
-    relatedPosts: Array
+    relatedPosts: Array,
+    seo: {
+        type: Object,
+        required: true
+    }
 });
 console.log(props.post);
 const formatDate = (dateString) => {
@@ -103,24 +107,24 @@ const copyToClipboard = async () => {
 
 <template>
     <Head>
-        <title>{{ post.meta_title || post.title }} - SysifosWeb</title>
-        <meta name="description" :content="post.meta_description || post.excerpt">
-        <meta name="keywords" :content="finalKeywordsString">
+        <title>{{ props.seo.title }}</title>
+        <meta name="description" :content="props.seo.description">
+        <meta name="keywords" :content="props.seo.keywords">
         <meta name="robots" content="index, follow">
-        <link rel="canonical" :href="getCanonicalUrl()">
+        <link rel="canonical" :href="props.seo.canonical">
         
         <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="article">
-        <meta property="og:title" :content="post.title">
-        <meta property="og:description" :content="post.excerpt">
-        <meta property="og:url" :content="getCanonicalUrl()">
-        <meta property="og:image" :content="getImageUrl(post)">
+        <meta property="og:type" :content="props.seo.og_type">
+        <meta property="og:title" :content="props.seo.title">
+        <meta property="og:description" :content="props.seo.description">
+        <meta property="og:url" :content="props.seo.canonical">
+        <meta property="og:image" :content="props.seo.og_image">
         
         <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" :content="post.title">
-        <meta name="twitter:description" :content="post.excerpt">
-        <meta name="twitter:image" :content="getImageUrl(post)">
+        <meta name="twitter:card" :content="props.seo.twitter_card">
+        <meta name="twitter:title" :content="props.seo.title">
+        <meta name="twitter:description" :content="props.seo.description">
+        <meta name="twitter:image" :content="props.seo.og_image">
     </Head>
     
     <div class="min-h-screen bg-white">

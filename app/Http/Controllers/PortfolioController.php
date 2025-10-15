@@ -13,7 +13,18 @@ class PortfolioController extends Controller
      */
     public function index()
     {
+        $seoData = [
+            'title' => 'Portfolio de Proyectos - Casos de Éxito en Desarrollo Web | SysifosWeb',
+            'description' => 'Descubre nuestros proyectos exitosos de desarrollo web y software. Casos reales de aplicaciones, e-commerce y soluciones digitales en Chile.',
+            'keywords' => 'portfolio desarrollo web, casos de éxito, proyectos desarrollo software, trabajos realizados, aplicaciones web Chile, e-commerce desarrollado, proyectos Laravel, proyectos React',
+            'canonical' => 'https://sysifosweb.cl/portfolio',
+            'og_type' => 'website',
+            'og_image' => 'https://sysifosweb.cl/img/og-portfolio.jpg',
+            'twitter_card' => 'summary_large_image'
+        ];
+
         return Inertia::render('Portfolio', [
+            'seo' => $seoData,
             'secondaryNavbarData' => [
                 'title' => 'Portafolio',
             ],

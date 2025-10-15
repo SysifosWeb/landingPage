@@ -9,26 +9,34 @@ import analysis from "../../img/analysis.png";
 import design from "../../img/design.png";
 import development from "../../img/development.png";
 import delivery from "../../img/delivery.png";
+
+// Recibir metadatos SEO desde el controlador
+const props = defineProps({
+    seo: {
+        type: Object,
+        required: true
+    }
+});
 </script>
 
 <template>
     <Head>
-      <title>Servicios de Desarrollo Web y Software a Medida | SysifosWeb</title>
-      <meta name="description" content="Desarrollo web y software a medida: landing pages, e-commerce, WordPress, mantenimiento, pasarelas de pago, envíos, seguridad y SEO básico en Chile." />
-      <meta name="keywords" content="servicios de desarrollo web, landing page, e-commerce, WordPress, software a medida, mantenimiento web, pasarela de pago, integración de envíos, backups, seguridad web, SEO básico, Chile" />
+      <title>{{ seo.title }}</title>
+      <meta name="description" :content="seo.description" />
+      <meta name="keywords" :content="seo.keywords" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://sysifosweb.cl/servicios" />
+      <link rel="canonical" :href="seo.canonical" />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Servicios de Desarrollo Web y Software a Medida | SysifosWeb" />
-      <meta property="og:description" content="Creamos y mantenemos sitios y plataformas a medida para tu negocio." />
-      <meta property="og:url" content="https://sysifosweb.cl/servicios" />
-      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta property="og:type" :content="seo.og_type" />
+      <meta property="og:title" :content="seo.title" />
+      <meta property="og:description" :content="seo.description" />
+      <meta property="og:url" :content="seo.canonical" />
+      <meta property="og:image" :content="seo.og_image" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Servicios de Desarrollo Web y Software a Medida | SysifosWeb" />
-      <meta name="twitter:description" content="Landing pages, e-commerce, WordPress, mantenimiento y seguridad web." />
-      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta name="twitter:card" :content="seo.twitter_card" />
+      <meta name="twitter:title" :content="seo.title" />
+      <meta name="twitter:description" :content="seo.description" />
+      <meta name="twitter:image" :content="seo.og_image" />
     </Head>
 
     <div class="min-h-screen bg-white">

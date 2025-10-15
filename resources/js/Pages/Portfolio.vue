@@ -10,26 +10,33 @@ import vue from "../../img/vue.js.png";
 import laravel from "../../img/laravel.png";
 import node from "../../img/Node.js.png";
 import flutter from "../../img/flutter.png";
+
+const props = defineProps({
+    seo: {
+        type: Object,
+        required: true
+    }
+});
 </script>
 
 <template>
     <Head>
-      <title>Portafolio de Proyectos | Desarrollo Web y Software | SysifosWeb</title>
-      <meta name="description" content="Revisa nuestro portafolio: sitios corporativos, e-commerce y plataformas a medida desarrolladas con tecnologías modernas." />
-      <meta name="keywords" content="portfolio desarrollo web, casos de éxito, proyectos de software, plataformas a medida, e-commerce, sitio corporativo, Vue, Laravel, MySQL, CMS, generación de leads, Chile" />
+      <title>{{ props.seo.title }}</title>
+      <meta name="description" :content="props.seo.description" />
+      <meta name="keywords" :content="props.seo.keywords" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://sysifosweb.cl/portfolio" />
+      <link rel="canonical" :href="props.seo.canonical" />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Portafolio de Proyectos | Desarrollo Web y Software | SysifosWeb" />
-      <meta property="og:description" content="Explora proyectos reales que impulsan negocios con soluciones digitales." />
-      <meta property="og:url" content="https://sysifosweb.cl/portfolio" />
-      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta property="og:type" :content="props.seo.og_type" />
+      <meta property="og:title" :content="props.seo.title" />
+      <meta property="og:description" :content="props.seo.description" />
+      <meta property="og:url" :content="props.seo.canonical" />
+      <meta property="og:image" :content="props.seo.og_image" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Portafolio de Proyectos | Desarrollo Web y Software | SysifosWeb" />
-      <meta name="twitter:description" content="Casos de éxito en e-commerce, sitios corporativos y plataformas a medida." />
-      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta name="twitter:card" :content="props.seo.twitter_card" />
+      <meta name="twitter:title" :content="props.seo.title" />
+      <meta name="twitter:description" :content="props.seo.description" />
+      <meta name="twitter:image" :content="props.seo.og_image" />
     </Head>
 
     <div class="min-h-screen bg-white">

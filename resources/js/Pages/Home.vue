@@ -15,26 +15,34 @@ import analysis from "../../img/analysis.png";
 import design from "../../img/design.png";
 import development from "../../img/development.png";
 import delivery from "../../img/delivery.png";
+
+// Recibir metadatos SEO desde el controlador
+const props = defineProps({
+    seo: {
+        type: Object,
+        required: true
+    }
+});
 </script>
 
 <template>
     <Head>
-      <title>Desarrollo de Software y Web en Chile | SysifosWeb</title>
-      <meta name="description" content="Empresa de desarrollo de software y sitios web en Chile. Creamos landing pages, tiendas online y soluciones a medida con Laravel, Vue.js y WordPress." />
-      <meta name="keywords" content="desarrollo de software, desarrollo web, landing page, tienda online, sitio web profesional, soluciones a medida, Laravel, Vue.js, React, WordPress, agencia de desarrollo, Chile, Coquimbo" />
+      <title>{{ seo.title }}</title>
+      <meta name="description" :content="seo.description" />
+      <meta name="keywords" :content="seo.keywords" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://sysifosweb.cl/" />
+      <link rel="canonical" :href="seo.canonical" />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Desarrollo de Software y Web en Chile | SysifosWeb" />
-      <meta property="og:description" content="Creamos sitios y software a medida con tecnologías modernas. Aumenta tus ventas y presencia digital." />
-      <meta property="og:url" content="https://sysifosweb.cl/" />
-      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta property="og:type" :content="seo.og_type" />
+      <meta property="og:title" :content="seo.title" />
+      <meta property="og:description" :content="seo.description" />
+      <meta property="og:url" :content="seo.canonical" />
+      <meta property="og:image" :content="seo.og_image" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Desarrollo de Software y Web en Chile | SysifosWeb" />
-      <meta name="twitter:description" content="Creamos sitios y software a medida con tecnologías modernas." />
-      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta name="twitter:card" :content="seo.twitter_card" />
+      <meta name="twitter:title" :content="seo.title" />
+      <meta name="twitter:description" :content="seo.description" />
+      <meta name="twitter:image" :content="seo.og_image" />
     </Head>
 
     <div class="min-h-screen bg-white">

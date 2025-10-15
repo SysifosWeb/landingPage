@@ -9,26 +9,34 @@ import team from "../../img/team.jpg";
 import mision from "../../img/mision.png";
 import vision from "../../img/vision.png";
 import valores from "../../img/valores.png";
+
+// Recibir metadatos SEO desde el controlador
+const props = defineProps({
+    seo: {
+        type: Object,
+        required: true
+    }
+});
 </script>
 
 <template>
     <Head>
-      <title>Nosotros | Empresa de Desarrollo de Software en Chile | SysifosWeb</title>
-      <meta name="description" content="Conoce a SysifosWeb: nuestra historia, equipo y valores. Desarrollamos soluciones digitales innovadoras con metodologías ágiles en Chile." />
-      <meta name="keywords" content="empresa de desarrollo de software, equipo de desarrollo, metodología ágil, Scrum, misión, visión, valores, innovación tecnológica, Chile, Coquimbo" />
+      <title>{{ seo.title }}</title>
+      <meta name="description" :content="seo.description" />
+      <meta name="keywords" :content="seo.keywords" />
       <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://sysifosweb.cl/nosotros" />
+      <link rel="canonical" :href="seo.canonical" />
 
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content="Nosotros | Empresa de Desarrollo de Software en Chile | SysifosWeb" />
-      <meta property="og:description" content="Somos un equipo apasionado por la tecnología y la innovación." />
-      <meta property="og:url" content="https://sysifosweb.cl/nosotros" />
-      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta property="og:type" :content="seo.og_type" />
+      <meta property="og:title" :content="seo.title" />
+      <meta property="og:description" :content="seo.description" />
+      <meta property="og:url" :content="seo.canonical" />
+      <meta property="og:image" :content="seo.og_image" />
 
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="Nosotros | Empresa de Desarrollo de Software en Chile | SysifosWeb" />
-      <meta name="twitter:description" content="Nuestra historia, equipo y valores en desarrollo de software." />
-      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+      <meta name="twitter:card" :content="seo.twitter_card" />
+      <meta name="twitter:title" :content="seo.title" />
+      <meta name="twitter:description" :content="seo.description" />
+      <meta name="twitter:image" :content="seo.og_image" />
     </Head>
 
     <div class="min-h-screen bg-white">

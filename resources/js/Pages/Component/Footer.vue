@@ -100,7 +100,7 @@ import logoBlanco from "../../../img/logo-blanco.webp";
             <div class="border-t border-gray-800 mt-8 pt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-400 text-sm">
-                        © {{ new Date().getFullYear() }} SysifosWeb. Todos los derechos reservados.
+                        © {{ new Date().getFullYear() }} <a href="https://www.sysifosweb.cl" class="text-cyan-400 hover:text-cyan-600 transition-colors duration-200">SysifosWeb</a>. Todos los derechos reservados.
                     </p>
                     <div class="flex space-x-6 mt-4 md:mt-0">
                         <!-- <a href="#" class="text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">

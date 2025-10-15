@@ -22,8 +22,6 @@ class ServicesController extends Controller
             'twitter_card' => 'summary_large_image'
         ];
 
-        return Inertia::render('Services', [
-            'seo' => $seoData
-        ]);
+        return Inertia::render('Services', ['seo' => $seoData]);
     }
 }

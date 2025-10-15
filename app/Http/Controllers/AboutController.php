@@ -22,8 +22,6 @@ class AboutController extends Controller
             'twitter_card' => 'summary_large_image'
         ];
 
-        return Inertia::render('About', [
-            'seo' => $seoData
-        ]);
+        return Inertia::render('About', ['seo' => $seoData]);
     }
 }

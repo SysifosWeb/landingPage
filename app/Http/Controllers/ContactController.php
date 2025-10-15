@@ -22,8 +22,6 @@ class ContactController extends Controller
             'twitter_card' => 'summary_large_image'
         ];
 
-        return Inertia::render('Contact', [
-            'seo' => $seoData
-        ]);
+        return Inertia::render('Contact', ['seo' => $seoData]);
     }
 }

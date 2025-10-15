@@ -23,12 +23,7 @@ class PortfolioController extends Controller
             'twitter_card' => 'summary_large_image'
         ];
 
-        return Inertia::render('Portfolio', [
-            'seo' => $seoData,
-            'secondaryNavbarData' => [
-                'title' => 'Portafolio',
-            ],
-        ]);
+        return Inertia::render('Portfolio', ['seo' => $seoData]);
     }
 
     /**

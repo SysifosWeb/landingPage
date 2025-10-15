@@ -63,7 +63,7 @@ import delivery from "../../img/delivery.png";
                             </a>
                         </div>
                     </div>
-                    <div class="flex justify-center lg:justify-end">
+                    <div class="hidden lg:flex justify-center lg:justify-end" aria-hidden="true">
                         <img :src="heroImage" alt="Desarrollo Web Profesional" class="w-80 h-80 md:w-130 md:h-130 object-cover rounded-xl" />
 
                     </div>

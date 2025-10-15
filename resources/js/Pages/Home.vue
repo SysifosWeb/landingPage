@@ -18,7 +18,24 @@ import delivery from "../../img/delivery.png";
 </script>
 
 <template>
-    <Head title="SysifosWeb - Desarrollo de Software Profesional" />
+    <Head>
+      <title>Desarrollo de Software y Web en Chile | SysifosWeb</title>
+      <meta name="description" content="Empresa de desarrollo de software y sitios web en Chile. Creamos landing pages, tiendas online y soluciones a medida con Laravel, Vue.js y WordPress." />
+      <meta name="keywords" content="desarrollo de software, desarrollo web, landing page, tienda online, sitio web profesional, soluciones a medida, Laravel, Vue.js, React, WordPress, agencia de desarrollo, Chile, Coquimbo" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://sysifosweb.cl/" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Desarrollo de Software y Web en Chile | SysifosWeb" />
+      <meta property="og:description" content="Creamos sitios y software a medida con tecnologías modernas. Aumenta tus ventas y presencia digital." />
+      <meta property="og:url" content="https://sysifosweb.cl/" />
+      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Desarrollo de Software y Web en Chile | SysifosWeb" />
+      <meta name="twitter:description" content="Creamos sitios y software a medida con tecnologías modernas." />
+      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+    </Head>
 
     <div class="min-h-screen bg-white">
         <Header />

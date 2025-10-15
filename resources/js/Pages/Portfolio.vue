@@ -13,7 +13,24 @@ import flutter from "../../img/flutter.png";
 </script>
 
 <template>
-    <Head title="Portfolio - SysifosWeb" />
+    <Head>
+      <title>Portafolio de Proyectos | Desarrollo Web y Software | SysifosWeb</title>
+      <meta name="description" content="Revisa nuestro portafolio: sitios corporativos, e-commerce y plataformas a medida desarrolladas con tecnologías modernas." />
+      <meta name="keywords" content="portfolio desarrollo web, casos de éxito, proyectos de software, plataformas a medida, e-commerce, sitio corporativo, Vue, Laravel, MySQL, CMS, generación de leads, Chile" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://sysifosweb.cl/portfolio" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Portafolio de Proyectos | Desarrollo Web y Software | SysifosWeb" />
+      <meta property="og:description" content="Explora proyectos reales que impulsan negocios con soluciones digitales." />
+      <meta property="og:url" content="https://sysifosweb.cl/portfolio" />
+      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Portafolio de Proyectos | Desarrollo Web y Software | SysifosWeb" />
+      <meta name="twitter:description" content="Casos de éxito en e-commerce, sitios corporativos y plataformas a medida." />
+      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+    </Head>
 
     <div class="min-h-screen bg-white">
         <Header />

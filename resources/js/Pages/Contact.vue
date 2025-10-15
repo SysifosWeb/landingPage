@@ -64,7 +64,24 @@ const closeAlert = () => {
 </script>
 
 <template>
-    <Head title="Contacto - SysifosWeb" />
+    <Head>
+      <title>Contacto | Solicita una Cotización de Desarrollo Web | SysifosWeb</title>
+      <meta name="description" content="¿Necesitas un sitio web o software a medida? Contáctanos para una cotización y asesoría en Chile." />
+      <meta name="keywords" content="contacto SysifosWeb, solicitar cotización, presupuesto desarrollo web, consultoría tecnológica, formulario de contacto, agencia de desarrollo, Chile, Coquimbo, WhatsApp" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://sysifosweb.cl/contacto" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Contacto | Solicita una Cotización de Desarrollo Web | SysifosWeb" />
+      <meta property="og:description" content="Escríbenos para cotizar tu proyecto o recibir asesoría técnica." />
+      <meta property="og:url" content="https://sysifosweb.cl/contacto" />
+      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Contacto | Solicita una Cotización de Desarrollo Web | SysifosWeb" />
+      <meta name="twitter:description" content="Contáctanos para cotizar o resolver dudas sobre tu proyecto web." />
+      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+    </Head>
     
     <div class="min-h-screen bg-white">
         <Header />

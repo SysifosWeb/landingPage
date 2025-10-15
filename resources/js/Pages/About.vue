@@ -12,7 +12,24 @@ import valores from "../../img/valores.png";
 </script>
 
 <template>
-    <Head title="Nosotros - SysifosWeb" />
+    <Head>
+      <title>Nosotros | Empresa de Desarrollo de Software en Chile | SysifosWeb</title>
+      <meta name="description" content="Conoce a SysifosWeb: nuestra historia, equipo y valores. Desarrollamos soluciones digitales innovadoras con metodologías ágiles en Chile." />
+      <meta name="keywords" content="empresa de desarrollo de software, equipo de desarrollo, metodología ágil, Scrum, misión, visión, valores, innovación tecnológica, Chile, Coquimbo" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://sysifosweb.cl/nosotros" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Nosotros | Empresa de Desarrollo de Software en Chile | SysifosWeb" />
+      <meta property="og:description" content="Somos un equipo apasionado por la tecnología y la innovación." />
+      <meta property="og:url" content="https://sysifosweb.cl/nosotros" />
+      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Nosotros | Empresa de Desarrollo de Software en Chile | SysifosWeb" />
+      <meta name="twitter:description" content="Nuestra historia, equipo y valores en desarrollo de software." />
+      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+    </Head>
 
     <div class="min-h-screen bg-white">
         <Header />

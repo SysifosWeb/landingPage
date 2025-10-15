@@ -1,10 +1,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import { Link } from "@inertiajs/vue3";
+import { Link, usePage } from "@inertiajs/vue3";
 import logoBlanco from "../../../img/logo-blanco.webp";
 
 const isMenuOpen = ref(false);
 const isScrolled = ref(false);
+const page = usePage();
 
 const toggleMenu = () => {
     isMenuOpen.value = !isMenuOpen.value;
@@ -28,6 +29,40 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll);
 });
+
+// Detección de ruta activa
+const getPathname = () => {
+    const url = page?.url ?? window.location.pathname;
+    try {
+        return new URL(url, window.location.origin).pathname;
+    } catch (e) {
+        return window.location.pathname;
+    }
+};
+
+const isActive = (path) => {
+    const pathname = getPathname();
+    if (path === '/') return pathname === '/';
+    return pathname === path || pathname.startsWith(path + '/');
+};
+
+const desktopLinkClasses = (path) => {
+    return [
+        'font-medium transition-colors duration-200 drop-shadow-lg',
+        isActive(path)
+            ? 'text-cyan-200 border-b-2 border-cyan-200'
+            : 'text-white hover:text-cyan-200'
+    ];
+};
+
+const mobileLinkClasses = (path) => {
+    return [
+        'block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200',
+        isActive(path)
+            ? 'text-cyan-300 bg-blue-700/50'
+            : 'text-white/90 hover:text-cyan-300 hover:bg-blue-700/50'
+    ];
+};
 </script>
 
 <template>
@@ -50,43 +85,54 @@ onUnmounted(() => {
                 <div class="hidden md:flex items-center space-x-8">
                     <Link
                         href="/"
-                        class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
+                        :class="desktopLinkClasses('/')"
                         @click="closeMenu"
+                        :aria-current="isActive('/') ? 'page' : undefined"
                     >
                         Inicio
                     </Link>
                     <Link
                         href="/nosotros"
-                        class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
+                        :class="desktopLinkClasses('/nosotros')"
                         @click="closeMenu"
+                        :aria-current="isActive('/nosotros') ? 'page' : undefined"
                     >
                         Nosotros
                     </Link>
                     <Link
                         href="/servicios"
-                        class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
+                        :class="desktopLinkClasses('/servicios')"
                         @click="closeMenu"
+                        :aria-current="isActive('/servicios') ? 'page' : undefined"
                     >
                         Servicios
                     </Link>
-                    <!-- <Link
+                    <Link
                         href="/portfolio"
-                        class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
+                        :class="desktopLinkClasses('/portfolio')"
                         @click="closeMenu"
+                        :aria-current="isActive('/portfolio') ? 'page' : undefined"
                     >
                         Portfolio
-                    </Link> -->
+                    </Link>
                     <Link
                         href="/blog"
-                        class="font-medium transition-colors duration-200 text-white drop-shadow-lg hover:text-cyan-200"
+                        :class="desktopLinkClasses('/blog')"
                         @click="closeMenu"
+                        :aria-current="isActive('/blog') ? 'page' : undefined"
                     >
                         Blog
                     </Link>
                     <Link
                         href="/contacto"
-                        class="bg-cyan-400 text-blue-900 px-4 py-2 rounded-lg font-semibold hover:bg-cyan-300 hover:scale-105 transition-all duration-200 shadow-lg"
+                        :class="[
+                            'px-4 py-2 rounded-lg font-semibold transition-all duration-200 shadow-lg',
+                            isActive('/contacto')
+                                ? 'bg-cyan-300 text-blue-900 ring-2 ring-cyan-200'
+                                : 'bg-cyan-400 text-blue-900 hover:bg-cyan-300 hover:scale-105'
+                        ]"
                         @click="closeMenu"
+                        :aria-current="isActive('/contacto') ? 'page' : undefined"
                     >
                         Contacto
                     </Link>
@@ -137,43 +183,53 @@ onUnmounted(() => {
                 <div class="px-2 pt-2 pb-3 space-y-1 bg-black/80 backdrop-blur-md rounded-lg mt-2 mb-4 border border-white/30">
                     <Link
                         href="/"
-                        class="text-white/90 hover:text-cyan-300 hover:bg-blue-700/50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        :class="mobileLinkClasses('/')"
                         @click="closeMenu"
+                        :aria-current="isActive('/') ? 'page' : undefined"
                     >
                         Inicio
                     </Link>
                     <Link
                         href="/nosotros"
-                        class="text-white/90 hover:text-cyan-300 hover:bg-blue-700/50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        :class="mobileLinkClasses('/nosotros')"
                         @click="closeMenu"
+                        :aria-current="isActive('/nosotros') ? 'page' : undefined"
                     >
                         Nosotros
                     </Link>
                     <Link
                         href="/servicios"
-                        class="text-white/90 hover:text-cyan-300 hover:bg-blue-700/50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        :class="mobileLinkClasses('/servicios')"
                         @click="closeMenu"
+                        :aria-current="isActive('/servicios') ? 'page' : undefined"
                     >
                         Servicios
                     </Link>
                     <!-- <Link
                         href="/portfolio"
-                        class="text-white/90 hover:text-cyan-300 hover:bg-blue-700/50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        :class="mobileLinkClasses('/portfolio')"
                         @click="closeMenu"
                     >
                         Portfolio
                     </Link> -->
                     <Link
                         href="/blog"
-                        class="text-white/90 hover:text-cyan-300 hover:bg-blue-700/50 block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                        :class="mobileLinkClasses('/blog')"
                         @click="closeMenu"
+                        :aria-current="isActive('/blog') ? 'page' : undefined"
                     >
                         Blog
                     </Link>
                     <Link
                         href="/contacto"
-                        class="bg-cyan-400 text-blue-900 hover:bg-cyan-300 block px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200 mt-4 shadow-lg"
+                        :class="[
+                            'block px-3 py-2 rounded-md text-base font-semibold transition-colors duration-200 mt-4 shadow-lg',
+                            isActive('/contacto')
+                                ? 'bg-cyan-300 text-blue-900 ring-2 ring-cyan-200'
+                                : 'bg-cyan-400 text-blue-900 hover:bg-cyan-300'
+                        ]"
                         @click="closeMenu"
+                        :aria-current="isActive('/contacto') ? 'page' : undefined"
                     >
                         Contacto
                     </Link>

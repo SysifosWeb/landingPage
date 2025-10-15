@@ -87,7 +87,24 @@ const getImageUrl = (post) => {
 </script>
 
 <template>
-    <Head title="Blog - SysifosWeb" />
+    <Head>
+      <title>Blog de Desarrollo de Software y Web en Español | SysifosWeb</title>
+      <meta name="description" content="Tutoriales, guías y tendencias en desarrollo web y software. Artículos sobre Laravel, Vue.js, React, frontend y backend." />
+      <meta name="keywords" content="blog desarrollo de software, blog desarrollo web, tutoriales, guías, tendencias tecnológicas, Laravel, Vue.js, React, frontend, backend, español" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://sysifosweb.cl/blog" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Blog de Desarrollo de Software y Web en Español | SysifosWeb" />
+      <meta property="og:description" content="Aprende con artículos y guías sobre tecnologías modernas en español." />
+      <meta property="og:url" content="https://sysifosweb.cl/blog" />
+      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Blog de Desarrollo de Software y Web en Español | SysifosWeb" />
+      <meta name="twitter:description" content="Tutoriales y tendencias en Laravel, Vue, React, frontend y backend." />
+      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+    </Head>
 
     <div class="min-h-screen bg-white">
         <Header />

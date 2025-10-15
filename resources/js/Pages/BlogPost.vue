@@ -31,6 +31,37 @@ const getCurrentUrl = () => {
     return `https://sysifosweb.cl/blog/${props.post.slug}`;
 };
 
+// Canonical estable en dominio de producción
+const getCanonicalUrl = () => {
+    return `https://sysifosweb.cl/blog/${props.post.slug}`;
+};
+
+// Keywords finales con fallback cuando no hay meta_keywords
+const finalKeywordsString = computed(() => {
+    const provided = Array.isArray(props.post.meta_keywords)
+        ? props.post.meta_keywords
+        : typeof props.post.meta_keywords === 'string' && props.post.meta_keywords.length
+            ? props.post.meta_keywords.split(',').map(k => k.trim()).filter(Boolean)
+            : [];
+
+    const fallback = [
+        props.post.category?.name,
+        props.post.title,
+        'blog de desarrollo',
+        'desarrollo web',
+        'tutorial',
+        'guía',
+        'mejores prácticas',
+        'Laravel',
+        'Vue.js',
+        'React',
+        'SysifosWeb',
+    ].filter(Boolean);
+
+    const unique = Array.from(new Set([...provided, ...fallback]));
+    return unique.join(', ');
+});
+
 const shareOnTwitter = () => {
     if (typeof window === 'undefined') return;
     const url = encodeURIComponent(getCurrentUrl());
@@ -74,12 +105,15 @@ const copyToClipboard = async () => {
     <Head>
         <title>{{ post.meta_title || post.title }} - SysifosWeb</title>
         <meta name="description" :content="post.meta_description || post.excerpt">
-        <meta name="keywords" :content="Array.isArray(post.meta_keywords) ? post.meta_keywords.join(', ') : ''">
+        <meta name="keywords" :content="finalKeywordsString">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" :href="getCanonicalUrl()">
         
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="article">
         <meta property="og:title" :content="post.title">
         <meta property="og:description" :content="post.excerpt">
+        <meta property="og:url" :content="getCanonicalUrl()">
         <meta property="og:image" :content="getImageUrl(post)">
         
         <!-- Twitter -->
@@ -366,4 +400,4 @@ const copyToClipboard = async () => {
 :deep(.article-content a) {
     @apply text-blue-600 hover:text-blue-800 underline;
 }
-</style> 
+</style>

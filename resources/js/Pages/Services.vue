@@ -12,7 +12,24 @@ import delivery from "../../img/delivery.png";
 </script>
 
 <template>
-    <Head title="Servicios - SysifosWeb" />
+    <Head>
+      <title>Servicios de Desarrollo Web y Software a Medida | SysifosWeb</title>
+      <meta name="description" content="Desarrollo web y software a medida: landing pages, e-commerce, WordPress, mantenimiento, pasarelas de pago, envíos, seguridad y SEO básico en Chile." />
+      <meta name="keywords" content="servicios de desarrollo web, landing page, e-commerce, WordPress, software a medida, mantenimiento web, pasarela de pago, integración de envíos, backups, seguridad web, SEO básico, Chile" />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://sysifosweb.cl/servicios" />
+
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Servicios de Desarrollo Web y Software a Medida | SysifosWeb" />
+      <meta property="og:description" content="Creamos y mantenemos sitios y plataformas a medida para tu negocio." />
+      <meta property="og:url" content="https://sysifosweb.cl/servicios" />
+      <meta property="og:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Servicios de Desarrollo Web y Software a Medida | SysifosWeb" />
+      <meta name="twitter:description" content="Landing pages, e-commerce, WordPress, mantenimiento y seguridad web." />
+      <meta name="twitter:image" content="https://sysifosweb.cl/images/logo-blanco.webp" />
+    </Head>
 
     <div class="min-h-screen bg-white">
         <Header />
@@ -82,9 +99,9 @@ import delivery from "../../img/delivery.png";
                     </li>
                 </ul>
 
-                <div class="text-sm text-gray-500 mb-4">
+                <!-- <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> React, Vue.js, Laravel, Node.js, TypeScript
-                </div>
+                </div> -->
                 <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20Landing%20pages"
                 target="_blank"
                 class="bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-600 transition-colors duration-200 mt-auto text-center">
@@ -134,9 +151,9 @@ import delivery from "../../img/delivery.png";
 
                     </ul>
 
-                <div class="text-sm text-gray-500 mb-4">
+                <!-- <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> React Native, Flutter, Swift, Kotlin
-                </div>
+                </div> -->
                     <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20Tienda%20online%20"
                     target="_blank"
                     class="bg-orange-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-colors duration-200 mt-auto text-center">
@@ -180,9 +197,9 @@ import delivery from "../../img/delivery.png";
 
                     </ul>
 
-                <div class="text-sm text-gray-500 mb-4">
+                <!-- <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> WordPress, Elementor, WooCommerce
-                </div>
+                </div> -->
                 <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20página%20wordpress"
                 target="_blank"
                 class="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200 mt-auto text-center">
@@ -225,9 +242,9 @@ import delivery from "../../img/delivery.png";
                     </li>
                     </ul>
 
-                <div class="text-sm text-gray-500 mb-4">
+                <!-- <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> PHP, Laravel, MySQL, Node.js, Vue.js
-                </div>
+                </div> -->
                 <a href="https://wa.me/56949109970?text=Hola,%20quiero%20una%20cotización%20para%20soluciones%20digitales%20a%20medida"
                 target="_blank"
                 class="bg-purple-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-600 transition-colors duration-200 mt-auto text-center">
@@ -270,10 +287,10 @@ import delivery from "../../img/delivery.png";
                     </li>
                     </ul>
 
-                <div class="text-sm text-gray-500 mb-4">
+                <!-- <div class="text-sm text-gray-500 mb-4">
                     <strong>Tecnologías:</strong> WordPress, PHP, HTML5, CSS3, JavaScript
 
-                </div>
+                </div> -->
                 <a href="https://wa.me/56949109970?text=Hola,%20quiero%20solicitar%20una%20cotización%20para%20mantenimiento%20web"
                     target="_blank"
                     class="bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors duration-200 mt-auto text-center">

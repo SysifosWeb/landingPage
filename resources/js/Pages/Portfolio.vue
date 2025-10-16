@@ -351,7 +351,7 @@ const props = defineProps({
                         <div class="text-gray-600">Satisfacción Cliente</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-4xl font-bold text-cyan-600 mb-2">2</div>
+                        <div class="text-4xl font-bold text-cyan-600 mb-2">5</div>
                         <div class="text-gray-600">Años de Experiencia</div>
                     </div>
                 </div>

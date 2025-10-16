@@ -21,9 +21,9 @@ class ServicesController extends Controller
             'og_image' => 'https://sysifosweb.cl/img/og-services.jpg',
             'twitter_card' => 'summary_large_image'
         ];
+        dd($seoData);
 
         if (config('app.use_blade_public_views')) {
-            dd('services');
             return view('public.services', [
                 'seo' => $seoData,
             ]);

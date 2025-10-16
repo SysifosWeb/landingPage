@@ -23,6 +23,7 @@ class ServicesController extends Controller
         ];
 
         if (config('app.use_blade_public_views')) {
+            dd('services');
             return view('public.services', [
                 'seo' => $seoData,
             ]);

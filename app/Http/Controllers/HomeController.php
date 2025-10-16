@@ -22,6 +22,12 @@ class HomeController extends Controller
             'twitter_card' => 'summary_large_image'
         ];
 
+        if (config('app.use_blade_public_views')) {
+            return view('public.home', [
+                'seo' => $seoData,
+            ]);
+        }
+
         return Inertia::render('Home', ['seo' => $seoData]);
     }
 }

@@ -22,6 +22,12 @@ class AboutController extends Controller
             'twitter_card' => 'summary_large_image'
         ];
 
+        if (config('app.use_blade_public_views')) {
+            return view('public.about', [
+                'seo' => $seoData,
+            ]);
+        }
+
         return Inertia::render('About', ['seo' => $seoData]);
     }
 }

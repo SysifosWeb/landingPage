@@ -1,7 +1,7 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
+import SeoHead from "../Components/SeoHead.vue";
 import pc from "../../img/pc.png";
 import iphone from "../../img/iphone.png";
 import building from "../../img/building.png";
@@ -20,24 +20,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <Head>
-      <title>{{ seo.title }}</title>
-      <meta name="description" :content="seo.description" />
-      <meta name="keywords" :content="seo.keywords" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" :href="seo.canonical" />
-
-      <meta property="og:type" :content="seo.og_type" />
-      <meta property="og:title" :content="seo.title" />
-      <meta property="og:description" :content="seo.description" />
-      <meta property="og:url" :content="seo.canonical" />
-      <meta property="og:image" :content="seo.og_image" />
-
-      <meta name="twitter:card" :content="seo.twitter_card" />
-      <meta name="twitter:title" :content="seo.title" />
-      <meta name="twitter:description" :content="seo.description" />
-      <meta name="twitter:image" :content="seo.og_image" />
-    </Head>
+    <SeoHead :seo="seo" />
 
     <div class="min-h-screen bg-white">
         <Header />

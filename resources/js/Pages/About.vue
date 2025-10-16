@@ -1,10 +1,10 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
-import diego from "../../img/diego.png";
-import karen from "../../img/karen.png";
-import osman from "../../img/osman.png";
+import SeoHead from "../Components/SeoHead.vue";
+import diego from "../../img/Diego.png";
+import karen from "../../img/Karen.png";
+import osman from "../../img/Osman.png";
 import team from "../../img/team.jpg";
 import mision from "../../img/mision.png";
 import vision from "../../img/vision.png";
@@ -20,24 +20,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <Head>
-      <title>{{ seo.title }}</title>
-      <meta name="description" :content="seo.description" />
-      <meta name="keywords" :content="seo.keywords" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" :href="seo.canonical" />
-
-      <meta property="og:type" :content="seo.og_type" />
-      <meta property="og:title" :content="seo.title" />
-      <meta property="og:description" :content="seo.description" />
-      <meta property="og:url" :content="seo.canonical" />
-      <meta property="og:image" :content="seo.og_image" />
-
-      <meta name="twitter:card" :content="seo.twitter_card" />
-      <meta name="twitter:title" :content="seo.title" />
-      <meta name="twitter:description" :content="seo.description" />
-      <meta name="twitter:image" :content="seo.og_image" />
-    </Head>
+    <SeoHead :seo="seo" />
 
     <div class="min-h-screen bg-white">
         <Header />

@@ -1,8 +1,8 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
 import { ref, computed } from "vue";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
+import SeoHead from "../Components/SeoHead.vue";
 
 // Props que vienen del backend
 const props = defineProps({
@@ -91,24 +91,7 @@ const getImageUrl = (post) => {
 </script>
 
 <template>
-    <Head>
-      <title>{{ props.seo.title }}</title>
-      <meta name="description" :content="props.seo.description" />
-      <meta name="keywords" :content="props.seo.keywords" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" :href="props.seo.canonical" />
-
-      <meta property="og:type" :content="props.seo.og_type" />
-      <meta property="og:title" :content="props.seo.title" />
-      <meta property="og:description" :content="props.seo.description" />
-      <meta property="og:url" :content="props.seo.canonical" />
-      <meta property="og:image" :content="props.seo.og_image" />
-
-      <meta name="twitter:card" :content="props.seo.twitter_card" />
-      <meta name="twitter:title" :content="props.seo.title" />
-      <meta name="twitter:description" :content="props.seo.description" />
-      <meta name="twitter:image" :content="props.seo.og_image" />
-    </Head>
+    <SeoHead :seo="props.seo" />
 
     <div class="min-h-screen bg-white">
         <Header />

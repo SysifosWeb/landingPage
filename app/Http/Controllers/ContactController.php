@@ -22,6 +22,16 @@ class ContactController extends Controller
             'twitter_card' => 'summary_large_image'
         ];
 
+        if (config('app.use_blade_public_views')) {
+            $errors = session()->get('errors');
+
+            return view('public.contact', [
+                'seo' => $seoData,
+                'errors' => $errors ? $errors->getMessages() : [],
+                'success' => session('success'),
+            ]);
+        }
+
         return Inertia::render('Contact', ['seo' => $seoData]);
     }
 }

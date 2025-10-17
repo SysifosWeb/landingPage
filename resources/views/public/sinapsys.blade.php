@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://sysifosweb.cl/sinapsys">
   <meta property="og:title" content="SysifosWeb - Software Developer">
   <meta property="og:description" content="Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.">
-  <meta property="og:image" content="{{asset('storage/logos/logo-simple-min.png')}}">
+  <meta property="og:image" content="https://sysifosweb.cl/storage/logos/logo-simple-min.png">
   <meta property="og:image:width" content="600">
   <meta property="og:image:height" content="600">
   <meta property="og:url" content="https://sysifosweb.cl/sinapsys">
@@ -19,7 +19,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SysifosWeb - Sinapsys">
   <meta name="twitter:description" content="Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.">
-  <meta name="twitter:image" content="{{asset('storage/logos/logo-simple-min.png')}}">
+  <meta name="twitter:image" content="https://sysifosweb.cl/storage/logos/logo-simple-min.png">
 
 <link href="{{asset('storage/logos/logo-simple-min.png')}}" rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>

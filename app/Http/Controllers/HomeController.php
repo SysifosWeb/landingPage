@@ -30,4 +30,8 @@ class HomeController extends Controller
 
         return Inertia::render('Home', ['seo' => $seoData]);
     }
+    public function indexSinapsys()
+    {
+        return view('public.sinapsys');
+    }
 }

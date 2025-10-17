@@ -15,7 +15,7 @@
   <meta property="og:image:height" content="600">
   <meta property="og:url" content="https://sysifosweb.cl/sinapsys">
   <meta property="og:type" content="website">
-  <meta name="fb:app_id" content="1215450019494398">
+  <meta property="fb:app_id" content="1215450019494398">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SysifosWeb - Sinapsys">
   <meta name="twitter:description" content="Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.">

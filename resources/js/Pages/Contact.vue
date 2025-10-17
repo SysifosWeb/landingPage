@@ -1,8 +1,9 @@
 <script setup>
-import { Head, useForm } from "@inertiajs/vue3";
+import { useForm } from "@inertiajs/vue3";
 import { ref } from "vue";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
+import SeoHead from "../Components/SeoHead.vue";
 
 const props = defineProps({
     errors: Object,
@@ -10,6 +11,10 @@ const props = defineProps({
     seo: {
         type: Object,
         required: true
+    },
+    disableSeoHead: {
+        type: Boolean,
+        default: false
     }
 });
 
@@ -68,24 +73,7 @@ const closeAlert = () => {
 </script>
 
 <template>
-    <Head>
-      <title>{{ props.seo.title }}</title>
-      <meta name="description" :content="props.seo.description" />
-      <meta name="keywords" :content="props.seo.keywords" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" :href="props.seo.canonical" />
-
-      <meta property="og:type" :content="props.seo.og_type" />
-      <meta property="og:title" :content="props.seo.title" />
-      <meta property="og:description" :content="props.seo.description" />
-      <meta property="og:url" :content="props.seo.canonical" />
-      <meta property="og:image" :content="props.seo.og_image" />
-
-      <meta name="twitter:card" :content="props.seo.twitter_card" />
-      <meta name="twitter:title" :content="props.seo.title" />
-      <meta name="twitter:description" :content="props.seo.description" />
-      <meta name="twitter:image" :content="props.seo.og_image" />
-    </Head>
+    <SeoHead v-if="!props.disableSeoHead" :seo="props.seo" :disabled="props.disableSeoHead" />
     
     <div class="min-h-screen bg-white">
         <Header />

@@ -1,13 +1,13 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
 import Header from "./Component/Header.vue";
 import Footer from "./Component/Footer.vue";
+import SeoHead from "../Components/SeoHead.vue";
 import heroImage from "../../img/home_image2.png";
-import react from "../../img/react.png";
-import vue from "../../img/vue.js.png";
-import laravel from "../../img/laravel.png";
+import react from "../../img/React.png";
+import vue from "../../img/Vue.js.png";
+import laravel from "../../img/Laravel.png";
 import node from "../../img/Node.js.png";
-import flutter from "../../img/flutter.png";
+import flutter from "../../img/Flutter.png";
 import pc from "../../img/pc.png";
 import iphone from "../../img/iphone.png";
 import building from "../../img/building.png";
@@ -21,29 +21,16 @@ const props = defineProps({
     seo: {
         type: Object,
         required: true
+    },
+    disableSeoHead: {
+        type: Boolean,
+        default: false
     }
 });
 </script>
 
 <template>
-    <Head>
-      <title>{{ seo.title }}</title>
-      <meta name="description" :content="seo.description" />
-      <meta name="keywords" :content="seo.keywords" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" :href="seo.canonical" />
-
-      <meta property="og:type" :content="seo.og_type" />
-      <meta property="og:title" :content="seo.title" />
-      <meta property="og:description" :content="seo.description" />
-      <meta property="og:url" :content="seo.canonical" />
-      <meta property="og:image" :content="seo.og_image" />
-
-      <meta name="twitter:card" :content="seo.twitter_card" />
-      <meta name="twitter:title" :content="seo.title" />
-      <meta name="twitter:description" :content="seo.description" />
-      <meta name="twitter:image" :content="seo.og_image" />
-    </Head>
+    <SeoHead v-if="!disableSeoHead" :seo="seo" :disabled="disableSeoHead" />
 
     <div class="min-h-screen bg-white">
         <Header />

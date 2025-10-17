@@ -70,6 +70,14 @@ class BlogPostController extends Controller
             'article_section' => $post->category->name ?? 'General'
         ];
 
+        if (config('app.use_blade_public_views')) {
+            return view('public.blog-post', [
+                'post' => $post->toArray(),
+                'relatedPosts' => $relatedPosts->toArray(),
+                'seo' => $seoData,
+            ]);
+        }
+
         return Inertia::render('BlogPost', [
             'post' => $post,
             'relatedPosts' => $relatedPosts,

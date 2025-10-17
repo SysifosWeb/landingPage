@@ -3,7 +3,22 @@
 <html class="dark" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SysifosWeb - Software Developer</title>
+<title>SysifosWeb - Sinapsys</title>
+  <meta name="description" content="Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://sysifosweb.cl/sinapsys">
+  <meta property="og:title" content="SysifosWeb - Software Developer">
+  <meta property="og:description" content="Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.">
+  <meta property="og:image" content="{{asset('storage/logos/logo-simple-min.png')}}">
+  <meta property="og:url" content="https://sysifosweb.cl/sinapsys">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SysifosWeb - Sinapsys">
+  <meta name="twitter:description" content="Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.">
+  <meta name="twitter:image" content="{{asset('storage/logos/logo-simple-min.png')}}">
+
 <link href="{{asset('storage/logos/logo-simple-min.png')}}" rel="icon" type="image/x-icon"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>

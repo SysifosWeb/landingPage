@@ -10,7 +10,7 @@
   <link rel="canonical" href="https://sysifosweb.cl/sinapsys">
   <meta property="og:title" content="SysifosWeb - Software Developer">
   <meta property="og:description" content="Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.">
-  <meta property="og:image" content="https://sysifosweb.cl/storage/logos/logo-simple-min.png">
+  <meta property="og:image" content="https://sysifosweb.cl/storage/logos/logo-simple-min.jpg">
   <meta property="og:image:width" content="600">
   <meta property="og:image:height" content="600">
   <meta property="og:url" content="https://sysifosweb.cl/sinapsys">

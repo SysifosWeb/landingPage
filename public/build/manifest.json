@@ -1,4 +1,41 @@
 {
+  "_bootstrap-Bqz7XBr8.js": {
+    "file": "assets/bootstrap-Bqz7XBr8.js",
+    "name": "bootstrap",
+    "css": [
+      "assets/bootstrap-BybRDSof.css"
+    ],
+    "assets": [
+      "assets/logo-blanco-BFdNkacE.webp",
+      "assets/diego-BExUej--.png",
+      "assets/karen-BK_KPaIo.png",
+      "assets/osman-BZj2Jzqp.png",
+      "assets/team-DoDC3Q1E.jpg",
+      "assets/mision-ByLiOYvt.png",
+      "assets/vision-B2z1ymn6.png",
+      "assets/valores-CyEwSgvW.png",
+      "assets/delivery-BbVlRW9e.png",
+      "assets/home_image2-CnLA6_VI.png",
+      "assets/React-CdrPibm4.png",
+      "assets/Vue.js-DgkQqFWc.png",
+      "assets/Laravel-CdgKIkwT.png",
+      "assets/Node.js-Dn9FxKf-.png",
+      "assets/Flutter-qKA_Aib5.png",
+      "assets/pc-CbuUKu36.png",
+      "assets/iphone-DOk4DjyI.png",
+      "assets/building-D2u9zc-9.png",
+      "assets/analysis-BpBQ50LC.png",
+      "assets/design-B6Whg8dl.png",
+      "assets/development-BMcPU851.png",
+      "assets/ansar-B3PA-uxT.gif",
+      "assets/car-DZBwJkla.gif",
+      "assets/faremin-ElgLJjzk.gif"
+    ]
+  },
+  "_bootstrap-BybRDSof.css": {
+    "file": "assets/bootstrap-BybRDSof.css",
+    "src": "_bootstrap-BybRDSof.css"
+  },
   "resources/css/app.css": {
     "file": "assets/app-BmFMYcr8.css",
     "src": "resources/css/app.css",
@@ -101,38 +138,21 @@
     "src": "resources/img/vision.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CJ9tQfXE.js",
+    "file": "assets/app-znSn3oJ-.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
-    "css": [
-      "assets/app-BybRDSof.css"
-    ],
-    "assets": [
-      "assets/logo-blanco-BFdNkacE.webp",
-      "assets/diego-BExUej--.png",
-      "assets/karen-BK_KPaIo.png",
-      "assets/osman-BZj2Jzqp.png",
-      "assets/team-DoDC3Q1E.jpg",
-      "assets/mision-ByLiOYvt.png",
-      "assets/vision-B2z1ymn6.png",
-      "assets/valores-CyEwSgvW.png",
-      "assets/delivery-BbVlRW9e.png",
-      "assets/home_image2-CnLA6_VI.png",
-      "assets/React-CdrPibm4.png",
-      "assets/Vue.js-DgkQqFWc.png",
-      "assets/Laravel-CdgKIkwT.png",
-      "assets/Node.js-Dn9FxKf-.png",
-      "assets/Flutter-qKA_Aib5.png",
-      "assets/pc-CbuUKu36.png",
-      "assets/iphone-DOk4DjyI.png",
-      "assets/building-D2u9zc-9.png",
-      "assets/analysis-BpBQ50LC.png",
-      "assets/design-B6Whg8dl.png",
-      "assets/development-BMcPU851.png",
-      "assets/ansar-B3PA-uxT.gif",
-      "assets/car-DZBwJkla.gif",
-      "assets/faremin-ElgLJjzk.gif"
+    "imports": [
+      "_bootstrap-Bqz7XBr8.js"
+    ]
+  },
+  "resources/js/public/public-app.js": {
+    "file": "assets/public-app-B4jP75vk.js",
+    "name": "public-app",
+    "src": "resources/js/public/public-app.js",
+    "isEntry": true,
+    "imports": [
+      "_bootstrap-Bqz7XBr8.js"
     ]
   }
 }

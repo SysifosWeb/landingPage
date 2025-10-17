@@ -30,6 +30,9 @@ Route::get('/contacto', [ContactController::class, 'index']);
 
 Route::get('/portfolio', [PortfolioController::class, 'index']);
 
+Route::get('/sinapsys', function () {
+    return view('Sinapsys');
+});
 // Rutas del blog público
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogPostController::class, 'show'])->name('blog.show');

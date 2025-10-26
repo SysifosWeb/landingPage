@@ -13,7 +13,7 @@ class HomeController extends Controller
     public function index()
     {
         $seoData = [
-            'title' => 'Desarrollo de Software y Aplicaciones Web Profesionales en Chile | SysifosWeb',
+            'title' => 'Paginas Web, Tiendas Online y software a medida en chile | SysifosWeb',
             'description' => 'Especialistas en desarrollo de software, aplicaciones web y soluciones digitales en Chile. Laravel, Vue.js, React y más. Cotiza tu proyecto gratis.',
             'keywords' => 'desarrollo de software Chile, desarrollo web, aplicaciones web, Laravel, Vue.js, React, desarrollo frontend, desarrollo backend, soluciones digitales, programación, SysifosWeb',
             'canonical' => 'https://sysifosweb.cl/',

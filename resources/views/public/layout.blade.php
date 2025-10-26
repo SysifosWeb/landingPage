@@ -24,6 +24,15 @@
     @endif
     @stack('head')
     @vite('resources/css/app.css')
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3BJ0HZ6RSH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3BJ0HZ6RSH');
+</script>
 </head>
 <body class="antialiased bg-white text-gray-900">
     <div id="public-app" data-page='@json($inertiaPage, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)'></div>

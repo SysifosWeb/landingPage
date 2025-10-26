@@ -101,6 +101,15 @@
          box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.2), 0 4px 6px -2px rgba(236, 72, 153, 0.1);
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3BJ0HZ6RSH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3BJ0HZ6RSH');
+</script>
 </head>
   <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark selection:bg-primary/30">
     <div class="relative min-h-screen w-full flex items-center justify-center p-4 overflow-hidden">

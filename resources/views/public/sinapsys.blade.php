@@ -110,8 +110,19 @@
 
   gtag('config', 'G-3BJ0HZ6RSH');
 </script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TWB2W6T9');</script>
+<!-- End Google Tag Manager -->
 </head>
   <body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark selection:bg-primary/30">
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TWB2W6T9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
     <div class="relative min-h-screen w-full flex items-center justify-center p-4 overflow-hidden">
       <div class="absolute inset-0 w-full h-full aurora-background animate-aurora opacity-10 dark:opacity-20 blur-3xl"></div>
       <div class="relative z-10 w-full max-w-2xl mx-auto">

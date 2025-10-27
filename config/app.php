@@ -123,4 +123,6 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    'use_blade_public_views' => env('APP_USE_BLADE_PUBLIC_VIEWS', true),
+
 ];

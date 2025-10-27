@@ -1,20 +1,49 @@
 {
+  "_bootstrap-BPuP35RY.css": {
+    "file": "assets/bootstrap-BPuP35RY.css",
+    "src": "_bootstrap-BPuP35RY.css"
+  },
+  "_bootstrap-C3Zh1R5t.js": {
+    "file": "assets/bootstrap-C3Zh1R5t.js",
+    "name": "bootstrap",
+    "css": [
+      "assets/bootstrap-BPuP35RY.css"
+    ],
+    "assets": [
+      "assets/logo-blanco-BFdNkacE.webp",
+      "assets/diego-BExUej--.png",
+      "assets/karen-BK_KPaIo.png",
+      "assets/osman-BZj2Jzqp.png",
+      "assets/team-DoDC3Q1E.jpg",
+      "assets/mision-ByLiOYvt.png",
+      "assets/vision-B2z1ymn6.png",
+      "assets/valores-CyEwSgvW.png",
+      "assets/delivery-BbVlRW9e.png",
+      "assets/home_image2-CnLA6_VI.png",
+      "assets/React-CdrPibm4.png",
+      "assets/Vue.js-DgkQqFWc.png",
+      "assets/Laravel-CdgKIkwT.png",
+      "assets/Node.js-Dn9FxKf-.png",
+      "assets/Flutter-qKA_Aib5.png",
+      "assets/pc-CbuUKu36.png",
+      "assets/iphone-DOk4DjyI.png",
+      "assets/building-D2u9zc-9.png",
+      "assets/analysis-BpBQ50LC.png",
+      "assets/design-B6Whg8dl.png",
+      "assets/development-BMcPU851.png",
+      "assets/ansar-B3PA-uxT.gif",
+      "assets/car-DZBwJkla.gif",
+      "assets/faremin-ElgLJjzk.gif"
+    ]
+  },
   "resources/css/app.css": {
     "file": "assets/app-BmFMYcr8.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/img/Diego.png": {
-    "file": "assets/Diego-BExUej--.png",
-    "src": "resources/img/Diego.png"
-  },
   "resources/img/Flutter.png": {
     "file": "assets/Flutter-qKA_Aib5.png",
     "src": "resources/img/Flutter.png"
-  },
-  "resources/img/Karen.png": {
-    "file": "assets/Karen-BK_KPaIo.png",
-    "src": "resources/img/Karen.png"
   },
   "resources/img/Laravel.png": {
     "file": "assets/Laravel-CdgKIkwT.png",
@@ -23,10 +52,6 @@
   "resources/img/Node.js.png": {
     "file": "assets/Node.js-Dn9FxKf-.png",
     "src": "resources/img/Node.js.png"
-  },
-  "resources/img/Osman.png": {
-    "file": "assets/Osman-BZj2Jzqp.png",
-    "src": "resources/img/Osman.png"
   },
   "resources/img/React.png": {
     "file": "assets/React-CdrPibm4.png",
@@ -64,6 +89,10 @@
     "file": "assets/development-BMcPU851.png",
     "src": "resources/img/development.png"
   },
+  "resources/img/diego.png": {
+    "file": "assets/diego-BExUej--.png",
+    "src": "resources/img/diego.png"
+  },
   "resources/img/faremin.gif": {
     "file": "assets/faremin-ElgLJjzk.gif",
     "src": "resources/img/faremin.gif"
@@ -76,6 +105,10 @@
     "file": "assets/iphone-DOk4DjyI.png",
     "src": "resources/img/iphone.png"
   },
+  "resources/img/karen.png": {
+    "file": "assets/karen-BK_KPaIo.png",
+    "src": "resources/img/karen.png"
+  },
   "resources/img/logo-blanco.webp": {
     "file": "assets/logo-blanco-BFdNkacE.webp",
     "src": "resources/img/logo-blanco.webp"
@@ -83,6 +116,10 @@
   "resources/img/mision.png": {
     "file": "assets/mision-ByLiOYvt.png",
     "src": "resources/img/mision.png"
+  },
+  "resources/img/osman.png": {
+    "file": "assets/osman-BZj2Jzqp.png",
+    "src": "resources/img/osman.png"
   },
   "resources/img/pc.png": {
     "file": "assets/pc-CbuUKu36.png",
@@ -101,38 +138,21 @@
     "src": "resources/img/vision.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-CJvDJ_5m.js",
+    "file": "assets/app-BMXGyGCS.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
-    "css": [
-      "assets/app-DzChA0Nc.css"
-    ],
-    "assets": [
-      "assets/logo-blanco-BFdNkacE.webp",
-      "assets/Diego-BExUej--.png",
-      "assets/Karen-BK_KPaIo.png",
-      "assets/Osman-BZj2Jzqp.png",
-      "assets/team-DoDC3Q1E.jpg",
-      "assets/mision-ByLiOYvt.png",
-      "assets/vision-B2z1ymn6.png",
-      "assets/valores-CyEwSgvW.png",
-      "assets/delivery-BbVlRW9e.png",
-      "assets/home_image2-CnLA6_VI.png",
-      "assets/React-CdrPibm4.png",
-      "assets/Vue.js-DgkQqFWc.png",
-      "assets/Laravel-CdgKIkwT.png",
-      "assets/Node.js-Dn9FxKf-.png",
-      "assets/Flutter-qKA_Aib5.png",
-      "assets/pc-CbuUKu36.png",
-      "assets/iphone-DOk4DjyI.png",
-      "assets/building-D2u9zc-9.png",
-      "assets/analysis-BpBQ50LC.png",
-      "assets/design-B6Whg8dl.png",
-      "assets/development-BMcPU851.png",
-      "assets/ansar-B3PA-uxT.gif",
-      "assets/car-DZBwJkla.gif",
-      "assets/faremin-ElgLJjzk.gif"
+    "imports": [
+      "_bootstrap-C3Zh1R5t.js"
+    ]
+  },
+  "resources/js/public/public-app.js": {
+    "file": "assets/public-app-smvvgokO.js",
+    "name": "public-app",
+    "src": "resources/js/public/public-app.js",
+    "isEntry": true,
+    "imports": [
+      "_bootstrap-C3Zh1R5t.js"
     ]
   }
 }

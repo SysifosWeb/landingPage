@@ -70,6 +70,14 @@ class BlogPostController extends Controller
             'article_section' => $post->category->name ?? 'General'
         ];
 
+        if (config('app.use_blade_public_views')) {
+            return view('public.blog-post', [
+                'post' => $post->toArray(),
+                'relatedPosts' => $relatedPosts->toArray(),
+                'seo' => $seoData,
+            ]);
+        }
+
         return Inertia::render('BlogPost', [
             'post' => $post,
             'relatedPosts' => $relatedPosts,
@@ -83,9 +91,15 @@ class BlogPostController extends Controller
     private function generateDynamicKeywords($post)
     {
         $provided = [];
-        
+
         if ($post->meta_keywords) {
-            $provided = array_map('trim', explode(',', $post->meta_keywords));
+            // Si meta_keywords es un array, usarlo directamente
+            if (is_array($post->meta_keywords)) {
+                $provided = array_map('trim', $post->meta_keywords);
+            } else {
+                // Si es un string, hacer explode
+                $provided = array_map('trim', explode(',', $post->meta_keywords));
+            }
         }
 
         $fallback = [

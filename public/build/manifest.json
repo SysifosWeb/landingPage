@@ -1,6 +1,10 @@
 {
-  "_bootstrap-BBxDYTLv.js": {
-    "file": "assets/bootstrap-BBxDYTLv.js",
+  "_bootstrap-BybRDSof.css": {
+    "file": "assets/bootstrap-BybRDSof.css",
+    "src": "_bootstrap-BybRDSof.css"
+  },
+  "_bootstrap-vbpIXw9W.js": {
+    "file": "assets/bootstrap-vbpIXw9W.js",
     "name": "bootstrap",
     "css": [
       "assets/bootstrap-BybRDSof.css"
@@ -31,10 +35,6 @@
       "assets/car-DZBwJkla.gif",
       "assets/faremin-ElgLJjzk.gif"
     ]
-  },
-  "_bootstrap-BybRDSof.css": {
-    "file": "assets/bootstrap-BybRDSof.css",
-    "src": "_bootstrap-BybRDSof.css"
   },
   "resources/css/app.css": {
     "file": "assets/app-D_nIs6Ml.css",
@@ -138,21 +138,21 @@
     "src": "resources/img/vision.png"
   },
   "resources/js/app.js": {
-    "file": "assets/app-DH5oq8bX.js",
+    "file": "assets/app-BU-tb5sk.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "imports": [
-      "_bootstrap-BBxDYTLv.js"
+      "_bootstrap-vbpIXw9W.js"
     ]
   },
   "resources/js/public/public-app.js": {
-    "file": "assets/public-app--aTFAxeU.js",
+    "file": "assets/public-app-C4AzGzao.js",
     "name": "public-app",
     "src": "resources/js/public/public-app.js",
     "isEntry": true,
     "imports": [
-      "_bootstrap-BBxDYTLv.js"
+      "_bootstrap-vbpIXw9W.js"
     ]
   }
 }

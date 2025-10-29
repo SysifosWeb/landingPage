@@ -34,7 +34,7 @@
                 type="email"
                 required
                 class="block w-full pl-10 pr-3 py-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
-                placeholder="admin@sysifosweb.cl"
+                placeholder=""
               >
             </div>
             <div v-if="errors.email" class="mt-1 text-sm text-red-300">
@@ -59,7 +59,7 @@
                 :type="showPassword ? 'text' : 'password'"
                 required
                 class="block w-full pl-10 pr-10 py-3 border border-white/30 rounded-lg bg-white/10 text-white placeholder-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
-                placeholder="••••••••"
+                placeholder=""
               >
               <button
                 type="button"

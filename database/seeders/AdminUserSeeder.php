@@ -18,9 +18,9 @@ class AdminUserSeeder extends Seeder
     {
         // Crear usuario administrador principal
         $admin = User::create([
-            'name' => 'Diego Araya',
+            'name' => 'Osman Ahumada',
             'email' => 'admin@sysifosweb.cl',
-            'password' => Hash::make('admin123'),
+            'password' => Hash::make('A2#R£0f8[Yj8'),
             'role' => 'admin',
             'active' => true,
             'email_verified_at' => now(),
@@ -30,7 +30,7 @@ class AdminUserSeeder extends Seeder
         $editor = User::create([
             'name' => 'Editor SysifosWeb',
             'email' => 'editor@sysifosweb.cl',
-            'password' => Hash::make('editor123'),
+            'password' => Hash::make('2[2D£lX57]H1'),
             'role' => 'editor',
             'active' => true,
             'email_verified_at' => now(),

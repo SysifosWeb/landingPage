@@ -56,11 +56,11 @@ import logoBlanco from "../../../img/logo-blanco.webp";
                                 Servicios
                             </Link>
                         </li>
-                        <!-- <li>
+                        <li>
                             <Link href="/portfolio" class="text-gray-300 hover:text-cyan-400 transition-colors duration-200">
                                 Portfolio
                             </Link>
-                        </li> -->
+                        </li>
                         <li>
                             <Link href="/blog" class="text-gray-300 hover:text-cyan-400 transition-colors duration-200">
                                 Blog

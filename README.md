@@ -21,6 +21,49 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+## Arquitectura Limpia en este proyecto
+
+Este proyecto adopta una separación por capas para mejorar mantenibilidad y pruebas:
+
+- **Domain**: contratos y entidades puras.
+  - `app/Domain/Users/Entities/User.php`: entidad de dominio (sin Eloquent/HTTP).
+  - `app/Domain/Users/UserRepositoryInterface.php`: interfaz de repositorio.
+  - `app/Domain/Auth/TokenServiceInterface.php`: interfaz de servicio de tokens.
+- **Application**: casos de uso que orquestan reglas de negocio.
+  - `app/Application/Users/RegisterUser.php`: registra usuario y emite token.
+  - `app/Application/Auth/LoginUser.php`: valida credenciales y emite token.
+  - `app/Application/Auth/LogoutUser.php`: revoca token actual.
+  - `app/Application/Users/GetAuthenticatedUser.php`: obtiene usuario autenticado.
+- **Infrastructure**: implementaciones concretas.
+  - `app/Infrastructure/Persistence/EloquentUserRepository.php`: repositorio con Eloquent.
+  - `app/Infrastructure/Auth/SanctumTokenService.php`: tokens con Sanctum.
+- **Interfaces (HTTP)**: controladores Laravel.
+  - `app/Http/Controllers/AuthController.php`: valida requests y delega en casos de uso.
+- **Contenedor IoC**: inversión de dependencias.
+  - `app/Providers/AppServiceProvider.php`: vincula interfaces → implementaciones.
+
+### Ventajas
+- Casos de uso y dominio no dependen de Eloquent ni de Sanctum.
+- Sustituir infraestructura (otro ORM o JWT) no impacta el dominio.
+- Facilita pruebas unitarias de casos de uso con dobles (mocks/stubs).
+
+### Cómo añadir un nuevo módulo
+1. Define entidad(es) y contratos en `app/Domain/<Modulo>`.
+2. Implementa repositorios/servicios en `app/Infrastructure/<...>`.
+3. Crea casos de uso en `app/Application/<Modulo>`.
+4. Expone endpoints con controladores en `app/Http/Controllers`.
+5. Registra bindings en `AppServiceProvider`.
+
+### Endpoints actuales (REST API con Sanctum)
+- `POST /api/auth/register` → devuelve `{ user, token }`.
+- `POST /api/auth/login` → devuelve `{ token }`.
+- `POST /api/auth/logout` → requiere `Authorization: Bearer`.
+- `GET /api/auth/me` → requiere `Authorization: Bearer`.
+
+### Notas
+- CORS está abierto en `config/cors.php` para facilitar pruebas; en producción, restringe `allowed_origins`.
+- El `User` de Eloquent usa cast `hashed` para el `password`.
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.

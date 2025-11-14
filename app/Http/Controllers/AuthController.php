@@ -2,31 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
+use App\Application\Users\RegisterUser;
+use App\Application\Auth\LoginUser;
+use App\Application\Auth\LogoutUser;
+use App\Application\Users\GetAuthenticatedUser;
 
+/**
+ * Controlador HTTP (adaptador de interfaz).
+ *
+ * Recibe y valida requests, delega la lógica a los casos de uso
+ * de la capa Application y construye las respuestas JSON.
+ */
 class AuthController extends Controller
 {
+    public function __construct(
+        private readonly RegisterUser $registerUser,
+        private readonly LoginUser $loginUser,
+        private readonly LogoutUser $logoutUser,
+        private readonly GetAuthenticatedUser $getAuthenticatedUser,
+    ) {}
+
     public function register(Request $request)
     {
+        // Validación de entrada propia del adaptador HTTP
         $validated = $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'string', 'min:8'],
         ]);
 
-        $user = new User([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-        ]);
-        // El cast 'hashed' en el modelo se encarga de hashear
-        $user->password = $validated['password'];
-        $user->save();
-
-        $token = $user->createToken('api')->plainTextToken;
+        [$user, $token] = $this->registerUser->execute(
+            $validated['name'],
+            $validated['email'],
+            $validated['password']
+        );
 
         return response()->json([
             'user' => [
@@ -40,37 +51,35 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
+        // Validación de entrada propia del adaptador HTTP
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required', 'string'],
         ]);
-
-        $user = User::where('email', $credentials['email'])->first();
-        if (! $user || ! Hash::check($credentials['password'], $user->password)) {
+        [$user, $token] = $this->loginUser->execute($credentials['email'], $credentials['password']);
+        if (! $user) {
             throw ValidationException::withMessages([
                 'email' => ['Las credenciales proporcionadas no son válidas.'],
             ]);
         }
-
-        $token = $user->createToken('api')->plainTextToken;
-
-        return response()->json([
-            'token' => $token,
-        ], 200);
+        return response()->json(['token' => $token], 200);
     }
 
     public function logout(Request $request)
     {
+        // Revoca el token actual del usuario autenticado
         $token = $request->user()->currentAccessToken();
         if ($token) {
-            $token->delete();
+            $this->logoutUser->execute($token->id);
         }
         return response()->json(['message' => 'Sesión cerrada'], 200);
     }
 
     public function me(Request $request)
     {
-        $user = $request->user();
+        // Obtiene el usuario autenticado desde la capa Application
+        $auth = $request->user();
+        $user = $this->getAuthenticatedUser->execute($auth->id);
         return response()->json([
             'id' => $user->id,
             'name' => $user->name,

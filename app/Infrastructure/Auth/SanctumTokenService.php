@@ -5,6 +5,7 @@ namespace App\Infrastructure\Auth;
 use App\Domain\Auth\TokenServiceInterface;
 use App\Domain\Users\Entities\User as DomainUser;
 use App\Models\User as EloquentUser;
+use Laravel\Sanctum\PersonalAccessToken;
 
 /**
  * Implementación del servicio de tokens usando Laravel Sanctum.
@@ -25,6 +26,24 @@ class SanctumTokenService implements TokenServiceInterface
     public function revokeTokenById(int $tokenId): void
     {
         // Laravel Sanctum usa tabla personal_access_tokens
-        \Laravel\Sanctum\PersonalAccessToken::where('id', $tokenId)->delete();
+        PersonalAccessToken::where('id', $tokenId)->delete();
+    }
+
+    /** Obtiene el usuario de dominio asociado a un token (texto plano). */
+    public function getUserFromToken(string $plainTextToken): ?DomainUser
+    {
+        $pat = PersonalAccessToken::findToken($plainTextToken);
+        if (! $pat) {
+            return null;
+        }
+        $tokenable = $pat->tokenable;
+        if (! $tokenable instanceof EloquentUser) {
+            return null;
+        }
+        return new DomainUser(
+            id: $tokenable->id,
+            name: $tokenable->name,
+            email: $tokenable->email,
+        );
     }
 }

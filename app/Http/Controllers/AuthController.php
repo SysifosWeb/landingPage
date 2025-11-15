@@ -8,6 +8,7 @@ use App\Application\Users\RegisterUser;
 use App\Application\Auth\LoginUser;
 use App\Application\Auth\LogoutUser;
 use App\Application\Users\GetAuthenticatedUser;
+use App\Application\Auth\AuthorizeUser;
 
 /**
  * Controlador HTTP (adaptador de interfaz).
@@ -22,6 +23,7 @@ class AuthController extends Controller
         private readonly LoginUser $loginUser,
         private readonly LogoutUser $logoutUser,
         private readonly GetAuthenticatedUser $getAuthenticatedUser,
+        private readonly AuthorizeUser $authorizeUser,
     ) {}
 
     public function register(Request $request)
@@ -77,6 +79,17 @@ class AuthController extends Controller
 
     public function me(Request $request)
     {
+        $authHeader = $request->header('Authorization');
+        $plainToken = $request->bearerToken();
+        if (! $authHeader && ! $plainToken) {
+            return response()->json([
+                'error' => 'Token de autorización requerido'], 401);
+        }
+        $user = $this->authorizeUser->execute($authHeader ?? $plainToken);
+        if (! $user) {
+            return response()->json([
+                'error' => 'Token inválido o expirado'], 401);
+        }
         // Obtiene el usuario autenticado desde la capa Application
         $auth = $request->user();
         $user = $this->getAuthenticatedUser->execute($auth->id);

@@ -6,8 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Application\Contacts\RegisterContact;
+use App\Application\Contacts\GetById;
 use App\Application\Users\GetAuthenticatedUser;
 use App\Application\Auth\AuthorizeUser;
+use App\Http\Resources\ContactResource;
+use App\Http\Resources\RegisterContactResource;
+use App\Application\Contacts\GetAll;
+use App\Http\Resources\AllContactCollection;
+use App\Http\Resources\Contact\MarkAsReadResource;
+use App\Application\Contacts\MarkAsRead;
+
+
 
 class ContactController extends Controller
 {
@@ -17,7 +26,10 @@ class ContactController extends Controller
     public function __construct(
         private readonly RegisterContact $registerContact,
         private readonly GetAuthenticatedUser $getAuthenticatedUser,
+        private readonly GetById $getById,
         private readonly AuthorizeUser $authorizeUser,
+        private readonly GetAll $getAll,
+        private readonly MarkAsRead $markAsRead,
     ) {}
 
 
@@ -76,17 +88,7 @@ class ContactController extends Controller
      
     public function registerContact(Request $request)
     {
-        $authHeader = $request->header('Authorization');
-        $plainToken = $request->bearerToken();
-        if (! $authHeader && ! $plainToken) {
-            return response()->json([
-                'error' => 'Token de autorización requerido'], 401);
-        }
-        $user = $this->authorizeUser->execute($authHeader ?? $plainToken);
-        if (! $user) {
-            return response()->json([
-                'error' => 'Token inválido o expirado'], 401);
-        }
+       $this->authorize($request);
 
         try {
             $request->validate([
@@ -97,38 +99,60 @@ class ContactController extends Controller
                 'subject' => 'required|string|max:255|min:5',
                 'message' => 'required|string|max:2000|min:10',
             ]);
-       
 
-        $this->registerContact->execute($request->all());
+            $contact = $this->registerContact->execute($request->all());
 
-       return response()->json([
-            'contacto' => [               
-                'name' => $request->name,
-                'email' => $request->email,
-                'subject' => $request->subject,
-                'message' => $request->message,
-            ],            
-        ], 201);
+            return (new RegisterContactResource($contact))
+                ->response()
+                ->setStatusCode(201);
 
-            }catch (\Exception $e) {
-                return response()->json([
-                    'error' => $e->getMessage(),
-                ], 500);
-            }
-    }
-    /**
-     * Display the specified resource.
-     */
-    public function show(Contact $contact)
-    {
-        // Marcar como leído si es nuevo
-        if ($contact->isNew()) {
-            $contact->markAsRead();
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al registrar contacto',
+                'message' => $e->getMessage(),
+            ], 500);
         }
+    }
+   
+    public function getById(Request $request, int $id)
+    {        
+       $this->authorize($request);
+       try{
+            $contact = $this->getById->execute($id);
 
-        // return Inertia::render('Admin/Contacts/Show', [
-        //     'contact' => $contact,
-        // ]);
+            if (!$contact) {
+                return response()->json([
+                    'error' => 'Contacto no encontrado',
+                    'message' => 'No se pudo encontrar un contacto con el ID número ' . $id,
+                ], 404);
+            }
+
+            return new ContactResource($contact);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al obtener contacto',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function getAll(Request $request)
+    {
+        $this->authorize($request);
+        try{
+            $contacts = $this->getAll->execute();
+
+            return (new AllContactCollection($contacts))
+                ->response()
+                ->setStatusCode(200);
+
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al obtener contactos',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
 
     /**
@@ -138,18 +162,38 @@ class ContactController extends Controller
     {
         $contact->delete();
 
-        return redirect()->route('admin.contacts.index')
-            ->with('success', 'Contacto eliminado exitosamente.');
+        // return redirect()->route('admin.contacts.index')
+        //     ->with('success', 'Contacto eliminado exitosamente.');
     }
 
     /**
      * Mark contact as read
      */
-    public function markAsRead(Contact $contact)
+    public function markAsRead(Request $request, int $id)
     {
-        $contact->markAsRead();
+        $this->authorize($request);
 
-        return back()->with('success', 'Contacto marcado como leído.');
+        try {
+            $contact = Contact::find($id);
+            if (!$contact) {
+                return response()->json(['error' => 'Contacto no encontrado'], 404);
+            }
+            $this->markAsRead->execute($id);
+
+            return new MarkAsReadResource($request);
+
+
+            // return response()->json([
+            //     'message' => 'Contacto marcado como leído.',
+            //     'id' => $contact->id,
+            //     'status' => $contact->status,
+            // ], 200);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al marcar como leído',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
     }
 
     /**
@@ -208,5 +252,18 @@ class ContactController extends Controller
         }
 
         return back()->with('success', $message);
+    }
+    private function authorize(Request $request){
+        $authHeader = $request->header('Authorization');
+        $plainToken = $request->bearerToken();
+        if (! $authHeader && ! $plainToken) {
+            return response()->json([
+                'error' => 'Token de autorización requerido'], 401);
+        }
+        $user = $this->authorizeUser->execute($authHeader ?? $plainToken);
+        if (! $user) {
+            return response()->json([
+                'error' => 'Token inválido o expirado'], 401);
+        }
     }
 }

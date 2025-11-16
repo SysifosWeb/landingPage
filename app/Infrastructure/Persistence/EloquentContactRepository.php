@@ -7,6 +7,7 @@ use App\Domain\Contacts\ContactRepositoryInterface;
 use App\Domain\Contacts\Entities\Contact as DomainContact;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 
 
@@ -59,20 +60,27 @@ class EloquentContactRepository implements ContactRepositoryInterface
     public function create(array $data): DomainContact
     {
         $model = new EloquentContact();
-        $model->name = $data['name'];
-        $model->email = $data['email'];
-        $model->phone = $data['phone'];
-        $model->company = $data['company'];
-        $model->subject = $data['subject'];
-        $model->message = $data['message'];
-        $model->status = $data['status'];
-        $model->ip_address = $data['ip_address'];
-        $model->user_agent = $data['user_agent'];
-        $model->metadata = $data['metadata'];
-        $model->read_at = $data['read_at'];
-        $model->replied_at = $data['replied_at'];
-        $model->save();
-        return $this->toDomain($model);
+        try {
+            
+            
+            $model->name = $data['name'];
+            $model->email = $data['email'];
+            $model->phone = $data['phone'];
+            $model->company = $data['company'];
+            $model->subject = $data['subject'];
+            $model->message = $data['message'];
+            $model->status = $data['status'];
+            $model->ip_address = $data['ip_address'];
+            $model->user_agent = $data['user_agent'];
+            $model->metadata = $data['metadata'];
+            $model->read_at = $data['read_at'];
+            $model->replied_at = $data['replied_at'];
+            $model->save();
+            return $this->toDomain($model);
+        } catch (\Throwable $th) {
+            Log::error('Error al crear contacto: ' . $th->getMessage());
+            return $this->toDomain($model);
+        }
     }
     /**
      * Busca por id (o null si no existe).
@@ -86,6 +94,7 @@ class EloquentContactRepository implements ContactRepositoryInterface
             $model = EloquentContact::findOrFail($id);
             return $this->toDomain($model);
         } catch (ModelNotFoundException $e) {
+            Log::error('Error al obtener contacto por ID: ' . $e->getMessage());
             return null;
         }
     }

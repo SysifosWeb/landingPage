@@ -13,3 +13,6 @@ Route::get('/auth/me', [AuthController::class, 'me'])->middleware('auth:sanctum'
 
 // Contact endpoints
 Route::post('/contact/register', [ContactController::class, 'registerContact'])->middleware('auth:sanctum');
+Route::get('/contact/{id}', [ContactController::class, 'getById'])->middleware('auth:sanctum');
+Route::get('/contact', [ContactController::class, 'getAll'])->middleware('auth:sanctum');
+Route::put('/contact/{id}/mark-as-read', [ContactController::class, 'markAsRead'])->middleware('auth:sanctum');

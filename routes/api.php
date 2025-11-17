@@ -16,3 +16,11 @@ Route::post('/contact/register', [ContactController::class, 'registerContact'])-
 Route::get('/contact/{id}', [ContactController::class, 'getById'])->middleware('auth:sanctum');
 Route::get('/contact', [ContactController::class, 'getAll'])->middleware('auth:sanctum');
 Route::put('/contact/{id}/mark-as-read', [ContactController::class, 'markAsRead'])->middleware('auth:sanctum');
+Route::put('/contact/{id}/mark-as-replied', [ContactController::class, 'markAsReplied'])->middleware('auth:sanctum');
+Route::get('/contact/{id}/browser-info', [ContactController::class, 'getBrowserInfoAttribute'])->middleware('auth:sanctum');
+Route::get('/contact/{id}/status-text', [ContactController::class, 'getStatusTextAttribute'])->middleware('auth:sanctum');
+Route::get('/contact/{id}/time-ago', [ContactController::class, 'getTimeAgoAttribute'])->middleware('auth:sanctum');
+Route::get('/contact/{id}/is-new', [ContactController::class, 'isNew'])->middleware('auth:sanctum');
+Route::get('/contact/{id}/is-read', [ContactController::class, 'isRead'])->middleware('auth:sanctum');
+Route::get('/contact/{id}/is-replied', [ContactController::class, 'isReplied'])->middleware('auth:sanctum');
+Route::put('/contact/{id}/mark-as-archived', [ContactController::class, 'markAsArchived'])->middleware('auth:sanctum');

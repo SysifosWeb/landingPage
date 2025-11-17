@@ -126,15 +126,20 @@ class EloquentContactRepository implements ContactRepositoryInterface
     {
         EloquentContact::where('id', $id)->update(['status' => 'replied', 'replied_at' => now()]);
     }
-    
-     public function hasValidEmail(string $email): bool
+    /**
+     * Marca como Archivado.
+     *
+     * @param int $id Identificador del contacto
+     */
+    public function markAsArchived(int $id): void
     {
-        return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
-    }
+        EloquentContact::where('id', $id)->update(['status' => 'archived']);
+    }        
     
-    public function getBrowserInfoAttribute(): string
+    public function getBrowserInfoAttribute(int $id): string
     {
-        $userAgent = EloquentContact::all()->user_agent;
+        try{
+        $userAgent = EloquentContact::findOrFail($id)->user_agent;
         $browser = 'Unknown';
         $os = 'Unknown';
         $device = 'Unknown';
@@ -148,41 +153,71 @@ class EloquentContactRepository implements ContactRepositoryInterface
             $device = $matches[1];
         }
         return "{$browser} on {$os} ({$device})";
+        }catch (\Throwable $th) {
+            Log::error('Error al obtener información del navegador: ' . $th->getMessage());
+            return 'User agent no disponible';
+        }
     }
     /**
      * Obtiene texto del estado.
      *
      * @return string Texto descriptivo del estado
      */
-    public function getStatusTextAttribute(): string
+    public function getStatusTextAttribute(int $id): string
     {
-        $status = EloquentContact::all()->status;
+        try{
+        $status = EloquentContact::findOrFail($id)->status;
         return match ($status) {
             'new' => 'Nuevo',
             'read' => 'Leído',
             'replied' => 'Respondido',
+            'archived' => 'Archivado',
             default => 'Desconocido',
         };
+        }catch (\Throwable $th) {
+            Log::error('Error al obtener texto del estado: ' . $th->getMessage());
+            return 'Estado no disponible';
+        }
     }
-    public function isRead(): bool
+    public function isRead(int $id): bool
     {
-         $status = EloquentContact::all()->status;
+        try{
+        $status = EloquentContact::findOrFail($id)->status;
         return $status === 'read';
+        }catch (\Throwable $th) {
+            Log::error('Error al verificar si el contacto fue leído: ' . $th->getMessage());
+            return false;
+        }
     }
-    public function isReplied(): bool
+    public function isReplied(int $id): bool
     {
-        $status = EloquentContact::all()->status;
+        try{
+        $status = EloquentContact::findOrFail($id)->status;
         return $status === 'replied';
+        }catch (\Throwable $th) {
+            Log::error('Error al verificar si el contacto fue respondido: ' . $th->getMessage());
+            return false;
+        }
     }
-    public function isNew(): bool
+    public function isNew(int $id): bool
     {
-        $status = EloquentContact::all()->status;
+        try{
+        $status = EloquentContact::findOrFail($id)->status;
         return $status === 'new';
+        }catch (\Throwable $th) {
+            Log::error('Error al verificar si el contacto es nuevo: ' . $th->getMessage());
+            return false;
+        }
     }
-    public function getTimeAgoAttribute(): string
+    public function getTimeAgoAttribute(int $id): string
     {
-        $createdAt = EloquentContact::all()->created_at;
+        try{
+        $createdAt = EloquentContact::findOrFail($id)->created_at;
         return $createdAt->diffForHumans();
+        }catch (\Throwable $th) {
+            Log::error('Error al obtener tiempo transcurrido: ' . $th->getMessage());
+            return 'Fecha de creación no disponible';
+        }
     }
 
 }

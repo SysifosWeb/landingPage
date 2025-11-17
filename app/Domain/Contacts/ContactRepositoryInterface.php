@@ -23,20 +23,20 @@ interface ContactRepositoryInterface
     public function markAsRead(int $id): void;
     /** Marca como respondido. */
     public function markAsReplied(int $id): void;
-    /** Verifica si el correo electrónico es válido.*/
-    public function hasValidEmail(string $email): bool;
+     /** Marca como respondido. */
+    public function markAsArchived(int $id): void;
     /** Obtiene información del navegador. */
-    public function getBrowserInfoAttribute(): string;
+    public function getBrowserInfoAttribute(int $id): string;
     /** Obtiene texto del estado. */
-    public function getStatusTextAttribute(): string;
-    /** Verifica si el contacto fue leído. */
-    public function isRead(): bool;
-    /** Verifica si el contacto fue respondido. */
-    public function isReplied(): bool;
+    public function getStatusTextAttribute(int $id): string;
     /** Obtiene tiempo transcurrido desde la creación. */
-    public function getTimeAgoAttribute(): string;
+    public function getTimeAgoAttribute(int $id): string;
+    /** Verifica si el contacto fue leído. */
+    public function isRead(int $id): bool;
+    /** Verifica si el contacto fue respondido. */
+    public function isReplied(int $id): bool;
     /** Verifica si el contacto es nuevo. */
-    public function isNew(): bool;
+    public function isNew(int $id): bool;
 
 
 }

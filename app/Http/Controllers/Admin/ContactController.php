@@ -15,8 +15,20 @@ use App\Application\Contacts\GetAll;
 use App\Http\Resources\AllContactCollection;
 use App\Http\Resources\Contact\MarkAsReadResource;
 use App\Application\Contacts\MarkAsRead;
-
-
+use App\Http\Resources\Contact\MarkAsRepliedResource;
+use App\Http\Resources\Contact\GetBrowserInfoAttributeResource;
+use App\Application\Contacts\MarkAsReplied;
+use App\Application\Contacts\GetBrowserInfoAttribute;
+use App\Application\Contacts\GetStatusTextAttribute;
+use App\Http\Resources\Contact\GetStatusTextAttributeResource;
+use App\Http\Resources\Contact\GetTimeAgoAttributeResource;
+use App\Application\Contacts\GetTimeAgoAttribute;
+use App\Application\Contacts\IsNew;
+use App\Application\Contacts\IsRead;
+use App\Application\Contacts\IsReplied;
+use App\Http\Resources\Contact\IsStatusResource;
+use App\Application\Contacts\MarkAsArchived;
+use App\Http\Resources\Contact\MarkAsArchivedResource;
 
 class ContactController extends Controller
 {
@@ -30,6 +42,14 @@ class ContactController extends Controller
         private readonly AuthorizeUser $authorizeUser,
         private readonly GetAll $getAll,
         private readonly MarkAsRead $markAsRead,
+        private readonly MarkAsReplied $markAsReplied,
+        private readonly GetBrowserInfoAttribute $getBrowserInfoAttribute,
+        private readonly GetStatusTextAttribute $getStatusTextAttribute,
+        private readonly GetTimeAgoAttribute $getTimeAgoAttribute,
+        private readonly IsNew $isNew,
+        private readonly IsRead $isRead,
+        private readonly IsReplied $isReplied,
+        private readonly MarkAsArchived $markAsArchived,
     ) {}
 
 
@@ -154,18 +174,6 @@ class ContactController extends Controller
             ], 500);
         }
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Contact $contact)
-    {
-        $contact->delete();
-
-        // return redirect()->route('admin.contacts.index')
-        //     ->with('success', 'Contacto eliminado exitosamente.');
-    }
-
     /**
      * Mark contact as read
      */
@@ -182,12 +190,6 @@ class ContactController extends Controller
 
             return new MarkAsReadResource($request);
 
-
-            // return response()->json([
-            //     'message' => 'Contacto marcado como leído.',
-            //     'id' => $contact->id,
-            //     'status' => $contact->status,
-            // ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'error' => 'Error al marcar como leído',
@@ -199,60 +201,140 @@ class ContactController extends Controller
     /**
      * Mark contact as replied
      */
-    public function markAsReplied(Contact $contact)
+    public function markAsReplied(Request $request, int $id)
     {
-        $contact->markAsReplied();
+        try {
+             $this->authorize($request);
+             $this->markAsReplied->execute($id);
 
-        return back()->with('success', 'Contacto marcado como respondido.');
+            return new MarkAsRepliedResource($request);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al marcar como respondido',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+       
     }
 
+     /**
+     * Get browser info attribute
+     */
+    public function getBrowserInfoAttribute(Request $request, int $id)
+    {
+        $this->authorize($request);
+
+        try {
+            $browserInfo = $this->getBrowserInfoAttribute->execute($id);
+
+            return new GetBrowserInfoAttributeResource($browserInfo);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al obtener información del navegador',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    function getStatusTextAttribute(Request $request, int $id)
+    {
+        $this->authorize($request);
+
+        try {
+            $statusText = $this->getStatusTextAttribute->execute($id);
+
+            return new GetStatusTextAttributeResource($statusText);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al obtener texto de estado',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+    
+    function getTimeAgoAttribute(Request $request, int $id)
+    {
+        $this->authorize($request);
+
+        try {
+            $timeAgo = $this->getTimeAgoAttribute->execute($id);
+
+            return new GetTimeAgoAttributeResource($timeAgo);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al obtener tiempo transcurrido',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+    
+    function isNew(Request $request, int $id)
+    {
+        $this->authorize($request);
+
+        try {
+            $isNew = $this->isNew->execute($id);
+
+            return new IsStatusResource($isNew);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al verificar si es nuevo',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+    function isRead(Request $request, int $id)
+    {
+        $this->authorize($request);
+
+        try {
+            $isRead = $this->isRead->execute($id);
+
+            return new IsStatusResource($isRead);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al verificar si es leído',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
+    function isReplied(Request $request, int $id)
+    {
+        $this->authorize($request);
+
+        try {
+            $isReplied = $this->isReplied->execute($id);
+
+            return new IsStatusResource($isReplied);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al verificar si es respondido',
+                'message' => $e->getMessage(),
+            ], 500);
+        }
+    }
     /**
      * Archive contact
      */
-    public function archive(Contact $contact)
+    public function markAsArchived(Request $request, int $id)
     {
-        $contact->update(['status' => 'archived']);
+        $this->authorize($request);
+        try {
+            $contact = Contact::find($id);
+            if (!$contact) {
+                return response()->json(['error' => 'Contacto no encontrado'], 404);
+            }
+            $this->markAsArchived->execute($id);
 
-        return back()->with('success', 'Contacto archivado exitosamente.');
-    }
-
-    /**
-     * Bulk actions
-     */
-    public function bulkAction(Request $request)
-    {
-        $request->validate([
-            'action' => 'required|in:mark_read,mark_replied,archive,delete',
-            'contacts' => 'required|array',
-            'contacts.*' => 'exists:contacts,id',
-        ]);
-
-        $contacts = Contact::whereIn('id', $request->contacts);
-
-        switch ($request->action) {
-            case 'mark_read':
-                $contacts->update(['status' => 'read', 'read_at' => now()]);
-                $message = 'Contactos marcados como leídos.';
-                break;
-
-            case 'mark_replied':
-                $contacts->update(['status' => 'replied', 'replied_at' => now()]);
-                $message = 'Contactos marcados como respondidos.';
-                break;
-
-            case 'archive':
-                $contacts->update(['status' => 'archived']);
-                $message = 'Contactos archivados.';
-                break;
-
-            case 'delete':
-                $contacts->delete();
-                $message = 'Contactos eliminados.';
-                break;
+            return new MarkAsArchivedResource($request);
+        } catch (\Exception $e) {
+            return response()->json([
+                'error' => 'Error al archivar contacto',
+                'message' => $e->getMessage(),
+            ], 500);
         }
-
-        return back()->with('success', $message);
     }
+
     private function authorize(Request $request){
         $authHeader = $request->header('Authorization');
         $plainToken = $request->bearerToken();

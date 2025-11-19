@@ -52,38 +52,30 @@ class BlogPost extends Model
         return $this->belongsTo(Category::class);
     }
 
-    /**
-     * Scope para posts publicados
-     */
-    public function scopePublished($query)
-    {
-        return $query->where('status', 'published')
-            ->where('published_at', '<=', now());
-    }
+    
+    // public function scopePublished($query)
+    // {
+    //     return $query->where('status', 'published')
+    //         ->where('published_at', '<=', now());
+    // }
 
-    /**
-     * Scope para posts destacados
-     */
-    public function scopeFeatured($query)
-    {
-        return $query->where('featured', true);
-    }
+    
+    // public function scopeFeatured($query)
+    // {
+    //     return $query->where('featured', true);
+    // }
 
-    /**
-     * Scope para buscar posts
-     */
-    public function scopeSearch($query, $search)
-    {
-        return $query->where(function ($q) use ($search) {
-            $q->where('title', 'like', "%{$search}%")
-                ->orWhere('excerpt', 'like', "%{$search}%")
-                ->orWhere('content', 'like', "%{$search}%");
-        });
-    }
+    
+    // public function scopeSearch($query, $search)
+    // {
+    //     return $query->where(function ($q) use ($search) {
+    //         $q->where('title', 'like', "%{$search}%")
+    //             ->orWhere('excerpt', 'like', "%{$search}%")
+    //             ->orWhere('content', 'like', "%{$search}%");
+    //     });
+    // }
 
-    /**
-     * Generar slug automáticamente
-     */
+    
     public function setTitleAttribute($value)
     {
         $this->attributes['title'] = $value;

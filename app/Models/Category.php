@@ -52,85 +52,85 @@ class Category extends Model
     /**
      * Scope para categorías activas
      */
-    public function scopeActive($query)
-    {
-        return $query->where('active', true);
-    }
+    // public function scopeActive($query)
+    // {
+    //     return $query->where('active', true);
+    // }
 
     /**
      * Scope ordenado por sort_order
      */
-    public function scopeOrdered($query)
-    {
-        return $query->orderBy('sort_order')->orderBy('name');
-    }
+    // public function scopeOrdered($query)
+    // {
+    //     return $query->orderBy('sort_order')->orderBy('name');
+    // }
 
     /**
      * Generar slug automáticamente
      */
-    public function setNameAttribute($value)
-    {
-        $this->attributes['name'] = $value;
+    // public function setNameAttribute($value)
+    // {
+    //     $this->attributes['name'] = $value;
 
-        if (empty($this->attributes['slug'])) {
-            $this->attributes['slug'] = $this->generateUniqueSlug($value);
-        }
-    }
+    //     if (empty($this->attributes['slug'])) {
+    //         $this->attributes['slug'] = $this->generateUniqueSlug($value);
+    //     }
+    // }
 
     /**
      * Generar slug único
      */
-    private function generateUniqueSlug($name)
-    {
-        $slug = Str::slug($name);
-        $originalSlug = $slug;
-        $counter = 1;
+    // private function generateUniqueSlug($name)
+    // {
+    //     $slug = Str::slug($name);
+    //     $originalSlug = $slug;
+    //     $counter = 1;
 
-        while (static::where('slug', $slug)->where('id', '!=', $this->id ?? 0)->exists()) {
-            $slug = $originalSlug . '-' . $counter;
-            $counter++;
-        }
+    //     while (static::where('slug', $slug)->where('id', '!=', $this->id ?? 0)->exists()) {
+    //         $slug = $originalSlug . '-' . $counter;
+    //         $counter++;
+    //     }
 
-        return $slug;
-    }
+    //     return $slug;
+    // }
 
     /**
      * Obtener URL de la categoría
      */
-    public function getUrlAttribute()
-    {
-        return route('blog.category', $this->slug);
-    }
+    // public function getUrlAttribute()
+    // {
+    //     return route('blog.category', $this->slug);
+    // }
 
     /**
      * Contar posts publicados
      */
-    public function getPublishedPostsCountAttribute()
-    {
-        return $this->publishedPosts()->count();
-    }
+    // public function getPublishedPostsCountAttribute()
+    // {
+    //     return $this->publishedPosts()->count();
+    // }
 
     /**
      * Verificar si tiene posts
      */
-    public function hasPosts(): bool
-    {
-        return $this->blogPosts()->exists();
-    }
+    // public function hasPosts(): bool
+    // {
+    //     return $this->blogPosts()->exists();
+    // }
 
     /**
      * Verificar si tiene posts publicados
      */
-    public function hasPublishedPosts(): bool
-    {
-        return $this->publishedPosts()->exists();
-    }
+    // public function hasPublishedPosts(): bool
+    // {
+    //     return $this->publishedPosts()->exists();
+    // }
 
     /**
      * Obtener color con fallback
      */
-    public function getColorAttribute($value)
-    {
-        return $value ?: '#3B82F6';
-    }
+    // public function getColorAttribute($value)
+    // {
+    //     return $value ?: '#3B82F6';
+    // }
 }

@@ -52,59 +52,49 @@ class ContactController extends Controller
         private readonly MarkAsArchived $markAsArchived,
     ) {}
 
-
-
-
-    public function index(Request $request)
-    {
-        $query = Contact::query();
+    // public function index(Request $request)
+    // {
+    //     $query = Contact::query();
 
         
-        if ($request->filled('search')) {
-            $query->where(function ($q) use ($request) {
-                $q->where('name', 'like', "%{$request->search}%")
-                    ->orWhere('email', 'like', "%{$request->search}%")
-                    ->orWhere('subject', 'like', "%{$request->search}%")
-                    ->orWhere('company', 'like', "%{$request->search}%");
-            });
-        }
+    //     if ($request->filled('search')) {
+    //         $query->where(function ($q) use ($request) {
+    //             $q->where('name', 'like', "%{$request->search}%")
+    //                 ->orWhere('email', 'like', "%{$request->search}%")
+    //                 ->orWhere('subject', 'like', "%{$request->search}%")
+    //                 ->orWhere('company', 'like', "%{$request->search}%");
+    //         });
+    //     }
 
-        if ($request->filled('status')) {
-            $query->where('status', $request->status);
-        }
+    //     if ($request->filled('status')) {
+    //         $query->where('status', $request->status);
+    //     }
 
-        if ($request->filled('date_from')) {
-            $query->whereDate('created_at', '>=', $request->date_from);
-        }
+    //     if ($request->filled('date_from')) {
+    //         $query->whereDate('created_at', '>=', $request->date_from);
+    //     }
 
-        if ($request->filled('date_to')) {
-            $query->whereDate('created_at', '<=', $request->date_to);
-        }
+    //     if ($request->filled('date_to')) {
+    //         $query->whereDate('created_at', '<=', $request->date_to);
+    //     }
 
-        // Ordenamiento
-        $sortBy = $request->get('sort_by', 'created_at');
-        $sortOrder = $request->get('sort_order', 'desc');
-        $query->orderBy($sortBy, $sortOrder);
+    //     // Ordenamiento
+    //     $sortBy = $request->get('sort_by', 'created_at');
+    //     $sortOrder = $request->get('sort_order', 'desc');
+    //     $query->orderBy($sortBy, $sortOrder);
 
-        $contacts = $query->paginate(15)->appends($request->query());
+    //     $contacts = $query->paginate(15)->appends($request->query());
 
-        // Estadísticas
-        $stats = [
-            'total' => Contact::count(),
-            'new' => Contact::where('status', 'new')->count(),
-            'read' => Contact::where('status', 'read')->count(),
-            'replied' => Contact::where('status', 'replied')->count(),
-            'this_month' => Contact::whereMonth('created_at', now()->month)
-                ->whereYear('created_at', now()->year)
-                ->count(),
-        ];
-
-        // return Inertia::render('Admin/Contacts/Index', [
-        //     'contacts' => $contacts,
-        //     'stats' => $stats,
-        //     'filters' => $request->only(['search', 'status', 'date_from', 'date_to']),
-        // ]);
-    }
+    //     $stats = [
+    //         'total' => Contact::count(),
+    //         'new' => Contact::where('status', 'new')->count(),
+    //         'read' => Contact::where('status', 'read')->count(),
+    //         'replied' => Contact::where('status', 'replied')->count(),
+    //         'this_month' => Contact::whereMonth('created_at', now()->month)
+    //             ->whereYear('created_at', now()->year)
+    //             ->count(),
+    //     ];      
+    // }
      
     public function registerContact(Request $request)
     {
@@ -174,9 +164,7 @@ class ContactController extends Controller
             ], 500);
         }
     }
-    /**
-     * Mark contact as read
-     */
+    
     public function markAsRead(Request $request, int $id)
     {
         $this->authorize($request);
@@ -198,9 +186,6 @@ class ContactController extends Controller
         }
     }
 
-    /**
-     * Mark contact as replied
-     */
     public function markAsReplied(Request $request, int $id)
     {
         try {
@@ -217,9 +202,6 @@ class ContactController extends Controller
        
     }
 
-     /**
-     * Get browser info attribute
-     */
     public function getBrowserInfoAttribute(Request $request, int $id)
     {
         $this->authorize($request);
@@ -283,6 +265,7 @@ class ContactController extends Controller
             ], 500);
         }
     }
+
     function isRead(Request $request, int $id)
     {
         $this->authorize($request);
@@ -298,6 +281,7 @@ class ContactController extends Controller
             ], 500);
         }
     }
+
     function isReplied(Request $request, int $id)
     {
         $this->authorize($request);
@@ -313,9 +297,7 @@ class ContactController extends Controller
             ], 500);
         }
     }
-    /**
-     * Archive contact
-     */
+
     public function markAsArchived(Request $request, int $id)
     {
         $this->authorize($request);

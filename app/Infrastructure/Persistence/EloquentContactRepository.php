@@ -57,12 +57,10 @@ class EloquentContactRepository implements ContactRepositoryInterface
      */
 
      
-    public function create(array $data): DomainContact
+    public function create(array $data): ?DomainContact
     {
         $model = new EloquentContact();
-        try {
-            
-            
+        try {                        
             $model->name = $data['name'];
             $model->email = $data['email'];
             $model->phone = $data['phone'];
@@ -79,7 +77,7 @@ class EloquentContactRepository implements ContactRepositoryInterface
             return $this->toDomain($model);
         } catch (\Throwable $th) {
             Log::error('Error al crear contacto: ' . $th->getMessage());
-            return $this->toDomain($model);
+            return null;
         }
     }
     /**

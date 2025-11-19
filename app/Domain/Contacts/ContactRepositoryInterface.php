@@ -14,7 +14,7 @@ use App\Domain\Contacts\Entities\Contact;
 interface ContactRepositoryInterface
 {
     /** Crea un contacto y devuelve la entidad de dominio. */
-    public function create(array $data): Contact;
+    public function create(array $data): ?Contact;
     /** Busca por id (o null si no existe). */
     public function getById(int $id): ?Contact;
     /** Obtiene todos los contactos. */

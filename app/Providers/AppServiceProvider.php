@@ -9,6 +9,12 @@ use App\Domain\Auth\TokenServiceInterface;
 use App\Infrastructure\Auth\SanctumTokenService;
 use App\Domain\Contacts\ContactRepositoryInterface;
 use App\Infrastructure\Persistence\EloquentContactRepository;
+use App\Domain\BlogPosts\BlogPostRepositoryInterface;
+use App\Infrastructure\Persistence\EloquentBlogPostRepository;
+use App\Domain\Categories\CategoryRepositoryInterface;
+use App\Infrastructure\Persistence\EloquentCategoryRepository;
+
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +35,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(UserRepositoryInterface::class, EloquentUserRepository::class);
         $this->app->bind(TokenServiceInterface::class, SanctumTokenService::class);
         $this->app->bind(ContactRepositoryInterface::class, EloquentContactRepository::class);
+        $this->app->bind(BlogPostRepositoryInterface::class, EloquentBlogPostRepository::class);
+        $this->app->bind(CategoryRepositoryInterface::class, EloquentCategoryRepository::class);
     }
 
     /**

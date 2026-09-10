@@ -62,7 +62,7 @@ export const useSEO = () => {
             { name: 'image', property: 'og:image', content: fullImage },
             { property: 'og:image', content: fullImage },
             { property: 'og:image:secure_url', content: fullImage },
-            { property: 'og:image:type', content: 'image/jpeg' },
+            { property: 'og:image:type', content: 'image/webp' },
             { property: 'og:image:width', content: '1200' },
             { property: 'og:image:height', content: '630' },
             { property: 'og:image:alt', content: title },

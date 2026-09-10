@@ -57,22 +57,10 @@ const sources = [
         },
         "urls": [
             {
-                "loc": "/"
-            },
-            {
-                "loc": "/contacto"
-            },
-            {
                 "loc": "/nosotros"
             },
             {
                 "loc": "/sinapsys"
-            },
-            {
-                "loc": "/portfolio"
-            },
-            {
-                "loc": "/servicios"
             },
             {
                 "loc": "/blog"
@@ -104,6 +92,24 @@ const sources = [
             {
                 "loc": "/admin/categories/create"
             }
+        ],
+        "sourceType": "app"
+    },
+    {
+        "context": {
+            "name": "nuxt:route-rules",
+            "description": "Generated from your route rules config.",
+            "tips": [
+                "Can be disabled with `{ excludeAppSources: ['nuxt:route-rules'] }`."
+            ]
+        },
+        "urls": [
+            "/",
+            "/servicios",
+            "/nosotros",
+            "/portfolio",
+            "/contacto",
+            "/blog"
         ],
         "sourceType": "app"
     }

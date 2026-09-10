@@ -52,7 +52,7 @@ setMeta({
   title: 'Sinapsys - Enlaces y Recursos | SysifosWeb',
   description: 'Accede a todos nuestros recursos, redes sociales y contacto directo. El nodo central de SysifosWeb.',
   keywords: 'enlaces sysifosweb, contacto sysifos, redes sociales sysifosweb',
-  image: '/img/og-sinapsys.png'
+  image: '/img/og-sinapsys.jpg'
 })
 
 setSchema({

@@ -50,6 +50,7 @@
     "iron-webcrypto": "1.2.1",
     "is-arrayish": "0.3.4",
     "is-unsafe": "1.0.1",
+    "lru-cache": "11.5.1",
     "lucide-vue-next": "1.0.0",
     "mdn-data": "2.0.30",
     "node-fetch-native": "1.6.7",

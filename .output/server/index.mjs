@@ -1,9 +1,9 @@
 import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import 'node:http';
 import 'node:https';
-export { O as default } from './chunks/nitro/nitro.mjs';
+export { Z as default } from './chunks/nitro/nitro.mjs';
 import 'node:events';
 import 'node:buffer';
-import 'node:diagnostics_channel';
+import 'lru-cache';
 import 'node:fs';
 import 'node:path';
 import 'node:crypto';
@@ -12,5 +12,10 @@ import 'node:url';
 import 'consola';
 import 'fast-xml-parser';
 import 'xss';
+import 'unhead/server';
+import 'unhead/plugins';
+import 'unhead/utils';
+import 'vue-bundle-renderer/runtime';
+import 'vue/server-renderer';
 import 'ipx';
 //# sourceMappingURL=index.mjs.map

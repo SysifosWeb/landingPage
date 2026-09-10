@@ -3,7 +3,7 @@ import 'node:http';
 import 'node:https';
 import 'node:events';
 import 'node:buffer';
-import 'node:diagnostics_channel';
+import 'lru-cache';
 import 'node:fs';
 import 'node:path';
 import 'node:crypto';
@@ -12,6 +12,11 @@ import 'node:url';
 import 'consola';
 import 'fast-xml-parser';
 import 'xss';
+import 'unhead/server';
+import 'unhead/plugins';
+import 'unhead/utils';
+import 'vue-bundle-renderer/runtime';
+import 'vue/server-renderer';
 import 'ipx';
 
 const ____slug_ = defineEventHandler(async (event) => {

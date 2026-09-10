@@ -57,14 +57,14 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 
 const technologies = [
-  { name: 'NUXT', fullName: 'Nuxt.js', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/ae/Nuxt_logo.svg' },
-  { name: 'VUE', fullName: 'Vue.js', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg' },
-  { name: 'REACT', fullName: 'React', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' },
-  { name: 'NODE', fullName: 'Node.js', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg' },
-  { name: 'TYPESCRIPT', fullName: 'TypeScript', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg' },
-  { name: 'TAILWIND', fullName: 'Tailwind CSS', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg' },
-  { name: 'LARAVEL', fullName: 'Laravel', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg' },
-  { name: 'AWS', fullName: 'Amazon Web Services', logo: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' }
+  { name: 'NUXT', fullName: 'Nuxt.js', logo: '/img/tech/nuxt.svg' },
+  { name: 'VUE', fullName: 'Vue.js', logo: '/img/tech/Vue.js.png' },
+  { name: 'REACT', fullName: 'React', logo: '/img/tech/React.png' },
+  { name: 'NODE', fullName: 'Node.js', logo: '/img/tech/Node.js.png' },
+  { name: 'TYPESCRIPT', fullName: 'TypeScript', logo: '/img/tech/typescript.svg' },
+  { name: 'TAILWIND', fullName: 'Tailwind CSS', logo: '/img/tech/tailwind.svg' },
+  { name: 'LARAVEL', fullName: 'Laravel', logo: '/img/tech/Laravel.png' },
+  { name: 'AWS', fullName: 'Amazon Web Services', logo: '/img/tech/aws.svg' }
 ]
 
 const carouselContainer = ref(null)

@@ -1,12 +1,18 @@
 <script setup>
+import { defineAsyncComponent } from 'vue'
 // SEO Configuration
 const { setMeta, setSchema } = useSEO()
+
+const HomeBusinessUnits = defineAsyncComponent(() => import('~/components/home/HomeBusinessUnits.vue'))
+const HomeTrust = defineAsyncComponent(() => import('~/components/home/HomeTrust.vue'))
+const HomeTestimonials = defineAsyncComponent(() => import('~/components/home/HomeTestimonials.vue'))
+const HomeBanner = defineAsyncComponent(() => import('~/components/home/HomeBanner.vue'))
 
 setMeta({
   title: 'SysifosWeb | Desarrollo de Software y Páginas Web en Chile',
   description: 'Creamos software a medida, páginas web profesionales y tiendas online para empresas en Chile. Especialistas en Laravel, Nuxt y arquitecturas escalables. ¡Cotiza gratis hoy!',
   keywords: 'desarrollo de software chile, páginas web profesionales chile, desarrollo web coquimbo, software a medida, tiendas online chile, consultoría tecnológica chile, aplicaciones web empresas',
-  image: '/img/og-home.png'
+  image: '/img/og-home.jpg'
 })
 
 setSchema({
@@ -62,8 +68,16 @@ setSchema({
   <HomeValue />
   <HomeProblems />
   <HomeProposition />
-  <HomeBusinessUnits />
-  <HomeTrust />
-  <HomeTestimonials />
-  <HomeBanner />
+  <Suspense>
+    <HomeBusinessUnits />
+  </Suspense>
+  <Suspense>
+    <HomeTrust />
+  </Suspense>
+  <Suspense>
+    <HomeTestimonials />
+  </Suspense>
+  <Suspense>
+    <HomeBanner />
+  </Suspense>
 </template>

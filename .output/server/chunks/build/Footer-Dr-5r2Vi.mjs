@@ -1,4 +1,4 @@
-import { b as buildAssetsURL } from '../nitro/nitro.mjs';
+import { h as buildAssetsURL } from '../nitro/nitro.mjs';
 import { _ as _export_sfc, a as __nuxt_component_0$1 } from './server.mjs';
 import { ref, computed, watch, mergeProps, withCtx, unref, createVNode, createTextVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr, ssrRenderList, ssrInterpolate, ssrRenderClass, ssrRenderStyle } from 'vue/server-renderer';

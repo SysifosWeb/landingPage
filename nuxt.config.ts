@@ -5,10 +5,27 @@ const GA4_ID = 'G-3BJ0HZ6RSH';
 
 export default defineNuxtConfig({
     build: {
-        transpile: ['lru-cache']
+        transpile: []
+    },
+    image: {
+        domains: ['olimpo.sysifosweb.cl', 'picsum.photos'],
+        format: ['webp','avif'],
+        screens: { xs: 320, sm: 640, md: 768, lg: 1024, xl: 1280 }
+    },
+    experimental: {
+        payloadExtraction: true,
+        renderJsonPayloads: true,
+        componentIslands: true
     },
     routeRules: {
-        '/**': { ssr: true }
+        '/': { prerender: true },
+        '/servicios': { prerender: true },
+        '/nosotros': { swr: 3600 },
+        '/portfolio': { prerender: true },
+        '/contacto': { prerender: true },
+        '/blog': { swr: 3600 },
+        '/blog/**': { swr: 3600 },
+        '/admin/**': { ssr: true }
     },
     compatibilityDate: '2024-11-01',
     devtools: { enabled: false },
@@ -43,7 +60,6 @@ export default defineNuxtConfig({
                 'img-src': [
                     "'self'",
                     "data:",
-                    "https://upload.wikimedia.org",
                     "https://www.googletagmanager.com",
                     "https://*.google-analytics.com",
                     "https://*.googletagmanager.com",
@@ -104,37 +120,20 @@ export default defineNuxtConfig({
                 { rel: 'alternate', href: 'https://www.sysifosweb.cl', hreflang: 'es' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+                { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
                 { rel: 'alternate', type: 'application/rss+xml', title: 'SysifosWeb Blog RSS', href: '/blog/feed.xml' },
-            ],
-            script: [
-                // Google Tag Manager — cargado de forma diferida para no penalizar rendimiento
-                {
-                    innerHTML: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${GTM_ID}');`,
-                    type: 'text/javascript',
-                    tagPosition: 'bodyClose',
-                    defer: true
-                },
-            ],
-            // GTM noscript fallback (funciona en <head> también)
-            noscript: [
-                {
-                    innerHTML: `<iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`
-                }
             ]
         }
     },
 
     googleFonts: {
         families: {
-            Inter: [300, 400, 500, 600, 700, 800, 900],
-            Poppins: [300, 400, 500, 600, 700, 800, 900]
+            Inter: [400, 600, 700],
+            Poppins: [400, 600, 700]
         },
         display: 'swap',
-        preload: true
+        preload: true,
+        subsets: ['latin']
     },
 
     css: ['~/assets/css/main.css'],

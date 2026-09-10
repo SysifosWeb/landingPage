@@ -54,21 +54,23 @@
         <!-- CTAs — Estrategia de conversión mejorada -->
         <div class="hero-enter delay-3 flex flex-col sm:flex-row gap-3.5 mb-12">
 
-          <!-- CTA Primario: Aspiracional, no genérico -->
-          <NuxtLink to="/contacto"
+          <!-- CTA Primario: WhatsApp -->
+          <a href="https://wa.me/56985021549?text=Hola%20SysifosWeb!%20Quiero%20cotizar%20mi%20proyecto%20web%2Fsoftware"
+            target="_blank"
+            rel="noopener"
             class="cta-primary group inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-semibold text-[0.9rem]"
             style="background: var(--accent); color: #07101F;">
-            <span>Hablemos de tu proyecto</span>
-            <svg class="w-4 h-4 cta-arrow" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            <span>Hablemos por WhatsApp</span>
+            <svg class="w-4 h-4 cta-arrow" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.149-.197.297-.767.966-.94 1.164-.173.198-.347.222-.644.073-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.67-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.371-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.876 1.213 3.074.149.198 2.095 3.2 5.08 4.487.707.307 1.255.491 1.68.626.711.226 1.36.195 1.874.118.57-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             </svg>
-          </NuxtLink>
+          </a>
 
-          <!-- CTA Secundario: Ghost pill -->
-          <NuxtLink to="/portfolio"
+          <!-- CTA Secundario: Contacto -->
+          <NuxtLink to="/contacto"
             class="cta-secondary inline-flex items-center justify-center gap-2 px-7 py-4 rounded-xl font-medium text-[0.9rem]"
             style="color: var(--text-main); border: 1px solid var(--border);">
-            Ver nuestros proyectos
+            Ver portfolio
           </NuxtLink>
         </div>
 

@@ -1,4 +1,4 @@
-import { h as buildAssetsURL } from '../nitro/nitro.mjs';
+import { e as buildAssetsURL } from '../nitro/nitro.mjs';
 import { mergeProps, unref, createVNode, resolveDynamicComponent, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderStyle, ssrRenderList, ssrRenderAttr, ssrRenderClass, ssrRenderVNode, ssrInterpolate } from 'vue/server-renderer';
 import { GlobeAltIcon, BriefcaseIcon, CameraIcon, LinkIcon } from '@heroicons/vue/24/solid';

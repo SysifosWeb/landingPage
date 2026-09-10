@@ -57,9 +57,6 @@ const sources = [
         },
         "urls": [
             {
-                "loc": "/nosotros"
-            },
-            {
                 "loc": "/sinapsys"
             },
             {

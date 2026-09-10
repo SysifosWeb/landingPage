@@ -1,4 +1,4 @@
-import { h as buildAssetsURL } from '../nitro/nitro.mjs';
+import { e as buildAssetsURL } from '../nitro/nitro.mjs';
 import { mergeProps, resolveDirective, unref, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrGetDirectiveProps, ssrRenderAttr, ssrInterpolate } from 'vue/server-renderer';
 import { Medal, Database, Smartphone } from 'lucide-vue-next';

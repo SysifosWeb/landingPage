@@ -1,4 +1,4 @@
-import { h as buildAssetsURL } from '../nitro/nitro.mjs';
+import { e as buildAssetsURL } from '../nitro/nitro.mjs';
 import { h as useCookie, a as __nuxt_component_0$1, d as useRuntimeConfig } from './server.mjs';
 import { reactive, computed, withAsyncContext, watch, withCtx, openBlock, createBlock, createVNode, createTextVNode, unref, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderAttr, ssrIncludeBooleanAttr, ssrLooseContain, ssrLooseEqual, ssrRenderList, ssrInterpolate, ssrRenderStyle, ssrRenderClass } from 'vue/server-renderer';

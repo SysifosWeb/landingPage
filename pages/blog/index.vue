@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 definePageMeta({
   layout: 'hero',
@@ -33,7 +33,7 @@ const currentPage = computed({
 })
 
 // Fetch ALL posts to allow frontend filtering and pagination
-const { data: allFetchedPosts, pending } = useAsyncData('all-blog-posts', async () => {
+const { data: allFetchedPosts, pending, refresh } = useAsyncData('all-blog-posts', async () => {
   const firstPage = await $fetch(`${apiUrl}blog?page=1`)
   let posts = firstPage.data || []
   const lastPage = firstPage.last_page || 1
@@ -49,6 +49,18 @@ const { data: allFetchedPosts, pending } = useAsyncData('all-blog-posts', async 
     })
   }
   return posts
+}, {
+  // Nunca dejar el estado en null: si el fetch falla, devolvemos un array vacío
+  // para que la UI se renderice sin romper y podamos re-intentar.
+  default: () => [],
+})
+
+// Re-fetch en el cliente si el payload SSR llegó vacío (por hidratación de un
+// payload cacheado durante el deploy) o si el fetch inicial falló en silencio.
+onMounted(() => {
+  if (process.client && (!allFetchedPosts.value || allFetchedPosts.value.length === 0)) {
+    refresh()
+  }
 })
 
 const allPosts = computed(() => {

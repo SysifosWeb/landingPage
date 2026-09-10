@@ -1,6 +1,6 @@
 import { defineComponent, useAttrs, ref, computed, mergeProps, unref, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderSlot } from 'vue/server-renderer';
-import { T as defu, F as hasProtocol, X as withLeadingSlash, r as joinURL, G as parseURL, Y as encodeParam, H as encodePath } from '../nitro/nitro.mjs';
+import { U as defu, E as hasProtocol, Y as withLeadingSlash, F as joinURL, G as parseURL, Z as encodeParam, H as encodePath } from '../nitro/nitro.mjs';
 import { b as useHead, f as useNuxtApp, d as useRuntimeConfig } from './server.mjs';
 
 async function imageMeta(_ctx, url) {

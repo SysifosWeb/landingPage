@@ -1,4 +1,4 @@
-import { h as buildAssetsURL } from '../nitro/nitro.mjs';
+import { e as buildAssetsURL } from '../nitro/nitro.mjs';
 import { _ as _export_sfc, a as __nuxt_component_0$1 } from './server.mjs';
 import { mergeProps, resolveDirective, withCtx, createTextVNode, openBlock, createBlock, createVNode, resolveDynamicComponent, unref, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrGetDirectiveProps, ssrRenderList, ssrRenderVNode, ssrInterpolate, ssrRenderAttr, ssrRenderClass, ssrRenderStyle } from 'vue/server-renderer';

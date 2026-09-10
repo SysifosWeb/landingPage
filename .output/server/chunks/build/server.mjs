@@ -1,5 +1,5 @@
 import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { ref, defineComponent, shallowRef, getCurrentInstance, provide, cloneVNode, h, createElementBlock, hasInjectionContext, inject, resolveComponent, computed, unref, defineAsyncComponent, shallowReactive, Suspense, Fragment, createApp, onErrorCaptured, onServerPrefetch, createVNode, resolveDynamicComponent, reactive, effectScope, mergeProps, withCtx, openBlock, createBlock, createTextVNode, getCurrentScope, toRef, nextTick, isReadonly, useSSRContext, isRef, isShallow, isReactive, toRaw } from 'vue';
-import { x as useHead$1, c as createError$1, y as klona, z as useSeoMeta$1, A as parseQuery, B as headSymbol, C as getRequestHeader, D as destr, E as isEqual, F as hasProtocol, r as joinURL, G as parseURL, H as encodePath, I as decodePath, J as getContext, K as setCookie, L as getCookie, M as deleteCookie, N as isScriptProtocol, O as withQuery, P as withTrailingSlash, Q as withoutTrailingSlash, R as sanitizeStatusCode, $ as $fetch, S as baseURL, T as defu, U as createHooks, V as executeAsync } from '../nitro/nitro.mjs';
+import { w as useHead$1, c as createError$1, x as klona, y as useSeoMeta$1, z as parseQuery, A as headSymbol, B as getRequestHeader, C as destr, D as isEqual, E as hasProtocol, F as joinURL, G as parseURL, H as encodePath, I as decodePath, J as getContext, K as setCookie, L as getCookie, M as deleteCookie, O as isScriptProtocol, P as withQuery, Q as withTrailingSlash, R as withoutTrailingSlash, S as sanitizeStatusCode, $ as $fetch, T as baseURL, U as defu, V as createHooks, W as executeAsync } from '../nitro/nitro.mjs';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { ssrRenderSuspense, ssrRenderComponent, ssrRenderVNode, ssrRenderAttrs, ssrInterpolate } from 'vue/server-renderer';
 import 'node:http';
@@ -475,7 +475,7 @@ function toArray$1(value) {
   return Array.isArray(value) ? value : [value];
 }
 const matcher = /* @__PURE__ */ (() => {
-  const $0 = { prerender: true }, $1 = { payload: true, payload: true }, $2 = {}, $3 = { ssr: true };
+  const $0 = { prerender: true }, $1 = { ssr: true }, $2 = {};
   return (m, p) => {
     let r = [];
     if (p.charCodeAt(p.length - 1) === 47) p = p.slice(0, -1) || "/";
@@ -484,7 +484,7 @@ const matcher = /* @__PURE__ */ (() => {
     } else if (p === "/servicios") {
       r.unshift({ data: $0 });
     } else if (p === "/nosotros") {
-      r.unshift({ data: $1 });
+      r.unshift({ data: $0 });
     } else if (p === "/portfolio") {
       r.unshift({ data: $0 });
     } else if (p === "/contacto") {
@@ -501,7 +501,7 @@ const matcher = /* @__PURE__ */ (() => {
       if (s[1] === "blog") {
         r.unshift({ data: $1, params: { "_": s.slice(2).join("/") } });
       } else if (s[1] === "admin") {
-        r.unshift({ data: $3, params: { "_": s.slice(2).join("/") } });
+        r.unshift({ data: $1, params: { "_": s.slice(2).join("/") } });
       }
     }
     r.unshift({ data: $2, params: { "_": s.slice(1).join("/") } });
@@ -608,7 +608,7 @@ const _routes = [
     name: "blog",
     path: "/blog",
     meta: __nuxt_page_meta$d || {},
-    component: () => import('./index-BlZa_EnZ.mjs')
+    component: () => import('./index-CoWRQtPl.mjs')
   },
   {
     name: "admin",

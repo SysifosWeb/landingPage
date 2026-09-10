@@ -20,11 +20,14 @@ export default defineNuxtConfig({
     routeRules: {
         '/': { prerender: true },
         '/servicios': { prerender: true },
-        '/nosotros': { swr: 3600 },
+        '/nosotros': { prerender: true },
         '/portfolio': { prerender: true },
         '/contacto': { prerender: true },
-        '/blog': { swr: 3600 },
-        '/blog/**': { swr: 3600 },
+        // Blog es contenido dinámico servido por la API: renderizado SSR sin caché
+        // para que los posts nuevos aparezcan de inmediato y no se sirvan payloads
+        // vacíos cacheados durante una hora.
+        '/blog': { ssr: true },
+        '/blog/**': { ssr: true },
         '/admin/**': { ssr: true }
     },
     compatibilityDate: '2024-11-01',
@@ -80,7 +83,8 @@ export default defineNuxtConfig({
                     "https://*.google-analytics.com",
                     "https://*.googletagmanager.com",
                     "https://*.doubleclick.net",
-                    "https://*.google.com"
+                    "https://*.google.com",
+                    "https://olimpo.sysifosweb.cl"
                 ],
                 'frame-src': [
                     "'self'",

@@ -1,5 +1,5 @@
 import { getRequestDependencies, getPreloadLinks, getPrefetchLinks } from 'vue-bundle-renderer/runtime';
-import { a as getResponseStatusText, b as getResponseStatus, e as appId, f as defineRenderHandler, h as buildAssetsURL, i as publicAssetsURL, j as appTeleportTag, k as appTeleportAttrs, l as getQuery, c as createError, m as createSSRContext, n as appHead, o as setSSRError, q as getRouteRules, r as joinURL, t as getRenderer, u as renderInlineStyles, v as replaceIslandTeleports, w as useNitroApp } from '../nitro/nitro.mjs';
+import { a as appId, b as defineRenderHandler, e as buildAssetsURL, f as publicAssetsURL, h as appTeleportTag, i as appTeleportAttrs, j as getQuery, c as createError, k as createSSRContext, l as appHead, m as setSSRError, n as getRouteRules, o as getRenderer, r as renderInlineStyles, q as replaceIslandTeleports, t as getResponseStatusText, u as getResponseStatus, v as useNitroApp, N as NUXT_RUNTIME_PAYLOAD_EXTRACTION } from '../nitro/nitro.mjs';
 import { stringify, uneval } from 'devalue';
 import { propsToString, renderSSRHead } from 'unhead/server';
 import 'node:http';
@@ -20,17 +20,6 @@ import 'unhead/utils';
 import 'vue/server-renderer';
 import 'ipx';
 
-function renderPayloadResponse(ssrContext) {
-	return {
-		body: encodeForwardSlashes(stringify(splitPayload(ssrContext).payload, ssrContext["~payloadReducers"])) ,
-		statusCode: getResponseStatus(ssrContext.event),
-		statusMessage: getResponseStatusText(ssrContext.event),
-		headers: {
-			"content-type": "application/json;charset=utf-8" ,
-			"x-powered-by": "Nuxt"
-		}
-	};
-}
 function renderPayloadJsonScript(opts) {
 	const contents = opts.data ? encodeForwardSlashes(stringify(opts.data, opts.ssrContext["~payloadReducers"])) : "";
 	const payload = {
@@ -52,19 +41,6 @@ function renderPayloadJsonScript(opts) {
 function encodeForwardSlashes(str) {
 	return str.replaceAll("/", "\\u002F");
 }
-function splitPayload(ssrContext) {
-	const { data, prerenderedAt, ...initial } = ssrContext.payload;
-	return {
-		initial: {
-			...initial,
-			prerenderedAt
-		},
-		payload: {
-			data,
-			prerenderedAt
-		}
-	};
-}
 
 const renderSSRHeadOptions = {"omitLineBreaks":false};
 
@@ -77,8 +53,6 @@ globalThis.__publicAssetsURL = publicAssetsURL;
 const HAS_APP_TELEPORTS = !!(appTeleportAttrs.id);
 const APP_TELEPORT_OPEN_TAG = HAS_APP_TELEPORTS ? `<${appTeleportTag}${propsToString(appTeleportAttrs)}>` : "";
 const APP_TELEPORT_CLOSE_TAG = HAS_APP_TELEPORTS ? `</${appTeleportTag}>` : "";
-const PAYLOAD_URL_RE = /^[^?]*\/_payload.json(?:\?.*)?$/ ;
-const PAYLOAD_FILENAME = "_payload.json" ;
 const handler = defineRenderHandler((event) => {
 	
 	const ssrError = event.path.startsWith("/__nuxt_error") ? getQuery(event) : null;
@@ -113,14 +87,7 @@ async function renderRoute(event, ssrError) {
 		ssrContext.noSSR = true;
 	}
 	
-	const _PAYLOAD_EXTRACTION = !ssrContext.noSSR && ((routeOptions.isr || routeOptions.cache));
-	const isRenderingPayload = (_PAYLOAD_EXTRACTION || false) && PAYLOAD_URL_RE.test(ssrContext.url);
-	if (isRenderingPayload) {
-		const url = ssrContext.url.substring(0, ssrContext.url.lastIndexOf("/")) || "/";
-		ssrContext.url = url;
-		event._path = event.node.req.url = url;
-	}
-	const payloadURL = _PAYLOAD_EXTRACTION ? joinURL(ssrContext.runtimeConfig.app.cdnURL || ssrContext.runtimeConfig.app.baseURL, ssrContext.url.replace(/\?.*$/, ""), PAYLOAD_FILENAME) + "?" + ssrContext.runtimeConfig.app.buildId : undefined;
+	!ssrContext.noSSR && (NUXT_RUNTIME_PAYLOAD_EXTRACTION);
 	
 	const renderer = await getRenderer(ssrContext);
 	{
@@ -141,7 +108,7 @@ async function renderRoute(event, ssrError) {
 	});
 	
 	
-	const inlinedStyles = !ssrContext["~renderResponse"] && !ssrContext._renderResponse && !isRenderingPayload ? await renderInlineStyles(ssrContext.modules ?? []) : [];
+	const inlinedStyles = !ssrContext["~renderResponse"] && !ssrContext._renderResponse && true ? await renderInlineStyles(ssrContext.modules ?? []) : [];
 	await ssrContext.nuxt?.hooks.callHook("app:rendered", {
 		ssrContext,
 		renderResult: _rendered
@@ -154,23 +121,9 @@ async function renderRoute(event, ssrError) {
 	if (ssrContext.payload?.error && !ssrError) {
 		throw ssrContext.payload.error;
 	}
-	
-	if (isRenderingPayload) {
-		const response = renderPayloadResponse(ssrContext);
-		return response;
-	}
 	const NO_SCRIPTS = routeOptions.noScripts;
 	
 	const { styles, scripts } = getRequestDependencies(ssrContext, renderer.rendererContext);
-	
-	if (_PAYLOAD_EXTRACTION && !NO_SCRIPTS) {
-		ssrContext.head.push({ link: [{
-			rel: "preload",
-			as: "fetch",
-			crossorigin: "anonymous",
-			href: payloadURL
-		} ] }, headEntryOptions);
-	}
 	if (ssrContext["~preloadManifest"] && !NO_SCRIPTS) {
 		ssrContext.head.push({ link: [{
 			rel: "preload",
@@ -214,11 +167,7 @@ async function renderRoute(event, ssrError) {
 		ssrContext.head.push({ link: getPreloadLinks(ssrContext, renderer.rendererContext) }, headEntryOptions);
 		ssrContext.head.push({ link: getPrefetchLinks(ssrContext, renderer.rendererContext) }, headEntryOptions);
 		
-		ssrContext.head.push({ script: _PAYLOAD_EXTRACTION ? renderPayloadJsonScript({
-			ssrContext,
-			data: splitPayload(ssrContext).initial,
-			src: payloadURL
-		})  : renderPayloadJsonScript({
+		ssrContext.head.push({ script: renderPayloadJsonScript({
 			ssrContext,
 			data: ssrContext.payload
 		})  }, {

@@ -44,8 +44,8 @@ export const useSEO = () => {
             tags = []
         } = seoConfig
 
-        // Dominio canónico unificado (siempre con www)
-        const siteUrl = 'https://www.sysifosweb.cl'
+        // Dominio canónico unificado (sin www)
+        const siteUrl = 'https://sysifosweb.cl'
         const fullUrl = url || `${siteUrl}${route.path}`
         const fullImage = image.startsWith('http') ? image : `${siteUrl}${image}`
 
@@ -125,7 +125,7 @@ export const useSEO = () => {
      */
     const setSchema = (schemaConfig: SchemaConfig) => {
         const { type, data = {} } = schemaConfig
-        const siteUrl = 'https://www.sysifosweb.cl'
+        const siteUrl = 'https://sysifosweb.cl'
 
         // Schema base de Organization (siempre presente)
         const organizationSchema = {

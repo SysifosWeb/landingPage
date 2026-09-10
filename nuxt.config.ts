@@ -116,8 +116,8 @@ export default defineNuxtConfig({
             ],
             link: [
                 { rel: 'icon', type: 'image/x-icon', href: '/logo_min.ico' },
-                { rel: 'alternate', href: 'https://www.sysifosweb.cl', hreflang: 'es-CL' },
-                { rel: 'alternate', href: 'https://www.sysifosweb.cl', hreflang: 'es' },
+                { rel: 'alternate', href: 'https://sysifosweb.cl', hreflang: 'es-CL' },
+                { rel: 'alternate', href: 'https://sysifosweb.cl', hreflang: 'es' },
                 { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
                 { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
                 { rel: 'preconnect', href: 'https://www.googletagmanager.com' },
@@ -145,7 +145,7 @@ export default defineNuxtConfig({
 
     // Configuración de Sitemap
     site: {
-        url: 'https://www.sysifosweb.cl'
+        url: 'https://sysifosweb.cl'
     },
     sitemap: {
         cacheMaxAgeSeconds: 0, // Desactivar caché para ver URLs nuevas al instante

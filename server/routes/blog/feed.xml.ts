@@ -1,6 +1,6 @@
 export default defineEventHandler(async (event) => {
   const apiBase = 'https://olimpo.sysifosweb.cl/api'
-  const siteUrl = 'https://www.sysifosweb.cl'
+  const siteUrl = 'https://sysifosweb.cl'
 
   try {
     const response = await $fetch<{ data: Array<{

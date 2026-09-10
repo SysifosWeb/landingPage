@@ -6,9 +6,9 @@
   RewriteEngine On
   RewriteBase /
 
-  # 1. Redirigir dominio sin www a www (tanto http como https)
-  RewriteCond %{HTTP_HOST} ^sysifosweb\.cl$ [NC]
-  RewriteRule ^(.*)$ https://www.sysifosweb.cl/$1 [R=301,L]
+  # 1. Redirigir dominio con www a sin www (tanto http como https)
+  RewriteCond %{HTTP_HOST} ^www\.sysifosweb\.cl$ [NC]
+  RewriteRule ^(.*)$ https://sysifosweb.cl/$1 [R=301,L]
 
   # 2. Forzar HTTPS si se accede vía HTTP sin SSL
   RewriteCond %{HTTPS} off

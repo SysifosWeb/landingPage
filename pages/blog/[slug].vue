@@ -62,7 +62,7 @@ onMounted(async () => {
 })
 
 // URL canónica del artículo (siempre absoluta)
-const canonicalUrl = computed(() => `https://www.sysifosweb.cl/blog/${slug.value}`)
+const canonicalUrl = computed(() => `https://sysifosweb.cl/blog/${slug.value}`)
 
 // Share functionality
 const shareUrl = computed(() => {
@@ -75,10 +75,10 @@ const shareUrl = computed(() => {
 // Asegurar que la imagen OG sea siempre una URL absoluta
 const ogImageUrl = computed(() => {
     const img = post.value?.image || ''
-    if (!img) return 'https://www.sysifosweb.cl/og-default.jpg'
+    if (!img) return 'https://sysifosweb.cl/og-default.jpg'
     if (img.startsWith('http')) return img
     // Si es ruta relativa, anteponer el dominio
-    return `https://www.sysifosweb.cl${img.startsWith('/') ? '' : '/'}${img}`
+    return `https://sysifosweb.cl${img.startsWith('/') ? '' : '/'}${img}`
 })
 
 const shareOnTwitter = () => {
@@ -97,7 +97,7 @@ const shareOnFacebook = () => {
     // Nota: Facebook lee los metadatos (OG tags) de la URL pública.
     // Si usas localhost, Facebook no mostrará el contenido. Usaremos la URL de producción como fallback.
     const urlToShare = typeof window !== 'undefined' && window.location.hostname.includes('localhost')
-        ? `https://www.sysifosweb.cl/blog/${slug.value}`
+        ? `https://sysifosweb.cl/blog/${slug.value}`
         : shareUrl.value
 
     const url = encodeURIComponent(urlToShare)
@@ -107,7 +107,7 @@ const shareOnFacebook = () => {
 const shareOnWhatsApp = () => {
     // WhatsApp usa únicamente el parámetro 'text' para prellenar el mensaje, por lo que incluimos la URL dentro del texto.
     const urlToShare = typeof window !== 'undefined' && window.location.hostname.includes('localhost')
-        ? `https://www.sysifosweb.cl/blog/${slug.value}`
+        ? `https://sysifosweb.cl/blog/${slug.value}`
         : shareUrl.value
 
     const text = encodeURIComponent(`¡Mira este artículo!: ${post.value?.title}\n\n${urlToShare}`)
@@ -173,7 +173,7 @@ const articleSchema = computed(() => {
             name: 'Sysifos Web',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://www.sysifosweb.cl/img/logo.png'
+                url: 'https://sysifosweb.cl/img/logo.png'
             }
         },
         datePublished: postData.value?.published_at || postData.value?.created_at,

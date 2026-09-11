@@ -98,7 +98,18 @@ export default defineNuxtConfig({
     },
 
     gtag: {
-        id: 'G-3BJ0HZ6RSH'
+        id: 'G-3BJ0HZ6RSH',
+        loadingStrategy: 'defer',
+        // Google Consent Mode v2: estado por defecto denegado hasta que el
+        // usuario otorgue su consentimiento desde el banner de cookies.
+        initCommands: [
+            ['consent', 'default', {
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                analytics_storage: 'denied'
+            }]
+        ]
     },
 
     app: {
@@ -165,6 +176,7 @@ export default defineNuxtConfig({
             { loc: '/contacto', priority: 0.8, changefreq: 'monthly' },
             { loc: '/blog', priority: 0.9, changefreq: 'daily' },
             { loc: '/sinapsys', priority: 0.8, changefreq: 'monthly' },
+            { loc: '/privacidad', priority: 0.3, changefreq: 'yearly' },
         ]
     },
 })

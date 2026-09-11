@@ -43,6 +43,11 @@ const sources = [
                 "loc": "/sinapsys",
                 "priority": 0.8,
                 "changefreq": "monthly"
+            },
+            {
+                "loc": "/privacidad",
+                "priority": 0.3,
+                "changefreq": "yearly"
             }
         ],
         "sourceType": "user"
@@ -61,6 +66,9 @@ const sources = [
             },
             {
                 "loc": "/blog"
+            },
+            {
+                "loc": "/privacidad"
             },
             {
                 "loc": "/admin"

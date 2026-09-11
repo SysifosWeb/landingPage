@@ -135,9 +135,15 @@ import logoBlanco from "@/assets/img/logo-blanco.webp"
         <p class="text-xs" style="color: var(--text-muted);">
           © {{ new Date().getFullYear() }} SysifosWeb. Todos los derechos reservados.
         </p>
-        <p class="text-xs" style="color: var(--text-muted);">
-          Hecho con ♥ en Coquimbo, Chile
-        </p>
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+          <NuxtLink to="/privacidad" class="nav-link text-xs transition-colors duration-200"
+            style="color: var(--text-muted);">
+            Política de Privacidad
+          </NuxtLink>
+          <p class="text-xs" style="color: var(--text-muted);">
+            Hecho con ♥ en Coquimbo, Chile
+          </p>
+        </div>
       </div>
 
     </div>

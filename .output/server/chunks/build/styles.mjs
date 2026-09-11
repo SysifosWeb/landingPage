@@ -1,6 +1,6 @@
 const interopDefault = r => r.default || r || [];
 const styles = {
-  "node_modules/nuxt/dist/app/entry.js": () => import('./entry-styles.pB0jMglW.mjs').then(interopDefault),
+  "node_modules/nuxt/dist/app/entry.js": () => import('./entry-styles.wc12w7gd.mjs').then(interopDefault),
   "pages/index.vue": () => import('./index-styles.CO7vGYsn.mjs').then(interopDefault),
   "components/home/HomeValue.vue": () => import('./HomeValue-styles.iOfSa90Y.mjs').then(interopDefault),
   "components/home/HomeProblems.vue": () => import('./HomeProblems-styles.BrzEF-iF.mjs').then(interopDefault),
@@ -20,8 +20,8 @@ const styles = {
   "components/servicios/TechStackSection.vue": () => import('./TechStackSection-styles.C7L4155j.mjs').then(interopDefault),
   "pages/blog/index.vue": () => import('./index-styles.C1UsRtWV.mjs').then(interopDefault),
   "components/blog/FiltersSection.vue": () => import('./index-styles.C1UsRtWV.mjs').then(interopDefault),
-  "pages/admin/index.vue": () => import('./index-styles.oEAM3uDO.mjs').then(interopDefault),
-  "pages/admin/posts/[id].vue": () => import('./_id_-styles.Lqb561wa.mjs').then(interopDefault),
+  "pages/admin/index.vue": () => import('./index-styles.DkgmV3Gr.mjs').then(interopDefault),
+  "pages/admin/posts/[id].vue": () => import('./_id_-styles.DJ7fUbHK.mjs').then(interopDefault),
   "pages/admin/posts/edit.vue": () => import('./edit-styles.B1mqzLzU.mjs').then(interopDefault),
   "pages/admin/contacts/[id].vue": () => import('./_id_-styles._u7EXDFO.mjs').then(interopDefault),
   "components/home/HomeBusinessUnits.vue": () => import('./HomeBusinessUnits-styles.D6Lb29RF.mjs').then(interopDefault),
@@ -34,7 +34,8 @@ const styles = {
   "layouts/secondary.vue": () => import('./secondary-styles.BTaaHlmf.mjs').then(interopDefault),
   "components/AppHeaderSecundary.vue": () => import('./secondary-styles.BTaaHlmf.mjs').then(interopDefault),
   "components/AppNavbar.vue": () => import('./AppNavbar-styles.C_9AjqQi.mjs').then(interopDefault),
-  "components/Footer.vue": () => import('./Footer-styles.IdzbQkrf.mjs').then(interopDefault)
+  "components/Footer.vue": () => import('./Footer-styles.BX-UnDKW.mjs').then(interopDefault),
+  "components/CookieConsent.vue": () => import('./CookieConsent-styles.ST0MBVb3.mjs').then(interopDefault)
 };
 
 export { styles as default };

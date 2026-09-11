@@ -518,28 +518,32 @@ function getRouteRules(arg) {
     return {};
   }
 }
-const __nuxt_page_meta$i = {
+const __nuxt_page_meta$j = {
   layout: "hero",
   title: "Contacto"
 };
-const __nuxt_page_meta$h = {
+const __nuxt_page_meta$i = {
   layout: "secondary",
   title: "Nosotros"
 };
-const __nuxt_page_meta$g = {
+const __nuxt_page_meta$h = {
   layout: "landing"
 };
-const __nuxt_page_meta$f = {
+const __nuxt_page_meta$g = {
   layout: "hero",
   title: "Portfolio"
 };
-const __nuxt_page_meta$e = {
+const __nuxt_page_meta$f = {
   layout: "hero",
   title: "Servicios"
 };
-const __nuxt_page_meta$d = {
+const __nuxt_page_meta$e = {
   layout: "hero",
   title: "Blog & Insights"
+};
+const __nuxt_page_meta$d = {
+  layout: "hero",
+  title: "Política de Privacidad"
 };
 const __nuxt_page_meta$c = { layout: "admin" };
 const __nuxt_page_meta$b = {
@@ -577,44 +581,50 @@ const _routes = [
   {
     name: "contacto",
     path: "/contacto",
-    meta: __nuxt_page_meta$i || {},
-    component: () => import('./contacto-DKsO600-.mjs')
+    meta: __nuxt_page_meta$j || {},
+    component: () => import('./contacto-B_l10oNy.mjs')
   },
   {
     name: "nosotros",
     path: "/nosotros",
-    meta: __nuxt_page_meta$h || {},
+    meta: __nuxt_page_meta$i || {},
     component: () => import('./nosotros-CsUs0rpj.mjs')
   },
   {
     name: "sinapsys",
     path: "/sinapsys",
-    meta: __nuxt_page_meta$g || {},
+    meta: __nuxt_page_meta$h || {},
     component: () => import('./sinapsys-Cv2eHLec.mjs')
   },
   {
     name: "portfolio",
     path: "/portfolio",
-    meta: __nuxt_page_meta$f || {},
+    meta: __nuxt_page_meta$g || {},
     component: () => import('./portfolio-DzLv7u9b.mjs')
   },
   {
     name: "servicios",
     path: "/servicios",
-    meta: __nuxt_page_meta$e || {},
+    meta: __nuxt_page_meta$f || {},
     component: () => import('./servicios-D_IAGViz.mjs')
   },
   {
     name: "blog",
     path: "/blog",
-    meta: __nuxt_page_meta$d || {},
+    meta: __nuxt_page_meta$e || {},
     component: () => import('./index-CoWRQtPl.mjs')
+  },
+  {
+    name: "privacidad",
+    path: "/privacidad",
+    meta: __nuxt_page_meta$d || {},
+    component: () => import('./privacidad-F_BoY0kY.mjs')
   },
   {
     name: "admin",
     path: "/admin",
     meta: __nuxt_page_meta$c || {},
-    component: () => import('./index-CTf2W1Wg.mjs')
+    component: () => import('./index-c4-LNx3M.mjs')
   },
   {
     name: "admin-login",
@@ -632,7 +642,7 @@ const _routes = [
     name: "admin-posts-id",
     path: "/admin/posts/:id()",
     meta: __nuxt_page_meta$9 || {},
-    component: () => import('./_id_-prEGZzhu.mjs')
+    component: () => import('./_id_-ClYGdeKC.mjs')
   },
   {
     name: "admin-posts-edit",
@@ -644,7 +654,7 @@ const _routes = [
     name: "admin-posts",
     path: "/admin/posts",
     meta: __nuxt_page_meta$7 || {},
-    component: () => import('./index-Bfu7DU6i.mjs')
+    component: () => import('./index-DQ1Enm4D.mjs')
   },
   {
     name: "admin-posts-create",
@@ -1595,9 +1605,9 @@ const plugins = [
 ];
 const layouts = {
   admin: defineAsyncComponent(() => import('./admin-Dsb0y0Dj.mjs').then((m) => m.default || m)),
-  default: defineAsyncComponent(() => import('./default-Dc5Vl7t2.mjs').then((m) => m.default || m)),
-  hero: defineAsyncComponent(() => import('./hero-3jC4rif6.mjs').then((m) => m.default || m)),
-  secondary: defineAsyncComponent(() => import('./secondary-BrCmVw-3.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-C2GKg9JJ.mjs').then((m) => m.default || m)),
+  hero: defineAsyncComponent(() => import('./hero-BIs1Wn2c.mjs').then((m) => m.default || m)),
+  secondary: defineAsyncComponent(() => import('./secondary-D0-er-Ph.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({

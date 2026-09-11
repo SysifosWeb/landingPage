@@ -10,7 +10,8 @@ const form = reactive({
   phone: '',
   company: '',
   subject: '',
-  message: ''
+  message: '',
+  consent: false
 })
 
 const isSubmitting = ref(false)
@@ -23,6 +24,13 @@ const submitForm = async (event) => {
 
   if (!form.name || !form.email || !form.subject || !form.message) {
     errorMessage.value = 'Por favor completa los campos requeridos.'
+    showError.value = true
+    setTimeout(() => showError.value = false, 5000)
+    return
+  }
+
+  if (!form.consent) {
+    errorMessage.value = 'Debes aceptar el tratamiento de tus datos personales para enviar el formulario.'
     showError.value = true
     setTimeout(() => showError.value = false, 5000)
     return
@@ -52,7 +60,8 @@ const submitForm = async (event) => {
         phone: form.phone || null,
         company: form.company || null,
         subject: form.subject,
-        message: form.message
+        message: form.message,
+        consent: form.consent
       })
     })
 
@@ -65,6 +74,7 @@ const submitForm = async (event) => {
       form.company = ''
       form.subject = ''
       form.message = ''
+      form.consent = false
       setTimeout(() => showSuccess.value = false, 5000)
     } else {
       errorMessage.value = data.message || 'Hubo un error al enviar tu mensaje.'
@@ -169,6 +179,18 @@ const submitForm = async (event) => {
                   *</label>
                 <textarea v-model="form.message" rows="4" required placeholder="¿Qué te gustaría construir?"
                   class="w-full bg-black/20 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-white/20 focus:outline-none focus:border-sky-400/50 focus:bg-black/40 transition-all duration-300 resize-y min-h-[120px]"></textarea>
+              </div>
+
+              <!-- Consentimiento de datos personales -->
+              <div class="space-y-2">
+                <label class="flex items-start gap-3 cursor-pointer select-none">
+                  <input v-model="form.consent" type="checkbox" class="mt-1 w-4 h-4 rounded border-white/20 bg-black/20 accent-sky-500">
+                  <span class="text-sm text-white/70 leading-relaxed">
+                    Acepto que mis datos personales sean tratados de acuerdo a la
+                    <NuxtLink to="/privacidad" class="text-sky-400 underline hover:text-sky-300 transition-colors">Política de Privacidad</NuxtLink>
+                    y autorizo a Sysifos a contactarme sobre mi consulta. Puedo ejercer mis derechos de acceso, rectificación, cancelación y oposición cuando lo desee.
+                  </span>
+                </label>
               </div>
 
               <button type="submit" :disabled="isSubmitting"

@@ -191,10 +191,6 @@ const getStatusText = (status) => {
     );
 };
 
-const formatNumber = (number) => {
-    return new Intl.NumberFormat("es-CL").format(number || 0);
-};
-
 const formatDate = (date) => {
     if (!date) return '-';
     return new Date(date).toLocaleDateString("es-CL", {
@@ -356,10 +352,6 @@ const goToPage = (url) => {
                             </th>
                             <th
                                 class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-300 uppercase tracking-wider">
-                                Vistas
-                            </th>
-                            <th
-                                class="px-6 py-3 text-left text-xs font-medium text-gray-300 dark:text-gray-300 uppercase tracking-wider">
                                 Fecha
                             </th>
                             <th
@@ -408,9 +400,6 @@ const goToPage = (url) => {
                                     :class="getStatusClass(post.status)">
                                     {{ getStatusText(post.status) }}
                                 </span>
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300">
-                                {{ formatNumber(post.views) }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300 dark:text-gray-300">
                                 {{ formatDate(post.created_at) }}

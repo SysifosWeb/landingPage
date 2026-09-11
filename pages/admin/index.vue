@@ -17,18 +17,16 @@ const { data: dashboardData, pending } = await useFetch(() => `${config.public.a
 const stats = computed(() => dashboardData.value?.stats || dashboardData.value?.data?.stats || {
   total_posts: 0, published_posts: 0, draft_posts: 0, featured_posts: 0,
   total_contacts: 0, new_contacts: 0, replied_contacts: 0,
-  total_views: 0, avg_views_per_post: 0,
   total_categories: 0, active_categories: 0,
   total_users: 0, admin_users: 0
 });
 
 const periodStats = computed(() => dashboardData.value?.periodStats || dashboardData.value?.data?.periodStats || {
-  posts_last_7_days: 0, contacts_last_7_days: 0, views_last_7_days: 0
+  posts_last_7_days: 0, contacts_last_7_days: 0
 });
 
 const recentPosts = computed(() => dashboardData.value?.recentPosts || dashboardData.value?.data?.recentPosts || []);
 const recentContacts = computed(() => dashboardData.value?.recentContacts || dashboardData.value?.data?.recentContacts || []);
-const popularPosts = computed(() => dashboardData.value?.popularPosts || dashboardData.value?.data?.popularPosts || []);
 const topCategories = computed(() => dashboardData.value?.topCategories || dashboardData.value?.data?.topCategories || []);
 const monthlyStats = computed(() => dashboardData.value?.monthlyStats || dashboardData.value?.data?.monthlyStats || []);
 const recentActivity = computed(() => dashboardData.value?.recentActivity || dashboardData.value?.data?.recentActivity || []);
@@ -57,7 +55,7 @@ const maxMonthlyValue = computed(() => {
   if (!monthlyStats.value || monthlyStats.value.length === 0) return 1
   return Math.max(
     ...monthlyStats.value.map((month) =>
-      Math.max(month.posts || 0, month.contacts || 0, (month.views || 0) / 10)
+      Math.max(month.posts || 0, month.contacts || 0)
     )
   )
 })
@@ -175,37 +173,6 @@ const getActivityColor = (color) => {
           </div>
         </div>
 
-        <!-- Total Vistas -->
-        <div class="bg-white dark:bg-slate-800 rounded-lg shadow p-6 border border-gray-100 dark:border-slate-700">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <div class="w-8 h-8 bg-green-500 rounded-md flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-              </div>
-            </div>
-            <div class="ml-5 w-0 flex-1">
-              <dl>
-                <dt class="text-sm font-medium text-gray-300 dark:text-gray-300 truncate">Total Vistas</dt>
-                <dd class="text-lg font-medium text-gray-900 dark:text-white">{{ stats.total_views?.toLocaleString() }}
-                </dd>
-              </dl>
-            </div>
-          </div>
-          <div class="mt-4">
-            <div class="text-sm text-gray-300 dark:text-gray-300">
-              Promedio: <span class="font-medium dark:text-white">{{ stats.avg_views_per_post }}</span> por post
-            </div>
-            <div class="text-xs text-gray-300 mt-1">
-              {{ periodStats.views_last_7_days?.toLocaleString() }} esta semana
-            </div>
-          </div>
-        </div>
-
         <!-- Categorías y Usuarios -->
         <div class="bg-white dark:bg-slate-800 rounded-lg shadow p-6 border border-gray-100 dark:border-slate-700">
           <div class="flex items-center">
@@ -250,10 +217,6 @@ const getActivityColor = (color) => {
               <div class="w-6 bg-purple-500"
                 :style="{ height: `${Math.max(((month.contacts || 0) / maxMonthlyValue) * 200, 4)}px` }"
                 :title="`${month.contacts} contactos`"></div>
-              <!-- Barra de Vistas (dividido por 10 para escala) -->
-              <div class="w-6 bg-green-500 rounded-b"
-                :style="{ height: `${Math.max(((month.views || 0) / 10 / maxMonthlyValue) * 200, 4)}px` }"
-                :title="`${month.views} vistas`"></div>
             </div>
             <span class="text-xs text-gray-300 dark:text-gray-300 mt-2 transform -rotate-45 origin-top-left">{{
               month.month_short }}</span>
@@ -267,10 +230,6 @@ const getActivityColor = (color) => {
           <div class="flex items-center">
             <div class="w-3 h-3 bg-purple-500 rounded mr-2"></div>
             <span class="text-sm text-gray-300 dark:text-gray-300">Contactos</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-3 h-3 bg-green-500 rounded mr-2"></div>
-            <span class="text-sm text-gray-300 dark:text-gray-300">Vistas</span>
           </div>
         </div>
       </div>
@@ -304,8 +263,7 @@ const getActivityColor = (color) => {
                       {{ post.category.name }}
                     </span>
                   </div>
-                  <p class="text-xs text-gray-300 mt-1">{{ post.time_ago || formatDate(post.created_at) }} • {{
-                    post.views }} vistas</p>
+                  <p class="text-xs text-gray-300 mt-1">{{ post.time_ago || formatDate(post.created_at) }}</p>
                 </div>
                 <div class="ml-4 flex-shrink-0 flex flex-col items-end space-y-1">
                   <span class="inline-flex px-2 py-1 text-xs font-semibold rounded-full"
@@ -391,43 +349,8 @@ const getActivityColor = (color) => {
         </div>
       </div>
 
-      <!-- Posts populares y categorías -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Posts más populares -->
-        <div class="bg-white dark:bg-slate-800 rounded-lg shadow border border-gray-100 dark:border-slate-700">
-          <div class="px-6 py-4 border-b border-gray-200 dark:border-slate-700">
-            <h3 class="text-lg font-medium text-gray-900 dark:text-white">Posts Más Populares</h3>
-          </div>
-          <div class="divide-y divide-gray-200 dark:divide-slate-700">
-            <div v-if="popularPosts.length === 0" class="px-6 py-4 text-center text-gray-300">
-              No hay posts populares aún
-            </div>
-            <div v-for="post in popularPosts" :key="post.id"
-              class="px-6 py-3 hover:bg-gray-50 dark:hover:bg-slate-700/50">
-              <div class="flex items-center justify-between">
-                <div class="flex-1 min-w-0">
-                  <p class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ post.title }}</p>
-                  <div class="flex items-center mt-1 space-x-2">
-                    <span v-if="post.category"
-                      class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium text-white shadow-sm"
-                      :style="{ backgroundColor: post.category_color ? post.category_color : '#6b7280' }">
-                      {{ post.category.name }}
-                    </span>
-                    <span class="text-xs text-gray-300">{{ formatDate(post.published_at) || formatDate(post.created_at)
-                      }}</span>
-                  </div>
-                </div>
-                <div class="ml-4 flex-shrink-0 text-right">
-                  <p class="text-sm font-medium text-gray-900 dark:text-gray-100">{{ post.views?.toLocaleString() || 0
-                  }}</p>
-                  <p class="text-xs text-gray-300">vistas</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Categorías más activas -->
+      <!-- Categorías más activas -->
+      <div class="grid grid-cols-1 gap-6">
         <div class="bg-white dark:bg-slate-800 rounded-lg shadow border border-gray-100 dark:border-slate-700">
           <div class="px-6 py-4 border-b border-gray-200 dark:border-slate-700">
             <h3 class="text-lg font-medium text-gray-900 dark:text-white">Categorías Más Activas</h3>
@@ -464,17 +387,10 @@ const getActivityColor = (color) => {
       </div>
 
       <!-- Estadísticas de rendimiento -->
-      <div v-if="performanceStats && (performanceStats.most_viewed_post || performanceStats.most_active_category)"
+      <div v-if="performanceStats && (performanceStats.most_active_category || performanceStats.avg_contacts_per_day)"
         class="bg-white dark:bg-slate-800 rounded-lg shadow p-6 border border-gray-100 dark:border-slate-700">
         <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Estadísticas de Rendimiento</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-if="performanceStats.most_viewed_post" class="text-center">
-            <p class="text-sm text-gray-300 dark:text-gray-300">Post Más Visto</p>
-            <p class="text-lg font-medium text-gray-900 dark:text-white truncate">{{
-              performanceStats.most_viewed_post.title }}</p>
-            <p class="text-sm text-blue-600 dark:text-blue-400">{{
-              performanceStats.most_viewed_post.views?.toLocaleString() || 0 }} vistas</p>
-          </div>
           <div v-if="performanceStats.most_active_category" class="text-center">
             <p class="text-sm text-gray-300 dark:text-gray-300">Categoría Más Activa</p>
             <p class="text-lg font-medium text-gray-900 dark:text-white">{{ performanceStats.most_active_category.name

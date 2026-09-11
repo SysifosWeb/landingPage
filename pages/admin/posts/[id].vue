@@ -213,15 +213,6 @@ const formatDate = (date) => {
                             </h3>
                         </div>
                         <div class="p-6 space-y-4">
-                            <div class="text-center">
-                                <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                                    {{ post.views?.toLocaleString() || 0 }}
-                                </div>
-                                <div class="text-sm text-gray-300 dark:text-gray-300">
-                                    Visualizaciones
-                                </div>
-                            </div>
-
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                                     Creado

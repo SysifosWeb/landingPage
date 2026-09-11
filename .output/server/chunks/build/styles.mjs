@@ -1,6 +1,6 @@
 const interopDefault = r => r.default || r || [];
 const styles = {
-  "node_modules/nuxt/dist/app/entry.js": () => import('./entry-styles.wc12w7gd.mjs').then(interopDefault),
+  "node_modules/nuxt/dist/app/entry.js": () => import('./entry-styles.uaMrePYp.mjs').then(interopDefault),
   "pages/index.vue": () => import('./index-styles.CO7vGYsn.mjs').then(interopDefault),
   "components/home/HomeValue.vue": () => import('./HomeValue-styles.iOfSa90Y.mjs').then(interopDefault),
   "components/home/HomeProblems.vue": () => import('./HomeProblems-styles.BrzEF-iF.mjs').then(interopDefault),
@@ -13,13 +13,13 @@ const styles = {
   "components/portfolio/HeroSection.vue": () => import('./HeroSection-styles.BqojEHeo.mjs').then(interopDefault),
   "components/portfolio/GridSection.vue": () => import('./GridSection-styles.BvFVHGoq.mjs').then(interopDefault),
   "components/portfolio/StatsSection.vue": () => import('./StatsSection-styles.Bk-XIwBk.mjs').then(interopDefault),
+  "pages/blog/index.vue": () => import('./index-styles.C1UsRtWV.mjs').then(interopDefault),
+  "components/blog/FiltersSection.vue": () => import('./index-styles.C1UsRtWV.mjs').then(interopDefault),
   "pages/servicios.vue": () => import('./servicios-styles.B3crXzI9.mjs').then(interopDefault),
   "components/servicios/HeroSection.vue": () => import('./HeroSection-styles.xX9nCbo-.mjs').then(interopDefault),
   "components/servicios/ListSection.vue": () => import('./ListSection-styles.BgkyI6JE.mjs').then(interopDefault),
   "components/servicios/ProcesoSection.vue": () => import('./ProcesoSection-styles.CQTjLApN.mjs').then(interopDefault),
   "components/servicios/TechStackSection.vue": () => import('./TechStackSection-styles.C7L4155j.mjs').then(interopDefault),
-  "pages/blog/index.vue": () => import('./index-styles.C1UsRtWV.mjs').then(interopDefault),
-  "components/blog/FiltersSection.vue": () => import('./index-styles.C1UsRtWV.mjs').then(interopDefault),
   "pages/admin/index.vue": () => import('./index-styles.DkgmV3Gr.mjs').then(interopDefault),
   "pages/admin/posts/[id].vue": () => import('./_id_-styles.DJ7fUbHK.mjs').then(interopDefault),
   "pages/admin/posts/edit.vue": () => import('./edit-styles.B1mqzLzU.mjs').then(interopDefault),
